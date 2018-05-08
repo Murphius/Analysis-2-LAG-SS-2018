@@ -1,0 +1,182 @@
+\setcounter{Satz}{6} 
+\begin{Satz}{
+	Sei $p \left( x\right) = \sum_{k=0}^{ \infty}
+	{ a_k \left( x-x_0\right)^k}, a_k \in 
+	\mathbb{R} ,x_0 \in \mathbb{R}$ eine Potenzreihe vom Konvergenzradius 
+	$R >0 $. Dann ist $p : x \mapsto p\left(x\right)$ auf ganz 
+	$\left( x_0-R, x_0+R \right)$ differenzierbar mit 
+	$p'\left( x \right) = \sum_{k=0}^\infty {\left( k+1\right) 
+	a_{k+1} \left(x-x_0\right)^k}$.\\
+	Insbesondere ist $p'$ auch wieder eine Potenzreihe 
+	(die man durch gliedweises differenzieren erhält) mit	Konvergenzradius R.
+}\end{Satz}
+
+\begin{Bemerkung}{
+	\textbf{ }\\
+	\begin{enumerate}
+		\item Damit erhalten wir: 
+		\begin{equation*}
+			exp'\left(x\right) = \left( \sum_{l=0}^{\infty} \frac{x^l}{l!}\right)' 
+			= \sum_{l=0}^{\infty} \left(l+1\right) \frac{x^l}{(l+1)!} 
+			= \sum_{l=0}^{\infty} \frac{x^l}{l!} = exp(x)
+		\end{equation*}
+		\item Damit sind Potenzreihen $\infty$ oft differenzierbar
+	\end{enumerate}
+	\textbf{Beweis} Wir zeigen zunächst die Aussage über den Konvergenzradius. 
+	Beachte, dass: 
+	\begin{equation*}
+		\left(\sum_{k=0}^{\infty} \left( k+1 \right) a_{k+1} \left( x -x_0 \right)^k \right)
+		\left(x-x_0\right) = \sum_{k=0}^{\infty} \left(k+1\right) 
+		a_{k+1} \left(x-x_0\right)^{k+1}
+	\end{equation*}
+	Ergo, für den Konvergenzradius der obigen Potenzreihe ergibt sich nach Cauchy-
+	Hadamard:
+	\begin{equation*}
+		R_{\phi'} = \left(\limsup \sqrt[k+1]{\left(k+1\right)a_{k+1}}\right)^{-1}
+		= R \left(\textit{da} \sqrt[k]{k} \rightarrow 1\right)
+	\end{equation*}
+	Damit ist $p'$ wohldefiniert.\\
+	 Wir zeigen nun, dass $p'$ tatsächlich die Ableitung von $p$ darstellt. 
+	 OBdA sei $x_0 = 0$. \\
+	Dann gilt für $y \in \left(-R,R\right)$:
+	\begin{equation*}
+		p\left(x\right)-p\left(y\right) - p'\left(y\right)\left(x-y\right) 
+		= \sum_{k= \sigma}^{\infty} a_k \left(x^k -y^k\right) - \left(k+1\right) 
+		a_{k+1} y^k\left(x-y\right)
+	\end{equation*}
+	Wir setzen $\Delta\left(x,y\right) = \sum_{n=\sigma}^{\infty} a_n 
+	\frac{x^n - y^n}{x-y} - \sum_{n = 1}^{\infty}n a_n y^{n-1}$. \\
+	Man sieht leicht (Teleskopsumme), dass
+	\begin{equation*}
+		\frac{x^n-y^n}{x-y} = \begin{cases}\sum_{k=0}^{n-1}x^{n-1-k}y^k & n \geq 1 
+		\\ 0 & sonst \end{cases}
+	\end{equation*}
+	Also folgt: 
+	\begin{equation*}
+		\Delta\left(x,y\right) = \sum_{n=1}^{\infty} a_n \left[ \sum_{k=0}^{n-1} 
+		x^{n-1-k}y^k -ny^{n-1}\right]
+	\end{equation*}
+	Für $n=1$ ist $\left[...\right] = 0$ und für $n\geq 2$
+	\begin{align*}
+		\left[...\right]  = & \sum_{k=0}^{n-2} x^{n-1-k}y^k - (n-1)y^{n-1} \\
+		 = & \sum_{k=0}^{n-2} (k+1) x^{n-1-k}y^k - \sum_{k=0}^{n-2}kx^{n-1-k}y^k 
+		.(n-1)y^{k-1} \\
+		= & \sum_{k=0}^{n-2} (k+1) x^{n-1-k}y^k - \sum_{k=0}^{n-1}kx^{n-1-k}y^k \\
+		= & \sum_{k=0}^{n-1} k x^{n-k} y^{k-1} - \sum_{k=1}^{n-1}kx^{n-1-k}y^k \\
+		= &(x -y) \sum_{k=1}^{n-1}kx^{n-1-k}y^{k-1} \\
+	\end{align*}
+	Sein nun $\vert y\vert < r < R$ und $|x| \leq r$. Dann gilt:
+	\begin{align*}
+		\vert \Delta(x,y)\vert \leq & 
+		\sum_{n=2}^{\infty} |a_n| |x-y| \sum_{k=1}^{n-1} 
+		k|x|^{n-1-k}|y|^{k-1} \\
+		\leq & \sum_{n=2}^{\infty} |a_n| |x-y|r^{n-2} \sum_{k=1}^{n-1}k 
+		\leq |a_n|r^{n-2}n^2|x-y|
+	\end{align*}
+	Nach Cauchy-Hadamard hat diese Reihe $q(z) = \sum_{n=2}^{\infty} |a_n|n^2z^n$ 
+	den Konvergenzradius $R$, weshalb $\sum_{n=2}^{\infty} |a_n| r^{n-2} n^2 
+	= \frac{1}{r^2}\sum_{n=2}^{\infty} |a_n|n^2r^n$ konvergiert.
+	Damit folgt aber $\lim\limits_{x \rightarrow y}{\Delta(x,y) = 0}$
+}\end{Bemerkung}
+
+\begin{Proposition}{
+	Sei $f: \left(a,b\right) \rightarrow \mathbb{R}$ streng monoton und 
+	differenzierbar in $p \in \left(a, b\right)$ mit $f'\left(p\right) \neq 0$
+	Dann ist die Umkehrfunktion $f^{-1}: f\left(a,b\right) \rightarrow \mathbb{R}$
+	differenzierbar in $q = f(p)$ und es gilt: 
+	\begin{equation*}
+		\left( f^{-1}\right)'\left(q\right) = \frac{1}{f'(p)} =
+		 \frac{1}{f'(f^{-1}(q))}
+	\end{equation*}
+	\textbf{Beweis} Da $f$ streng monoton ist, ist $f^{-1}$  stetig. \\
+	Insbesondere gilt $f^{-1}(y) \rightarrow f^{-1}(q)$ für $y \rightarrow q$.\\
+	Damit gilt:
+	\begin{align*}		
+	 \lim\limits_{y \rightarrow q}
+		{\frac{1}{y-q} \left( f^{-1}(y) - f^{-1}(q) \right) }
+		= & \lim\limits_{y \rightarrow q}
+		{\frac{f^{-1}(y) - f^{-1}(q)}{f(f^{-1}(y)) - f(f^{-1}(q)) }} \\
+		= &\left( \lim\limits_{y \rightarrow q}
+		{\frac{f(f^{-1}(y)) - f(f^{-1}(q))}
+		{f^{-1}(y) - f^{-1}(q)} } \right)^{-1} \\
+		= & \left(f'(f^{-1}(q))\right)^{-1}
+		=  \frac{1}{f'\left( f^{-1}(q) \right)}		
+	\end{align*}
+}\end{Proposition}
+
+\begin{Beispiel}{
+	\textbf{ }\\
+	\begin{itemize}
+		\item k-te Wurtel $g: (0,\infty) \rightarrow \mathbb{R} : 
+		y \mapsto y^{\frac{1}{k}}$ ist differenzierbar mit 
+		$g'(y) = \frac{1}{k}y^{\frac{1}{k}-1}$
+		\textbf{Denn} g ist Umkerhfunktion zu $f(x) = x^k$ \\
+		Damit gilt: 
+		\begin{equation*}g'(y) = \frac{1}{f'(g(y))} = \frac{1}{k(\sqrt[k]{y})^{k-1}}
+		= \frac{1}{k}y^{\frac{1}{k} -1}
+		\end{equation*}
+		\item Logarithmus $\ln: (0,\infty) \rightarrow \mathbb{R}: 
+		y \mapsto \ln y$. Es ist 
+		$\ln'(y) = \frac{1}{y}$, \textbf{denn:}
+		\begin{equation*}\ln'(y) = \frac{1}{exp'(\ln y)}
+		= \frac{1}{exp(\ln y)} = \frac{1}{y}
+		\end{equation*}
+	\end{itemize}
+}\end{Beispiel}
+
+\begin{Bemerkung}{
+	Für $\alpha \in \mathbb{R}$ und $x > 0$ ist $x^\alpha := exp(\alpha \ln(x))$ \\
+	\textbf{Anwendung:} Die Funktion $\left( \circ \right)^\alpha : 
+	(0, \infty) \rightarrow (0, \infty): x \mapsto \alpha x^{\alpha}$ hat die Ableitung 
+	$((\circ)^{\alpha})' : (0, \infty) \rightarrow (0, \infty) : 
+	x \mapsto \alpha x^{\alpha-1}$
+	\textbf{denn} 
+	\begin{align*}
+	(x^{\alpha})' = & exp'(\alpha \ln(x)) = exp(\alpha\ln x) \frac{\alpha}{x} \\
+	= & \alpha exp(\alpha \ln x) exp (-\ln x) =  \alpha exp ((\alpha -1 ) \ln x)) \\
+	= & \alpha x^{\alpha-1}
+	\end{align*}
+	Es folgen die bekannten Rechenregeln $x^{\alpha}x^{\beta} = x^{\alpha+\beta} $
+	und $x^\alpha \cdot y^\alpha = (xy)^\alpha$
+}\end{Bemerkung}
+
+\section{Differenzierbare Funktionen auf Intervallen}
+Sei $I \subseteq \mathbb{R}$ ein Intervall
+\begin{Definition}{
+	Sei $f: I \rightarrow \mathbb{R}$ Wir sagen, f hat in $x_0 \in I$ ein 
+	\textbf{lokales Maximum (lokales Minimum)}, falls ein $\delta > 0$ gibt,
+	so dass 
+	\begin{equation*}
+	\forall x \in B_\delta(x_0) : f(x) \leq f(x_0) (f(x) \geq f(x_0))
+	\end{equation*}
+	Gilt 
+	\begin{equation*}
+		f(x) \leq f(x_0) (f(x) \geq f(x_0))
+	\end{equation*}
+	 für alle $x \in I$, so sagen wir, dass 
+	$x_0$ ein \textbf{globales Maximum (globales Minimum)} ist.
+	Sind die entsprechenden Ungleichungen strikt, so reden wir von 
+	\textbf{strikten Maxima (strikte Minima)}. Maximum und Minimum werden unter dem 
+	Begriff \textbf{Extremum} zusammengefasst.
+}\end{Definition}
+
+\begin{Satz}{
+	\label{satz_8}
+	Seif $f:[a,b] \rightarrow \mathbb{R}$ Hat $f$ ein lokales Maximum (lokales 
+	Minimum) in $x_0 \in (a,b)$ und existiert $f'(x_0)$, so gilt 
+	$f'(x_0) = 0$. \\
+	\textbf{Beweis} Wir betrachten den Fall des Maximums.
+	Es gilt:
+	\begin{equation*}
+		\label{gleichung:bedingungi}
+		\lim\limits_{x \nearrow x_0}{ \frac{f(x)-f(x_0)}{x-x_0} \geq 0}
+	\end{equation*}
+	und
+	\begin{equation*}
+		\label{gleichung:bedingungii}
+		\lim\limits_{x \searrow x_0}{\frac{f(x)-f(x_0)}{x-x_0} \leq 0}
+	\end{equation*}
+	Wegen differenzierbarkeit in $x_0$ folgt
+	 $Gleichung\text{ }1 = Gleichung \text{ }2 \Rightarrow 
+	f'(x_0) = 0$ 	
+}\end{Satz}

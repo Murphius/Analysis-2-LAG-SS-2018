@@ -1,0 +1,112 @@
+\section{Differentiation}
+
+\begin{Definition}{
+	Sei $f: D \left( f \right) \subseteq \mathbb{R} \rightarrow \mathbb{R}$ 
+	und $x_0 \in D \left( f \right)$ ein Punkt, 
+	um den ein offenes Intervall $B_{\epsilon} \left( x \right)$ 
+	(für geeignetes $\epsilon > 0$) komplett 
+	in $D \left( f \right)$ enthalten ist $\left( B_{\epsilon} \left( x \right)
+	 \subseteq D \left( f \right) \right) $. Dann heißt $f$ an der Stelle $x_0$ 
+	 \textbf{differenzierbar}, wenn der Grenzwert
+	\begin{equation*}
+		Df\left(x_0\right) := \frac{df}{dx} 
+		\left( x_0 \right) := f'\left( x_0 \right) 
+	\end{equation*}
+	\begin{equation*}
+	\lim\limits_{x \rightarrow x_0}{\frac{f 
+	\left( x \right) - f \left( x_0 \right) }{x - x_0} }
+	\end{equation*} 
+	existiert. \\
+	Wir meinen mit $f'\left(x_0\right)$ die \textbf{Ableitung} 
+	(seltener \textit{Differentialquotient}) von $f$ an der Stelle $x_0$. \\
+	Ist $f: D\left(f \right) \rightarrow \mathbb{R}$ in jedem $x \in D\left(f\right)
+	$ differenzierbar, dann heißt $f$ schlechthin \textbf{differenzierbar}. 
+	Etwas irreführend wird auch die Abbildung  
+	\begin{equation*}
+		f': D\left(f\right) \subseteq \mathbb{R} \rightarrow \mathbb{R}
+	\end{equation*}
+	\begin{equation*}
+		x \mapsto f'(x)
+	\end{equation*}
+	als Ableitung von $f$ bezeichnet.
+}\end{Definition}
+
+\begin{Satz}{
+	Sei $I \subseteq \mathbb{R}$ ein offenes Intervall und $f: I \rightarrow \mathbb{R}$ und $x_0 \in I$. Dann sind äquivalent:
+	\begin{enumerate}
+		\item \label{satz1:i}Es gibt ein $c \in \mathbb{R}$ und $\phi: I \rightarrow \mathbb{R}$, so dass
+		\begin{equation*}
+		f\left(x\right) = f\left(x_0\right) + c\left(x-x_0\right) + \phi\left(x\right)
+		\end{equation*} 
+		und 
+		\begin{equation*} \label{gleichung:i}
+			\lim\limits_{x \rightarrow x_0}{\frac{\phi\left(x\right)}{x-x_0}}  = 0
+		\end{equation*}
+		\item Es gibt ein $ \tilde{c} \in \mathbb{R}$ und $
+		u: I \rightarrow \mathbb{R}$, so dass 
+	\begin{equation*}		
+		f\left(x\right) = f\left(x_0\right) + \tilde{c}\left(x-x_0\right) + u\left(x
+		\right)\left(x-x_0\right)
+		\end{equation*}
+		und 
+		\begin{equation*}
+		\lim\limits_{x \rightarrow x_0}{u\left(x\right) = 0}
+		\end{equation*}
+		\item $f$ ist in $x_0$ differenzierbar
+	\end{enumerate}
+	Gelten die obigen Aussagen, so gilt 
+	\begin{equation*}
+		f''\left(x_0\right) = c = \tilde{c}
+	\end{equation*}
+	D.h. insbesondere $c$ und $\tilde{c}$ sind eindeutig bestimmt
+
+}\end{Satz}
+
+\begin{Bemerkung}{
+	\textbf{ }\\
+	\begin{itemize}
+		\item Der springende Punkt in \ref{gleichung:i} ist 
+		Gleichung~\ref{gleichung:i}. Ohne Gleichung~\ref{gleichung:i} 
+		kann man sich ein beliebiges $c \in \mathbb{R}$ wählen und setzt 
+	\begin{equation*}
+	\phi\left(x\right) := f\left(x\right) - f\left(x_0\right) - c\left(x-x_0\right)
+	\end{equation*}			
+	\item Vergisst man die Funktion $\phi$, versteht man mit der Geradengleichung
+		\begin{equation*}
+		x \mapsto f\left(x_0\right) + c\left(x-x_0\right)
+		\end{equation*}
+		Das ist per Definition die Gleichung der Tangente an $f$ in $x_0$
+	\end{itemize}
+	Beweis:
+	\begin{itemize}
+		\item[$1 \leftrightarrow 2$] Man setzte einfach $u\left(x\right) = \frac{\phi\left(x\right)}{x-x_0}$ und $\tilde{c} = c$ \\
+		(in $x = x_0$ setze man $u\left(x_0\right) = 0$)
+		\item[$1 \rightarrow 2$] ZZ $\lim\limits_{x \rightarrow x_0}{\frac{f\left(x\right)-f\left(x_0\right)}{x-x_0}}$ existiert \\
+		\begin{equation*}
+			\lim\limits_{x\rightarrow x_0}{\frac{f\left(x\right) - f\left(x_0\right)}{x-x_0}} = \lim\limits_{x \rightarrow x_0}{\frac{f\left(x_0\right) + c\left(x-x_0\right)+\phi\left(x\right)-f\left(x_0\right)}{x-x_0}}
+			= \lim\limits_{x\rightarrow x_0}{c + \frac{\phi \left(x\right)}{x-x_0}} = c
+		\end{equation*}
+		\item[$3\rightarrow 1$] Wir setzten $ c = f'\left(x_0\right)$ und 
+		\begin{equation*}
+			\phi\left(x\right) = f\left(x\right) - f\left(x_0\right) - f'\left(x_0\right)\left(x-x_0\right)
+		\end{equation*}
+		offensichtlich gilt dann:
+		\begin{equation*}
+			f\left(x\right) = f\left(x_0\right) 
+			+ f'\left(x_0\right)\left(x-x_0\right) + \phi\left(x\right)
+		\end{equation*}
+		\begin{equation*}
+			\lim\limits_{x\rightarrow x_0}
+			{\vert \frac{\phi\left(x\right)}{x-x_0}\vert} 
+			= \lim\limits_{x \rightarrow x_0}
+			{\vert \frac{f\left(x\right)-f\left(x_0\right)-
+			f'\left(x_0\right)\left(x-x_0\right)}{x-x_0}\vert} 
+			\end{equation*}
+			\begin{equation*}
+			\hspace{35mm}= \lim\limits_{x\rightarrow x_0}{\frac{f\left(x\right)-
+			f\left(x_0\right)}{x-x_0} - f'\left(x_0\right)}
+			=f'\left(x_0\right) - f\left(x_0\right) 
+			=0
+		\end{equation*}
+	\end{itemize}
+}\end{Bemerkung}

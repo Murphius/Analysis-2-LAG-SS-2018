@@ -1,0 +1,202 @@
+\setcounter{Satz}{1} 
+\setcounter{Definition}{5}
+
+\begin{Satz}{
+	Es sind äquivalent: $f : I \rightarrow \mathbb{R}$
+	\begin{enumerate}
+		\item $f(x) = f(x_0) + f'(x_0) \cdot (x-x_0) + \phi(x) $\\
+		 mit: $\lim\limits_{n \rightarrow \infty}{\frac{\phi(x)}{|x-x_0|}} = 0$
+	\item $ f(x) = f(x_0) + f'(x_0) \cdot (x-x_0) + \phi(x) + u(x)  \cdot (x-x_0)$ \\
+	mit: $\lim\limits_{n \rightarrow \infty}{u(x)} = 0$
+	\item Der Grenzwert 
+	$f'(x_0) = \lim\limits_{n \rightarrow \infty}{\frac{f(x)-f(x_0)}{x-x_0}}$ 	
+	existiert
+	\end{enumerate}
+}\end{Satz}
+
+\begin{Satz}{\label{satz:satz_3}
+	Sei $ I \subset \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$ 
+	differenzierbar in $x_0 \in I$. Dann ist f in $x_0$ stetig. \\
+	\textbf{Beweis:} \\
+		\noindent\hspace*{5mm}
+		\textit{ZZ}  ist: $\lim\limits_{x \rightarrow x_0}{f(x) = f(x_0)}$ \\
+		\noindent\hspace*{10mm}
+		Äquivalent dazu: $\lim\limits_{x \rightarrow x_0}{f(x)-f(x_0) = 0}$. \\
+		\noindent\hspace*{10mm}
+		Nun gilt: $\lim\limits_{x \rightarrow x_0}{f(x) - f(x_0)} = 
+	 \lim\limits_{x \rightarrow x_0}{\frac{f(x)-f(x_0)}{\frac{x-x_0}{x-x_0}}}
+	 = f'(x_0) \cdot 0 = 0 $
+}\end{Satz}
+\begin{Bemerkung}{
+	\textbf{ }\\
+	 \begin{itemize}
+	 	\item Die Umkehrung dieser Aussage ist im Allgemeinen falsch! \\
+	 	Es gibt sogar Funktionen, die überall stetig aber nirgends 
+	 	differenzierbar sind. \\
+	 	(\textit{Beispiel:} Weierhaus-Fkt: $\sum_{n \in \mathbb{N}} cos(b_n \pi x)$
+	 	mit $a_n \in (0,1)$ und $a_n b_n >1$)
+	 	\item Jede nicht stetige Funktion ist nicht differenzierbar
+	 \end{itemize}	 
+}\end{Bemerkung}
+
+\begin{Satz}{
+	Seien $f,g : I \rightarrow \mathbb{R}$ in $x \in I$ differenzierbar, 
+	$ I \subset \mathbb{R}$ ein Intervall. Dann sind $f +g$, $f \cdot g$ und 
+	$\frac{f}{g}$ (sofern $g(x) \neq 0 $)  in $x$ differenzierbar. \\
+	Es gilt:
+	\begin{enumerate}
+		\item $(f + g)' = f'(x) + g'(x)$ (Summenregel)
+		\item $(f \cdot g)' = f'(x)g(x) + f(x) \cdot g'(x) $ (Produktregel)
+		\item $ (\frac{f}{g})' = \frac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$ 	
+		(Quotientenregel) 
+	\end{enumerate}
+	\textbf{Beweis:}
+	\begin{enumerate}
+		\item $(f+g)'(x) = 
+		\lim\limits_{y \rightarrow x}{\frac{f(y)+g(y) - (f(x) + g(x))}{y- x}} = 
+		\lim\limits_{y \rightarrow x}{\frac{f(y) - f(x)}{y-x} + \frac{g(y) -g(x)}
+		{y-x}}  \\ \noindent\hspace*{17mm}
+		= \lim\limits_{y \rightarrow x}{\frac{f(y)-f(x)}{y-x}} + 
+		\lim\limits_{y \rightarrow x}{\frac{g(y)-g(x)}{y-x}} 
+		= f'(x) + g'(x)$
+		
+		\item $\lim\limits_{y \rightarrow x}{\frac{f(y)g(y) - f(x)g(x)}{y-x}} = 
+		\lim\limits_{y \rightarrow x}{\frac{f(y)g(y) - f(y)g(x) 
+		+ f(y)g(x)-f(x)g(x)}{y-x}} \\ \noindent\hspace*{17mm}
+		= \lim\limits_{y \rightarrow x}{f(y) \frac{g(y)-g(x)}{y-x} + g(x) 
+		\frac{f(x)-f(x)}{y-x}} \\ \noindent\hspace*{17mm}
+		=\lim\limits_{y \rightarrow x}f(y) 
+		\lim\limits_{y \rightarrow x}{\frac{g(y) - g(x)}{y-x}} + g(x) 
+		\lim\limits_{y \rightarrow x}{\frac{f(y)-f(x)}{y-x}} 
+		\\ \noindent\hspace*{17mm}
+		\overset{Satz~\ref{satz:satz_3}}{=} f(x)g'(x) + g(x)f'(x)$
+		
+		\item $
+		\lim\limits_{y \rightarrow x}
+			{\frac{\frac{f(y)}{g(y)} - \frac{f(x)}{g(x)}}{y-x}}
+		= \lim\limits_{y \rightarrow x}{\frac{\frac{f(y)}{g(y)}\frac{g(x)}{g(x)} -
+			\frac{f(x)}{g(x)}\frac{g(y)}{g(y)}}{y-x}}
+		= \lim\limits_{y \rightarrow 	x}{\frac{1}{g(y)g(x)} 
+			\frac{f(y)g(x)-f(x)g(y)}{y-x}} \\ \noindent\hspace*{17mm}
+		=\frac{1}{g^2(x)} \lim\limits_{y \rightarrow x}
+			{\frac{f(y)g(x) -f(y)g(y) + f(y)g(y) -f(x)g(y)}{y-x}} 
+		\\	\noindent\hspace*{17mm}
+		= \frac{1}{g^2(x)} \lim\limits_{y \rightarrow x} 
+		{f(y) \cdot \frac{g(x)-g(y)}{y-x} + g(y) \frac{f(y)-f(x)}{y-x}} 
+		\\ \noindent\hspace*{17mm}
+		= \frac{1}{g^2(x)} \cdot \left( \lim\limits_{y \rightarrow x}
+			{f(y) \frac{g(x) - g(y)}{y-x}} + \lim\limits_{y \rightarrow x}
+			{g(y) \frac{f(y) - f(x)}{y-x} } \right) \\ \noindent\hspace*{17mm}
+		= \frac{1}{g^2(x)}(f(x)\cdot(-g(x)) + g(x)f'(x)) 
+		= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}$
+	\end{enumerate}	 
+}\end{Satz}
+
+\begin{Beispiel}{
+	\textbf{ }\\
+	\begin{itemize}
+		\item[•\label{punkt_1}]$f(x) = c \in \mathbb{R} (x \in \mathbb{R})$ \\
+		$\rightarrow f'(x) = \lim\limits_{x \rightarrow y}{\frac{f(y)-f(x)}{y-x}}
+		= \lim\limits_{x \rightarrow y}{\frac{c - c}{y-x}} = 0$
+		
+		\item[•\label{punkt_2}]  $f(x) = x (x \in \mathbb{R}) \\
+		f'(x) = \lim\limits_{x \rightarrow y}{\frac{y-x}{y-x}} = 1$
+		
+		\item $f(x) = x^n, (x\in\mathbb{R})$ wobei $n \in \mathbb{N}$ \\
+		$f'(x) = n x^{n-1}$ per Induktion: \\
+		\noindent\hspace*{5mm} \textbf{$n = 1$} Stichpunkt 2 $\checkmark$ \\
+		\noindent\hspace*{5mm} \textbf{$n \rightarrow n+1$}: 
+		Sei also $f(x) = x^{n+1}$. Das gibt mit der Produktregel: \\
+		\noindent\hspace*{5mm} $f'(x) = (x \cdot x^n)' = (x)' \cdot (x^n)' 
+		= 1\cdot x	n + x \cdot n \cdot 
+		x^{n-1} = x^n + nx^n = (n+1)x^n$
+	\end{itemize}
+}\end{Beispiel}
+
+Damit sind alle Polynome differenzierbar und für 
+$p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
+\begin{equation*}p'(x) = \sum_{l = 0}^n l \cdot a_l \cdot x^{l-1} 
+= \sum_{l=1}^n l \cdot a_l x^{l-1}
+\end{equation*}
+
+\begin{itemize}
+	\item Seien $P_1$ und $P_2$ Polynome. \\
+	Dann nennt man die Abbildung \\
+	\noindent\hspace*{5mm}$Q : \mathbb{R}\setminus\{x|P_2(x) = 0\}
+	\rightarrow \mathbb{R} \\
+	\noindent\hspace*{6mm}x \mapsto \frac{P_1(x)}{P_2(x)}$ 
+	eine rationale Funktion. \\
+	Mit obiger sehen wir: rationale Funktionen sind auf dem kompletten
+	 Definitionsbereich differenzierbar.
+	 
+	\item Die Funktion $|\circ | \cdot x \mapsto |x| = \begin{cases}x  & \textit{für } x\geq 0 \\ - x & sonst \end{cases}$
+	ist nicht in 0 differenzierbar. Denn: \\
+	\begin{equation*}
+	\lim\limits_{y \searrow 0}{\frac{|y|-|0|}{y-0}}
+	= \lim\limits_{y \searrow 0}{\frac{y-0}{y-0}} = 1 
+	\end{equation*}
+	\begin{equation*}
+	\lim\limits_{y \nearrow 0}{\frac{|y| -|0|}{y-0}} = \lim\limits_{y 
+	\nearrow 0}{\frac{-y-0}{y-0}} = -1
+	\end{equation*}
+\end{itemize}
+
+\begin{Satz}[Kettenregel]{
+	Seien $I_f$ und $I_g$ Intervalle, $x_0 \in I_f$ und 
+	$f : I_f \rightarrow \mathbb{R}$ in $x_0$ differenzierbar und 
+	$g: I_g \rightarrow \mathbb{R}$ sei in $f(x_0)$ differenzierbar und 
+	$f(I_f) \subset I_g$. Dann gilt:
+	\begin{equation*}
+	\frac{d g \circ f}{dx}(x_0) = \frac{dg}{dx}(f(x_0)) \cdot \frac{df}{dx}(x_0)
+	\end{equation*}
+	
+	\textbf{Beweis:}
+	\noindent\hspace*{5mm} Da f in $x_0$ differenzierbar ist, gilt für alle 
+	$x \in I_f$: \\
+	\begin{equation*}
+		f(x) -f(x_0) = (x-x_0) \cdot(f'(x_0) + u(x))
+	\end{equation*}
+	\noindent\hspace*{5mm}$($ Wobei $\lim\limits_{x \rightarrow x_0}{u(x) = 0})$ \\
+	\noindent\hspace*{5mm}Analog gilt für alle $y \in I_g$: \\
+	\begin{equation*}
+		g(y) -g(f(x_0)) = (y-f(x_0)) \cdot (g'(f(x_0)) + v(y)),
+	\end{equation*}		
+	\noindent\hspace*{5mm}wobei $\lim\limits_{y \rightarrow f(x_0)}{v(y) = 0}$ \\
+	\noindent\hspace*{5mm}Damit haben wir für alle $x \in I_f$: \\
+	\begin{equation*}
+	g(f(x)) - g(f(x_0)) = (f(x)-f(x_0)) \cdot (g'(f(x_0)) + v(f(x))
+	= (x-x_0)(f'(x_0) + u(x)) (g'(f(x_0)) + v(f(x))
+	\end{equation*}
+	\noindent\hspace*{5mm}Damit gilt: \\
+	\noindent\hspace*{15mm}$\lim\limits_{x \rightarrow x_0}
+	{\frac{g(f(x))-g(f(x_0))}{x-x_0} } 
+	= \lim\limits_{x \rightarrow x_0}{(f'(x_0) + u(x)) (g'(f(x)) + v(f(x))}
+	\\ \noindent\hspace*{15mm}
+	= \lim\limits_{x \rightarrow x_0}{(f'(x_0) + u(x))} 
+	\lim\limits_{x \rightarrow x_0}{(g'(f(x_0)) + v(f(x)))}
+	 \\ \noindent\hspace*{15mm}
+	= (f'(x_0) + 0) (g'(f(x_0)) + 0)
+	= f'(x_0) g'(f(x_0))$
+}\end{Satz}
+
+\begin{Definition}{
+	Ist $I \subset \mathbb{R}$ ein Intervall und 
+	$f: I \rightarrow \mathbb{R}$ differenzierbar und $f':I \rightarrow \mathbb{R}$
+	stetig. Dann heißt f \textbf{stetig differenzierbar}. 
+	Wir definieren weiterhin induktiv die 
+	k-te Ableitung (für $k \in \mathbb{N}$) durch:
+	\begin{equation*}
+		f^{(0)} := f 
+	\end{equation*}
+	\begin{equation*}
+	f^{(k+1)} := f^{(k+1)'}
+	\end{equation*}
+	sofern die Ableitungen definiert sind.\\
+	Ist $f^{(k)}: I \rightarrow \mathbb{R}$ für alle $k \in \mathbb{N}$ definiert, 
+	so heißt f \textbf{beliebig oft} bzw. \textbf{unendlich oft differenzierbar}. \\
+	
+}\end{Definition}
+
+\begin{Bemerkung}{Wir haben bereits gesehen: Polynome sind beliebig oft
+	 differenzierbar.
+}\end{Bemerkung}
