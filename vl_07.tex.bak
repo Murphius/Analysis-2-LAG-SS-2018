@@ -94,7 +94,7 @@
 	\begin{align*}
 		\lim\limits_{y \searrow x}{\frac{f(y)-f(x)}{y-x} } \geq 0
 	\end{align*}
-	Äquivalent für $\lim\limits_{y \nearrow x}{ }$ 
+	Äquivalent für $\lim\limits{y \nearrow x}{ }$ 
 }\end{Satz}
 
 
@@ -109,7 +109,7 @@
 }\end{Korollar}
 
 \begin{Satz}{
-	Sei $f: I \rightarrow \mathbb{R}$ zweimal differenzierbar $(I \subseteq 
+	Sei $f: I \rightarrow \mathbb{R}$ zweimal differenzierbar $(I \subset 
 	\mathbb{R}$ Intervall$)$. Gibt es $\xi \in I$ mit $f'(\xi) = 0$ und 
 	$f''(\xi) < 0 \textbf{ }  (f''(\xi)> 0)$, so nimmt $f$ an der Stelle $\xi$ ein 
 	striktes lokales Maximum (Minimum) an.\\
@@ -237,7 +237,7 @@
 		Es muss also ein $ c > a$ existieren mit: 
 		$\frac{f(x)}{g(x)} <r$ $(x \in (a,c))$ \\
 		Analog kann man zeigen: \\
-		\textbf{Behauptung' :} Sei $A  \in (-\infty, \infty]$. Dann existiert für 
+		\textbf{Behauptung' :} Sei $A (-\infty, \infty]$. Dann existiert für 
 		jedes $p <A$ ein $d > a$, so dass $p < \frac{f(x)}{g(x)}$ $(x \in (a,d))$\\
 		Für $A = +\infty$ folgt die Aussage aus der letzten Behauptung, für 
 		$ A = - \infty$ aus der ersten Behauptung. \\
