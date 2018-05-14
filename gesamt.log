@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.11.7)  11 MAY 2018 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.11.7)  14 MAY 2018 13:41
 entering extended mode
 **./gesamt.tex
 (gesamt.tex
@@ -1055,8 +1055,8 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (vl_06.aux) (vl_07.aux) (vl_08.aux)) ) 
 Here is how much of TeX's memory you used:
  15167 strings out of 493323
- 284824 string characters out of 3139066
- 336532 words of memory out of 3000000
+ 284846 string characters out of 3139066
+ 337066 words of memory out of 3000000
  18369 multiletter control sequences out of 15000+200000
  14437 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1079,7 +1079,7 @@ sy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on gesamt.pdf (16 pages, 265264 bytes).
+Output written on gesamt.pdf (16 pages, 265342 bytes).
 PDF statistics:
  368 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
