@@ -28,8 +28,8 @@
 	 = f'(x_0) \cdot 0 = 0 $
 }\end{Satz}
 \begin{Bemerkung}{
-	\textbf{ }\\
 	 \begin{itemize}
+	 	\item[ ]
 	 	\item Die Umkehrung dieser Aussage ist im Allgemeinen falsch! \\
 	 	Es gibt sogar Funktionen, die überall stetig aber nirgends 
 	 	differenzierbar sind. \\
@@ -93,8 +93,8 @@
 }\end{Satz}
 
 \begin{Beispiel}{
-	\textbf{ }\\
 	\begin{itemize}
+	\item[]
 		\item[•\label{punkt_1}]$f(x) = c \in \mathbb{R} (x \in \mathbb{R})$ \\
 		$\rightarrow f'(x) = \lim\limits_{x \rightarrow y}{\frac{f(y)-f(x)}{y-x}}
 		= \lim\limits_{x \rightarrow y}{\frac{c - c}{y-x}} = 0$
@@ -130,7 +130,7 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	 Definitionsbereich differenzierbar.
 	 
 	\item Die Funktion $|\circ | \cdot x \mapsto |x| = \begin{cases}x  & \textit{für } x\geq 0 \\ - x & sonst \end{cases}$
-	ist nicht in 0 differenzierbar. Denn: \\
+	ist nicht in 0 differenzierbar. Denn:
 	\begin{equation*}
 	\lim\limits_{y \searrow 0}{\frac{|y|-|0|}{y-0}}
 	= \lim\limits_{y \searrow 0}{\frac{y-0}{y-0}} = 1 
@@ -151,32 +151,32 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	\end{equation*}
 	
 	\textbf{Beweis:}
-	\noindent\hspace*{5mm} Da f in $x_0$ differenzierbar ist, gilt für alle 
-	$x \in I_f$: \\
+	Da f in $x_0$ differenzierbar ist, gilt für alle 
+	$x \in I_f$:
 	\begin{equation*}
 		f(x) -f(x_0) = (x-x_0) \cdot(f'(x_0) + u(x))
 	\end{equation*}
-	\noindent\hspace*{5mm}$($ Wobei $\lim\limits_{x \rightarrow x_0}{u(x) = 0})$ \\
-	\noindent\hspace*{5mm}Analog gilt für alle $y \in I_g$: \\
+	$($Wobei $\lim\limits_{x \rightarrow x_0}{u(x) = 0})$ \\
+	Analog gilt für alle $y \in I_g$:
 	\begin{equation*}
 		g(y) -g(f(x_0)) = (y-f(x_0)) \cdot (g'(f(x_0)) + v(y)),
 	\end{equation*}		
 	\noindent\hspace*{5mm}wobei $\lim\limits_{y \rightarrow f(x_0)}{v(y) = 0}$ \\
-	\noindent\hspace*{5mm}Damit haben wir für alle $x \in I_f$: \\
-	\begin{equation*}
-	g(f(x)) - g(f(x_0)) = (f(x)-f(x_0)) \cdot (g'(f(x_0)) + v(f(x))
-	= (x-x_0)(f'(x_0) + u(x)) (g'(f(x_0)) + v(f(x))
-	\end{equation*}
-	\noindent\hspace*{5mm}Damit gilt: \\
-	\noindent\hspace*{15mm}$\lim\limits_{x \rightarrow x_0}
+	\noindent\hspace*{5mm}Damit haben wir für alle $x \in I_f$:
+	\begin{align*}
+	g(f(x)) - g(f(x_0)) = & (f(x)-f(x_0)) \cdot (g'(f(x_0)) + v(f(x)) \\
+	= & (x-x_0)(f'(x_0) + u(x)) (g'(f(x_0)) + v(f(x))
+	\end{align*}
+	\noindent\hspace*{5mm}Damit gilt:
+	\begin{align*}
+	\lim\limits_{x \rightarrow x_0}
 	{\frac{g(f(x))-g(f(x_0))}{x-x_0} } 
-	= \lim\limits_{x \rightarrow x_0}{(f'(x_0) + u(x)) (g'(f(x)) + v(f(x))}
-	\\ \noindent\hspace*{15mm}
-	= \lim\limits_{x \rightarrow x_0}{(f'(x_0) + u(x))} 
-	\lim\limits_{x \rightarrow x_0}{(g'(f(x_0)) + v(f(x)))}
-	 \\ \noindent\hspace*{15mm}
-	= (f'(x_0) + 0) (g'(f(x_0)) + 0)
-	= f'(x_0) g'(f(x_0))$
+	= & \lim\limits_{x \rightarrow x_0}{(f'(x_0) + u(x)) (g'(f(x)) + v(f(x))} \\
+	= & \lim\limits_{x \rightarrow x_0}{(f'(x_0) + u(x))} 
+	\lim\limits_{x \rightarrow x_0}{(g'(f(x_0)) + v(f(x)))} \\
+	= & (f'(x_0) + 0) (g'(f(x_0)) + 0)
+	= f'(x_0) g'(f(x_0))
+	\end{align*}
 }\end{Satz}
 
 \begin{Definition}{
@@ -185,16 +185,13 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	stetig. Dann heißt f \textbf{stetig differenzierbar}. 
 	Wir definieren weiterhin induktiv die 
 	k-te Ableitung (für $k \in \mathbb{N}$) durch:
-	\begin{equation*}
-		f^{(0)} := f 
-	\end{equation*}
-	\begin{equation*}
-	f^{(k+1)} := f^{(k+1)'}
-	\end{equation*}
+	\begin{align*}
+		f^{(0)} := & f \\
+		f^{(k+1)} := & f^{(k+1)'}
+	\end{align*}
 	sofern die Ableitungen definiert sind.\\
 	Ist $f^{(k)}: I \rightarrow \mathbb{R}$ für alle $k \in \mathbb{N}$ definiert, 
-	so heißt f \textbf{beliebig oft} bzw. \textbf{unendlich oft differenzierbar}. \\
-	
+	so heißt f \textbf{beliebig oft} bzw. \textbf{unendlich oft differenzierbar}.
 }\end{Definition}
 
 \begin{Bemerkung}{Wir haben bereits gesehen: Polynome sind beliebig oft

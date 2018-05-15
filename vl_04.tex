@@ -63,8 +63,8 @@
 }\end{Satz}
 
 \begin{Bemerkung}{
-	\textbf{ }\\
 	\begin{itemize}
+		\item[ ]
 		\item Der springende Punkt in \ref{gleichung:i} ist 
 		Gleichung~\ref{gleichung:i}. Ohne Gleichung~\ref{gleichung:i} 
 		kann man sich ein beliebiges $c \in \mathbb{R}$ wählen und setzt 
@@ -77,16 +77,21 @@
 		\end{equation*}
 		Das ist per Definition die Gleichung der Tangente an $f$ in $x_0$
 	\end{itemize}
-	Beweis:
+	\textbf{Beweis:}
 	\begin{itemize}
-		\item[$1 \leftrightarrow 2$] Man setzte einfach $u\left(x\right) = \frac{\phi\left(x\right)}{x-x_0}$ und $\tilde{c} = c$ \\
+		\item[]$1 \leftrightarrow 2$ Man setzte einfach $u\left(x\right) = \frac{\phi\left(x\right)}{x-x_0}$ und $\tilde{c} = c$ \\
 		(in $x = x_0$ setze man $u\left(x_0\right) = 0$)
-		\item[$1 \rightarrow 2$] ZZ $\lim\limits_{x \rightarrow x_0}{\frac{f\left(x\right)-f\left(x_0\right)}{x-x_0}}$ existiert \\
-		\begin{equation*}
-			\lim\limits_{x\rightarrow x_0}{\frac{f\left(x\right) - f\left(x_0\right)}{x-x_0}} = \lim\limits_{x \rightarrow x_0}{\frac{f\left(x_0\right) + c\left(x-x_0\right)+\phi\left(x\right)-f\left(x_0\right)}{x-x_0}}
-			= \lim\limits_{x\rightarrow x_0}{c + \frac{\phi \left(x\right)}{x-x_0}} = c
-		\end{equation*}
-		\item[$3\rightarrow 1$] Wir setzten $ c = f'\left(x_0\right)$ und 
+		\item[]$1 \rightarrow 2$ ZZ $\lim\limits_{x \rightarrow x_0}{\frac{f\left(x\right)-f\left(x_0\right)}{x-x_0}}$ existiert
+		\begin{align*}
+			\lim\limits_{x\rightarrow x_0}
+			{\frac{f\left(x\right) - f\left(x_0\right)}{x-x_0}} 
+			= & \lim\limits_{x \rightarrow x_0}
+			{\frac{f\left(x_0\right) + c\left(x-x_0\right)+\phi
+			\left(x\right)-f\left(x_0\right)}{x-x_0}} \\
+			& = \lim\limits_{x\rightarrow x_0}
+			{c + \frac{\phi \left(x\right)}{x-x_0}} = c
+		\end{align*}
+		\item[]$3\rightarrow 1$ Wir setzten $ c = f'\left(x_0\right)$ und 
 		\begin{equation*}
 			\phi\left(x\right) = f\left(x\right) - f\left(x_0\right) - f'\left(x_0\right)\left(x-x_0\right)
 		\end{equation*}
@@ -95,18 +100,16 @@
 			f\left(x\right) = f\left(x_0\right) 
 			+ f'\left(x_0\right)\left(x-x_0\right) + \phi\left(x\right)
 		\end{equation*}
-		\begin{equation*}
+		\begin{align*}
 			\lim\limits_{x\rightarrow x_0}
-			{\vert \frac{\phi\left(x\right)}{x-x_0}\vert} 
-			= \lim\limits_{x \rightarrow x_0}
-			{\vert \frac{f\left(x\right)-f\left(x_0\right)-
-			f'\left(x_0\right)\left(x-x_0\right)}{x-x_0}\vert} 
-			\end{equation*}
-			\begin{equation*}
-			\hspace{35mm}= \lim\limits_{x\rightarrow x_0}{\frac{f\left(x\right)-
-			f\left(x_0\right)}{x-x_0} - f'\left(x_0\right)}
-			=f'\left(x_0\right) - f\left(x_0\right) 
+			{\left\vert \frac{\phi\left(x\right)}{x-x_0}\right\vert} 
+			= & \lim\limits_{x \rightarrow x_0}
+			{\left\vert \frac{f\left(x\right)-f\left(x_0\right)-
+			f'\left(x_0\right)\left(x-x_0\right)}{x-x_0}\right\vert} \\
+			= & \lim\limits_{x\rightarrow x_0}{\frac{f\left(x\right)-
+			f\left(x_0\right)}{x-x_0} - f'\left(x_0\right)} \\
+			= & f'\left(x_0\right) - f\left(x_0\right) 
 			=0
-		\end{equation*}
+		\end{align*}
 	\end{itemize}
 }\end{Bemerkung}
