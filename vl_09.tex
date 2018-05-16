@@ -47,32 +47,40 @@
 \section{Riemann-Integral}\label{kap_riemann_integral}
 \underline{\textbf{Ziel}:} Wir wollen auf \glqq{} natürliche\grqq{} Weise einen 
 Flächeninhaltsbegriff definieren, der uns erlaubt, die Fläche zwischen den Graphen 
-einer Funktion und der $x-$Achse zu bestimmen.
+einer Funktion und der $x-$Achse zu bestimmen (Abbildung~\ref{fig_int_vorgehen}).
 	\input{plot_integral_f}
+	
 Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere: 
 \begin{itemize}
 	\item gilt $f(x) = c = const$ für alle $x \in D (f) = [a,b]$, so soll 
-	gelten:
+	gelten (Abbildung~\ref{fig_int_konst_funk})
 	\begin{align*}
 		\int_a^b f \dd{x} = c \cdot ( b - a)
 	\end{align*}
+	\input{plot_rechteck_integral}
+	
 	\item gilt $f(x) \leq g(x)$ $(x \in [a,b])$ so formulieren wir
 	\begin{align*}
 		\int_a^b f \dd{x} \leq \int_a^b g(x) \dd{x} 
 	\end{align*}
-	\item für $c \in [a,b]$ soll gelten
+	%TODO Grafik
+	
+	\item für $c \in [a,b]$ soll gelten (Abbildung~\ref{fig_integral_aufteilen})
 	\begin{align*}
 		\int_a^b f \dd{x} = \int_a^c f \dd{x} + \int_c^b f\dd{x}
 	\end{align*}
 	Vorgehen: Man unterteile $[a,b]$ in \glqq viele\grqq{} Teilintervalle, auf denen 
 	$f$ nahezu konstant ist.
+	\input{plot_aufteilung_integral}
 \end{itemize} 
 
 \begin{Definition}{
-	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \underline{Partition} $P$ von 
+	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \underline{Partition} $P$ 
+	(Abbildung~\ref{fig_int_partition}) von 
 	$[a,b]$ ist eine endliche Menge von Punkten $a = x_0 \leq x_1 \leq \hdots
 	\leq x_n = b$.\\
 	Wir schreiben $\Delta x_i = x_i - x_{i-1}$
+	\input{plot_integral_partition}
 }\end{Definition}
 
 \begin{Definition}{ \label{def_riemann-integrierbar}
@@ -113,6 +121,7 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 	das \underline{Riemannintegral} von $f$ über $[a,b]$.\\
 	Die Menge der Riemanintegrierbaren Funktionen auf $[a,b]$ bezeichnen wir 
 	mit $\mathcal{R}$ beziehungsweise $\mathcal{R}_{[a,b]}$.\\
+	\input{plot_integral_riemannintegral}
 	\textbf{Bemerkungen}
 	\begin{itemize}
 		\item Da $f$ beschränkt ist, gibt es $m \leq M$ in $\mathbb{R}$ mit:
