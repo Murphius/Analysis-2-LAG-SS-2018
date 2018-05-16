@@ -20,7 +20,7 @@
 }\end{Definition}
 
 \begin{Satz}{
-	Sei $f(x) = \sum_{n_0}^{\infty} a_n (x- x_0)^n $ und $R > 0$ der zugehörige 
+	Sei $f(x) = \sum_{n_0}^{\infty} a_n (x- \alpha)^n $ und $R > 0$ der zugehörige 
 	Konvergenzradius von $f$.\\
 	Dann ist $f$ auf $(\alpha -R, \alpha + R)$ beliebig oft differenzierbar und 
 	es gilt:
@@ -40,13 +40,15 @@
 	 	... \cdot (n-l) a_n(x-\alpha)^{n-l}
 	 \end{align*}
 	 für $l \in \mathbb{N}$ \\
+	 \textit{$(x - \alpha) = 0$ für $x = \alpha$}\\
 	 Also: $f^{(l)}(\alpha) = l! \cdot a_l$
 }\end{Satz}
 
 \section{Riemann-Integral}\label{kap_riemann_integral}
 \underline{\textbf{Ziel}:} Wir wollen auf \glqq{} natürliche\grqq{} Weise einen 
 Flächeninhaltsbegriff definieren, der uns erlaubt, die Fläche zwischen den Graphen 
-einer Funktion und der $x-$Achse zu bestimmen. \\
+einer Funktion und der $x-$Achse zu bestimmen.
+	\input{plot_integral_f}
 Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere: 
 \begin{itemize}
 	\item gilt $f(x) = c = const$ für alle $x \in D (f) = [a,b]$, so soll 
@@ -102,7 +104,7 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 	\begin{align*}
 		\int_a^{\overline{b}} f \dd{x} = \int_{\underline{a}}^b f \dd{x}
 	\end{align*}
-	sagen wir f ist \underline{Riemann-integrierbar} (\underline{integrierbar}) 
+	sagen wir $f$ ist \underline{Riemann-integrierbar} (\underline{integrierbar}) 
 	und nennen 
 	\begin{align*}
 		\int_a^b f(x) \dd{x} := \int_{\underline{a}}^b f \dd{x} = 
@@ -119,10 +121,10 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 		\end{align*}
 		Damit gilt für jede jede Partition $P$: 
 		\begin{align*}
-			m \cdot (b-a) \leq s(P,f) \leq S(P,f)
+			m \cdot (b-a) \leq s(P,f) \leq S(P,f) \leq M \cdot (b-a)
 		\end{align*}
 		Ergo: $\int_a^{\overline{b}} f \dd{x} , \int_{\underline{a}}^b f \dd{x}$ 
-		wohldefiniert.
+		sind wohldefiniert.
 		\item im gesamten Kapitel~\ref{kap_riemann_integral}
 		werden wir Funktionen stets als 
 		beschränkt annehmen
@@ -140,7 +142,7 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 \begin{Satz}{
 	Ist $P'$ eine Verfeinerung der Partition $P$ von $[a,b]$, dann gilt:
 	\begin{align*}
-		\int (P,f) \geq & \int (P',f) \\
+		S (P,f) \geq & S (P',f) \\
 		s(P,f) \leq & s(P',f)
 	\end{align*}
 	(wobei $f$ wie in Definition~\ref{def_riemann-integrierbar}
@@ -170,7 +172,7 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 \begin{Satz}{
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt. Dann gilt:
 	\begin{align*}
-		\int_a^b f \dd{x} \geq \int_{\underline{a}}^b f \dd{x}
+		\int_a^{\overline{b}} f \dd{x} \geq \int_{\underline{a}}^b f \dd{x}
 	\end{align*}
 	\textbf{Beweis:} Seien $P_1, P_2$ zwei Partitionierungen von $[a,b]$ und 
 	$P'$ die gemeinsame Verfeinerung. Dann gilt:
