@@ -1,4 +1,5 @@
-\begin{Satz}{
+
+\begin{Satz}{\label{kap_10_satz18}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt. Dann ist 
 	$f \in \mathcal{R}_{[a,b]}$ genau dann, wenn für jedes $\epsilon > 0$ eine 
 	Partition$P_{\epsilon}$ existiert mit:
@@ -8,10 +9,10 @@
 	\textbf{Beweis:} Per Definition gilt 
 	\begin{align*}
 		s(P_{\epsilon},f) \leq \int_{\underline{a}}^b f \dd{x}
-		\overset{Satz 5}{\le} \int_a^{\overline{b}} f \dd{x} 
+		\overset{Satz~\ref{kap09_satz17}}{\le} \int_a^{\overline{b}} f \dd{x} 
 		\leq S(P_{\epsilon},f) 		
 	\end{align*}
-	%TODO referenzierung 
+
 	Damit erhalten wir:
 	\begin{align*}
 		\int_a^{\overline{b}} f \dd{x} - 
@@ -34,7 +35,7 @@
 		S(P_{\epsilon}'',f) - \int_a^{\overline{b}} f \dd{x}) < \frac{\epsilon}{2}
 	\end{align}
 	Wir setzten $P_{\epsilon}$ gleich der gemeinsamen Vereinigung von 
-	$P_{\epsilon}'$ und $P_{\epsilon}''$. Man beachte: Wegen Satz 4 %TODO ref
+	$P_{\epsilon}'$ und $P_{\epsilon}''$. Man beachte: Wegen Satz~\ref{kap09_satz16} 
 	gelten Gleichung~\ref{gleichung_1_1505} und Gleichung~\ref{gleichung_2_1505},
 	wenn wir $P_{\epsilon}'$ beziehungsweise $P_{\epsilon}''$ durch $P_{\epsilon}$
 	ersetzen. Da $f \in \mathcal{R}_{[a,b]}$ gilt außerdem 
@@ -48,7 +49,7 @@
 	\end{align*}
 }\end{Satz}
 
-\begin{Satz}{
+\begin{Satz}{\label{kap10_satz19}
 	Sei $f:[a,b] \rightarrow \mathbb{R}$ beschränkt und $P_{\epsilon} = 
 	{x_0, \hdots, x_n}$ eine Partition von $[a,b]$ mit $S(P_{\epsilon},f) -
 	s(P_{\epsilon},f) < \epsilon$ für ein $\epsilon > 0$.
@@ -65,7 +66,7 @@
 	\end{enumerate}	 
 	\textbf{Beweis:}
 	\begin{enumerate}
-		\item Das folgt aus Satz 4 %TODO referenzierung
+		\item Das folgt aus Satz~\ref{kap09_satz16}
 		
 		\item
 		 \begin{align*}
@@ -86,7 +87,7 @@
 	Funktionen kennenlernen.
 }\end{Satz}
 
-\begin{Satz}{
+\begin{Satz}{\label{kap10_satz20}
 	Ist $f: [a,b] \rightarrow \mathbb{R}$ stetig, so ist 
 	$ f \in \mathcal{R}_{[a,b]}$ \\
 	\textbf{Beweis:} Da stetige Funktionen auf abgeschlossenen Intervallen 
@@ -103,7 +104,7 @@
 		S(P_{\epsilon},f) - s(P_{\epsilon},f) = \sum_{i = 1}^n \delta x_i 
 		\leq \epsilon \cdot \sum_{i = 1}^n \delta x_i = \epsilon \cdot (b-a)
 	\end{align*}
-	Da $\epsilon > 0$ beliebig, folgt die Aussage mit Satz 6. %TODO ref
+	Da $\epsilon > 0$ beliebig, folgt die Aussage mit Satz~\ref{kap_10_satz18}.
 }\end{Satz}
 
 \begin{Satz}{
@@ -124,11 +125,10 @@
 	\begin{align*}
 		\frac{1}{n_{\epsilon}}(f(b) -f(a)) < \epsilon
 	\end{align*}
-	Dann gilt mit $P_{\epsilon} := P_{n_{\epsilon}}$ die Aussage nach Satz 6 
-	%TODO referenzierung
+	Dann gilt mit $P_{\epsilon} := P_{n_{\epsilon}}$ die Aussage nach Satz~\ref{kap_10_satz18}
 }\end{Satz}
 
-\begin{Satz}{
+\begin{Satz}{\label{kap10_satz21}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt mit endlich vielen 
 	Unstetigkeitsstellen. Dann gilt $f \in \mathcal{R}_{[a,b]}$\\
 	\textbf{Beweis:} Sei $\epsilon > 0$ gegeben und $E = {P_1, \hdots, P_n}$
@@ -139,7 +139,7 @@
 	\frac{\epsilon}{2n}$. Sei $I_1^{\epsilon} = [a, u_1], I_l^{\epsilon} = [v_{l-1}, 
 	u_l] (l = 2, \hdots, n), I_n^{\epsilon} = [v_n, b]$ 
 	Per Vorraussetzung ist $f_{\vert I_j^{\epsilon}} (j = 1,\hdots, n+1)$ stetig.
-	Daher existiert nach Satz 8 %TODO refe
+	Daher existiert nach Satz~\ref{kap10_satz20}
 	eine Partition $P_j^{\epsilon}$, so dass 
 	\begin{align*}
 		S(P_j^{\epsilon}, f_{I_j{\epsilon}}) - s(P_j^{\epsilon}, f_{I_j^{\epsilon}}) 
@@ -167,15 +167,15 @@
 	\begin{align*}
 		f(x) = c_i \text{ } ( x\in (y_{i-1},y_i))
 	\end{align*}
-	Nach Satz 10 %TODO ref 
+	Nach Satz~\ref{kap10_satz21}
 	ist jede Treppenfunktion Riemann-integrierbar. \\
 	Zur Berechnung des Intervalls bedienen wir uns der Notation von Satz 10 
-	und verwenden Satz 7c.\\
+	und verwenden Satz~\ref{kap10_satz19}c.\\
 	Zur Vereinfachung nehmen wir wieder an, dass $f$ in $a$ und $b$ stetig ist. 
 	Das heißt die Menge der Unstetigkeitsstellen ist gegeben durch 
 	$E = \{y_1, \hdots, y_{m-1}\}$. \\
 	Für $x \in I_l^{\epsilon}$ gilt dann $f(x) = c_l$ für alle $ l = 1, \hdots, m$.
-	Dann gilt nach Satz 7 c %TODO ref
+	Dann gilt nach Satz~\ref{kap10_satz19}c:
 	\begin{align*}
 		\left\vert \int_a^b f \dd{x} - \sum_{i=1}^{m+1} c_i \cdot \vert 
 		I_l^{\epsilon}\vert + \sum_{i =1}^{m-1} f(y_i)\cdot (v_i -u_i) \right\vert
