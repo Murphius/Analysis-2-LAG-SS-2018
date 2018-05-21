@@ -45,12 +45,12 @@
 }\end{Satz}
 
 \section{Riemann-Integral}\label{kap_riemann_integral}
-\underline{\textbf{Ziel}:} Wir wollen auf \glqq{} natürliche\grqq{} Weise einen 
+\underline{\textbf{Ziel}:} Wir wollen auf \enquote{natürliche}\todo{eigentlich wäre "\\emph" sogar besser als Anführungsstriche} Weise einen 
 Flächeninhaltsbegriff definieren, der uns erlaubt, die Fläche zwischen den Graphen 
 einer Funktion und der $x-$Achse zu bestimmen (Abbildung~\ref{fig_int_vorgehen}).
 	\input{plot_integral_f}
 	
-Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere: 
+Dabei heißt auf \enquote{natürliche Weise} insbesondere: 
 \begin{itemize}
 	\item gilt $f(x) = c = const$ für alle $x \in D (f) = [a,b]$, so soll 
 	gelten (Abbildung~\ref{fig_int_konst_funk})
@@ -59,7 +59,7 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 	\end{align*}
 	\input{plot_rechteck_integral}
 	
-	\item gilt $f(x) \leq g(x)$ $(x \in [a,b])$ so formulieren wir
+	\item gilt $f(x) \leq g(x)$ $(x \in [a,b])$ so fordern wir
 	\begin{align*}
 		\int_a^b f \dd{x} \leq \int_a^b g(x) \dd{x} 
 	\end{align*}
@@ -69,13 +69,13 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 	\begin{align*}
 		\int_a^b f \dd{x} = \int_a^c f \dd{x} + \int_c^b f\dd{x}
 	\end{align*}
-	Vorgehen: Man unterteile $[a,b]$ in \glqq viele\grqq{} Teilintervalle, auf denen 
+	Vorgehen: Man unterteile $[a,b]$ in \enquote{viele} Teilintervalle, auf denen 
 	$f$ nahezu konstant ist.
 	\input{plot_aufteilung_integral}
 \end{itemize} 
 
 \begin{Definition}{
-	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \underline{Partition} $P$ 
+	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \underline{Partition}\todo{das geht besser auch mit Stichwortverzeichnis. Baue ich später ein.} $P$ 
 	(Abbildung~\ref{fig_int_partition}) von 
 	$[a,b]$ ist eine endliche Menge von Punkten $a = x_0 \leq x_1 \leq \hdots
 	\leq x_n = b$.\\
@@ -98,14 +98,14 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 	\end{align*}
 	Wir setzen:
 	\begin{align*}
-		\int_a^{\overline{b}} f \dd{x} = \inf S(P,f) \\
-		\int_{\underline{a}}^b f \dd{x} = \sup s(P,f)
+		\overline{\int_a^b} f \dd{x} = \inf S(P,f) \\
+		\underline{\int_a^b} f \dd{x} = \sup s(P,f)
 	\end{align*}
 	wobei Infimum und Supremum über alle Partitionen von $[a,b]$ genommen werden. 
 	Wir nennen 
 	\begin{align*}
-		& \int_a^{\overline{b}} f \dd{x} \text{ das \underline{obere} und} \\
-		& \int_{\underline{a}}^b f \dd{x} \text{ das \underline{untere}}
+		& \overline{\int_a^b} f \dd{x} \text{ das \underline{obere} und} \\
+		& \underline{\int_a^b} f \dd{x} \text{ das \underline{untere}}
 	\end{align*}
 	\underline{Riemannintegral} von $f$ über $[a,b]$ \\
 	Gilt 
@@ -115,8 +115,8 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 	sagen wir $f$ ist \underline{Riemann-integrierbar} (\underline{integrierbar}) 
 	und nennen 
 	\begin{align*}
-		\int_a^b f(x) \dd{x} := \int_{\underline{a}}^b f \dd{x} = 
-		\int_a^{\overline{b}} f \dd{x}
+		\int_a^b f(x) \dd{x} := \underline{\int_a^b} f \dd{x} = 
+		\overline{\int_a^b} f \dd{x}
 	\end{align*}
 	das \underline{Riemannintegral} von $f$ über $[a,b]$.\\
 	Die Menge der Riemanintegrierbaren Funktionen auf $[a,b]$ bezeichnen wir 
@@ -132,7 +132,7 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 		\begin{align*}
 			m \cdot (b-a) \leq s(P,f) \leq S(P,f) \leq M \cdot (b-a)
 		\end{align*}
-		Ergo: $\int_a^{\overline{b}} f \dd{x} , \int_{\underline{a}}^b f \dd{x}$ 
+		Ergo: $\overline{\int_a^b} f \dd{x} , \underline{\int_a^b} f \dd{x}$ 
 		sind wohldefiniert.
 		\item im gesamten Kapitel~\ref{kap_riemann_integral}
 		werden wir Funktionen stets als 
@@ -181,7 +181,7 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 \begin{Satz}{\label{kap09_satz17}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt. Dann gilt:
 	\begin{align*}
-		\int_a^{\overline{b}} f \dd{x} \geq \int_{\underline{a}}^b f \dd{x}
+		\obint a b f \geq \unint{a}{b} f
 	\end{align*}
 	\textbf{Beweis:} Seien $P_1, P_2$ zwei Partitionierungen von $[a,b]$ und 
 	$P'$ die gemeinsame Verfeinerung. Dann gilt:
@@ -204,6 +204,6 @@ Dabei heißt auf \glqq natürliche Weise\grqq{} insbesondere:
 	Wir haben also gezeigt:
 	\begin{align*}
 		\int_{\underline{a}}^b f \dd{x} = \sup s(P,f) \leq 
-		\inf S(P,f) = \inf \int_a^{\overline{b}} f \dd{x}
+		\inf S(P,f) = \inf \obint ab f 
 	\end{align*}
 }\end{Satz}

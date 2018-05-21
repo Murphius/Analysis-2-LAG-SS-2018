@@ -10,6 +10,31 @@
 \usepackage{tikz}
 \usepackage{extarrows}
 \usepackage{physics}
+\usepackage{todonotes}
+\usepackage{csquotes}
+
+\usepackage{hyperref}	%should be loaded last
+\hypersetup{%
+	unicode=true,%
+	pdftitle=Analysis 2 MLG,%
+	pdfauthor=Merle Gänssinger,%
+	pdfkeywords=Analysis Lehramt,%
+	pdfsubject=Skript zur Vorlesung Analysis 2 für Lehramtsstudenten für das Gymnasium,%
+	pdflang=DE%
+}
+
+
+% Befehle um die Integrale angenehmer zu schreiben
+\newcommand{\obint}[4][x]{\overline{\int_{#2}^{#3}} #4 \dd{#1}}
+\newcommand{\unint}[4][x]{\underline{\int_{#2}^{#3}} #4 \dd{#1}}
+% Verwendung:
+% Optionales Argument mit [x]
+% 1. Argument untere Grenze
+% 2. Argument obere Grenze
+% 3. Argument Funktion, die zu integrieren ist
+% Beispiel mit Integration nach dy: \unint[y]{a}{b}{f(y)}
+% oder kurz \unint[y] ab {f(y)}
+
 
 \begin{document}
 \include{vl_04}

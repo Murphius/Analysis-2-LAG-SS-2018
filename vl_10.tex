@@ -2,7 +2,7 @@
 \begin{Satz}{\label{kap_10_satz18}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt. Dann ist 
 	$f \in \mathcal{R}_{[a,b]}$ genau dann, wenn für jedes $\epsilon > 0$ eine 
-	Partition$P_{\epsilon}$ existiert mit:
+	Partition $P_{\epsilon}$ existiert mit:
 	\begin{align*}
 		S(P_2,f) - s(P_2,f) < \epsilon
 	\end{align*}
@@ -57,11 +57,11 @@
 		\item Ist $P$ eine Verfeinerung von $P_{\epsilon}$, so gilt 
 		$S(P,f) - s(P,f) < \epsilon$
 		\item Sind $s_i, t_i$ beliebige Punkte in $[x_{i-1},x_i]$, so gilt 
-		$\sum_{i=1}^n \left\vert f(s_i) - f(t_i) \right\vert \cdot \delta x_i 
+		$\sum_{i=1}^n \left\vert f(s_i) - f(t_i) \right\vert \cdot \Delta x_i 
 		< \epsilon$
 		\item Ist $f \in \mathcal{R}_{[a,b]}$ und $t_i \in [x_{i-1},x_i]$, so 
 		gilt 
-		$\left\vert \sum_{i=1}^n f(t_i) \cdot \delta x_i - \int_a^b f \dd{x} 
+		$\left\vert \sum_{i=1}^n f(t_i) \cdot \Delta x_i - \int_a^b f \dd{x} 
 		\right\vert < \epsilon$ 
 	\end{enumerate}	 
 	\textbf{Beweis:}
@@ -71,15 +71,15 @@
 		\item
 		 \begin{align*}
 			\sum_{i = 1}^n \left\vert f(s_i) - f(t_i) \right\vert	\cdot 
-			\delta x_i \leq \sum_{i=1}^n (M_i-m_i)\cdot \delta x_i
+			\Delta x_i \leq \sum_{i=1}^n (M_i-m_i)\cdot \Delta x_i
 			= S(P_{\epsilon},f) - s(P_{\epsilon},f) < \epsilon
 		 \end{align*}
 		 \item Da $t_i \in [x_{i-1},x_i]$, gilt $m_i \leq f(t_i) \leq M_i$ \\
 		 	Damit folgt die Aussage aus
 			 \begin{align*}
 			 	s(P_{\epsilon},f ) \leq  
-			 	\sum_{i = 1}^n m_i \cdot \delta x_i \leq \sum_{i=1}^n f(t_i) \delta 
-			 	x_i \leq \sum_{i=1}^n M_i \cdot \delta x_i = S(P_{\epsilon},f)
+			 	\sum_{i = 1}^n m_i \cdot \Delta x_i \leq \sum_{i=1}^n f(t_i) \Delta 
+			 	x_i \leq \sum_{i=1}^n M_i \cdot \Delta x_i = S(P_{\epsilon},f)
 			 \end{align*}
 			 und $s(P_{\epsilon},f) \leq \int_a^b f \dd{x} \leq S(P_{\epsilon},f)$
 	\end{enumerate}
@@ -99,10 +99,10 @@
 		\vert x - y \vert < \Delta \Rightarrow \vert f(x) -f(y) \vert < \epsilon
 	\end{align*}
 	Wir wählen eine Partition $P_{\epsilon} = \{ x_0, \hdots, x_n \}$, so dass 
-	$\delta x_i < \Delta$. Dann gilt: $M_i - m_i < \epsilon$ und daher
+	$\Delta x_i < \Delta$. Dann gilt: $M_i - m_i < \epsilon$ und daher
 	\begin{align*}
-		S(P_{\epsilon},f) - s(P_{\epsilon},f) = \sum_{i = 1}^n \delta x_i 
-		\leq \epsilon \cdot \sum_{i = 1}^n \delta x_i = \epsilon \cdot (b-a)
+		S(P_{\epsilon},f) - s(P_{\epsilon},f) = \sum_{i = 1}^n \Delta x_i 
+		\leq \epsilon \cdot \sum_{i = 1}^n \Delta x_i = \epsilon \cdot (b-a)
 	\end{align*}
 	Da $\epsilon > 0$ beliebig, folgt die Aussage mit Satz~\ref{kap_10_satz18}.
 }\end{Satz}
@@ -112,12 +112,12 @@
 	$\\
 	\textbf{Beweis:} Da $f$ monoton ist, gilt für alle $x \in [a,b]: f(a) \leq f(x) 
 	\leq f(b)$. D.h. f ist beschränkt. Zu $n \in \mathbb{N}$ wählen wir eine 
-	Partition $P_n = {x_0, \hdots, x_k}$ mit $\delta x_i < \frac{1}{n}$\\
-	Dann gilt: $S(P_n, f) - s(P_n,f) = \sum_{i=1}^n (M_i - m_i)\delta x_i$ \\
+	Partition $P_n = {x_0, \hdots, x_k}$ mit $\Delta x_i < \frac{1}{n}$\\
+	Dann gilt: $S(P_n, f) - s(P_n,f) = \sum_{i=1}^n (M_i - m_i)\Delta x_i$ \\
 	Ohne Einschränkung sei $f$ monoton wachsend (der andere Fall läuft analog). \\
 	Dann gilt $M_i = f(x_i), m_i = f(x_{i-1})$ und daher 
 	\begin{align*}
-		S(P_n, f) - s(P_n,f) = & \sum_{i=1}^n (f(x_i) -f(x_{i-1}))\cdot \delta x_i 
+		S(P_n, f) - s(P_n,f) = & \sum_{i=1}^n (f(x_i) -f(x_{i-1}))\cdot \Delta x_i 
 		\\ = & \frac{1}{	n}\sum_{i=1}^n f(x_i) -f(x_{i-1}) = 
 		\frac{1}{n} (f(b) -f(a)) 
 	\end{align*}
