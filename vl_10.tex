@@ -1,4 +1,3 @@
-
 \begin{Satz}{\label{kap_10_satz18}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt. Dann ist 
 	$f \in \mathcal{R}_{[a,b]}$ genau dann, wenn für jedes $\epsilon > 0$ eine 
@@ -8,31 +7,31 @@
 	\end{align*}
 	\textbf{Beweis:} Per Definition gilt 
 	\begin{align*}
-		s(P_{\epsilon},f) \leq \int_{\underline{a}}^b f \dd{x}
-		\overset{Satz~\ref{kap09_satz17}}{\le} \int_a^{\overline{b}} f \dd{x} 
+		s(P_{\epsilon},f) \leq \underline{\int_{a}^b} f \dd{x}
+		\overset{Satz~\ref{kap09_satz17}}{\le} \overline{\int_a^b} f \dd{x} 
 		\leq S(P_{\epsilon},f) 		
 	\end{align*}
 
 	Damit erhalten wir:
 	\begin{align*}
-		\int_a^{\overline{b}} f \dd{x} - 
-		\int_{\underline{a}}^b f \dd{x} \leq S(P_{\epsilon},f) 
+		\overline{\int_a^b} f \dd{x} - 
+		\underline{\int_{a}^b} f \dd{x} \leq S(P_{\epsilon},f) 
 		- s(P_{\epsilon},f) < \epsilon
 	\end{align*}
 	Das heißt, da $\epsilon$ beliebig, dass
 	\begin{align*}
-		\int_{\underline{a}}^b \dd{x} = \int_a^{\overline{b}} f \dd{x}
+		\underline{\int_{a}^b} \dd{x} = \overline{\int_a^b} f \dd{x}
 	\end{align*}
 	Ergo: $f \in \mathcal{R}_{[a,b]}$ \\
 	Per Definition gibt es für alle $\epsilon > 0$ ein $P_{\epsilon}'$ mit 
 	\begin{align}
 		\label{gleichung_1_1505}
-		\int_{\underline{a}}^b f \dd{x} - s(P_{\epsilon}',f) < \frac{\epsilon}{2} 
+		\underline{\int_{a}^b} f \dd{x} - s(P_{\epsilon}',f) < \frac{\epsilon}{2} 
 	\end{align}
 	Analog existiert ein $P_{\epsilon}''$ mit 
 	\begin{align}
 		\label{gleichung_2_1505}
-		S(P_{\epsilon}'',f) - \int_a^{\overline{b}} f \dd{x}) < \frac{\epsilon}{2}
+		S(P_{\epsilon}'',f) - \overline{\int_a^{b}} f \dd{x}) < \frac{\epsilon}{2}
 	\end{align}
 	Wir setzten $P_{\epsilon}$ gleich der gemeinsamen Vereinigung von 
 	$P_{\epsilon}'$ und $P_{\epsilon}''$. Man beachte: Wegen Satz~\ref{kap09_satz16} 
@@ -40,7 +39,7 @@
 	wenn wir $P_{\epsilon}'$ beziehungsweise $P_{\epsilon}''$ durch $P_{\epsilon}$
 	ersetzen. Da $f \in \mathcal{R}_{[a,b]}$ gilt außerdem 
 	\begin{align*}
-		\int_{\underline{a}}^b f \dd{x} = \int_a^{\overline{b}} f\dd{x}
+		\underline{\int_{a}^b} f \dd{x} = \overline{\int_a^{b}} f\dd{x}
 	\end{align*}	 
 	Addition von Gleichung~\ref{gleichung_1_1505} und Gleichung~
 	\ref{gleichung_2_1505} liefert:
@@ -51,18 +50,22 @@
 
 \begin{Satz}{\label{kap10_satz19}
 	Sei $f:[a,b] \rightarrow \mathbb{R}$ beschränkt und $P_{\epsilon} = 
-	{x_0, \hdots, x_n}$ eine Partition von $[a,b]$ mit $S(P_{\epsilon},f) -
+	\{x_0, \hdots, x_n\}$ eine Partition von $[a,b]$ mit $S(P_{\epsilon},f) -
 	s(P_{\epsilon},f) < \epsilon$ für ein $\epsilon > 0$.
 	\begin{enumerate}
 		\item Ist $P$ eine Verfeinerung von $P_{\epsilon}$, so gilt 
 		$S(P,f) - s(P,f) < \epsilon$
 		\item Sind $s_i, t_i$ beliebige Punkte in $[x_{i-1},x_i]$, so gilt 
-		$\sum_{i=1}^n \left\vert f(s_i) - f(t_i) \right\vert \cdot \Delta x_i 
-		< \epsilon$
+		\begin{align*}
+			\sum_{i=1}^n \left\vert f(s_i) - f(t_i) \right\vert \cdot 
+			\Delta x_i < \epsilon
+		\end{align*}
 		\item Ist $f \in \mathcal{R}_{[a,b]}$ und $t_i \in [x_{i-1},x_i]$, so 
 		gilt 
-		$\left\vert \sum_{i=1}^n f(t_i) \cdot \Delta x_i - \int_a^b f \dd{x} 
-		\right\vert < \epsilon$ 
+		\begin{align*}
+			\left\vert \sum_{i=1}^n f(t_i) \cdot \Delta x_i - \int_a^b f \dd{x} 
+			\right\vert < \epsilon
+		\end{align*}
 	\end{enumerate}	 
 	\textbf{Beweis:}
 	\begin{enumerate}
@@ -78,7 +81,7 @@
 		 	Damit folgt die Aussage aus
 			 \begin{align*}
 			 	s(P_{\epsilon},f ) \leq  
-			 	\sum_{i = 1}^n m_i \cdot \Delta x_i \leq \sum_{i=1}^n f(t_i) \Delta 
+			 	\sum_{i = 1}^n m_i \cdot \Delta x_i \leq \sum_{i=1}^n f(t_i) \cdot \Delta 
 			 	x_i \leq \sum_{i=1}^n M_i \cdot \Delta x_i = S(P_{\epsilon},f)
 			 \end{align*}
 			 und $s(P_{\epsilon},f) \leq \int_a^b f \dd{x} \leq S(P_{\epsilon},f)$
@@ -91,34 +94,43 @@
 	Ist $f: [a,b] \rightarrow \mathbb{R}$ stetig, so ist 
 	$ f \in \mathcal{R}_{[a,b]}$ \\
 	\textbf{Beweis:} Da stetige Funktionen auf abgeschlossenen Intervallen 
-	beschränkt, ist $f$ offensichtlich beschränkt. Weiterhin ist $f$ als stetige 
+	beschränkt sind, ist $f$ offensichtlich beschränkt. Weiterhin ist $f$ als stetige 
 	Funktion auf dem abgeschlossenen Intervall $[a,b]$ gleichmäßig stetig. \\
 	Sei $\epsilon > 0 $ gegeben. Wegen der gleichmäßigen Stetigkeit von $f$ 
-	existiert ein $\Delta > 0$, so dass folgende Implikation gilt:
+	existiert ein $\delta > 0$, so dass folgende Implikation gilt:
 	\begin{align*}
-		\vert x - y \vert < \Delta \Rightarrow \vert f(x) -f(y) \vert < \epsilon
+		\vert x - y \vert < \delta \Rightarrow \vert f(x) -f(y) \vert < \epsilon
 	\end{align*}
 	Wir wählen eine Partition $P_{\epsilon} = \{ x_0, \hdots, x_n \}$, so dass 
-	$\Delta x_i < \Delta$. Dann gilt: $M_i - m_i < \epsilon$ und daher
+	$\Delta x_i < \delta$. Dann gilt:
 	\begin{align*}
-		S(P_{\epsilon},f) - s(P_{\epsilon},f) = \sum_{i = 1}^n \Delta x_i 
+		M_i - m_i < & \epsilon \text{ und daher} \\
+		S(P_{\epsilon},f) - s(P_{\epsilon},f) = & \sum_{i = 1}^n (M_i -m_i)\Delta x_i 
 		\leq \epsilon \cdot \sum_{i = 1}^n \Delta x_i = \epsilon \cdot (b-a)
 	\end{align*}
 	Da $\epsilon > 0$ beliebig, folgt die Aussage mit Satz~\ref{kap_10_satz18}.
 }\end{Satz}
 
 \begin{Satz}{
-	Ist $f: [a,b] \rightarrow \mathbb{R}$ monoton, so ist $f \in \mathcal{R}_{[a,b]}
-	$\\
+		Ist $f: [a,b] \rightarrow \mathbb{R}$ monoton, so ist 
+		$f \in \mathcal{R}_{[a,b]}$ \\
 	\textbf{Beweis:} Da $f$ monoton ist, gilt für alle $x \in [a,b]: f(a) \leq f(x) 
-	\leq f(b)$. D.h. f ist beschränkt. Zu $n \in \mathbb{N}$ wählen wir eine 
-	Partition $P_n = {x_0, \hdots, x_k}$ mit $\Delta x_i < \frac{1}{n}$\\
-	Dann gilt: $S(P_n, f) - s(P_n,f) = \sum_{i=1}^n (M_i - m_i)\Delta x_i$ \\
-	Ohne Einschränkung sei $f$ monoton wachsend (der andere Fall läuft analog). \\
-	Dann gilt $M_i = f(x_i), m_i = f(x_{i-1})$ und daher 
+	\leq f(b)$. \\
+	Das heißt $f$ ist beschränkt. Zu $n \in \mathbb{N}$ wählen wir eine 
+	Partition \linebreak $P_n = \{x_0, \hdots, x_k\}$ mit $\Delta x_i < \frac{1}{n}$.
+	Dann gilt:
+	\begin{align*}
+		S(P_n, f) - s(P_n,f) = & \sum_{i=1}^n (M_i - m_i)\Delta x_i
+	\end{align*}
+	Ohne Einschränkung sei $f$ monoton wachsend (der andere Fall läuft analog).
+	Dann gilt 
+	\begin{align*}
+		M_i = & f(x_i) \text{ und} \\
+		m_i = & f(x_{i-1})
+	\end{align*} und daher 
 	\begin{align*}
 		S(P_n, f) - s(P_n,f) = & \sum_{i=1}^n (f(x_i) -f(x_{i-1}))\cdot \Delta x_i 
-		\\ = & \frac{1}{	n}\sum_{i=1}^n f(x_i) -f(x_{i-1}) = 
+		\\ \leq & \frac{1}{	n}\sum_{i=1}^n f(x_i) -f(x_{i-1}) = 
 		\frac{1}{n} (f(b) -f(a)) 
 	\end{align*}
 	Sei $\epsilon > 0$ gegeben. Wähle $n_{\epsilon}$ so dass gilt:
@@ -130,15 +142,27 @@
 
 \begin{Satz}{\label{kap10_satz21}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt mit endlich vielen 
-	Unstetigkeitsstellen. Dann gilt $f \in \mathcal{R}_{[a,b]}$\\
-	\textbf{Beweis:} Sei $\epsilon > 0$ gegeben und $E = {P_1, \hdots, P_n}$
+	Unstetigkeitsstellen. Dann gilt $f \in \mathcal{R}_{[a,b]}$.\\
+	\textbf{Beweis:} Sei $\epsilon > 0$ gegeben und $E = \{P_1, \hdots, P_n\}$
 	die Menge der Unstetigkeitsstellen von $f$. Wir nehmen der Einfachheit halber 
-	an, dass $\{a,b\} \cap E = \emptyset$ (der andere Fall läuft analog).\\
-	Sei $M:= \sup_{x \in [a,b]} \vert f(x) \vert$. Wir wählen $u_j, v_j \in [a,b]$ 
-	$j = 1, \hdots, n)$, so dass $P_s \in [u_j, v_j]$ und $2M (u_j - v_j) < 
-	\frac{\epsilon}{2n}$. Sei $I_1^{\epsilon} = [a, u_1], I_l^{\epsilon} = [v_{l-1}, 
-	u_l] (l = 2, \hdots, n), I_n^{\epsilon} = [v_n, b]$ 
-	Per Vorraussetzung ist $f_{\vert I_j^{\epsilon}} (j = 1,\hdots, n+1)$ stetig.
+	an, dass $\{a,b\} \cap E = \emptyset$ (der andere Fall läuft analog).
+	Sei
+	\begin{align*}
+		 M:= \sup_{x \in [a,b]} \vert f(x) \vert
+	\end{align*}
+	 Wir wählen $u_j, v_j \in [a,b]$, 
+	$j = (1, \hdots, n)$, so dass
+	\begin{align*}
+		P_s \in [u_j, v_j] \text{ und} \\
+		2M (u_j - v_j) < \frac{\epsilon}{2n}
+	\end{align*}		
+	 Sei 
+	 \begin{align*}
+		I_1^{\epsilon} = & [a, u_1], \\
+		 I_l^{\epsilon} = & [v_{l-1}, u_l] \text{ }  (l = 2, \hdots, n) \\
+		 I_n^{\epsilon} = & [v_n, b]
+	 \end{align*}
+	Per Vorraussetzung ist $f_{\vert I_j^{\epsilon}} (j = 1,\hdots, n+1)$ stetig. \\
 	Daher existiert nach Satz~\ref{kap10_satz20}
 	eine Partition $P_j^{\epsilon}$, so dass 
 	\begin{align*}
@@ -150,8 +174,8 @@
 	 Dann gilt:
 	 \begin{align*}
 	 	S(P^{\epsilon},f) - s(P^{\epsilon},f) 
-	 	= & \sum_{l=1}^{n+1} S(P_l^{\epsilon},f_{I_l^{\epsilon}}) - 
-	 		s(P_l^{\epsilon},f_{I_l^{\epsilon}})  \\
+	 	= & \sum_{l=1}^{n+1} S(P_l^{\epsilon},f_{|I_l^{\epsilon}}) - 
+	 		s(P_l^{\epsilon},f_{|I_l^{\epsilon}})  \\
 	 		& + \sum_{l = 1}^n \left( \sup_{x \in [u_l, v_l]} 
 	 		f(x) - \inf_{x \in [u_l, v_l]} f(x) (v_l - u_l)\right) \\
 	 		\leq & \sum_{l=1}^{n+1} \frac{\epsilon}{2(n+1)} + \sum_{l=1}^n
@@ -190,7 +214,8 @@
 	Das heißt
 	\begin{align}
 		\label{gleichung_3_1705}
-		\sum_{i=1}^{m+1}c_i(y_i -y_{i-1}) + c_m(b-y_m)
+		\sum_{i=1}^{m+1}c_i\vert I_{\epsilon}^l \rightarrow c_i(y_i -a) 
+		\sum_{i=2}^m c_i \cdot (y_i -y_{i-1}) + c_m(b-y_m)
 	\end{align}
 	Außerdem gilt $v_i-u_j \overset{\epsilon \rightarrow 0}{\rightarrow} 0$
 	gilt $\int_a^b f\dd{x} = Gleichung~\ref{gleichung_3_1705}$
