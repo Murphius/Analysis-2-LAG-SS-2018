@@ -1,0 +1,249 @@
+%TODO Einfügen des letzten Satzes in VL 11
+
+\section{Differentiation und Integration}
+
+\begin{Bemerkung}{
+	Bisher hatten wir stets $\int_a^b f \dd{x}$ mit $ a \leq b$ betrachtet.
+	Für $a \geq b$ setze man 
+	\begin{align*}
+		\int_a^b f \dd{x} := - \int_b^a f \dd{x}
+	\end{align*}
+}\end{Bemerkung}
+
+\begin{Satz}{
+	Sei $f \in \mathcal{R}_{[a,b]}$. Für $ a \leq x \leq b$ setze man 
+	\begin{align*}
+		F(x) = \int_a^b f(t) \dd{t}
+	\end{align*}
+	Dann gilt
+	\begin{enumerate}
+		\item $F$ ist stetig auf $[a,b]$
+		\item Ist $f$ stetig in $x_0 \in [a,b]$, so ist $F$ in $x_0$ differenzierbar 
+		und es gilt $F'(x_0) = f'(x_0)$
+	\end{enumerate}
+	\textbf{Beweis:}
+	\begin{enumerate}
+		\item Da $f \in \mathcal{R}_{[a,b]}$, ist $f$ insbesondere beschränkt.
+		Das heißt es existiert ein $M \in \mathbb{R}$ mit 
+		\begin{align*}
+			\abs{f(x)} \leq M \text{ } (x \in [a,b])
+		\end{align*}
+		Sei nun $\epsilon > 0$ gegeben. Setze $\delta := \frac{\epsilon}{M}$. 
+		Für $x, y \in [a,b]$ mit $\abs{x-y} < \delta$ erhalten wir:
+		\begin{align*}
+			\abs{F(x) - F(y)} = & \abs{\int_a^x f \dd{t} - \int_a^y f \dd{t} }\\
+			= &  \abs{\int_a^x f\dd{t} + \int_y^x f\dd{t} - \int_a^yf\dd{t}}\\
+			= & \abs{\int_y^x f\dd{t}} \leq \int_y^x \abs{f} \dd{t}\\
+			\leq & M \cdot \int_y^x \dd{t} = M (x-y) \leq \epsilon
+		\end{align*}
+		Da $\epsilon > 0$ beliebig gewählt war, folgt die Aussage
+	\end{enumerate}
+	\item Sei $h \in \mathbb{R}$, so dass $x_0 +h \in [a,b]$.
+	Dann gibgt es ein $\xi_h$ zwischen $x_0$ und $x_0+h$ mit:
+	\begin{align*}
+		\frac{F(x_0 + h) - F(x_0)}{h} = & \frac{\int_a^{x_0+h}f(t)\dd{t}-
+		\int_a^{x_0}f(t)\dd{t}}{	h} \\
+		= & \int_{x_0}^{x_0+h}\frac{f(t)\dd{t}}{h} \\
+		= & f(\xi_h) \cdot \frac{\int_{x_0}^h \dd{t}}{h} \\
+		= & f(\xi_h) \cdot \frac{h}{h} \text{ Damit gilt:} \\
+		&\lim\limits_{h \rightarrow 0}{\frac{F(x_0+h)-F(x_0)}{h}} 
+		= \lim\limits_{h \rightarrow 0} f(\xi_h) = f(x_0)
+	\end{align*}
+}\end{Satz}
+
+
+\begin{Satz}{
+	Ist $f \in \mathcal{R}_{[a,b]}$ und es gilt $F: [a,] \rightarrow \mathbb{R}$
+	differenzierbar mit $F' = f$. Dann gilt
+	\begin{align*}
+		\int_a^b f\dd{x} = F(b) - F(a) 
+	\end{align*}
+	\textbf{Bemerkungen:}
+	\begin{itemize}
+		\item Eine Funktion $F$ mit $F'=f$ nennt man eine \emph{Stammfunktion} 
+		von $f$
+		\item Man schreibt gerne $F(x) \vert_a^b := F(b) -F(a)$
+	\end{itemize}
+	\textbf{Beweis:}\\
+	Sei $\epsilon >0 $ gegeben. Man wähle eine Partition $P = \{x_0, \hdots, x_n\}$ 
+	mit 
+	\begin{align*}
+		S(P,f) - s(P,f) < \epsilon
+	\end{align*}
+	Weiter existiert aufgrund des Mittelwertsatzes der Differential-Rechnung %TODO 
+	$\xi \in [x_{i-1}, x_i]$ mit 
+	\begin{align*}
+		F(x_i) - F(x_{i-1}) = f(\xi_i) \cdot \Delta x_i
+	\end{align*}
+	Nach Satz 7 P2 %TODO
+	gilt 
+	\begin{align*}
+		\epsilon > & \abs{ \int_a^b f \dd{x} - \sum_{i=1}^n f(\xi_i) \Delta x_i} \\
+		= & \abs{ \int_a^b f \dd{x} - \sum_{i=1}^n F(x_i) -F(x_{i-1})} \\
+		= & \abs{ \int_a^b f \dd{x} - (F(b) -F(a))}
+	\end{align*}
+	Da $\epsilon > 0$ beliebig gewählt war, folgt die Behauptung.	
+}\end{Satz}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+	\item[ ]
+		\item Sei $f \in \mathcal{R}_{[a,b]}$ Dann bezeichnet man die Funktion 
+		\begin{align*}
+			\int_a^{\circ} f\dd{x} : & [a,b] \rightarrow \mathbb{R} \\
+			& t \mapsto \int_a^b f\dd{x}
+		\end{align*}
+		als \emph{unbestimmtes Integral} von $f$.
+		\item Satz 2 %TODO
+		sagt also das jede Stammfunktion ein unbestimmtes Integral von $f$ ist 
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Proposition}{
+	Sei $F: [a,b] \rightarrow \mathbb{R}$ eine Stammfunktion von $f \in \mathcal{R}
+	_{[a,b]}$. Eine Funktion $G: [a,b] \rightarrow \mathbb{R}$ genau dann 
+	Stammfunktion von $f$, wenn $F-G = konst.$\\
+	\textbf{Beweis:} $\Leftarrow$ \\
+	Sei $c \in \mathbb{R}$. Dann gilt für $F + c$ 
+	\begin{align*}
+		(F+ c)' = F' ) f
+	\end{align*}
+	$\Rightarrow$ \\
+	Das war eine Folgerung des Mittelwertsatzes der Differentialrechnung %TODO
+}\end{Proposition}
+
+\begin{Bemerkung}{
+	Oftmals wird ignoriert, dass sobald es eine Stammfunktion $F$ von $f$ gibt, es 
+	automatisch unendlich viele gibt. So schreibt man beispielsweise 
+	\begin{align*}
+		\int f \dd{x} = F
+	\end{align*} 
+	oder spricht von \glqq der\grqq{} Stammfunktion. Die obige Gleichung ist
+	 insofern problematisch, da die rechte Seite (und damit per Definition auch die 
+	 linke Seite) nur bis auf eine Konstante bestimmt ist. Oftmals ist daher etwas 
+	 laxe Umgang mit den Begriffen unkritisch.
+}\end{Bemerkung}
+
+\begin{Satz}[Partielle Integration]{
+	Seien $F,G: [a,b] \rightarrow \mathbb{R}$ differenzierbar mit 
+	\begin{align*}
+		F' = f \text{ und } G' = g 
+	\end{align*}
+	wobei $f,g \in \mathcal{R}_{[a,b]}$. Dann gilt:
+	\begin{align*}
+		\int_a^b F \cdot g \dd{x} = FG\vert_a^b - \int_a^b f \cdot G \dd{x}
+	\end{align*}
+	\textbf{Beweis:}
+	\begin{align*}
+		\left( FG|_a^x - \int_a^x f \cdot G \dd{t} \right)' = &
+		\left(F(x) \cdot G(x) - F(a) \cdot G(a) - \int_a^x fG \dd{t} \right)' \\
+		= & F'(x)G(x) + F(x)G'(x) - f(x)G(x)) \\
+		= & f(x)G(x) + F(x)g(x) -f(x)G(x)
+	\end{align*}
+	Ergo: die rechte Seite ist eine Stammfunktion des Integranden der 
+	linken Seite. Damit folgt die Aussage aus Satz 2. %TODO
+}\end{Satz}
+
+\begin{Beispiel}{
+	\begin{align*}
+		\int_a^b cos^2(x) \dd{x} = & \int_a^b cos(x) \cdot cos(x) \dd{x} \\
+		= & cos(x) \cdot sin(x) \vert_a^b + \int_a^b sin^2 \dd{x} \\
+		= & cos(x) \cdot sin(x) \vert_a^b + \int_a^b 1 - cos^2(x) \dd{x} \\
+		= &  cos(x) \cdot sin(x) \vert_a^b + \int_a^b 1 \dd{x} - \int_a^b cos^2(x) 
+		\dd{x} \\
+		\text{Ergo: } \int_a^b cos^2(x) \dd{x} = & \frac{1}{2} (cos(x) sin(x) 
+		\vert_a^b - (b-a))
+	\end{align*}
+	
+	\begin{align*}
+		\int_a^b \ln (x) \dd{x} \text{ wobei } 0 \not\in [a,b] \\
+		\int 1 \cdot \ln (x) \dd{x} = & x \ln (x)\vert_a^b - 
+		\int_a^b x \cdot \frac{1}{x} \dd{x} \\
+		= &  \ln (x)\vert_a^b - \int_a^b 1 \dd{x} \\
+		= & \ln (x)\vert_a^b - x\vert_a^b \\
+		= & \ln (x)\vert_a^b - (b - a)
+	\end{align*}
+}\end{Beispiel}
+
+\begin{Satz}{
+	Sei $f: [a,b] \rightarrow \mathbb{R}$ stetig und $\phi: [c,d] \rightarrow [a,b]$ 
+	stetig differenzierbar. Dann gilt
+	\begin{align*}
+		\int_a^b f(\phi(t))\cdot\phi'(t)\dd{t} = \int_{\phi(c)}^{\phi(d)} 
+		f(x) \dd{x}
+	\end{align*}	 
+	\textbf{Beweis:}
+	Sei $F : [a,b] \rightarrow \mathbb{R}$ eine Stammfunktion von $f$. Dann gilt für 
+	$t \in [c,d]$:
+	\begin{align*}
+		\frac{\mathrm{d}}{\mathrm{dt}}F(\phi(t)) = &  F'(\phi(t)) \cdot \phi'(t) \\
+		= & f(\phi(t))\cdot \phi'(t) \\
+		\text{Ergo: } \int_{\phi(c)}^{\phi{d}} = & \int F(\phi(d))-F(\phi(c)) \\
+		= & \int_a^b f(\phi(t)) \phi'(t) \dd{t}
+	\end{align*}
+	\textbf{Bemerkung}
+	\begin{itemize}
+		\item Die Substitutionsregel lässt sich wie folgt nachrechnen
+		\begin{align*}
+			\phi'(t)\mathrm{dt} = \frac{\mathrm{d\phi}}{\mathrm{dt}}dt
+		\end{align*}
+		Dann lässt sich die Substitutions-Regel
+		\begin{align*}
+			\int_c^d f(\phi) \dd{\phi} = \int_{\phi(c)}^{\phi(d)} f(x) \dd{x}
+		\end{align*}
+	\end{itemize}
+}\end{Satz}
+
+\begin{Beispiel}{
+	\begin{align*}
+		\int_{-r}^r \sqrt{r^2 -x^2} \dd{x} = r \int_{-r}^r 
+		\sqrt{1 - \frac{x^2}{r^2}} \dd{x}
+	\end{align*}
+	Wir wählen $\phi(t) = r \cdot sin(t)$ für $ t \in [\frac{-\pi}{2}, \frac{\pi}{2}]$. 
+	Dann gilt mit der Substitutionsregel 
+	(man beachte dass $\phi(\frac{-\pi}{2}) = -r 
+	$ und $\phi(\frac{\pi}{2}) = r$). 
+	\begin{align*}
+		r \int_{-r}^r \sqrt{1 - \frac{x^2}{r^2}} \dd{x} = & r \int_{-\frac{\pi}{2}}
+		^{\frac{\pi}{2}} \sqrt{1 - \frac{\phi^2(t)}{r^2}} \cdot \phi'(t) \dd{t} \\
+		= & r \int_{-\frac{pi}{2}}^{\frac{\pi}{2}} \sqrt{cos^2(t)} cos(t) r\dd{t} \\
+		= & r^2 \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} cos^2(t)\dd{t} \\
+		= & \frac{r^2}{2} \cdot \pi
+	\end{align*}	 
+}\end{Beispiel} %TODO
+
+\begin{Beispiel}
+	\begin{align*}
+		\int_a^b \frac{\dd{x}}{1-x^2} \text{ wobei } -1, 1 \notin [a,b]
+	\end{align*}
+	Vorgehen Partialbruchzerlegung: Man zerlegt den Nennen in seine Linerarfaktoren 
+	und bestimmt Konstanten $\alpha, \beta \in \mathbb{R}$ mit 
+	\begin{align*}
+		\frac{1}{1-x^2} = \frac{\alpha}{1+x} + \frac{\beta}{1-x}
+	\end{align*}
+	Man beachte, dass $(1-x)(1+x) = 1 -x^2$ \\
+	Wir multiplizieren die Gleichung mit $(1+x)(1-x)$ und erhalten 
+	\begin{align*}
+		1 = \alpha (1 -x) + \beta (1+x) 
+		= \alpha + \beta (\beta-\alpha)x (x \in [a,b])
+	\end{align*}
+	Also: $ \alpha = \beta = \frac{1}{2}$
+	Damit gilt:
+	\begin{align*}
+		\int_a^b \frac{\dd{x}}{1-x^2} = \frac{1}{2} \left( \int_a^b \frac{\dd{x}}{1-x} + \int_a^b \frac{\dd{x}}{1+x} \right)
+	\end{align*}
+	Nun gilt für $\phi(t) = 1 - t$:
+	\begin{align*}
+		\int_a^b \frac{\dd{x}}{1-x} = \int_{1-a}^{1-b} \frac{-1 \dd{t}}{1 \phi(t)}
+		= - \int_{-a}^{1-b} \frac{\dd{t}}{t} = -\ln(t)\vert_a^b
+	\end{align*}
+	Weiter gilt mit $\phi(t) = t-1$
+	\begin{align*}
+		\int_a^b \frac{\dd{x}}{1+x} = \int_{1+a}^{1+b} \frac{\dd{t]}}{t} = \ln(t) \vert_{1+a}^{1+b}
+	\end{align*}
+	Ergo
+	\begin{align*}
+		\frac{1}{2}(\ln(1+b) - \ln(1-b) - (\ln(1+a) - \ln(1-a))
+		= \frac{1}{2} \ln \frac{1+x}{1-x}\vert_a^b
+	\end{align*}	
+\end{Beispiel}
