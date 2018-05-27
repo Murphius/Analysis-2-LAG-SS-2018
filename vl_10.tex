@@ -143,7 +143,15 @@
 
 \begin{Satz}{\label{kap10_satz21}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt mit endlich vielen 
-	Unstetigkeitsstellen. Dann gilt $f \in \mathcal{R}_{[a,b]}$.\\
+	Unstetigkeitsstellen %(Abbildung~\ref{plot_fkt_unstetigketsstellen}. 
+	Dann gilt $f \in \mathcal{R}_{[a,b]}$.\\
+	\begin{figure}[ht]
+		\begin{center}
+			\includegraphics[scale=0.5]{./skizzen/plot_fkt_unstetigkeitsstellen}
+		\end{center}
+		\caption{Funktion mit endlichen Unstetigkeitsstellen}
+		\label{plot_fkt_unstetigketsstellen}
+	\end{figure}
 	\textbf{Beweis:} Sei $\epsilon > 0$ gegeben und $E = \{P_1, \hdots, P_n\}$
 	die Menge der Unstetigkeitsstellen von $f$. Wir nehmen der Einfachheit halber 
 	an, dass $\{a,b\} \cap E = \emptyset$ (der andere Fall läuft analog).
@@ -186,12 +194,21 @@
 }\end{Satz}
 
 \begin{Definition}{
-	Eine Funktion $f: [a,b] \rightarrow \mathbb{R}$ heißt Treppenfunktion, wenn es 
+	Eine Funktion $f: [a,b] \rightarrow \mathbb{R}$ heißt \emph{Treppenfunktion}
+	 (Abbildung~\ref{plot_treppenfkt}), 
+	wenn es 
 	eine Partition $Z = \{ y_0, \hdots, y_m \}$ von $[a,b]$ und für alle 
 	$i \in \{0, \hdots, m\}$ für $c_i \in \mathbb{R}$ gibt, so dass 
 	\begin{align*}
 		f(x) = c_i \text{ } ( x\in (y_{i-1},y_i))
 	\end{align*}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[scale=0.5]{./skizzen/plot_treppenfkt}
+		\end{center}
+		\caption{Treppenfunktion}
+		\label{plot_treppenfkt}
+	\end{figure}
 	Nach Satz~\ref{kap10_satz21}
 	ist jede Treppenfunktion Riemann-integrierbar. \\
 	Zur Berechnung des Intervalls bedienen wir uns der Notation von Satz 10 
