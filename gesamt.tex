@@ -5,13 +5,39 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage[standard]{ntheorem}                            % Theorem-Umgebung
+\usepackage{amsthm} 
+%\usepackage[standard]{ntheorem}                            % Theorem-Umgebung
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{extarrows}
 \usepackage{physics}
 \usepackage{todonotes}
 \usepackage{csquotes}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{Definition}{Definition}[section]
+\theoremstyle{definition}
+
+\newtheorem{Beispiel}{Beispiel}[section]
+\theoremstyle{definition}
+
+\newtheorem{Satz}{Satz}[section]
+\theoremstyle{plain}
+
+\newtheorem*{Bemerkung}{Bemerkung}
+\theoremstyle{plain}
+
+\newtheorem{Proposition}{Proposition}[section]
+\theoremstyle{definition}
+
+\newtheorem{Korollar}{Korollar}[section]
+\theoremstyle{definition}
+
+%\newtheorem*{Beweis}{Beweis}
+%\theoremstyle{proof}
+
+\renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
 
 \usepackage{hyperref}	%should be loaded last
 \hypersetup{%

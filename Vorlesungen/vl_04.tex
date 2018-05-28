@@ -1,5 +1,4 @@
 \section{Differentiation}
-
 \begin{Definition}{
 	Sei $f: D \left( f \right) \subseteq \mathbb{R} \rightarrow \mathbb{R}$ 
 	und $x_0 \in D \left( f \right)$ ein Punkt, 
@@ -7,7 +6,7 @@
 	(für geeignetes $\epsilon > 0$) komplett 
 	in $D \left( f \right)$ enthalten ist $\left( B_{\epsilon} \left( x \right)
 	 \subseteq D \left( f \right) \right) $. Dann heißt $f$ an der Stelle $x_0$ 
-	 \textbf{differenzierbar}, wenn der Grenzwert
+	 \emph{differenzierbar}, wenn der Grenzwert
 	\begin{equation*}
 		Df\left(x_0\right) := \frac{df}{dx} 
 		\left( x_0 \right) := f'\left( x_0 \right) 
@@ -17,10 +16,10 @@
 	\left( x \right) - f \left( x_0 \right) }{x - x_0} }
 	\end{equation*} 
 	existiert. \\
-	Wir meinen mit $f'\left(x_0\right)$ die \textbf{Ableitung} 
-	(seltener \textit{Differentialquotient}) von $f$ an der Stelle $x_0$. \\
+	Wir meinen mit $f'\left(x_0\right)$ die \emph{Ableitung} 
+	(seltener \emph{Differentialquotient}) von $f$ an der Stelle $x_0$. \\
 	Ist $f: D\left(f \right) \rightarrow \mathbb{R}$ in jedem $x \in D\left(f\right)
-	$ differenzierbar, dann heißt $f$ schlechthin \textbf{differenzierbar}. 
+	$ differenzierbar, dann heißt $f$ schlechthin \emph{differenzierbar}. 
 	Etwas irreführend wird auch die Abbildung  
 	\begin{equation*}
 		f': D\left(f\right) \subseteq \mathbb{R} \rightarrow \mathbb{R}
@@ -39,9 +38,10 @@
 		f\left(x\right) = f\left(x_0\right) + c\left(x-x_0\right) + \phi\left(x\right)
 		\end{equation*} 
 		und 
-		\begin{equation*} \label{gleichung:i}
+		\begin{align} 
 			\lim\limits_{x \rightarrow x_0}{\frac{\phi\left(x\right)}{x-x_0}}  = 0
-		\end{equation*}
+			\label{gleichung:i}
+		\end{align}
 		\item Es gibt ein $ \tilde{c} \in \mathbb{R}$ und $
 		u: I \rightarrow \mathbb{R}$, so dass 
 	\begin{equation*}		
@@ -58,7 +58,7 @@
 	\begin{equation*}
 		f''\left(x_0\right) = c = \tilde{c}
 	\end{equation*}
-	D.h. insbesondere $c$ und $\tilde{c}$ sind eindeutig bestimmt
+	Das heißt insbesondere $c$ und $\tilde{c}$ sind eindeutig bestimmt
 
 }\end{Satz}
 
@@ -77,8 +77,11 @@
 		\end{equation*}
 		Das ist per Definition die Gleichung der Tangente an $f$ in $x_0$
 	\end{itemize}
-	\textbf{Beweis:}
+}\end{Bemerkung}
+
+\begin{proof}{
 	\begin{itemize}
+		\item[ ]
 		\item[]$1 \leftrightarrow 2$ Man setzte einfach $u\left(x\right) = \frac{\phi\left(x\right)}{x-x_0}$ und $\tilde{c} = c$ \\
 		(in $x = x_0$ setze man $u\left(x_0\right) = 0$)
 		\item[]$1 \rightarrow 2$ ZZ $\lim\limits_{x \rightarrow x_0}{\frac{f\left(x\right)-f\left(x_0\right)}{x-x_0}}$ existiert
@@ -112,4 +115,5 @@
 			=0
 		\end{align*}
 	\end{itemize}
-}\end{Bemerkung}
+	\qedhere
+}\end{proof}

@@ -5,7 +5,10 @@
 	\begin{align*}
 		S(P_2,f) - s(P_2,f) < \epsilon
 	\end{align*}
-	\textbf{Beweis:} Per Definition gilt 
+}\end{Satz}
+
+\begin{proof}
+	 Per Definition gilt 
 	\begin{align*}
 		s(P_{\epsilon},f) \leq \underline{\int_{a}^b} f \dd{x}
 		\overset{Satz~\ref{kap09_satz17}}{\le} \overline{\int_a^b} f \dd{x} 
@@ -46,7 +49,7 @@
 	\begin{align*}
 	S(P_{\epsilon},f) - s(P_{\epsilon},f) < \epsilon
 	\end{align*}
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}{\label{kap10_satz19}
 	Sei $f:[a,b] \rightarrow \mathbb{R}$ beschränkt und $P_{\epsilon} = 
@@ -66,11 +69,13 @@
 			\left\vert \sum_{i=1}^n f(t_i) \cdot \Delta x_i - \int_a^b f \dd{x} 
 			\right\vert < \epsilon
 		\end{align*}
-	\end{enumerate}	 
-	\textbf{Beweis:}
+	\end{enumerate}	
+}\end{Satz}
+
+\begin{proof}
 	\begin{enumerate}
+		\item[ ]
 		\item Das folgt aus Satz~\ref{kap09_satz16}
-		
 		\item
 		 \begin{align*}
 			\sum_{i = 1}^n \left\vert f(s_i) - f(t_i) \right\vert	\cdot 
@@ -88,12 +93,15 @@
 	\end{enumerate}
 	Wir wollen im Folgenden wichtige Vertreter Riemann-integrierbarer 
 	Funktionen kennenlernen.
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}{\label{kap10_satz20}
 	Ist $f: [a,b] \rightarrow \mathbb{R}$ stetig, so ist 
-	$ f \in \mathcal{R}_{[a,b]}$ \\
-	\textbf{Beweis:} Da stetige Funktionen auf abgeschlossenen Intervallen 
+	$ f \in \mathcal{R}_{[a,b]}$ 
+}\end{Satz}
+
+\begin{proof}
+	Da stetige Funktionen auf abgeschlossenen Intervallen 
 	beschränkt sind, ist $f$ offensichtlich beschränkt. Weiterhin ist $f$ als stetige 
 	Funktion auf dem abgeschlossenen Intervall $[a,b]$ gleichmäßig stetig. \\
 	Sei $\epsilon > 0 $ gegeben. Wegen der gleichmäßigen Stetigkeit von $f$ 
@@ -109,12 +117,15 @@
 		\leq \epsilon \cdot \sum_{i = 1}^n \Delta x_i = \epsilon \cdot (b-a)
 	\end{align*}
 	Da $\epsilon > 0$ beliebig, folgt die Aussage mit Satz~\ref{kap_10_satz18}.
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}{
 		Ist $f: [a,b] \rightarrow \mathbb{R}$ monoton, so ist 
-		$f \in \mathcal{R}_{[a,b]}$ \\
-	\textbf{Beweis:} Da $f$ monoton ist, gilt für alle $x \in [a,b]: f(a) \leq f(x) 
+		$f \in \mathcal{R}_{[a,b]}$ 
+}\end{Satz}
+
+\begin{proof}
+	 Da $f$ monoton ist, gilt für alle $x \in [a,b]: f(a) \leq f(x) 
 	\leq f(b)$. \\
 	Das heißt $f$ ist beschränkt. Zu $n \in \mathbb{N}$ wählen wir eine 
 	Partition \linebreak $P_n = \{x_0, \hdots, x_k\}$ mit $\Delta x_i < \frac{1}{n}$.
@@ -139,7 +150,7 @@
 		\frac{1}{n_{\epsilon}}(f(b) -f(a)) < \epsilon
 	\end{align*}
 	Dann gilt mit $P_{\epsilon} := P_{n_{\epsilon}}$ die Aussage nach Satz~\ref{kap_10_satz18}
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}{\label{kap10_satz21}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt mit endlich vielen 
@@ -152,7 +163,10 @@
 		\caption{Funktion mit endlichen Unstetigkeitsstellen}
 		\label{plot_fkt_unstetigketsstellen}
 	\end{figure}
-	\textbf{Beweis:} Sei $\epsilon > 0$ gegeben und $E = \{P_1, \hdots, P_n\}$
+}\end{Satz}
+
+\begin{proof}
+	 Sei $\epsilon > 0$ gegeben und $E = \{P_1, \hdots, P_n\}$
 	die Menge der Unstetigkeitsstellen von $f$. Wir nehmen der Einfachheit halber 
 	an, dass $\{a,b\} \cap E = \emptyset$ (der andere Fall läuft analog).
 	Sei
@@ -191,7 +205,7 @@
 	 			2M \cdot(v_l-u_l) \leq \frac{\epsilon}{2} + \frac{\epsilon}{2} 
 	 			= \epsilon
 	 \end{align*}	 
-}\end{Satz}
+\end{proof}
 
 \begin{Definition}{
 	Eine Funktion $f: [a,b] \rightarrow \mathbb{R}$ heißt \emph{Treppenfunktion}

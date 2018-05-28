@@ -1,5 +1,3 @@
-
-%Satzcounter = 3
 \begin{Satz}[verallgemeinerter Mittelwertsatz]{
 	\label{satz_9}
 	Seien $f,g : [a,b] \rightarrow \mathbb{R}$ stetig und auf ganz 
@@ -9,18 +7,21 @@
 		\left( g(b)- g(a)\right)f'(\xi) = 
 		\left( f(b) - f(a) \right) g'(\xi)
 	\end{align*}
-	\textbf{Beweis:} Wir betrachten $h: [a,b] \rightarrow \mathbb{R}$ 
+}\end{Satz}
+
+\begin{proof}
+	Wir betrachten $h: [a,b] \rightarrow \mathbb{R}$ 
 	\begin{align*}
 		t \mapsto \left( g(b) -g(a)\right)f(t) - \left(f(b)-f(a)\right)g(t)
 	\end{align*}
-	Offensichtlich \textit{(nach Summenregel)} ist $h$ differenzierbar auf $(a,b)$.
+	Offensichtlich \emph{(nach Summenregel)} ist $h$ differenzierbar auf $(a,b)$.
 	Es gilt:
 	\begin{align*}
 		h'(t) = \left(g(b)-g(a)\right)f'(t) - \left(f(b)-f(a)\right)g'(t)
 	\end{align*}
 	Wir zeigen: es existiert ein $\xi \in (a,b)$ mit $h'(\xi) = 0$. Damit folgt 
 	dann die Aussage. \\
-	\textbf{Beachte:} 
+	\emph{Beachte:} 
 	\begin{align*}
 		h(a) = & \left(g(b)-g(a)\right)f(a) - \left(f(b)-f(a)\right)g(a) \\
 		= & g(b) \cdot f(a) - f(b) \cdot g(a) \\
@@ -39,7 +40,7 @@
 	 ein lokales Maximum. Mit Satz~\ref{satz_8}
 	 folgt: $h'(\xi) = 0$
 	 \input{Plots/plot_MWS}
-}\end{Satz}
+\end{proof}
 	
 \begin{Satz}[Mittelwertsatz(MWS)]{\label{vl_07_MWS}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ stetig und differenzierbar auf 
@@ -47,11 +48,18 @@
 	\begin{align*}
 		f(b) -f(a) = (b-a) \cdot f'(\xi)
 	\end{align*}
-	\textbf{Bemerkung:} Es ist oft wichtig, dass f nur auf $(a,b)$ differenzierbar 
-	sein muss. \\
-	\textbf{Beweis:} Das folgt aus Satz~\ref{satz_9}
-	mit $g = id_{[a,b]}$, d.h. $g(x) = x \textbf{ } (x \in [a,b])$.
 }\end{Satz}
+
+\begin{Bemerkung}{
+	 Es ist oft wichtig, dass f nur auf $(a,b)$ differenzierbar 
+	sein muss.
+}\end{Bemerkung}
+
+\begin{proof}
+	Das folgt aus Satz~\ref{satz_9}
+	mit $g = id_{[a,b]}$, d.h. $g(x) = x \textbf{ } (x \in [a,b])$.
+\end{proof}
+
 
 \begin{Satz}{
 	\label{satz_11}
@@ -67,7 +75,10 @@
 		\item $f$ ist streng monoton fallend $\Leftrightarrow f'(x) < 0 
 		(x \in (a,b))$ 
 	\end{enumerate}
-	\textbf{Beweis:} a) folgt aus b) und c). \\
+}\end{Satz}
+
+\begin{proof}
+	a) folgt aus b) und c). \\
 	Weiterhin folgt d) beziehungsweise e) aus b) beziehungsweise c). \\
 	Sei $ y > x \in [a,b]$. Sei $f|_{[x,y]}$ die \textit{Einschränkung} 
 	von f auf $[x,y]$, das heißt: 
@@ -81,7 +92,7 @@
 	\hspace*{1.5cm}\rotatebox[origin=c]{180}{$\Lsh$} $f(y) \geq f(x) $ \\
 	\textbf{Fall c)} $f(y)-f(x) > 0$ \\
 	\hspace*{1.5cm}\rotatebox[origin=c]{180}{$\Lsh$}$f(y) > f(x)$ \\
-	\textbf{Beweis der Richtung $\Leftarrow$ in Teil b):} Ist $f'(x) \geq 0$ so gilt
+	\emph{Beweis der Richtung $\Leftarrow$ in Teil b):} Ist $f'(x) \geq 0$ so gilt
 	\begin{align*}
 		\lim\limits_{y \searrow x}{\frac{f(y)-f(x)}{y-x}}
 		=\lim\limits_{y \nearrow x}{\frac{f(x) -f(y)}{x-y}} \geq 0
@@ -95,25 +106,31 @@
 		\lim\limits_{y \searrow x}{\frac{f(y)-f(x)}{y-x} } \geq 0
 	\end{align*}
 	Äquivalent für $\lim\limits_{y \nearrow x}{ }$ 
-}\end{Satz}
+\end{proof}
 
 
 \begin{Korollar}{
 	Seien $f,g : [a,b] \rightarrow \mathbb{R}$ stetig und differenzierbar auf
-	$(a,b)$ mit $f'(x) = g'(x)$ für $x \in (a,b)$. Dann gilt $f-g = const$\\
-	\textbf{Beweis:} Es gilt: 
+	$(a,b)$ mit $f'(x) = g'(x)$ für $x \in (a,b)$. Dann gilt $f-g = const$
+}\end{Korollar}
+
+\begin{proof}
+	Es gilt: 
 	\begin{align*}
 		(f-g)'(x) = f'(x)-g'(x) = 0
 	\end{align*}
 	Damit folgt die Aussage mit Satz~\ref{satz_11}.
-}\end{Korollar}
+\end{proof}
 
 \begin{Satz}{
 	Sei $f: I \rightarrow \mathbb{R}$ zweimal differenzierbar $(I \subseteq 
 	\mathbb{R}$ Intervall$)$. Gibt es $\xi \in I$ mit $f'(\xi) = 0$ und 
 	$f''(\xi) < 0 \textbf{ }  (f''(\xi)> 0)$, so nimmt $f$ an der Stelle $\xi$ ein 
-	striktes lokales Maximum (Minimum) an.\\
-	\textbf{Beweis:} Wir betrachten nur den Fall $f''(\xi) < 0$. Für den Fall
+	striktes lokales Maximum (Minimum) an.
+}\end{Satz}
+
+\begin{proof}
+	Wir betrachten nur den Fall $f''(\xi) < 0$. Für den Fall
 	$f''(\xi) > 0$ betrachte man $-f$.\\
 	Per Definition haben wir also: 
 	\begin{align*}
@@ -150,7 +167,7 @@
 	  Mit Satz~\ref{satz_11} folgt: \\
 	  	\hspace*{5mm}$f|_{(\xi-\delta, \xi]}$ ist streng monoton wachsend und \\
 	  	\hspace*{5mm}$f|_{[\xi, \xi + \delta)}$ ist streng monoton fallend.
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}[Regel von l'Hospital]{
 	Seien $f,g: (a,b) \rightarrow \mathbb{R}$ mit
@@ -167,9 +184,12 @@
 	$\lim\limits_{x \rightarrow a}{g(x) = 0} $
 	bzw. $\lim\limits_{x\rightarrow a}{g(x) = \pm \infty}$.\\
 	Dann gilt: $\lim\limits_{x \rightarrow a}{\frac{f(x)}{g(x)} = A}$.
-	Die analoge Aussage gilt auch für $x \rightarrow b$.\\
-	\textbf{Bemerkung:}
+	Die analoge Aussage gilt auch für $x \rightarrow b$.
+}\end{Satz}
+
+\begin{Bemerkung}{
 	\begin{itemize}
+		\item[ ]
 		\item Wir verwenden hier den erweiterten Grenzwertbegriff, d.h. $\pm \infty$ 
 		sind als Grenzwerte zulässig.
 		\item Zwei wesentliche Voraussetzungen:
@@ -196,12 +216,14 @@
 		\end{align*}
 		umrechnen.
 	\end{itemize}
+}\end{Bemerkung}
 	
-	\textbf{Beweis:} Wir beschränken uns auf den Fall $x \rightarrow a$ 
+\begin{proof}
+	Wir beschränken uns auf den Fall $x \rightarrow a$ 
 	$(x \rightarrow b$ läuft analog$)$ und zeigen zunächst folgende Aussage: \\
-	\textbf{Behauptung:} Sei $A \in [-\infty, \infty)$. \\ 
+	\emph{Behauptung:} Sei $A \in [-\infty, \infty)$. \\ 
 	Dann existiert für jedes $q > A$ ein $c > a$ mit $\frac{f(x)}{g(x)} < q$ $(x\in (a,c))$. \\
-	\textbf{Beweis der Behauptung:} \\
+	\emph{Beweis der Behauptung:} \\
 	Da $\frac{f'(x)}{g'(x)} \overset{x \searrow a}{\rightarrow} A$ 
 	existiert ein $c' > a$ mit: $\frac{f'(x)}{g'(x)}<r$ für ein beliebiges 
 	$r \in (A,q)$ und $x \in (a,c')$.\\
@@ -240,7 +262,7 @@
 		Es muss also ein $ c > a$ existieren mit: 
 		$\frac{f(x)}{g(x)} <r$ $(x \in (a,c))$ \\
 		Analog kann man zeigen: \\
-		\textbf{Behauptung' :} Sei $A  \in (-\infty, \infty]$. Dann existiert für 
+		\emph{Behauptung' :} Sei $A  \in (-\infty, \infty]$. Dann existiert für 
 		jedes $p <A$ ein $d > a$, so dass $p < \frac{f(x)}{g(x)}$ $(x \in (a,d))$\\
 		Für $A = +\infty$ folgt die Aussage aus der letzten Behauptung, für 
 		$ A = - \infty$ aus der ersten Behauptung. \\
@@ -256,8 +278,7 @@
 			\frac{f(x)}{g(x)} \in B_{\epsilon}(A)
 		\end{align*}
 	\end{itemize}	
-	
-}\end{Satz}
+\end{proof}
 
 \begin{Beispiel}{
 	$f(x) = 1, g(x) = x + 7$\\

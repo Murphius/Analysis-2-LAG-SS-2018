@@ -22,7 +22,10 @@
 		\end{equation*}
 		\item Damit sind Potenzreihen $\infty$ oft differenzierbar
 	\end{enumerate}
-	\textbf{Beweis} Wir zeigen zunächst die Aussage über den Konvergenzradius. 
+}\end{Bemerkung}
+
+\begin{proof}
+Wir zeigen zunächst die Aussage über den Konvergenzradius. 
 	Beachte, dass: 
 	\begin{equation*}
 		\left(\sum_{k=0}^{\infty} \left( k+1 \right) a_{k+1} \left( x -x_0 \right)^k \right)
@@ -77,7 +80,7 @@
 	den Konvergenzradius $R$, weshalb $\sum_{n=2}^{\infty} |a_n| r^{n-2} n^2 
 	= \frac{1}{r^2}\sum_{n=2}^{\infty} |a_n|n^2r^n$ konvergiert.
 	Damit folgt aber $\lim\limits_{x \rightarrow y}{\Delta(x,y) = 0}$
-}\end{Bemerkung}
+\end{proof}
 
 \begin{Proposition}{
 	Sei $f: \left(a,b\right) \rightarrow \mathbb{R}$ streng monoton und 
@@ -88,7 +91,10 @@
 		\left( f^{-1}\right)'\left(q\right) = \frac{1}{f'(p)} =
 		 \frac{1}{f'(f^{-1}(q))}
 	\end{equation*}
-	\textbf{Beweis} Da $f$ streng monoton ist, ist $f^{-1}$  stetig. \\
+}\end{Proposition}
+
+\begin{proof}
+	Da $f$ streng monoton ist, ist $f^{-1}$  stetig. \\
 	Insbesondere gilt $f^{-1}(y) \rightarrow f^{-1}(q)$ für $y \rightarrow q$.\\
 	Damit gilt:
 	\begin{align*}		
@@ -102,7 +108,7 @@
 		= & \left(f'(f^{-1}(q))\right)^{-1}
 		=  \frac{1}{f'\left( f^{-1}(q) \right)}		
 	\end{align*}
-}\end{Proposition}
+\end{proof}
 
 \begin{Beispiel}{
 	\begin{itemize}
@@ -110,7 +116,7 @@
 		\item k-te Wurtel $g: (0,\infty) \rightarrow \mathbb{R} : 
 		y \mapsto y^{\frac{1}{k}}$ ist differenzierbar mit 
 		$g'(y) = \frac{1}{k}y^{\frac{1}{k}-1}$
-		\textbf{Denn} g ist Umkerhfunktion zu $f(x) = x^k$ \\
+		\textbf{Denn} g ist Umkehrfunktion zu $f(x) = x^k$ \\
 		Damit gilt: 
 		\begin{equation*}g'(y) = \frac{1}{f'(g(y))} = \frac{1}{k(\sqrt[k]{y})^{k-1}}
 		= \frac{1}{k}y^{\frac{1}{k} -1}
@@ -144,7 +150,7 @@
 Sei $I \subseteq \mathbb{R}$ ein Intervall
 \begin{Definition}{
 	Sei $f: I \rightarrow \mathbb{R}$ Wir sagen, f hat in $x_0 \in I$ ein 
-	\textbf{lokales Maximum (lokales Minimum)}, falls ein $\delta > 0$ gibt,
+	\emph{lokales Maximum (lokales Minimum)}, falls ein $\delta > 0$ gibt,
 	so dass 
 	\begin{equation*}
 	\forall x \in B_\delta(x_0) : f(x) \leq f(x_0) (f(x) \geq f(x_0))
@@ -154,18 +160,21 @@ Sei $I \subseteq \mathbb{R}$ ein Intervall
 		f(x) \leq f(x_0) (f(x) \geq f(x_0))
 	\end{equation*}
 	 für alle $x \in I$, so sagen wir, dass 
-	$x_0$ ein \textbf{globales Maximum (globales Minimum)} ist.
+	$x_0$ ein \emph{globales Maximum (globales Minimum)} ist.
 	Sind die entsprechenden Ungleichungen strikt, so reden wir von 
-	\textbf{strikten Maxima (strikte Minima)}. Maximum und Minimum werden unter dem 
-	Begriff \textbf{Extremum} zusammengefasst.
+	\emph{strikten Maxima (strikte Minima)}. Maximum und Minimum werden unter dem 
+	Begriff \emph{Extremum} zusammengefasst.
 }\end{Definition}
 
 \begin{Satz}{
 	\label{satz_8}
 	Seif $f:[a,b] \rightarrow \mathbb{R}$ Hat $f$ ein lokales Maximum (lokales 
 	Minimum) in $x_0 \in (a,b)$ und existiert $f'(x_0)$, so gilt 
-	$f'(x_0) = 0$. \\
-	\textbf{Beweis} Wir betrachten den Fall des Maximums.
+	$f'(x_0) = 0$.
+}\end{Satz}
+
+\begin{proof}
+	Wir betrachten den Fall des Maximums.
 	Es gilt:
 	\begin{equation*}
 		\label{gleichung:bedingungi}
@@ -177,6 +186,8 @@ Sei $I \subseteq \mathbb{R}$ ein Intervall
 		\lim\limits_{x \searrow x_0}{\frac{f(x)-f(x_0)}{x-x_0} \leq 0}
 	\end{equation*}
 	Wegen differenzierbarkeit in $x_0$ folgt
-	 $Gleichung\text{ }1 = Gleichung \text{ }2 \Rightarrow 
-	f'(x_0) = 0$ 	
-}\end{Satz}
+	\begin{align*}
+		Gleichung\text{ }1 = Gleichung \text{ }2 \Rightarrow 
+		f'(x_0) = 0
+	\end{align*}	
+\end{proof}
