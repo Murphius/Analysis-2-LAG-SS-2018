@@ -19,7 +19,10 @@
 		\item Ist $f$ stetig in $x_0 \in [a,b]$, so ist $F$ in $x_0$ differenzierbar 
 		und es \linebreak gilt $F'(x_0) = f(x_0)$
 	\end{enumerate}
-	\textbf{Beweis:}
+}\end{Satz}
+
+
+\begin{proof}
 	\begin{enumerate}
 		\item Da $f \in \mathcal{R}_{[a,b]}$, ist $f$ insbesondere beschränkt.
 		Das heißt es existiert ein $M \in \mathbb{R}$ mit 
@@ -47,7 +50,7 @@
 		&\lim\limits_{h \rightarrow 0}{\frac{F(x_0+h)-F(x_0)}{h}} 
 		= \lim\limits_{h \rightarrow 0} f(\xi_h) = f(x_0)
 	\end{align*}
-}\end{Satz}
+\end{proof}
 
 
 \begin{Satz}{\label{vl_12_satz_02}
@@ -56,13 +59,18 @@
 	\begin{align*}
 		\int_a^b f\dd{x} = F(b) - F(a) 
 	\end{align*}
-	\textbf{Bemerkungen:}
+}\end{Satz}
+
+\begin{Bemerkung}{
 	\begin{itemize}
+		\item[ ]
 		\item Eine Funktion $F$ mit $F'=f$ nennt man eine \emph{Stammfunktion} 
 		von $f$
 		\item Man schreibt gerne $F(x) \vert_a^b := F(b) -F(a)$
 	\end{itemize}
-	\textbf{Beweis:}\\
+}\end{Bemerkung}
+
+\begin{proof}
 	Sei $\epsilon >0 $ gegeben. Man wähle eine Partition $P = \{x_0, \hdots, x_n\}$ 
 	mit 
 	\begin{align*}
@@ -82,7 +90,7 @@
 		= & \abs{ \int_a^b f \dd{x} - (F(b) -F(a))}
 	\end{align*}
 	Da $\epsilon > 0$ beliebig gewählt war, folgt die Behauptung.	
-}\end{Satz}
+\end{proof}
 
 \begin{Bemerkung}{
 	\begin{itemize}
@@ -101,8 +109,11 @@
 \begin{Proposition}{
 	Sei $F: [a,b] \rightarrow \mathbb{R}$ eine Stammfunktion von $f \in \mathcal{R}
 	_{[a,b]}$. Eine Funktion $G: [a,b] \rightarrow \mathbb{R}$ genau dann 
-	Stammfunktion von $f$, wenn $F-G = konst.$\\
-	\textbf{Beweis:} $\Leftarrow$ \\
+	Stammfunktion von $f$, wenn $F-G = konst.$
+}\end{Proposition}
+
+\begin{proof}
+	 $\Leftarrow$ \\
 	Sei $c \in \mathbb{R}$. Dann gilt für $F + c$ 
 	\begin{align*}
 		(F+ c)' = F' ) f
@@ -110,7 +121,7 @@
 	$\Rightarrow$ \\
 	Das war eine Folgerung des Mittelwertsatzes der Differentialrechnung 
 	(Satz~\ref{vl_07_MWS}).
-}\end{Proposition}
+\end{proof}
 
 \begin{Bemerkung}{
 	Oftmals wird ignoriert, dass sobald es eine Stammfunktion $F$ von $f$ gibt, es 
@@ -133,7 +144,9 @@
 	\begin{align*}
 		\int_a^b F \cdot g \dd{x} = FG\vert_a^b - \int_a^b f \cdot G \dd{x}
 	\end{align*}
-	\textbf{Beweis:}
+}\end{Satz}
+
+\begin{proof}
 	\begin{align*}
 		\left( FG|_a^x - \int_a^x f \cdot G \dd{t} \right)' = &
 		\left(F(x) \cdot G(x) - F(a) \cdot G(a) - \int_a^x fG \dd{t} \right)' \\
@@ -142,7 +155,7 @@
 	\end{align*}
 	Ergo: die rechte Seite ist eine Stammfunktion des Integranden der 
 	linken Seite. Damit folgt die Aussage aus Satz~\ref{vl_12_satz_02}.
-}\end{Satz}
+\end{proof}
 
 \begin{Beispiel}{
 	\begin{align*}
@@ -172,7 +185,10 @@
 		\int_a^b f(\phi(t))\cdot\phi'(t)\dd{t} = \int_{\phi(c)}^{\phi(d)} 
 		f(x) \dd{x}
 	\end{align*}	 
-	\textbf{Beweis:}
+}\end{Satz}
+
+
+\begin{proof}
 	Sei $F : [a,b] \rightarrow \mathbb{R}$ eine Stammfunktion von $f$. Dann gilt für 
 	$t \in [c,d]$:
 	\begin{align*}
@@ -181,8 +197,11 @@
 		\text{Ergo: } \int_{\phi(c)}^{\phi{d}} = & \int F(\phi(d))-F(\phi(c)) \\
 		= & \int_a^b f(\phi(t)) \phi'(t) \dd{t}
 	\end{align*}
-	\textbf{Bemerkung}
+\end{proof}
+
+\begin{Bemerkung}{
 	\begin{itemize}
+		\item[ ]
 		\item Die Substitutionsregel lässt sich wie folgt nachrechnen
 		\begin{align*}
 			\phi'(t)\mathrm{dt} = \frac{\mathrm{d\phi}}{\mathrm{dt}}dt
@@ -192,7 +211,7 @@
 			\int_c^d f(\phi) \dd{\phi} = \int_{\phi(c)}^{\phi(d)} f(x) \dd{x}
 		\end{align*}
 	\end{itemize}
-}\end{Satz}
+}\end{Bemerkung}
 
 \begin{Beispiel}{
 	\begin{align*}

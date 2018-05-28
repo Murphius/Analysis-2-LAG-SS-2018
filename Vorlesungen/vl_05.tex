@@ -16,17 +16,19 @@
 
 \begin{Satz}{\label{satz:satz_3}
 	Sei $ I \subseteq \mathbb{R}$ ein Intervall, $f: I \rightarrow \mathbb{R}$ 
-	differenzierbar in $x_0 \in I$. Dann ist f in $x_0$ stetig. \\
-	\textbf{Beweis:} \\
-		\noindent\hspace*{5mm}
-		\textit{ZZ}  ist: $\lim\limits_{x \rightarrow x_0}{f(x) = f(x_0)}$ \\
+	differenzierbar in $x_0 \in I$. Dann ist f in $x_0$ stetig.
+}\end{Satz}
+
+\begin{proof}
+	\textit{ZZ}  ist: $\lim\limits_{x \rightarrow x_0}{f(x) = f(x_0)}$ \\
 		\noindent\hspace*{10mm}
 		Äquivalent dazu: $\lim\limits_{x \rightarrow x_0}{f(x)-f(x_0) = 0}$. \\
 		\noindent\hspace*{10mm}
 		Nun gilt: $\lim\limits_{x \rightarrow x_0}{f(x) - f(x_0)} = 
 	 \lim\limits_{x \rightarrow x_0}{\frac{f(x)-f(x_0)}{\frac{x-x_0}{x-x_0}}}
 	 = f'(x_0) \cdot 0 = 0 $
-}\end{Satz}
+\end{proof}
+		
 \begin{Bemerkung}{
 	 \begin{itemize}
 	 	\item[ ]
@@ -50,8 +52,11 @@
 		\item $ (\frac{f}{g})' = \frac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$ 	
 		(Quotientenregel) 
 	\end{enumerate}
-	\textbf{Beweis:}
+}\end{Satz}
+
+\begin{proof}
 	\begin{enumerate}
+		\item[ ]
 		\item $(f+g)'(x) = 
 		\lim\limits_{y \rightarrow x}{\frac{f(y)+g(y) - (f(x) + g(x))}{y- x}} = 
 		\lim\limits_{y \rightarrow x}{\frac{f(y) - f(x)}{y-x} + \frac{g(y) -g(x)}
@@ -60,7 +65,8 @@
 		\lim\limits_{y \rightarrow x}{\frac{g(y)-g(x)}{y-x}} 
 		= f'(x) + g'(x)$
 		
-		\item $\lim\limits_{y \rightarrow x}{\frac{f(y)g(y) - f(x)g(x)}{y-x}} = 
+		\item $
+		\lim\limits_{y \rightarrow x}{\frac{f(y)g(y) - f(x)g(x)}{y-x}} = 
 		\lim\limits_{y \rightarrow x}{\frac{f(y)g(y) - f(y)g(x) 
 		+ f(y)g(x)-f(x)g(x)}{y-x}} \\ \noindent\hspace*{17mm}
 		= \lim\limits_{y \rightarrow x}{f(y) \frac{g(y)-g(x)}{y-x} + g(x) 
@@ -90,7 +96,7 @@
 		= \frac{1}{g^2(x)}(f(x)\cdot(-g(x)) + g(x)f'(x)) 
 		= \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}$
 	\end{enumerate}	 
-}\end{Satz}
+\end{proof}
 
 \begin{Beispiel}{
 	\begin{itemize}
@@ -131,14 +137,12 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	 
 	\item Die Funktion $|\circ | \cdot x \mapsto |x| = \begin{cases}x  & \textit{für } x\geq 0 \\ - x & sonst \end{cases}$
 	ist nicht in 0 differenzierbar. Denn:
-	\begin{equation*}
-	\lim\limits_{y \searrow 0}{\frac{|y|-|0|}{y-0}}
-	= \lim\limits_{y \searrow 0}{\frac{y-0}{y-0}} = 1 
-	\end{equation*}
-	\begin{equation*}
-	\lim\limits_{y \nearrow 0}{\frac{|y| -|0|}{y-0}} = \lim\limits_{y 
+	\begin{align*}
+		\lim\limits_{y \searrow 0}{\frac{|y|-|0|}{y-0}}
+		= & \lim\limits_{y \searrow 0}{\frac{y-0}{y-0}} = 1 \\
+		\lim\limits_{y \nearrow 0}{\frac{|y| -|0|}{y-0}} =  & \lim\limits_{y 
 	\nearrow 0}{\frac{-y-0}{y-0}} = -1
-	\end{equation*}
+	\end{align*}
 \end{itemize}
 
 \begin{Satz}[Kettenregel]{
@@ -149,8 +153,9 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	\begin{equation*}
 	\frac{d g \circ f}{dx}(x_0) = \frac{dg}{dx}(f(x_0)) \cdot \frac{df}{dx}(x_0)
 	\end{equation*}
-	
-	\textbf{Beweis:}
+}\end{Satz}
+
+\begin{proof}	
 	Da f in $x_0$ differenzierbar ist, gilt für alle 
 	$x \in I_f$:
 	\begin{equation*}
@@ -161,13 +166,13 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	\begin{equation*}
 		g(y) -g(f(x_0)) = (y-f(x_0)) \cdot (g'(f(x_0)) + v(y)),
 	\end{equation*}		
-	\noindent\hspace*{5mm}wobei $\lim\limits_{y \rightarrow f(x_0)}{v(y) = 0}$ \\
-	\noindent\hspace*{5mm}Damit haben wir für alle $x \in I_f$:
+	wobei $\lim\limits_{y \rightarrow f(x_0)}{v(y) = 0}$ \\
+	Damit haben wir für alle $x \in I_f$:
 	\begin{align*}
 	g(f(x)) - g(f(x_0)) = & (f(x)-f(x_0)) \cdot (g'(f(x_0)) + v(f(x)) \\
 	= & (x-x_0)(f'(x_0) + u(x)) (g'(f(x_0)) + v(f(x))
 	\end{align*}
-	\noindent\hspace*{5mm}Damit gilt:
+	Damit gilt:
 	\begin{align*}
 	\lim\limits_{x \rightarrow x_0}
 	{\frac{g(f(x))-g(f(x_0))}{x-x_0} } 
@@ -177,12 +182,12 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	= & (f'(x_0) + 0) (g'(f(x_0)) + 0)
 	= f'(x_0) g'(f(x_0))
 	\end{align*}
-}\end{Satz}
+\end{proof}
 
 \begin{Definition}{
 	Ist $I \subseteq \mathbb{R}$ ein Intervall und 
 	$f: I \rightarrow \mathbb{R}$ differenzierbar und $f':I \rightarrow \mathbb{R}$
-	stetig. Dann heißt f \textbf{stetig differenzierbar}. 
+	stetig. Dann heißt f \emph{stetig differenzierbar}. 
 	Wir definieren weiterhin induktiv die 
 	k-te Ableitung (für $k \in \mathbb{N}$) durch:
 	\begin{align*}
@@ -191,7 +196,7 @@ $p(x) = \sum_{l=0}^{n} a_l x^l$ gilt (Summenregel):
 	\end{align*}
 	sofern die Ableitungen definiert sind.\\
 	Ist $f^{(k)}: I \rightarrow \mathbb{R}$ für alle $k \in \mathbb{N}$ definiert, 
-	so heißt f \textbf{beliebig oft} bzw. \textbf{unendlich oft differenzierbar}.
+	so heißt f \emph{beliebig oft} beziehungsweise \emph{unendlich oft differenzierbar}.
 }\end{Definition}
 
 \begin{Bemerkung}{Wir haben bereits gesehen: Polynome sind beliebig oft

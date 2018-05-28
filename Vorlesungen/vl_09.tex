@@ -5,10 +5,13 @@
 		T_{f, \alpha} (x) = \sum_{n = 0}^{\infty} \frac{f^{(n)}(\alpha)}{n!}
 		(x- \alpha)^n
 	\end{align*}
-	\textbf{Bemerkung:} 
+}\end{Definition}
+
+\begin{Bemerkung}{ 
 	\begin{itemize}
+		\item[ ]
 		\item im Allgemeinen konvergiert $T_{f,\alpha}(x)$ für $x \neq \alpha$ nicht
-		\item Der Satz von Taylor behandelt \underline{nicht} die Taylorreihe
+		\item Der Satz von Taylor behandelt \emph{nicht} die Taylorreihe
 		\item Selbst wenn $T_{f, \alpha}(x)$ konvergiert, muss 
 		$T_{f,\alpha}(x) = f(x)$ nicht gelten
 		\item Sei $R_n(x) = P_{n, \alpha}(x) -f(x)$ Dann gilt :
@@ -17,7 +20,7 @@
 			& \Leftrightarrow  R_n (x) \rightarrow 0
 		\end{align*}
 	\end{itemize}
-}\end{Definition}
+}\end{Bemerkung}
 
 \begin{Satz}{
 	Sei $f(x) = \sum_{n_0}^{\infty} a_n (x- \alpha)^n $ und $R > 0$ der zugehörige 
@@ -29,8 +32,10 @@
 	\end{align*}
 	das heißt, die Taylorreihe $T_{f,\alpha}$ stimmt mit der definierten 
 	Potenzreihe überein.
-	\\
-	\textbf{Beweis:} Wir wissen bereits, dass Potenzreihen gliedweise differenziert
+}\end{Satz}
+
+\begin{proof}
+	Wir wissen bereits, dass Potenzreihen gliedweise differenziert
 	 werden. Daher gilt: 
 	 \begin{align*}
 	 	f'(x) = & \left( \sum_{n = 0}^{\infty} a_n (x- \alpha)^n \right) '
@@ -42,10 +47,10 @@
 	 für $l \in \mathbb{N}$ \\
 	 \textit{$(x - \alpha) = 0$ für $x = \alpha$}\\
 	 Also: $f^{(l)}(\alpha) = l! \cdot a_l$
-}\end{Satz}
+\end{proof}
 
 \section{Riemann-Integral}\label{kap_riemann_integral}
-\underline{\textbf{Ziel}:} Wir wollen auf \enquote{natürliche}\todo{eigentlich wäre "\\emph" sogar besser als Anführungsstriche} Weise einen 
+\emph{\textbf{Ziel}:} Wir wollen auf \enquote{natürliche}\todo{eigentlich wäre "\\emph" sogar besser als Anführungsstriche}\ \ Weise einen 
 Flächeninhaltsbegriff definieren, der uns erlaubt, die Fläche zwischen den Graphen 
 einer Funktion und der $x-$Achse zu bestimmen (Abbildung~\ref{fig_int_vorgehen}).
 	\input{Plots/plot_integral_f}
@@ -82,7 +87,7 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 \end{itemize} 
 
 \begin{Definition}{
-	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \underline{Partition}\todo{das geht besser auch mit Stichwortverzeichnis. Baue ich später ein.} $P$ 
+	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \emph{Partition} \todo{das geht besser auch mit Stichwortverzeichnis. Baue ich später ein.} $P$ 
 	(Abbildung~\ref{fig_int_partition}) von 
 	$[a,b]$ ist eine endliche Menge von Punkten $a = x_0 \leq x_1 \leq \hdots
 	\leq x_n = b$.\\
@@ -111,26 +116,29 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 	wobei Infimum und Supremum über alle Partitionen von $[a,b]$ genommen werden. 
 	Wir nennen 
 	\begin{align*}
-		& \overline{\int_a^b} f \dd{x} \text{ das \underline{obere} und} \\
-		& \underline{\int_a^b} f \dd{x} \text{ das \underline{untere}}
+		& \overline{\int_a^b} f \dd{x} \text{ das \emph{obere} und} \\
+		& \underline{\int_a^b} f \dd{x} \text{ das \emph{untere}}
 	\end{align*}
-	\underline{Riemannintegral} von $f$ über $[a,b]$ \\
+	\emph{Riemannintegral} von $f$ über $[a,b]$ \\
 	Gilt 
 	\begin{align*}
-		\int_a^{\overline{b}} f \dd{x} = \int_{\underline{a}}^b f \dd{x}
+		\int_a^{\overline{b}} f \dd{x} = \underline{\int_{a}^b} f \dd{x}
 	\end{align*}
-	sagen wir $f$ ist \underline{Riemann-integrierbar} (\underline{integrierbar}) 
+	sagen wir $f$ ist \emph{Riemann-integrierbar} (\emph{integrierbar}) 
 	und nennen 
 	\begin{align*}
 		\int_a^b f(x) \dd{x} := \underline{\int_a^b} f \dd{x} = 
 		\overline{\int_a^b} f \dd{x}
 	\end{align*}
-	das \underline{Riemannintegral} von $f$ über $[a,b]$.\\
+	das \emph{Riemannintegral} von $f$ über $[a,b]$.\\
 	Die Menge der Riemanintegrierbaren Funktionen auf $[a,b]$ bezeichnen wir 
-	mit $\mathcal{R}$ beziehungsweise $\mathcal{R}_{[a,b]}$.\\
+	mit $\mathcal{R}$ beziehungsweise $\mathcal{R}_{[a,b]}$.
 	\input{Plots/plot_integral_riemannintegral}
-	\textbf{Bemerkungen}
+}\end{Definition}
+
+\begin{Bemerkung}{
 	\begin{itemize}
+		\item[ ]
 		\item Da $f$ beschränkt ist, gibt es $m \leq M$ in $\mathbb{R}$ mit:
 		\begin{align*}
 			m \leq f(x) \leq M \text{ }(x \in [a,b])
@@ -145,13 +153,12 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 		werden wir Funktionen stets als 
 		beschränkt annehmen
 	\end{itemize}
-	
-}\end{Definition}
+}\end{Bemerkung}
 
 \begin{Definition}{
 	Seien $P_1, P_2$ zwei Partitionen eines Intervalls. Dann heißt $P_1$ 
-	\underline{Verfeinerung} von $P_2$, wenn gilt: $P_2 \subseteq P_1$ \\
-	Weiterhin nennen wir $P_1 \cup P_2$ die \underline{gemeinsame} Verfeinerung 
+	\emph{Verfeinerung} von $P_2$, wenn gilt: $P_2 \subseteq P_1$ \\
+	Weiterhin nennen wir $P_1 \cup P_2$ die \emph{gemeinsame} Verfeinerung 
 	von $P_1$ und $P_2$
 }\end{Definition}
 
@@ -162,8 +169,11 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 		s(P,f) \leq & s(P',f)
 	\end{align*}
 	(wobei $f$ wie in Definition~\ref{def_riemann-integrierbar}
-	sei) \\
-	\textbf{Beweis:} Wir zeigen nur die obere Ungleichung, die andere folgt analog. 
+	sei)
+}\end{Satz}
+
+\begin{proof}
+	Wir zeigen nur die obere Ungleichung, die andere folgt analog. 
 	Wir nehmen zunächst an, dass $P'$ sich von $P$ in nur einem Element $x'$ 
 	unterscheidet. Das heißt: $P' = P \cup \{x'\}$ \\
 	Dann gibt es ein $i \in \mathbb{N}$ mit $x' \in [x_{i-1}, x_i]$ \newline
@@ -182,15 +192,17 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 	\end{align*}
 	 Enthält von $P'$ $k$ Punkte, die nicht in $P$ enthalten sind, so führen wir 
 	 obiges Verfahren insgesamt $k$-mal durch. 
-	
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}{\label{kap09_satz17}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ beschränkt. Dann gilt:
 	\begin{align*}
 		\obint a b f \geq \unint{a}{b} f
 	\end{align*}
-	\textbf{Beweis:} Seien $P_1, P_2$ zwei Partitionierungen von $[a,b]$ und 
+}\end{Satz}
+
+\begin{proof}
+	Seien $P_1, P_2$ zwei Partitionierungen von $[a,b]$ und 
 	$P'$ die gemeinsame Verfeinerung. Dann gilt:
 	\begin{align*}
 		s(P_1,f) \leq s(P',f) \leq S(P',f) \leq S(P_2, f) 
@@ -213,4 +225,4 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 		\int_{\underline{a}}^b f \dd{x} = \sup s(P,f) \leq 
 		\inf S(P,f) = \inf \obint ab f 
 	\end{align*}
-}\end{Satz}
+\end{proof}

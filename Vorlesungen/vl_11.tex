@@ -68,7 +68,10 @@
 	Sei $f \in \mathcal{R}_{[a,b]}$ und $m \leq f(x) \leq M$ $ (x \in [a,b])$.
 	Sei ferner  \linebreak $\Phi : [m, M] \rightarrow \mathbb{R}$ stetig. 
 	Dann ist $\Phi \circ f \in \mathcal{R}_{[a,b]}$ \\
-	\textbf{Beweis:} Sei $\epsilon > 0$ gegeben. Da $\Phi$ auf dem abgeschlossenen Intervall 
+}\end{Satz}
+
+\begin{proof}	
+	 Sei $\epsilon > 0$ gegeben. Da $\Phi$ auf dem abgeschlossenen Intervall 
 	$[m,M]$ stetig ist, existiert ein $\delta > 0$ 
 	(Ohne Eisnchränkung sei $\delta < \epsilon$) mit :
 	\begin{align*}
@@ -109,7 +112,7 @@
 		\leq & \epsilon \left(|b-a| + 2\sup_{x \in [m,M]} \abs{\Phi \circ f(x)}\right)
 	\end{align*}
 	Da $\epsilon > 0$ beliebig, folgt die Behauptung mit~\ref{kap_10_satz18}.
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}{\label{vl_11_satz24}%12
 	Seien $f_1, f_2,f \in \mathcal{R}_{[a,b]}$ Dann gilt:
@@ -124,7 +127,7 @@
 		\end{align*}
 		\item Insbesondere gilt also 
 		\begin{align*}
-			f_1 + f_2 \in \mathcal{R}_{[a,b]} \text{und} \\
+			f_1 + f_2 \in \mathcal{R}_{[a,b]} \text{ und} \\
 			c f \in \mathcal{R}_{[a,b]}
 		\end{align*}
 		\item Gilt $f_1(x) \leq f_2(x) \text{ } ( x \in [a,b])$ so folgt
@@ -140,7 +143,9 @@
 			M \cdot (b-a) \geq \int_a^b f \dd{x}
 		\end{align*}
 	\end{enumerate}
-	\textbf{Beweis:}
+}\end{Satz}
+
+\begin{proof}
 	\begin{enumerate}
 		\item Da $f_i \in \mathcal{R}_{[a,b]} (i = 1, 2)$ gibt es Partitionen 
 		$P_i$ von $[a,b]$ mit 
@@ -206,7 +211,7 @@
 		\int_a^b M \dd{x} = M \cdot (b-a)
 	\end{align*}		
 	\end{enumerate}
-}\end{Satz}
+\end{proof}
 
 \begin{Bemerkung}{
 	\begin{itemize}
@@ -232,7 +237,9 @@
 		\item $\abs{f} \in \mathcal{R}_{[a,b]}$ und $\int_a^b \abs{f} \dd{x} 
 		\geq \abs{\int_a^b f \dd{x}}$
 	\end{itemize}
-	\textbf{Beweis:}
+}\end{Satz}
+
+\begin{proof}
 	Sei $\Phi : \mathbb{R} \rightarrow  \mathbb{R}, t \mapsto t^2$. \\
 	Dann ist
 	$\Phi$ stetig und damit $\Phi \circ (f+g) $ bzw $\Phi \circ (f -g)$ 
@@ -257,7 +264,7 @@
 		\abs{\int_a^b f\dd{x}} = c \int_a^b f\dd{x} = \int_a^b cf \dd{x} 
 		\overset{Satz~\ref{vl_11_satz24}}{\le} \int_a^b \abs{f}\dd{x}
 	\end{align*}
-}\end{Satz}
+\end{proof}
 
 \begin{Satz}[Mittelwertsatz der Integralrechnung]{
 	Seien $f,g: [a,b] \rightarrow \mathbb{R}$ stetig und 
@@ -280,7 +287,10 @@
 	\begin{align*}
 		\int_a^b f \dd{x} = f(\xi) \cdot (b-a)
 	\end{align*}
-	\textbf{Beweis:} Man setze: $h: [a,b] \rightarrow \mathbb{R},$ $y \mapsto f(y) 
+}\end{Satz}
+
+\begin{proof}
+ 	Man setze: $h: [a,b] \rightarrow \mathbb{R},$ $y \mapsto f(y) 
 	\cdot \int_a^b g \dd{x}$. $h$ ist stetig und es gilt:
 	\begin{align*}
 		\inf_{y \in [a,b]} h(y) = & \inf_{y \in [a,b]} \int_a^b f(y) g(x) \dd{x} \\
@@ -294,6 +304,5 @@
 		\int_a^b fg\dd{x} \in [\inf_{y \in [a,b]} h(y),  \sup_{y \in [a,b]} h(y)]
 	\end{align*}
 	\textbf{Bemerkung:} Wir haben bereits gesehen: Polynome sind beliebig oft
-	 differenzierbar.
-	
-}\end{Satz}
+	 differenzierbar.	
+\end{proof}

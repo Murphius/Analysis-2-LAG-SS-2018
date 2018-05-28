@@ -35,8 +35,11 @@
 		x \mapsto & \sum_{l = 0}^n \frac{f^{(l)}(\alpha)}{l !} (x - \alpha)^l
 	\end{align*}
 	das $n-te$ Taylorpolynom, wobei $\alpha \in I$ sei, von f an der Stelle 
-	$\alpha$. \\
-	\textbf{Bemerkung:} Offensichtlich gilt: 
+	$\alpha$.
+}\end{Definition}
+
+\begin{Bemerkung}{
+	Offensichtlich gilt: 
 	$f(\alpha) = P_{n, \alpha} ( \alpha)$. Weiter gilt: 
 	\begin{align*}
 		f'(\alpha) = P'_{n, \alpha}(\alpha) = \left( \sum_{l = 0}^n l 
@@ -47,9 +50,9 @@
 		f^{(l)} (\alpha) = P_{n, \alpha}^{(l)} = P_{n, \alpha}^{(l)} (\alpha) \\
 		( l = 1, ..., n)
 	\end{align*}
-}\end{Definition}
+}\end{Bemerkung}
 
-\begin{Satz}[Satz von Taylor ( mit Lagrange-Restglied)]{
+\begin{Satz}[Satz von Taylor (mit Lagrange-Restglied)]{
 	Sei $f: [a,b] \rightarrow \mathbb{R},$ $n \in \mathbb{N}$ und 
 	$f$ $(n-1)-mal$ stetig differenzierbar $($auf $[a,b])$ und 
 	$n-mal$ differenzierbar auf $(a,b)$. Seien $\alpha \neq \beta$ 
@@ -58,7 +61,10 @@
 	\begin{align*}
 		f(\beta) = P_{n-1, \alpha}(\beta) + \frac{f^{(n)}(x)}{n!}(\beta - \alpha)^n
 	\end{align*}
-	\textbf{Beweis:} Wähle $M \in \mathbb{R}$ mit 
+}\end{Satz}
+
+\begin{proof}
+	Wähle $M \in \mathbb{R}$ mit 
 	\begin{align*}
 		f(\beta) = P_{n-1,\alpha}(\beta) + M (\beta - \alpha)^n
 	\end{align*}
@@ -95,10 +101,14 @@
 		0 = h^{(n)}(x) = f^{(n)}(x) - P_{n-1, \alpha}(x) - M \cdot n! \cdot 
 		(x-\alpha)^0
 	\end{align*}
-	und daher $f^{(n)}(x) = M \cdot n!$ \\
-	\textbf{Bemerkung:} Die obige Darstellung des Restgliedes ist die sogenannte 
+	und daher $f^{(n)}(x) = M \cdot n!$
+\end{proof}	
+
+\begin{Bemerkung}{
+	Die obige Darstellung des Restgliedes ist die sogenannte 
 	Lagrange'sche Darstellung
-}\end{Satz}
+}\end{Bemerkung}
+
 
 \begin{Beispiel}{
 	Sei $f(x) = \sqrt{1 +x}$. Offensichtlich: 
@@ -138,8 +148,14 @@
 		\item ist $n$ gerade, so ist $\alpha$ eine Extremstelle.
 			Genauso gilt: Ist $f^{(n)}(\alpha) < 0$, so ist 
 			$\alpha$ eine Maximalstelle. Ist $f^{(n)}(\alpha)>0$, so ist 
-			$\alpha$ Minimalstelle. \\
-			\textbf{Beweis:} Wir betrachten nur den Fall $n$ gerade und 
+			$\alpha$ Minimalstelle.
+	\end{itemize}
+}\end{Korollar}
+
+\begin{proof}
+	\begin{itemize}
+		\item[ ]
+			\item Wir betrachten nur den Fall $n$ gerade und 
 			$f^{(n)}(\alpha) > 0$.\\
 			 Nach dem Satz von Taylor gilt für alle $x \in I$: 
 			\begin{align*}
@@ -162,4 +178,4 @@
 			Da ist also $f(x) > f(\alpha)$ für $x$ hinreichend nah an $\alpha$. \\
 			Sprich: \textit{$\alpha$ ist strikte lokale Minimalstelle}
 	\end{itemize}
-}\end{Korollar}
+\end{proof}
