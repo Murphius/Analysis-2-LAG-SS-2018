@@ -1,0 +1,32 @@
+% Mathematische Gliederung
+\usepackage{amsthm}
+\newtheoremstyle{mystyle}%
+	{3pt}%			Space above
+	{8pt}%			Space below
+	{}%				Body font
+	{}%				Indent amount
+	{\bfseries}%	Theorem head font
+	{.}%			Punctuation after theorem head
+	{.5em}%			Space after theorem head
+	{}%				Theorem head spec
+\theoremstyle{mystyle}
+\newtheorem*{Lemma*}{Lemma}
+\newtheorem*{Satz*}{Theorem}
+\newtheorem*{Korollar*}{Korollary}
+\newtheorem*{Bemerkung*}{Remark}
+\newtheorem*{Definition*}{Definition}
+\newtheorem*{Beispiel*}{Example}
+\newtheorem*{Theorem*}{Theorem}
+\newtheorem*{Uebung*}{Exercise}
+\newtheorem*{Proposition*}{Proposition}
+
+\newcounter{mycounter}
+\numberwithin{mycounter}{section}	%sectionsweises nummerieren
+\newtheorem{Definition}[mycounter]{Definition}
+\newtheorem{Lemma}[mycounter]{Lemma}
+\newtheorem{Satz}[mycounter]{Theorem}
+\newtheorem{Korollar}[mycounter]{Korollary}
+\newtheorem{Bemerkung}[mycounter]{Remark}
+\newtheorem{Beispiel}[mycounter]{Example}
+\newtheorem{Proposition}[mycounter]{Proposition}
+\newtheorem{Theorem}[mycounter]{Theorem}

@@ -1,0 +1,53 @@
+% Standard-Präambel.
+% Diese Datei lädt alle Pakete und Optionen, die nicht für mathematische Zwecke gebraucht werden.
+
+% Einige Inspiration habe ich mir hier von Jens Kubiziel et al. (uni-skripte.lug-jena.de) geholt.
+
+% LuaLaTeX gehört die Zukunft.
+\usepackage{luatextra}
+%\directlua{dofile("luafunctions.lua")}
+
+	%Basti
+	\usepackage{enumerate}
+	%\usepackage{tikz}
+	\usepackage[a4paper]{geometry}
+	\usepackage{calc}
+	
+
+% Deutsche Sprache.
+\usepackage{index}
+\usepackage[english]{babel}
+\usepackage[babel]{csquotes}
+	%\usepackage[babel,german=quotes]{csquotes}
+	%\usepackage{suetterl}
+
+% Seitenlayout.
+\usepackage{parskip}
+			%\usepackage[a4paper,twoside]{geometry}
+
+
+% Grafikpakete.
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+
+% Hervorhebung für wichtige Begriffe, insbesondere Definitionen.
+% Sofort verknüpft mit dem Index.
+\newcommand*{\highl}[2][]{\textbf{\boldmath{#2}}%
+	\ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1}}%
+}
+\newcommand*{\nenne}[2][]{#2%
+	\ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1}}%
+}
+
+\makeindex
+
+
+
+\usepackage{tikz,pgf}
+				\usetikzlibrary{matrix}
+				\usetikzlibrary{cd}
+			\usepackage{paralist}
+			%\renewcommand{\leftmargini}{1.7cm}
+			
+\usepackage[columns=3,font=footnotesize,totoc=true]{idxlayout}

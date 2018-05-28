@@ -1,0 +1,334 @@
+% AMS-Pakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+
+% Umgebungen für Sätze und Co. (verlegt in Struktur.tex)
+%\usepackage{amsthm}
+% Weitere Konventionen sollten einzeln geladen werden, da jeder
+% Dozent seine eigenen Vorlieben zur Nummerierung hat.
+
+% Weitere Pakete
+\usepackage{nicefrac}
+			\usepackage{mathtools}
+			%\usepackage{commath}
+				\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+				\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+				\DeclarePairedDelimiter{\set}{\{}{\}}
+				
+			\usepackage{dsfont}
+			%\usepackage{mathrsfs}
+
+\newcommand{\ZZ}{z.z.}
+
+% Doppelt gestrichene Buchstaben. (fold)
+\newcommand{\IA}{\ensuremath{\mathbb{A}}}
+\newcommand{\IB}{\ensuremath{\mathbb{B}}}
+\newcommand{\IC}{\ensuremath{\mathbb{C}}}
+\newcommand{\ID}{\ensuremath{\mathbb{D}}}
+\newcommand{\IE}{\ensuremath{\mathbb{E}}}
+\newcommand{\IF}{\ensuremath{\mathbb{F}}}
+\newcommand{\IG}{\ensuremath{\mathbb{G}}}
+\newcommand{\IH}{\ensuremath{\mathbb{H}}}
+\newcommand{\II}{\ensuremath{\mathbb{I}}}
+\renewcommand{\IJ}{\ensuremath{\mathbb{J}}} % \IJ ist standardmäßig ein niederländischer Buchstabe.
+\newcommand{\IK}{\ensuremath{\mathbb{K}}}
+\newcommand{\IL}{\ensuremath{\mathbb{L}}}
+\newcommand{\IM}{\ensuremath{\mathbb{M}}}
+\newcommand{\IN}{\ensuremath{\mathbb{N}}}
+\newcommand{\IO}{\ensuremath{\mathbb{O}}}
+\newcommand{\IP}{\ensuremath{\mathbb{P}}}
+\newcommand{\IQ}{\ensuremath{\mathbb{Q}}}
+\newcommand{\IR}{\ensuremath{\mathbb{R}}}
+\newcommand{\IS}{\ensuremath{\mathbb{S}}}
+\newcommand{\IT}{\ensuremath{\mathbb{T}}}
+\newcommand{\IU}{\ensuremath{\mathbb{U}}}
+\newcommand{\IV}{\ensuremath{\mathbb{V}}}
+\newcommand{\IW}{\ensuremath{\mathbb{W}}}
+\newcommand{\IX}{\ensuremath{\mathbb{X}}}
+\newcommand{\IY}{\ensuremath{\mathbb{Y}}}
+\newcommand{\IZ}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Ind}{\ensuremath{\mathds{1}}}
+% (end)
+
+% Kaligraphische Buchstaben. (fold)
+\newcommand{\cA}{\ensuremath{\mathcal{A}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cC}{\ensuremath{\mathcal{C}}}
+\newcommand{\cD}{\ensuremath{\mathcal{D}}}
+\newcommand{\cE}{\ensuremath{\mathcal{E}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\cG}{\ensuremath{\mathcal{G}}}
+\newcommand{\cH}{\ensuremath{\mathcal{H}}}
+\newcommand{\cI}{\ensuremath{\mathcal{I}}}
+\newcommand{\cJ}{\ensuremath{\mathcal{J}}}
+\newcommand{\cK}{\ensuremath{\mathcal{K}}}
+\newcommand{\cL}{\ensuremath{\mathcal{L}}}
+\newcommand{\cM}{\ensuremath{\mathcal{M}}}
+\newcommand{\cN}{\ensuremath{\mathcal{N}}}
+\newcommand{\cO}{\ensuremath{\mathcal{O}}}
+\newcommand{\cP}{\ensuremath{\mathcal{P}}}
+\newcommand{\cQ}{\ensuremath{\mathcal{Q}}}
+\newcommand{\cR}{\ensuremath{\mathcal{R}}}
+\newcommand{\cS}{\ensuremath{\mathcal{S}}}
+\newcommand{\cT}{\ensuremath{\mathcal{T}}}
+\newcommand{\cU}{\ensuremath{\mathcal{U}}}
+\newcommand{\cV}{\ensuremath{\mathcal{V}}}
+\newcommand{\cW}{\ensuremath{\mathcal{W}}}
+\newcommand{\cX}{\ensuremath{\mathcal{X}}}
+\newcommand{\cY}{\ensuremath{\mathcal{Y}}}
+\newcommand{\cZ}{\ensuremath{\mathcal{Z}}}
+% (end)
+
+% Skriptbuchstaben.
+\newcommand{\sL}{\ensuremath{\mathscr{L}}}
+
+% Fraktur. (fold)
+\newcommand{\FA}{\ensuremath{\mathfrak{A}}}
+\newcommand{\FB}{\ensuremath{\mathfrak{B}}}
+\newcommand{\FC}{\ensuremath{\mathfrak{C}}}
+\newcommand{\FD}{\ensuremath{\mathfrak{D}}}
+\newcommand{\FE}{\ensuremath{\mathfrak{E}}}
+\newcommand{\FF}{\ensuremath{\mathfrak{F}}}
+\newcommand{\FG}{\ensuremath{\mathfrak{G}}}
+\newcommand{\FH}{\ensuremath{\mathfrak{H}}}
+\newcommand{\FI}{\ensuremath{\mathfrak{I}}}
+\newcommand{\FJ}{\ensuremath{\mathfrak{J}}}
+\newcommand{\FK}{\ensuremath{\mathfrak{K}}}
+\newcommand{\FL}{\ensuremath{\mathfrak{L}}}
+\newcommand{\FM}{\ensuremath{\mathfrak{M}}}
+\newcommand{\FN}{\ensuremath{\mathfrak{N}}}
+\newcommand{\FO}{\ensuremath{\mathfrak{O}}}
+\newcommand{\FP}{\ensuremath{\mathfrak{P}}}
+\newcommand{\FQ}{\ensuremath{\mathfrak{Q}}}
+\newcommand{\FR}{\ensuremath{\mathfrak{R}}}
+\newcommand{\FS}{\ensuremath{\mathfrak{S}}}
+\newcommand{\FT}{\ensuremath{\mathfrak{T}}}
+\newcommand{\FU}{\ensuremath{\mathfrak{U}}}
+\newcommand{\FV}{\ensuremath{\mathfrak{V}}}
+\newcommand{\FW}{\ensuremath{\mathfrak{W}}}
+\newcommand{\FX}{\ensuremath{\mathfrak{X}}}
+\newcommand{\FY}{\ensuremath{\mathfrak{Y}}}
+\newcommand{\FZ}{\ensuremath{\mathfrak{Z}}}
+
+\newcommand{\Fa}{\ensuremath{\mathfrak{a}}}
+\newcommand{\Fb}{\ensuremath{\mathfrak{b}}}
+\newcommand{\Fc}{\ensuremath{\mathfrak{c}}}
+\newcommand{\Fd}{\ensuremath{\mathfrak{d}}}
+\newcommand{\Fe}{\ensuremath{\mathfrak{e}}}
+\newcommand{\Ff}{\ensuremath{\mathfrak{f}}}
+\newcommand{\Fg}{\ensuremath{\mathfrak{g}}}
+\newcommand{\Fh}{\ensuremath{\mathfrak{h}}}
+\newcommand{\Fi}{\ensuremath{\mathfrak{i}}}
+\newcommand{\Fj}{\ensuremath{\mathfrak{j}}}
+\newcommand{\Fk}{\ensuremath{\mathfrak{k}}}
+\newcommand{\Fl}{\ensuremath{\mathfrak{l}}}
+\newcommand{\Fm}{\ensuremath{\mathfrak{m}}}
+\newcommand{\Fn}{\ensuremath{\mathfrak{n}}}
+\newcommand{\Fo}{\ensuremath{\mathfrak{o}}}
+\newcommand{\Fp}{\ensuremath{\mathfrak{p}}}
+\newcommand{\Fq}{\ensuremath{\mathfrak{q}}}
+\newcommand{\Fr}{\ensuremath{\mathfrak{r}}}
+\newcommand{\Fs}{\ensuremath{\mathfrak{s}}}
+\newcommand{\Ft}{\ensuremath{\mathfrak{t}}}
+\newcommand{\Fu}{\ensuremath{\mathfrak{u}}}
+\newcommand{\Fv}{\ensuremath{\mathfrak{v}}}
+\newcommand{\Fw}{\ensuremath{\mathfrak{w}}}
+\newcommand{\Fx}{\ensuremath{\mathfrak{x}}}
+\newcommand{\Fy}{\ensuremath{\mathfrak{y}}}
+\newcommand{\Fz}{\ensuremath{\mathfrak{z}}}
+% (end)
+
+% Mengen-Modifier ;)
+\newcommand{\oN}{\ensuremath{\setminus\{0\}}}	% ohne Null
+\newcommand{\kreuz}[1]{#1^{\times}}				% Einheitengruppe
+\newcommand{\stern}{ ^{*}}
+
+\newcommand{\inv}{^{-1}}
+\newcommand{\Pot}{\cP}
+
+% Klammerbefehle
+\DeclarePairedDelimiter{\spann}{\langle}{\rangle}
+\DeclarePairedDelimiter{\gk}{\lbrace}{\rbrace}
+\DeclarePairedDelimiter{\rk}{(}{)}
+\DeclarePairedDelimiter{\sk}{\langle}{\rangle}
+
+% Aufrecht zu schreibende Symbole. (fold)
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Ord}{Ord}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Img}{Img}
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\kgV}{kgV}
+\DeclareMathOperator{\modd}{mod}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\Abb}{Abb}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\opint}{int}
+\DeclareMathOperator{\rank}{rk}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\esssup}{ess\,sup}
+\DeclareMathOperator{\trdeg}{tr.deg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Poi}{Poi}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Db}{Db}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+
+\DeclareMathOperator{\wlim}{wlim}
+\newcommand{\llim}[0]{\sL\text{-lim}}
+%\DeclareMathOperator{\Fr}{Fr}
+% (end)
+
+% Eine Abkürzung für \varepsilon.
+\newcommand{\eps}{\varepsilon}
+
+% Funktionen.
+\newcommand{\conj}[1]{\ensuremath{\overline{#1}}}
+\newcommand{\Gal}[2]{\ensuremath{\text{Gal} (#1 | #2)}}
+
+% Relationen.
+\newcommand{\nt}{\ensuremath{\triangleleft}}
+
+% Logische Symbole.
+\newcommand{\und}{\ensuremath{\,\land\,}}
+\newcommand{\oder}{\ensuremath{\,\lor\,}}
+\newcommand{\folge}{\ensuremath{\,\Rightarrow\,}}
+\newcommand{\gdw}{\ensuremath{\,\Leftrightarrow\,}}
+\newcommand{\iso}{\overset{\sim}{\longrightarrow}}
+
+\newcommand{\Hinrichtung}{``$\Rightarrow$''\,\,}
+\newcommand{\Rueckrichtung}{``$\Leftarrow$''\,\,}
+
+
+
+
+	\newcommand{\op}{\operatorname}
+	\newcommand{\MM}{\mathds}
+
+	\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+	\DeclarePairedDelimiter{\gauss}{\lfloor}{\rfloor}
+	\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+	\DeclarePairedDelimiter{\menge}{\{}{\}}
+	\DeclarePairedDelimiter{\angular}{\langle}{\rangle}
+	\DeclarePairedDelimiter{\interv}{[}{]}
+	\newcommand\folgt\Rightarrow
+	\newcommand{\mymod}[1]{\;\text{(mod #1)}}
+	
+	\newcommand\blitz{\tikz \draw[->,>=stealth] (0,0)--++(-0.25,-0.25)--++(0.25,0)--++(-0.25,-0.25);}
+	\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}	%schöne Römische Zahlen
+	\DeclareMathOperator\ran{ran}
+	\DeclareMathOperator\lin{lin}
+	\DeclarePairedDelimiter\onterv{(}{)}
+	\DeclareMathOperator\diag{diag}
+	\newcommand{\bigmid}{\;\middle\vert\;}	%since mid is often to small
+	
+%	\DeclarePairedDelimiter{\sabs}{\lvert}{\rvert}
+%	\DeclarePairedDelimiter{\snorm}{\lVert}{\rVert} %smallnorm
+	\newcommand{\anfue}[1]{``#1''}
+	
+	\newcommand{\dx}[1][\empty]{\ensuremath{
+			\ifthenelse		{\equal{#1}{\empty}}
+						{\,\mathrm d}
+						{\,\mathrm d#1}}
+	}
+	
+	\newcommand\limfty[1][\empty]{\ensuremath{
+		\ifthenelse	{\equal{#1}{\empty}}
+					{\lim_{n\to \infty}}
+					{\lim_{#1\to \infty}}}
+	}
+
+	\newcommand\toinfty[1][\empty]{
+		\ifthenelse	{\equal{#1}{\empty}}
+					{\xrightarrow{n\to\infty}}
+					{\xrightarrow{#1\to\infty}}
+	}
+	
+	\newcommand\restr[1]{{\Big |}_{#1}}
+	\newcommand\gradient\nabla		%triangledown
+	
+	\newcommand\limze[1][\empty]{\ensuremath{
+		\ifthenelse	{\equal{#1}{\empty}}
+					{\lim_{t\to 0}}
+					{\lim_{#1\to 0}}}
+	}
+	
+
+\newcommand\ii{\mathrm{i}}
+\newcommand\ee{\mathrm{e}}
+	
+\DeclarePairedDelimiter{\noorm}{\lvert\!\lvert\!\lvert}{\rvert\!\rvert\!\rvert}
+\DeclareMathOperator\RE{Re}
+\DeclareMathOperator\Imag{Im}
+\DeclareMathOperator\dist{dist}
+
+\usepackage{mathtools}
+
+%\usepackage{ifthen}
+%\newcommand{\abc}[2][\empty]{%%% \empty: Standardwert des optionalen Parameters
+%  \ifthenelse{\equal{#1}{\empty}}
+%    {no opt, mand.: \textbf{#2}}
+%    {opt: \textbf{#1}, mand.: \textbf{#2}}
+%}
+%\abc{bla}\par
+%\abc[huup]{bla}\par
+%\abc[]{blupp}\par
+
+
+
+%nicht kanonisches
+		\DeclareMathOperator{\absmu}{\lvert\mu\rvert}
+		\newcommand\ang\angular
+		\newcommand\ov\overline
+		\newcommand\ovlin{\overline\lin}
+		\newcommand\la\lambda
+		\newcommand\sig\sigma
+		\newcommand\siga{$\sigma$-Algebra }
+		\DeclareMathOperator{\ess}{ess}
+		\newcommand\nat{\in\IN}
+		
+		\newcommand{\closedsubseteq}{\overset{\text{\tiny cl}}{\subseteq}}
+		\newcommand{\closedsubsetneq}{\overset{\text{\tiny cl}}{\subsetneq}}
+		\newcommand{\opensubseteq}{\overset{\text{\tiny op}}{\subseteq}}
+		\newcommand{\opensupseteq}{\overset{\text{\tiny op}}{\supseteq}}
+		\newcommand{\affinesubseteq}{\overset{\text{\tiny aff}}{\subseteq}}
+		\newcommand{\projsubseteq}{\overset{\text{\tiny proj}}{\subseteq}}
+		\newcommand{\densesubseteq}{\overset{\text{\tiny dense}}{\subseteq}}
+		
+		\newcommand{\opensubsetneq}{\overset{\text{\tiny op}}{\subsetneq}}
+		\newcommand{\ovirr}{\overset{\text{\tiny irr}}}
+		\DeclareMathOperator\Spec{Spec}
+		\DeclareMathOperator\Max{Max}
+		\newcommand{\affsubseteq}{\overset{\text{\tiny aff}}\subseteq}
+		\newcommand{\affsubset}{\overset{\text{\tiny aff}}\subset}
+		\DeclareMathOperator	\height	{ht}
+		\DeclareMathOperator	\Zproj	{Z_{\text{proj}}}
+		\DeclareMathOperator	\Iproj	{I_{\text{proj}}}
+		\DeclareMathOperator	\Zaff	{Z_{\text{aff}}}
+		\DeclareMathOperator	\algVar	{Var}
+		\newcommand{\modulo}[1]{\;(\modd #1)}
+		\DeclareMathOperator\Var{Var}
+		
+		\newcommand{\mpty}{\emptyset}
+		
+		
+		%{\DejaSans ☺😐☹😁😂😃😇😉😈😋😍😱} and even cats: {\DejaSans 😺}!
+		%antididactical sponge
+		%totally misleading picture
+		
+		
+		%%sehr hässlich
+		\DeclareMathOperator{\clos}{clos}
+		\DeclareMathOperator{\spanQ}{span}
+		\newcommand{\closspan}{\clos\spanQ}
