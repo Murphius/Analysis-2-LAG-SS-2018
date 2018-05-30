@@ -44,18 +44,20 @@
 	 	f^{(l)} = & l! \cdot a_l + \sum_{n = l-1}^{\infty} n \cdot (n-1) \cdot 
 	 	... \cdot (n-l) a_n(x-\alpha)^{n-l}
 	 \end{align*}
-	 für $l \in \mathbb{N}$ \\
-	 \textit{$(x - \alpha) = 0$ für $x = \alpha$}\\
+	 für $l \in \mathbb{N}$: 
+	 \begin{align*}
+		 x - \alpha) = 0 \text{ für } x = \alpha
+	 \end{align*}
 	 Also: $f^{(l)}(\alpha) = l! \cdot a_l$
 \end{proof}
 
 \section{Riemann-Integral}\label{kap_riemann_integral}
-\emph{\textbf{Ziel}:} Wir wollen auf \enquote{natürliche}\todo{eigentlich wäre "\\emph" sogar besser als Anführungsstriche}\ \ Weise einen 
-Flächeninhaltsbegriff definieren, der uns erlaubt, die Fläche zwischen den Graphen 
+\emph{\textbf{Ziel}:} Wir wollen auf \enquote{natürliche} Weise einen 
+Flächeninhaltsbegriff definieren, der uns erlaubt die Fläche zwischen den Graphen 
 einer Funktion und der $x-$Achse zu bestimmen (Abbildung~\ref{fig_int_vorgehen}).
 	\input{Plots/plot_integral_f}
 	
-Dabei heißt auf \enquote{natürliche Weise} insbesondere: 
+Dabei heißt auf \emph{natürliche Weise} insbesondere: 
 \begin{itemize}
 	\item gilt $f(x) = c = const$ für alle $x \in D (f) = [a,b]$, so soll 
 	gelten (Abbildung~\ref{fig_int_konst_funk})
@@ -120,11 +122,11 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 		& \underline{\int_a^b} f \dd{x} \text{ das \emph{untere}}
 	\end{align*}
 	\emph{Riemannintegral} von $f$ über $[a,b]$ \\
-	Gilt 
+	Gilt:
 	\begin{align*}
 		\int_a^{\overline{b}} f \dd{x} = \underline{\int_{a}^b} f \dd{x}
 	\end{align*}
-	sagen wir $f$ ist \emph{Riemann-integrierbar} (\emph{integrierbar}) 
+	so sagen wir $f$ ist \emph{Riemann-integrierbar} (\emph{integrierbar}) 
 	und nennen 
 	\begin{align*}
 		\int_a^b f(x) \dd{x} := \underline{\int_a^b} f \dd{x} = 
@@ -159,7 +161,7 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 	Seien $P_1, P_2$ zwei Partitionen eines Intervalls. Dann heißt $P_1$ 
 	\emph{Verfeinerung} von $P_2$, wenn gilt: $P_2 \subseteq P_1$ \\
 	Weiterhin nennen wir $P_1 \cup P_2$ die \emph{gemeinsame} Verfeinerung 
-	von $P_1$ und $P_2$
+	von $P_1$ und $P_2$.
 }\end{Definition}
 
 \begin{Satz}{\label{kap09_satz16}
@@ -169,7 +171,7 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 		s(P,f) \leq & s(P',f)
 	\end{align*}
 	(wobei $f$ wie in Definition~\ref{def_riemann-integrierbar}
-	sei)
+	sei).
 }\end{Satz}
 
 \begin{proof}
@@ -222,7 +224,7 @@ Dabei heißt auf \enquote{natürliche Weise} insbesondere:
 	Ergo: $\sup s(P,f) \leq \inf S (P,f)$  \\
 	Wir haben also gezeigt:
 	\begin{align*}
-		\int_{\underline{a}}^b f \dd{x} = \sup s(P,f) \leq 
+		\underline{\int_a^b} f \dd{x} = \sup s(P,f) \leq 
 		\inf S(P,f) = \inf \obint ab f 
 	\end{align*}
 \end{proof}

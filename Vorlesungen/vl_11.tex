@@ -177,7 +177,8 @@
 		\begin{align*}
 			S(P, f_1 + f_2) - s(P, f_1 +f_2) & \\
 			\leq &  S(P, f_1) - s(P,f_1) + S(P,f_2) 
-			-s(P,f_2) \leq 2 \epsilon
+			-s(P,f_2) \\
+			 \leq & 2 \epsilon
 		\end{align*}
 		Da $\epsilon >0 $ beliebig gewählt war, gilt $f_1 + f_2 \in 
 		\mathcal{R}_{[a,b]}$ nach Satz~\ref{kap_10_satz18}. \\
@@ -299,10 +300,13 @@
 		\overset{Satz~\ref{vl_11_satz24}}{\le}
 		\int_a^b \sup_{y \in [a,b]} f(y) g(x) \dd{x} = \sup_{y \in [a,b]} h(y)
 	\end{align*}
-	D.h wir haben eine stetige Funktion $h$ mit 
+	Das heißt wir haben eine stetige Funktion $h$ mit: 
 	\begin{align*}
 		\int_a^b fg\dd{x} \in [\inf_{y \in [a,b]} h(y),  \sup_{y \in [a,b]} h(y)]
 	\end{align*}
-	\textbf{Bemerkung:} Wir haben bereits gesehen: Polynome sind beliebig oft
-	 differenzierbar.	
 \end{proof}
+
+\begin{Bemerkung}{
+	 Wir haben bereits gesehen: Polynome sind beliebig oft
+	 differenzierbar.	
+}\end{Bemerkung}

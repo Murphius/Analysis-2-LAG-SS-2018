@@ -44,7 +44,7 @@
 	
 \begin{Satz}[Mittelwertsatz(MWS)]{\label{vl_07_MWS}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ stetig und differenzierbar auf 
-	(a,b). Dann gibt ex ein $\xi \in (a,b)$ mit 
+	(a,b). Dann gibt es ein $\xi \in (a,b)$ mit 
 	\begin{align*}
 		f(b) -f(a) = (b-a) \cdot f'(\xi)
 	\end{align*}
@@ -67,7 +67,7 @@
 	Dann gilt:
 	\renewcommand{\labelenumi}{\alph{enumi})}
 	\begin{enumerate}
-		\item $f = const \Leftrightarrow f'(x) = 0 (x\in(a,b))$
+		\item $f = const \Leftrightarrow f'(x) = 0$ $(x\in(a,b))$
 		\item $f$ ist monoton wachsend $\Leftrightarrow f'(x) \geq 0 (x \in (a,b))$
 		\item $f$ ist streng monoton wachsend $\Leftrightarrow f'(x) > 0 (x \in (a,b
 		))$
@@ -81,7 +81,7 @@
 	a) folgt aus b) und c). \\
 	Weiterhin folgt d) beziehungsweise e) aus b) beziehungsweise c). \\
 	Sei $ y > x \in [a,b]$. Sei $f|_{[x,y]}$ die \textit{Einschränkung} 
-	von f auf $[x,y]$, das heißt: 
+	von $f$ auf $[x,y]$, das heißt: 
 	\begin{equation*}
 		f|_{[x,y]} : [x,y] \rightarrow \mathbb{R}, z \mapsto f(z)
 	\end{equation*}
@@ -105,7 +105,7 @@
 	\begin{align*}
 		\lim\limits_{y \searrow x}{\frac{f(y)-f(x)}{y-x} } \geq 0
 	\end{align*}
-	Äquivalent für $\lim\limits_{y \nearrow x}{ }$ 
+	Äquivalent für $\lim\limits_{y \nearrow x}{ }$. 
 \end{proof}
 
 
@@ -138,21 +138,21 @@
 		< 0
 	\end{align*}
 	$r := \lim\limits_{x \rightarrow \xi}{\frac{f'(x) - f'(\xi)}{x - \xi} } $ \\
-	D.h. es existiert für jedes $ \epsilon > 0$ ein $\delta > 0$ mit
+	Das heißt es existiert für jedes $ \epsilon > 0$ ein $\delta > 0$ mit:
 	\begin{align*}
 		\left\vert \frac{f'(x) - f'(\xi)}{x - \xi} - r \right\vert < \epsilon
 	\end{align*}
 	
 	Für $\epsilon := \frac{r}{2}$ gilt daher: 
 	\begin{align*}
-		\left\vert \frac{f'(\xi) - f'(x)}{\xi - x}-r \right\vert < \left\vert \frac{r}{2} \right\vert
+		\left\vert \frac{f'(\xi) - f'(x)}{\xi - x}-r \right\vert < \left\vert \frac{r}{2} \right\vert  \text{ für ein entsprechend gewähltes } \delta > 0
 	\end{align*}
-	für ein entsprechend gewähltes $\delta > 0$. Insbesondere gilt also:
+ Insbesondere gilt also:
 	\begin{align*}
 		\frac{f'(\xi)-f'(x)}{\xi - x} < 0
 	\end{align*}
 	für alle $ x \in ( \xi - \delta, \xi + \delta)$.\\
-	D.h. für $x < \xi$ gilt: 
+	Das heißt für $x < \xi$ gilt: 
 	\begin{align*}
 		f'(\xi) - f'(x) < 0
 	\end{align*}
@@ -208,11 +208,8 @@
 		\item Man kann l'Hospital auch verwenden um Ausdrücke der Form 
 		$0 \cdot \infty$ zu behandeln, indem wir diese in die Form
 		\begin{align*}
-		 	\frac{\infty}{\infty} = \frac{\infty}{\frac{1}{\infty}}
-		\end{align*}
-		bzw. 
-		\begin{align*}
-			\frac{0}{0} = \frac{0}{\frac{1}{\infty}}
+		 	\frac{\infty}{\infty} = & \frac{\infty}{\frac{1}{\infty}} \text{ beziehungsweise } \\ 
+			\frac{0}{0} = & \frac{0}{\frac{1}{\infty}}
 		\end{align*}
 		umrechnen.
 	\end{itemize}
@@ -224,7 +221,7 @@
 	\emph{Behauptung:} Sei $A \in [-\infty, \infty)$. \\ 
 	Dann existiert für jedes $q > A$ ein $c > a$ mit $\frac{f(x)}{g(x)} < q$ $(x\in (a,c))$. \\
 	\emph{Beweis der Behauptung:} \\
-	Da $\frac{f'(x)}{g'(x)} \overset{x \searrow a}{\rightarrow} A$ 
+	Da $\frac{f'(x)}{g'(x)} \overset{x \searrow a}{\longrightarrow} A$ 
 	existiert ein $c' > a$ mit: $\frac{f'(x)}{g'(x)}<r$ für ein beliebiges 
 	$r \in (A,q)$ und $x \in (a,c')$.\\
 	Nach dem verallgemeinerten Mittelwertsatz gilt:
@@ -239,11 +236,11 @@
 		\frac{f(x)-f(y)}{g(x)-g(y)} < r
 	\end{align}
 	\begin{itemize}
-		\item[Fall 1:] $f,g \overset{x \rightarrow a}{\rightarrow} 0$. 
+		\item[Fall 1:] $f,g \overset{x \rightarrow a}{\longrightarrow} 0$. 
 		Nach Gleichung~\eqref{gleichung_beweis_lh_2}
 		gilt für $x \rightarrow a$ 
 		\begin{align*}
-			\frac{-f(y)}{-g(y)} = \frac{f(y)}{g(y)} < r <q (y \in (a, c'))
+			\frac{-f(y)}{-g(y)} = \frac{f(y)}{g(y)} < r <q \text{ }(y \in (a, c'))
 		\end{align*}
 		\item[Fall 2:] $g(x) \overset{x \rightarrow a}{\rightarrow}\pm \infty$
 		Multipliziere \eqref{gleichung_beweis_lh_1} mit
@@ -282,6 +279,6 @@
 
 \begin{Beispiel}{
 	$f(x) = 1, g(x) = x + 7$\\
-	Dann gilt $\lim\limits_{x \rightarrow 0 }{\frac{f(x)}{g(x)} = \frac{1}{7}}$ \\
+	Dann gilt: $\lim\limits_{x \rightarrow 0 }{\frac{f(x)}{g(x)} = \frac{1}{7}}$ \\
  aber:$ \lim\limits_{x \rightarrow 0 }{\frac{f'(x)}{g'(x)} = \frac{0}{	1}= 0}$
 }\end{Beispiel}

@@ -40,7 +40,7 @@ Wir zeigen zunächst die Aussage über den Konvergenzradius.
 	\end{equation*}
 	Damit ist $p'$ wohldefiniert.\\
 	 Wir zeigen nun, dass $p'$ tatsächlich die Ableitung von $p$ darstellt. 
-	 OBdA sei $x_0 = 0$. \\
+	 ohne Beschränkung der Allgemeinheit sei $x_0 = 0$. \\
 	Dann gilt für $y \in \left(-R,R\right)$:
 	\begin{equation*}
 		p\left(x\right)-p\left(y\right) - p'\left(y\right)\left(x-y\right) 
@@ -49,42 +49,48 @@ Wir zeigen zunächst die Aussage über den Konvergenzradius.
 	\end{equation*}
 	Wir setzen $\Delta\left(x,y\right) = \sum_{n=\sigma}^{\infty} a_n 
 	\frac{x^n - y^n}{x-y} - \sum_{n = 1}^{\infty}n a_n y^{n-1}$. \\
-	Man sieht leicht (Teleskopsumme), dass
+	Man sieht leicht (Teleskopsumme), dass:
 	\begin{equation*}
 		\frac{x^n-y^n}{x-y} = \begin{cases}\sum_{k=0}^{n-1}x^{n-1-k}y^k & n \geq 1 
 		\\ 0 & sonst \end{cases}
 	\end{equation*}
 	Also folgt: 
-	\begin{equation*}
+	\begin{align}
 		\Delta\left(x,y\right) = \sum_{n=1}^{\infty} a_n \left[ \sum_{k=0}^{n-1} 
 		x^{n-1-k}y^k -ny^{n-1}\right]
-	\end{equation*}
-	Für $n=1$ ist $\left[...\right] = 0$ und für $n\geq 2$
-	\begin{align*}
+	\end{align}
+	Für $n=1$ ist $\left[...\right] = 0$ und für $n\geq 2$: \todo{Hier nicht ... 
+	sondern Gleichungsnummer ?}
+	\begin{align}
 		\left[...\right]  = & \sum_{k=0}^{n-2} x^{n-1-k}y^k - (n-1)y^{n-1} \\
 		 = & \sum_{k=0}^{n-2} (k+1) x^{n-1-k}y^k - \sum_{k=0}^{n-2}kx^{n-1-k}y^k 
-		.(n-1)y^{k-1} \\
-		= & \sum_{k=0}^{n-2} (k+1) x^{n-1-k}y^k - \sum_{k=0}^{n-1}kx^{n-1-k}y^k \\
-		= & \sum_{k=0}^{n-1} k x^{n-k} y^{k-1} - \sum_{k=1}^{n-1}kx^{n-1-k}y^k \\
-		= &(x -y) \sum_{k=1}^{n-1}kx^{n-1-k}y^{k-1} \\
-	\end{align*}
+		.(n-1)y^{k-1} \notag \\
+		= & \sum_{k=0}^{n-2} (k+1) x^{n-1-k}y^k - \sum_{k=0}^{n-1}kx^{n-1-k}y^k 	
+		\notag \\
+		= & \sum_{k=0}^{n-1} k x^{n-k} y^{k-1} - \sum_{k=1}^{n-1}kx^{n-1-k}y^k 
+		\notag \\
+		= &(x -y) \sum_{k=1}^{n-1}kx^{n-1-k}y^{k-1} \notag
+	\end{align}
 	Sein nun $\vert y\vert < r < R$ und $|x| \leq r$. Dann gilt:
 	\begin{align*}
 		\vert \Delta(x,y)\vert \leq & 
-		\sum_{n=2}^{\infty} |a_n| |x-y| \sum_{k=1}^{n-1} 
+		\sum_{n=2}^{\infty} |a_n| |x-y| \cdot \sum_{k=1}^{n-1} 
 		k|x|^{n-1-k}|y|^{k-1} \\
-		\leq & \sum_{n=2}^{\infty} |a_n| |x-y|r^{n-2} \sum_{k=1}^{n-1}k 
+		\leq & \sum_{n=2}^{\infty} |a_n| |x-y|r^{n-2} \cdot \sum_{k=1}^{n-1}k 
 		\leq |a_n|r^{n-2}n^2|x-y|
 	\end{align*}
 	Nach Cauchy-Hadamard hat diese Reihe $q(z) = \sum_{n=2}^{\infty} |a_n|n^2z^n$ 
-	den Konvergenzradius $R$, weshalb $\sum_{n=2}^{\infty} |a_n| r^{n-2} n^2 
-	= \frac{1}{r^2}\sum_{n=2}^{\infty} |a_n|n^2r^n$ konvergiert.
-	Damit folgt aber $\lim\limits_{x \rightarrow y}{\Delta(x,y) = 0}$
+	den Konvergenzradius $R$, weshalb 
+	\begin{align*}	
+		\sum_{n=2}^{\infty} |a_n| r^{n-2} n^2 
+		= \frac{1}{r^2}\sum_{n=2}^{\infty} |a_n|n^2r^n
+	\end{align*}
+	konvergiert.	Damit folgt aber $\lim\limits_{x \rightarrow y}{\Delta(x,y) = 0}$
 \end{proof}
 
 \begin{Proposition}{
 	Sei $f: \left(a,b\right) \rightarrow \mathbb{R}$ streng monoton und 
-	differenzierbar in $p \in \left(a, b\right)$ mit $f'\left(p\right) \neq 0$
+	differenzierbar in $p \in \left(a, b\right)$ mit $f'\left(p\right) \neq 0$.
 	Dann ist die Umkehrfunktion $f^{-1}: f\left(a,b\right) \rightarrow \mathbb{R}$
 	differenzierbar in $q = f(p)$ und es gilt: 
 	\begin{equation*}
@@ -153,9 +159,9 @@ Sei $I \subseteq \mathbb{R}$ ein Intervall
 	\emph{lokales Maximum (lokales Minimum)}, falls ein $\delta > 0$ gibt,
 	so dass 
 	\begin{equation*}
-	\forall x \in B_\delta(x_0) : f(x) \leq f(x_0) (f(x) \geq f(x_0))
+	\forall x \in B_\delta(x_0) : f(x) \leq f(x_0) (f(x) \geq f(x_0)) \text{ gilt.}
 	\end{equation*}
-	Gilt 
+	Gilt:
 	\begin{equation*}
 		f(x) \leq f(x_0) (f(x) \geq f(x_0))
 	\end{equation*}
@@ -168,7 +174,7 @@ Sei $I \subseteq \mathbb{R}$ ein Intervall
 
 \begin{Satz}{
 	\label{satz_8}
-	Seif $f:[a,b] \rightarrow \mathbb{R}$ Hat $f$ ein lokales Maximum (lokales 
+	Seif $f:[a,b] \rightarrow \mathbb{R}$. Hat $f$ ein lokales Maximum (lokales 
 	Minimum) in $x_0 \in (a,b)$ und existiert $f'(x_0)$, so gilt 
 	$f'(x_0) = 0$.
 }\end{Satz}
@@ -180,12 +186,12 @@ Sei $I \subseteq \mathbb{R}$ ein Intervall
 		\label{gleichung:bedingungi}
 		\lim\limits_{x \nearrow x_0}{ \frac{f(x)-f(x_0)}{x-x_0} \geq 0}
 	\end{equation*}
-	und
+	und:
 	\begin{equation*}
 		\label{gleichung:bedingungii}
 		\lim\limits_{x \searrow x_0}{\frac{f(x)-f(x_0)}{x-x_0} \leq 0}
 	\end{equation*}
-	Wegen differenzierbarkeit in $x_0$ folgt
+	Wegen differenzierbarkeit in $x_0$ folgt:
 	\begin{align*}
 		Gleichung\text{ }1 = Gleichung \text{ }2 \Rightarrow 
 		f'(x_0) = 0
