@@ -1,0 +1,219 @@
+\section{Differentialgleichungen}
+
+Differenzialgleichungen sind eine spezielle Form von Funktionalgleichungen.\\
+ Funktional"-gleichungen sind Gleichungen, in denen nach einer Funktion gesucht wird.
+
+\begin{Beispiel}[Welche Funktion erfüllt $f^2 = f$ ?]{
+	Beispielsweise $f(x) = 0$ oder $f(x) = 1$.
+}\end{Beispiel}
+
+Oftmals ist die Lösung einer Funktionalgleichung in dieser Allgemeinheit gar nicht 
+von Interesse und man schränkt den Lösungsraum in einer naheliegenden Weise ein.
+Man könnte beispielsweise für obige Gleichung fordern, dass $f$ stetig sein soll. 
+Aber selbst dann sind wir von einer eindeutigen Lösung entfernt. \\
+(Man betrachte beispielsweise
+\begin{align*}
+	f_1 : \mathbb{R} \rightarrow \mathbb{R}, f_1(x) = 1; \\
+	f_0 : \mathbb{R} \rightarrow \mathbb{R}, f_0(x) = 0; \\
+	f_2: [0,1] \rightarrow \mathbb{R}, f_2(x) = 0; \\
+	\vdots
+\end{align*}). \\
+Uns sind bereits Funktionalgleichungen begegnet. Beispielsweise 
+\begin{align*}
+	\Phi (x+y) = \Phi (x) \cdot \Phi(y) \\
+	\text{Mögliche Lösung: } \Phi(x) = a^x \text{ für a > 0}
+\end{align*}
+Eine spezielle Form von Funktionalgleichungen die insbesondere in den Natur-, 
+Ingenieurs-, oder Wirtschaftswissenschaften eine zentrale Rolle spielt, sind 
+sogenannte \emph{Differenzialgleichungen (DGLs)}, das heißt Funktionalgleichungen, 
+die neben der Funktion selbst auch deren Ableitung beinhalten.
+
+\begin{Beispiel}{
+	Sämtliche physikalische Grundgesetze beinhalten 
+	Differentialgleichungen.\\
+	Das 2. Newton'sche Gesetz: Das besagt, dass wenn ein Teilchen zur Zeit 
+	$t_0 \in \mathbb{R}$ an einem Ort $x_0$ mit einer Geschwindigkeit $v_0$ 
+	ist, dass das Teilchen zur Zeit $t \in \mathbb{R}$ an der Stelle 
+	$x(t)$ ist, wobei die Funktion $t \mapsto x(t)$ folgende 
+	Differentialgleichung erfüllt:
+	\begin{align*}
+		\frac{\mathrm{d^2x(t)}}{\mathrm{dt^2}} = \frac{F(x(t))}{m}
+	\end{align*}
+	Hierbei ist $F(\cdot)$ die im jeweiligen Ort wirkende Kraft und 
+	$x(t_0) = x_0, \frac{\mathrm{dx}}{\mathrm{dt}}(x_0) = u_0$.\\
+	\underline{Konkretes Beispiel:} Ein Massepunkt zwischen zwei Federn \\
+	Physik:$F(x) = -k \cdot x$ ($k$ Federkonstante)\\
+	Das heißt wir haben die folgende Differenzialgleichung zu lösen:
+	\begin{align*}
+		\frac{\mathrm{d^2x(t)}}{\mathrm{dt^2}} = \frac{-k}{m} \cdot x
+	\end{align*}
+	Mögliche Lösung:
+	\begin{align*}
+		x(t) = \alpha \cdot \sin\left(\sqrt{\frac{k}{m}}t\right) 
+			+ \beta \cos\left(\frac{k}{m}t\right)
+	\end{align*}
+	Überprüfung:
+	\begin{align*}
+	\frac{\mathrm{d^2x(t)}}{\mathrm{dt^2}} = 
+	&\frac{\mathrm{d}}{\mathrm{dt}} \left(\alpha \cdot \sqrt{\frac{k}{m}} 
+		\cdot \cos\left( \sqrt{\frac{k}{m}} \cdot t\right) - \beta \cdot 	
+		\sqrt{\frac{k}{m}} \cdot \sin\left( \sqrt{\frac{k}{m}}
+		\cdot t\right)\right) \\
+	= & - \alpha \cdot \frac{k}{m} \cdot \sin\left(\sqrt{\frac{k}{m}\cdot t}\right)
+		- \beta \cdot \frac{k}{m} \cdot \cos\left(\sqrt{\frac{k}{m}} \cdot t\right) 	
+		\\
+	= & - \frac{k}{m} \cdot x(t)
+	\end{align*}
+	Wobei $\alpha, \beta \in \mathbb{R}$. Durch Festlegen der 
+	Anfangsposition und Geschwindigkeit, können wir $\alpha, \beta$ 
+	festlegen und erhalten eine eindeutig bestimmte (ohne Beweis) Lösung 
+	des Anfangswertproblems (das heißt Lösung der Differentialgleichung 
+	und Erfüllen der Anfangsbedingung).\todo{Der Satz kling doof formuliert} 
+}\end{Beispiel}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Offensichtlich besitzt die Differentialgleichung alleine noch keine 
+		eindeutige Lösung. Für die Eindeutigkeit benötigen wir zusätzliche
+		 Informationen, zum Beispiel in Form von Anfangsbedingungen.
+		\item Auch wenn man nicht jede Differentialgleichung analytisch lösen kann, 
+		kann man Lösungen raten und durch Einsetzen verifizieren.
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Beispiel}{
+	Die logistische Differentialgleichung (Anwendung in der Ökologie 
+	[Populationsentwicklung] beziehungsweise in der Ökonometrie [Wachstum 
+	eines Marktes]) \\
+	Sei $N(t)$ die Populationsgröße einer Bakterienkultur zum Zeitpunkt $t \in 
+	\mathbb{R}$. Wir erwarten, dass die Änderungsrate $\frac{\mathrm{dN(t)}}{\mathrm{dt}}$ einerseits proportional zur aktuellen Populationsgröße $N(t)$ ist, 
+	andererseits aber natürlichen Grenzen (\emph{Carying capacity}) unterliegt.
+	\begin{align*}
+		\frac{\mathrm{dN(t)}}{\mathrm{dt}} = A \cdot N(t) \cdot (B - N(t))
+		\text{ wobei A, B } > 0
+	\end{align*}
+	Allgemeine Lösung:
+	\begin{align*}
+		N(t) = \frac{1}{\alpha \cdot \exp(-ABt) + 1} \text{ }(t \geq 0) 
+	\end{align*}
+	wobei $\alpha > -1$.
+}\end{Beispiel}
+
+\begin{Definition}{
+	Sei $G \subseteq \mathbb{R}^2$ und $f : G \rightarrow \mathbb{R}$ stetig. Dann 
+	nennen wir
+	\begin{align}\label{vl_14_gl_1}
+		\frac{\mathrm{dx(t)}}{\mathrm{dx}} = f(t,x(t))
+	\end{align}
+	eine \emph{(explizite gewöhnliche) Differentialgleichung 1. Ordnung}. Wir 
+	sagen:\\
+		$y : (a,b) \rightarrow \mathbb{R}$ ist eine Lösung von 
+	Gleichung~\ref{vl_14_gl_1}, wenn $y$ differenzierbar ist und es gilt:
+	\renewcommand{\labelenumi}{\roman{enumi})}
+	\begin{enumerate}
+		\item\label{vl_14_punkt_i} $\{(t,y(t)) \vert t \in (a,b)\} \subseteq G$
+		\item\label{vl_14_punkt_ii} 
+			$\frac{\mathrm{dy(t)}}{\mathrm{dt}} = f(t, y(t))$ $(t \in (a,b))$
+	\end{enumerate}
+}\end{Definition}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Punkt~\ref{vl_14_punkt_i}
+		ist nötig, um Punkt~\ref{vl_14_punkt_ii}	überhaupt formulieren zu können.
+		\item Gleichung~\ref{vl_14_gl_1} heißt Differentialgleichung erster Ordnung, 
+		da nur die erste Ableitung der gesuchten Funktion vorkommt. Allgemein kann 
+		man auch $n$-te Ableitungen zulassen und entsprechende
+		 Differentialgleichungen $n$-ter Ordnung betrachten (siehe Newton), 
+		was wir aber mit den uns zur Verfügung stehenden Mitteln nicht schematisch
+		 machen können.
+		\item Im konkreten Fall der logistischen Differentialgleichung können 
+		wir setzen f:
+		\begin{align*}
+			f : \mathbb{R} \rightarrow & \mathbb{R} \\
+			(t,x) \mapsto & A\cdot x \cdot (B-x)
+		\end{align*}
+		Wir sehen: $f$ ist unabhängig von $t$. Eine solche Differentialgleichung 
+		nennen wir \emph{autonom}.
+	\end{itemize}
+}\end{Bemerkung}
+
+\subsection{Trennung der Variablen}
+Die Trennung der Variablen ist ein Verfahren, welches für Differentialgleichungen
+ der  folgenden Form geeignet ist: \\
+ Seien $I, J \subseteq \mathbb{R}$ offene Intervalle und $f: I \rightarrow \mathbb{R}, g: J \rightarrow \mathbb{R}$ stetig mit $g(x) \neq 0$ $(x \in J)$.
+ Dann heißt 
+\begin{align}\label{vl_14_gl_2}
+ 	\frac{\mathrm{dx(t)}}{\mathrm{dt}} = f(t) \cdot g(x(t))
+\end{align}  
+eine Differentialgleichung mit \emph{getrennten Variablen}\todo{das konnte keiner 
+lesen}
+
+\begin{Satz}{\label{vl_14_satz_1}
+	Seien $I, J \subseteq \mathbb{R}$ und $f,g$ wie oben. 
+	Sei $(t_0, x_0) \in I \times J$.
+	Wir definieren:
+	\begin{align*}
+		F(t) := \int_{t_0}^t f(s)\dd{s}, G(x) := \int_{x_0}^x \frac{\dd{s}}{g(s)}
+	\end{align*}
+	Sei $I' \subseteq I$ ein Intervall mit $t_0 \in I'$ und 
+	$F(I') \subseteq G(J)$.
+	Dann gibt es genau eine Funktion $y : I' \rightarrow \mathbb{R}$, die 
+	Gleichung~\ref{vl_14_gl_2} löst und $y(t_0) = x_0$ erfüllt und $y$ genügt der 
+	Gleichung:
+	\begin{align*}
+		G(y(t)) = F(t)
+	\end{align*}
+}\end{Satz}
+\begin{proof}
+	Wir zeigen zunächst, dass jede Funktion $y: I' \rightarrow \mathbb{R}$ die 
+	Gleichung~\ref{vl_14_gl_2} erfüllt, auch die Gleichung $G(y(t)) = F(t)$ erfüllt.
+	\begin{align*}
+		G(y,t) & =  \int_{y(t_0) = x_0}^{y(t)}\frac{\dd{s}}{g(s)} \\
+		& \xlongequal[regel]{\text{Sub.-}} 
+		\int_{t_0}^t\frac{y'(r)}{g(y(r))}\dd{r}
+		= \int_{t_0}^t\frac{f(r)g(y(r))}{g(y,r)}\dd{r} \\
+		& = \int_{t_0}^t f(r) \dd{r} = F(t)
+	\end{align*}
+	Nun zur Eindeutigkeit:\\
+	Da $g \neq 0$, ist $G$ streng monoton wachsend (falls g > 0) oder streng monoton 
+	fallend, falls $g < 0$. Da $G$ differenzierbar ist (Satz vor dem hauptsatz der 
+	differential Rechnung)
+	\todo{Referenzierung Satz 1 § 3}
+	und invertierbar (wegen der Monotonie) existiert also eine differenzierbare 
+	Umkehrfunktion $G^{-1}$. Damit haben wir, dass für jede Lösung 
+	$y : I' \rightarrow \mathbb{R}$ von Gleichung~\ref{vl_14_gl_2} mit 
+	$y(t_0) = x_0$ gilt:
+	\begin{align*}
+		y(t) = G^{-1}(F(t)) \text{ } (t \in I')
+	\end{align*}
+	Bleibt die Existenz nachzuweisen:\\
+	Wir setzen einfach $G^{-1}(F(\cdot))$ in Gleichung~\ref{vl_14_gl_2} ein.
+	Dann erhalten wir:
+	\begin{align*}
+		\frac{\mathrm{d}}{\mathrm{dt}} G^{-1}F(t)) 
+		= & \left( \frac{\mathrm{d}}{\mathrm{dt}} G^{-1}\right) 
+			(F(t)) \cdot \frac{\mathrm{d}}{\mathrm{dt}} F(t) \\
+		= & \left(\frac{\mathrm{d}}{\mathrm{dt}}G^{-1}\right)\cdot (F(t)) \cdot f(t)
+			\\
+		= & \frac{1}{\left(\frac{\mathrm{d}}{\mathrm{dt}}\right)
+			\left(G^{-1}(F(*))\right)} \cdot f(t) \\
+		= & g\left(G^{-1}(F(t))\right)f(t)
+	\end{align*}
+\end{proof}
+
+\begin{Bemerkung}{
+	Satz~\ref{vl_14_satz_1} lässt sich wie folgt merken:
+	\begin{align*}
+		\frac{\mathrm{dx(t)}}{\mathrm{dt}} = & f(t) \cdot g(x(t))
+			\vert \cdot g(x(t)) \\
+		\Leftrightarrow 
+		\frac{1}{g(x(t))} \frac{\mathrm{dx(t)}}{\mathrm{dt}} = & f(t)  \vert 
+			\cdot \text{\glqq} \mathrm{dt}\text{\grqq} \\	
+		\frac{dx}{g(x)} = &  f(t) \mathrm{dt}
+	\end{align*}
+	und integriere anschließend von $x_0 \rightarrow x$ beziehungsweise $t_0 
+	\rightarrow t$
+}\end{Bemerkung}
