@@ -7,7 +7,7 @@ möglicherweise nicht beschränkt sind, beziehungsweise auf Integrationsinterval
 die nicht beschränkt sind.
 
 \begin{enumerate}
-	\item Eine Intervallgrenze ist unendlich
+	\item Eine Intervallgrenze ist unendlich.
 \end{enumerate}
 
 \begin{Definition}{
@@ -20,7 +20,7 @@ die nicht beschränkt sind.
 		\int_a^{\infty} f \dd{x} := \lim\limits_{b \rightarrow \infty}
 			{\int_a^b f \dd{x}}
 	\end{align*}
-	Analog definiert man $\int_{-\infty}^b f \dd{x}$
+	Analog definiert man $\int_{-\infty}^b f \dd{x}$.
 }\end{Definition}
 
 \begin{Beispiel}{
@@ -36,7 +36,7 @@ die nicht beschränkt sind.
 		  \overset{b \rightarrow \infty}{\longrightarrow}
 		  \frac{1}{s-1}
 	\end{align*}
-	Hingegen ist $\frac{1}{x^s}$ nicht unendlich integrierbar, über $[1, \infty)$ 
+	Hingegen ist $\frac{1}{x^s}$ nicht unendlich integrierbar über $[1, \infty)$,
 	falls $s \leq 1$.\\
 	Für $s=1$ folgt das wie folgt:
 	\begin{align*}
@@ -47,14 +47,14 @@ die nicht beschränkt sind.
 
 \begin{enumerate}[resume]
 	\item Der Integrand ist an einer Invervallgrenze kritisch (also beispielsweise 
-	unbeschränkt)
+	unbeschränkt).
 \end{enumerate}
 
 \begin{Definition}{
 	Sei $f: (a, b] \rightarrow \mathbb{R}$ für jedes $ \epsilon \in (0, b-a)$ 
 	über $[a + \epsilon, b]$ Riemann-integrierbar. Dann sagen wir, dass $f$ 
 	über $(a,b]$ \emph{uneigentlich integrierbar} ist beziehungsweise dass 
-	$\int_a^b f \dd{x}$ existiert, sofern folgender Limes existiert:
+	$\int_a^b f \dd{x}$ existiert, sofern folgender Grenzwert existiert:
 	\begin{align*}
 		\int_a^b f \dd{x} := \lim\limits_{\epsilon \rightarrow 0}
 		{\int_{a + \epsilon}^b f \dd{x}}
@@ -71,7 +71,7 @@ die nicht beschränkt sind.
 		\int_{\epsilon}^1 \frac{\mathrm{dx}}{x^s} = \int_{\epsilon}^1 x^{-s} \dd{x} 
 		= \left. \frac{x^{-s+1}}{-s+1} \right\vert_{\epsilon}^1 
 		= \frac{1}{1-s} (1- \epsilon^{1-s}) \overset{\epsilon \rightarrow 0}
-		{\rightarrow}\frac{1}{1-s}
+		{\longrightarrow}\frac{1}{1-s}
 	\end{align*}
 }\end{Beispiel}
 
@@ -118,10 +118,10 @@ die nicht beschränkt sind.
 	$\Rightarrow$ Wir setzen $g(x) = f( \lfloor x \rfloor )$ \\
 	Dann gilt:
 	\begin{itemize}
-		\item $g(x) \geq f(x)$ $x \in [1, \infty])$
+		\item $g(x) \geq f(x)$ $(x \in [1, \infty])$
 		\item $g \in \riemann 1 b$ für alle $ b > a$
 	\end{itemize}
-	%TODO 2. Summe fehlt über was summiert wird
+	\todo{ 2. Summe fehlt über was summiert wird}
 	\begin{align*}
 		\int_1^b f \dd{x} \leq \int_1^b g \dd{x} \leq \sum_{n = 1}^{\lceil b \rceil}
 		f(n) \leq \sum_{n=1}^{\infty} < \infty 
@@ -203,14 +203,14 @@ Damit gilt:
 			\Gamma(x) = &  (x-1) \Gamma(x-1)
 	\end{align*}
 \end{proof}
-%TODO Bemerkung statt x -1 -> x+1
+\todo{ Bemerkung statt x -1 -> x+1 ? }
 
 \subsection{Integrale über komplexwertige Funktionen}
 
 \begin{Definition}{
 	Sei $f: [a,b] \rightarrow \mathbb{C}$. Dann heißt $f$ auf $[a,b]$ 
 	\emph{Riemann-integrierbar}, falls $Re(f)$ und $Im(f)$ (Realteil beziehungsweise 
-	Imaginärteil von f) Riemann-integrierbar sind über $[a,b]$ In diesem Falle 
+	Imaginärteil von f) Riemann-integrierbar sind über $[a,b]$. In diesem Falle 
 	definieren wir:
 	\begin{align*}
 		\int_a^b f \dd{x} = \int_a^b Re(f) \dd{x} + i \int_a^b Im(f) \dd{x}
@@ -240,7 +240,7 @@ Damit gilt:
 			\abs{\int_a^b f \dd{x} } \leq \int_a^b \abs{f} \dd{x}
 		\end{align*}
 	\end{enumerate}
-	%TODO f fehlt ???
+	\todo{Punkt f fehlt oben ?}
 }\end{Satz}
 
 \begin{proof}

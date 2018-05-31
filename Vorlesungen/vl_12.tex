@@ -17,13 +17,14 @@
 	\begin{enumerate}
 		\item $F$ ist stetig auf $[a,b]$
 		\item Ist $f$ stetig in $x_0 \in [a,b]$, so ist $F$ in $x_0$ differenzierbar 
-		und es \linebreak gilt $F'(x_0) = f(x_0)$
+		und es \linebreak gilt: $F'(x_0) = f(x_0)$
 	\end{enumerate}
 }\end{Satz}
 
 
 \begin{proof}
 	\begin{enumerate}
+		\item[ ]
 		\item Da $f \in \mathcal{R}_{[a,b]}$, ist $f$ insbesondere beschränkt.
 		Das heißt es existiert ein $M \in \mathbb{R}$ mit 
 		\begin{align*}
@@ -35,7 +36,7 @@
 			\abs{F(x) - F(y)} = & \abs{\int_a^x f \dd{t} - \int_a^y f \dd{t} }\\
 			= &  \abs{\int_a^x f\dd{t} + \int_y^x f\dd{t} - \int_a^yf\dd{t}}\\
 			= & \abs{\int_y^x f\dd{t}} \leq \int_y^x \abs{f} \dd{t}\\
-			\leq & M \cdot \int_y^x \dd{t} = M (x-y) \leq \epsilon
+			\leq & M \cdot \int_y^x 1 \dd{t} = M (x-y) \leq \epsilon
 		\end{align*}
 		Da $\epsilon > 0$ beliebig gewählt war, folgt die Aussage
 	\end{enumerate}
@@ -97,9 +98,10 @@
 	\item[ ]
 		\item Sei $f \in \mathcal{R}_{[a,b]}$ Dann bezeichnet man die Funktion 
 		\begin{align*}
-			\int_a^{\circ} f\dd{x} : & [a,b] \rightarrow \mathbb{R} \\
-			& t \mapsto \int_a^b f\dd{x}
+			\int_a^{\circ} f\dd{x} :  [a,b]  & \rightarrow \mathbb{R} \\
+			 t & \mapsto \int_a^b f\dd{x}
 		\end{align*}
+		\todo{ich bin mir hier nicht sicher ob das nicht t $\mapsto \int_a^x f \dd{t}$ sein müsste}
 		als \emph{unbestimmtes Integral} von $f$.
 		\item Satz~\ref{vl_12_satz_02}
 		sagt also das jede Stammfunktion ein unbestimmtes Integral von $f$ ist 
@@ -131,8 +133,8 @@
 	\end{align*} 
 	oder spricht von \glqq der\grqq{} Stammfunktion. Die obige Gleichung ist
 	 insofern problematisch, da die rechte Seite (und damit per Definition auch die 
-	 linke Seite) nur bis auf eine Konstante bestimmt ist. Oftmals ist daher etwas 
-	 laxe Umgang mit den Begriffen unkritisch.
+	 linke Seite) nur bis auf eine Konstante bestimmt ist. Oftmals ist daher der 
+	 etwas laxe Umgang mit den Begriffen unkritisch.
 }\end{Bemerkung}
 
 \begin{Satz}[Partielle Integration]{\label{vl_12_satz_03}
@@ -159,19 +161,27 @@
 
 \begin{Beispiel}{
 	\begin{align*}
-		\int_a^b cos^2(x) \dd{x} = & \int_a^b cos(x) \cdot cos(x) \dd{x} \\
-		= & \left. cos(x) \cdot sin(x) \right\vert_a^b + \int_a^b sin^2 \dd{x} \\
-		= & \left. cos(x) \cdot sin(x) \right\vert_a^b + \int_a^b 1 - cos^2(x) \dd{x} \\
-		= &  \left. cos(x) \cdot sin(x) \right\vert_a^b + \int_a^b 1 \dd{x} - \int_a^b cos^2(x) 
-		\dd{x} \\
-		= &  \frac{1}{2} \cdot \left. \left( cos(x) \cdot sin(x) + x\right) \right\vert_a^b \\
-		\text{Ergo: } \int_a^b cos^2(x) \dd{x} = & \frac{1}{2} (cos(x) sin(x) 
+		& \int_a^b cos^2(x) \dd{x} & = &  \int_a^b cos(x) \cdot cos(x) \dd{x} \\
+		& &  = & \left. cos(x) \cdot sin(x) \right\vert_a^b + 
+			\int_a^b sin^2 \dd{x} \\
+		& & = & \left. cos(x) \cdot sin(x) \right\vert_a^b + 
+			\int_a^b 1 - cos^2(x) \dd{x} \\
+		& & = & \left. cos(x) \cdot sin(x) \right\vert_a^b 
+			+ \int_a^b 1 \dd{x} - \int_a^b cos^2(x) \dd{x} 
+			 \left\vert + \int_a^b cos^2(x) \dd{x} \right. \\
+	 \Leftrightarrow 
+	 & 2 \int_a^b cos^2(x) \dd{x} & = & \left. cos(x) \cdot sin(x) \right\vert_a^b 
+	 	+ \left. x \right\vert_a^b  \left\vert \cdot \frac{1}{2} \right. \\
+	 \Leftrightarrow
+	& \int_a^b cos^2(x) \dd{x} & = & \frac{1}{2} \cdot 
+		\left. \left( cos(x) \cdot sin(x) + x\right) \right\vert_a^b \\
+	\text{Ergo: } & \int_a^b cos^2(x) \dd{x} & = & \frac{1}{2} (cos(x) sin(x) 
 		\vert_a^b + (b-a))
 	\end{align*}
 	
 	\begin{align*}
 		\int_a^b \ln (x) \dd{x} \text{ wobei } 0 \not\in [a,b] \\
-		\int 1 \cdot \ln (x) \dd{x} = & x \ln (x)\vert_a^b - 
+		\int 1 \cdot \ln (x) \dd{x} = & x \cdot \ln (x)\vert_a^b - 
 		\int_a^b x \cdot \frac{1}{x} \dd{x} \\
 		= & \left. x \cdot \ln (x) \right\vert_a^b - \int_a^b 1 \dd{x} \\
 		= & \left. x \cdot \ln (x)\right\vert_a^b - \left. x\right\vert_a^b \\
@@ -181,7 +191,7 @@
 
 \begin{Satz}{\label{vl_12_satz_04}
 	Sei $f: [a,b] \rightarrow \mathbb{R}$ stetig und $\phi: [c,d] \rightarrow [a,b]$ 
-	stetig differenzierbar. Dann gilt
+	stetig differenzierbar. Dann gilt:
 	\begin{align*}
 		\int_a^b f(\phi(t))\cdot\phi'(t)\dd{t} = \int_{\phi(c)}^{\phi(d)} 
 		f(x) \dd{x}
@@ -222,12 +232,14 @@
 	Wir wählen $\phi(t) = r \cdot sin(t)$ für $ t \in [\frac{-\pi}{2}, \frac{\pi}{2}]$. 
 	Dann gilt mit der Substitutionsregel 
 	(man beachte dass $\phi(\frac{-\pi}{2}) = -r 
-	$ und $\phi(\frac{\pi}{2}) = r$). 
+	$ und $\phi(\frac{\pi}{2}) = r$):
 	\begin{align*}
-		r \int_{-r}^r \sqrt{1 - \frac{x^2}{r^2}} \dd{x} = & r \int_{-\frac{\pi}{2}}
-		^{\frac{\pi}{2}} \sqrt{1 - \frac{\phi^2(t)}{r^2}} \cdot \phi'(t) \dd{t} \\
-		= & r \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sqrt{cos^2(t)} cos(t) r\dd{t} \\
-		= & r^2 \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} cos^2(t)\dd{t} \\
+		r \cdot \int_{-r}^r \sqrt{1 - \frac{x^2}{r^2}} \dd{x} = & r 
+			\cdot \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} 
+			\sqrt{1 - \frac{\phi^2(t)}{r^2}} \cdot \phi'(t) \dd{t} \\
+		= & r \cdot \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} 
+			\sqrt{cos^2(t)} \cdot cos(t) \cdot r\dd{t} \\
+		= & r^2 \cdot \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \cdot cos^2(t)\dd{t} \\
 		= & \frac{r^2}{2} \cdot \pi
 	\end{align*}	 
 }\end{Beispiel}
@@ -237,12 +249,12 @@
 		\int_a^b \frac{\dd{x}}{1-x^2} \text{ wobei } -1, 1 \notin [a,b]
 	\end{align*}
 	Vorgehen Partialbruchzerlegung: Man zerlegt den Nennen in seine Linearfaktoren 
-	und bestimmt Konstanten $\alpha, \beta \in \mathbb{R}$ mit 
+	und bestimmt Konstanten $\alpha, \beta \in \mathbb{R}$ mit:
 	\begin{align*}
 		\frac{1}{1-x^2} = \frac{\alpha}{1+x} + \frac{\beta}{1-x}
 	\end{align*}
 	Man beachte, dass $(1-x)(1+x) = 1 -x^2$ \\
-	Wir multiplizieren die Gleichung mit $(1+x)(1-x)$ und erhalten 
+	Wir multiplizieren die Gleichung mit $(1+x)(1-x)$ und erhalten: 
 	\begin{align*}
 		1 = \alpha (1 -x) + \beta (1+x) 
 		= \alpha + \beta (\beta-\alpha)x (x \in [a,b])
@@ -257,12 +269,12 @@
 		\int_a^b \frac{\dd{x}}{1-x} = \int_{1-a}^{1-b} \frac{-1 \dd{t}}{1 \phi(t)}
 		= - \int_{-a}^{1-b} \frac{\dd{t}}{t} = \left. -\ln(t)\right\vert_a^b
 	\end{align*}
-	Weiter gilt mit $\phi(t) = t-1$
+	Weiter gilt mit $\phi(t) = t-1$:
 	\begin{align*}
 		\int_a^b \frac{\dd{x}}{1+x} = \int_{1+a}^{1+b} \frac{\dd{t}}{t} = \left.\ln 
 		(t) \right\vert_{1+a}^{1+b}
 	\end{align*}
-	Ergo
+	Ergo:
 	\begin{align*}
 		\frac{1}{2}(\ln(1+b) - \ln(1-b) - (\ln(1+a) - \ln(1-a))
 		= \left. \frac{1}{2} \ln \frac{1+x}{1-x}\right\vert_a^b
