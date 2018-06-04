@@ -39,8 +39,8 @@ die neben der Funktion selbst auch deren Ableitung beinhalten.
 	\begin{align*}
 		\frac{\mathrm{d^2x(t)}}{\mathrm{dt^2}} = \frac{F(x(t))}{m}
 	\end{align*}
-	Hierbei ist $F(\cdot)$ die im jeweiligen Ort wirkende Kraft und 
-	$x(t_0) = x_0, \frac{\mathrm{dx}}{\mathrm{dt}}(x_0) = u_0$.\\
+	Hierbei ist $F(\cdot)$ die im jeweiligen Ort wirkende Kraft und \\
+	$x(t_0) = x_0, \frac{\mathrm{dx}}{\mathrm{dt}}(x_0) = v_0$.\\
 	\underline{Konkretes Beispiel:} Ein Massepunkt zwischen zwei Federn \\
 	Physik:$F(x) = -k \cdot x$ ($k$ Federkonstante)\\
 	Das heißt wir haben die folgende Differenzialgleichung zu lösen:
@@ -59,7 +59,7 @@ die neben der Funktion selbst auch deren Ableitung beinhalten.
 		\cdot \cos\left( \sqrt{\frac{k}{m}} \cdot t\right) - \beta \cdot 	
 		\sqrt{\frac{k}{m}} \cdot \sin\left( \sqrt{\frac{k}{m}}
 		\cdot t\right)\right) \\
-	= & - \alpha \cdot \frac{k}{m} \cdot \sin\left(\sqrt{\frac{k}{m}\cdot t}\right)
+	= & - \alpha \cdot \frac{k}{m} \cdot \sin\left(\sqrt{\frac{k}{m}}\cdot t\right)
 		- \beta \cdot \frac{k}{m} \cdot \cos\left(\sqrt{\frac{k}{m}} \cdot t\right) 	
 		\\
 	= & - \frac{k}{m} \cdot x(t)
@@ -130,7 +130,7 @@ die neben der Funktion selbst auch deren Ableitung beinhalten.
 		was wir aber mit den uns zur Verfügung stehenden Mitteln nicht schematisch
 		 machen können.
 		\item Im konkreten Fall der logistischen Differentialgleichung können 
-		wir setzen f:
+		wir setzen:
 		\begin{align*}
 			f : \mathbb{R} \rightarrow & \mathbb{R} \\
 			(t,x) \mapsto & A\cdot x \cdot (B-x)
@@ -208,7 +208,7 @@ lesen}
 	Satz~\ref{vl_14_satz_1} lässt sich wie folgt merken:
 	\begin{align*}
 		\frac{\mathrm{dx(t)}}{\mathrm{dt}} = & f(t) \cdot g(x(t))
-			\vert \cdot g(x(t)) \\
+			\vert : g(x(t)) \\
 		\Leftrightarrow 
 		\frac{1}{g(x(t))} \frac{\mathrm{dx(t)}}{\mathrm{dt}} = & f(t)  \vert 
 			\cdot \text{\glqq} \mathrm{dt}\text{\grqq} \\	

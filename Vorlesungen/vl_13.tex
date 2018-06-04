@@ -20,7 +20,8 @@ die nicht beschränkt sind.
 		\int_a^{\infty} f \dd{x} := \lim\limits_{b \rightarrow \infty}
 			{\int_a^b f \dd{x}}
 	\end{align*}
-	Analog definiert man $\int_{-\infty}^b f \dd{x}$.
+	Analog definiert man $\int_{-\infty}^b f \dd{x}$ für $f: (-\infty, b)
+	 \rightarrow \mathbb{R}$.
 }\end{Definition}
 
 \begin{Beispiel}{
@@ -30,7 +31,7 @@ die nicht beschränkt sind.
 	Denn: für $b > 1$ gilt:
 	\begin{align*}
 		\int_a^b \frac{\mathrm{dx}}{x^s} \dd{x} = & \int_a^b x^{-s} \dd{x}
-		  = \left.\frac{x^{-s+1}}{-s+} \right\vert_a^b \\
+		  = \left.\frac{x^{-s+1}}{-s+1} \right\vert_a^b \\
 		  & = \frac{\left( b^{-s+1} - a^{-s+1}\right)}{-s+1} \overset{a = 1}{=}
 		  \frac{1}{s-1}\left(1-b^{-s+1}\right) 
 		  \overset{b \rightarrow \infty}{\longrightarrow}
@@ -81,7 +82,7 @@ die nicht beschränkt sind.
 \end{enumerate}
 
 \begin{Definition}{
-	Sei $f:(a,b) \rightarrow \mathbb{R}$ mit $a \in \mathbb{R} \cup \{- \infty\}$ 
+	Sei $f:(a,b) \rightarrow \mathbb{R}$ mit $a \in \mathbb{R} \cup \{ \infty\}$ 
 	und $b \in \mathbb{R} \cup \{-\infty\}$ für alle $\alpha \in (a,b)$ und 
 	$\beta \in (\alpha, b)$ Riemann-integrierbar über $[\alpha, \beta]$.
 	Dann definiert man das \emph{uneigentliche Integral} von f über $[a,b]$ und 
@@ -121,10 +122,9 @@ die nicht beschränkt sind.
 		\item $g(x) \geq f(x)$ $(x \in [1, \infty])$
 		\item $g \in \riemann 1 b$ für alle $ b > a$
 	\end{itemize}
-	\todo{ 2. Summe fehlt über was summiert wird}
 	\begin{align*}
 		\int_1^b f \dd{x} \leq \int_1^b g \dd{x} \leq \sum_{n = 1}^{\lceil b \rceil}
-		f(n) \leq \sum_{n=1}^{\infty} < \infty 
+		f(n) \leq \sum_{n=1}^{\infty} f(n) < \infty 
 	\end{align*}
 	$\Leftarrow$ Sei $ h(x) = f(\lceil x \rceil )$ Dann gilt:
 	\begin{itemize}
@@ -198,7 +198,7 @@ Damit gilt:
 	\begin{align*}
 		\int_{\epsilon}^{R}t^{x-1} exp(-t) \dd{t}  = & 
 			\left. -t^{x-1} \cdot exp(-t) \right\vert_{\epsilon}^R 
-			+ \int_{\epsilon}^{R}(x+1)t^{x-2}exp(-t) \dd{t} \\
+			+ \int_{\epsilon}^{R}(x-1)t^{x-2}exp(-t) \dd{t} \\
 			\text{ Für } x > 1 \text{ gilt daher }
 			\Gamma(x) = &  (x-1) \Gamma(x-1)
 	\end{align*}
