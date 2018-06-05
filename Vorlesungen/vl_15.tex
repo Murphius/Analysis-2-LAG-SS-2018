@@ -1,0 +1,280 @@
+\subsection{Lineare Differentialgleichungen 1. Ordnung}
+
+\begin{Bemerkung}{
+	Bisher haben wir Differentialgleichungen stets in der Form
+	\begin{align*}
+		x'(t) = f(t,x(t))
+	\end{align*}
+	notiert. Um Schreibarbeit zu sparen, werden wir im Folgenden etwas
+	 verkürzt schreiben:
+	 \begin{align*}
+	 	x' = f(t,x)
+	 \end{align*}
+	 und damit genau die obige Differentialgleichung meinen.
+}\end{Bemerkung}
+
+\begin{Definition}{
+	Sei $I \subseteq \mathbb{R}$ ein Intervall und $a,b: I \rightarrow \mathbb{R}$ 
+	stetig. Dann nennen wir die Differentialgleichung
+	\begin{align}\label{vl15_gl_1}
+		x' = a(t) \cdot x + b(t)
+	\end{align}
+	eine \emph{lineare Differentialgleichung 1. Ordnung}.
+	Ist $b = 0$ so nennen wir Gleichung~\ref{vl15_gl_1} \emph{homogen}, 
+	sonst \emph{inhomogen}.
+}\end{Definition}
+
+
+\begin{Satz}{\label{vl_15_satz_1}
+	Wir betrachten die Differentialgleichung~\ref{vl15_gl_1} mit den 
+	Bezeichnungen von oben und $b = 0$. \\
+	Für $t_0 \in I$ und $x_0 \in \mathbb{R}$ gilt: \\
+	Es gibt genau eine Lösung von Gleichung~\ref{vl15_gl_1}, 
+	$y : I \rightarrow \mathbb{R}$ mit $y(t_0) = x_0$ und zwar:
+	\begin{align*}
+		y(t) = x_0 \cdot \exp\left( \int_{t_0}^t a(s) \dd{s} \right)
+	\end{align*}
+}\end{Satz}
+
+\begin{proof}
+	Offensichtlich gilt: $y(t_0) = x_0$. Weiter haben wir:
+	\begin{align*}
+		y'(t) = x_0 \cdot \exp\left( \int_{t_0}^t a(x) \dd{s} \right) \cdot a(t)
+	\end{align*}
+	Ergo: $y$ ist in der Tat eine Lösung von Gleichung~\ref{vl15_gl_1} mit 
+	$y(t_0) = x_0$. \\
+	Eindeutigkeit: Wir betrachten die Funktion 
+	\begin{align*}
+		\tilde{y} : I \rightarrow & \mathbb{R} \\
+		t \mapsto & \exp\left(-\int_{t_0}^t a(x) \dd{s}\right)
+	\end{align*}
+	Dann gilt offensichtlich:
+	\begin{align*}
+		\tilde{y}'(t) = -a(t) \cdot \tilde{y}(t).
+	\end{align*}
+	Sei $z: I \rightarrow \mathbb{R}$ eine weitere Lösung von 
+	Gleichung~\ref{vl15_gl_1} mit $z(t_0) = x_0$. Dann gilt:
+	\begin{align*}
+		(z \cdot \tilde{y})'(t) = & z'(t) \cdot \tilde{y}(t)
+		+ z(t) \cdot \tilde{y}'(t) \\
+		= & a(t) \cdot z(t) \cdot \tilde{y}(t) - z(t) \cdot a(t) \cdot \tilde{y}(t) \\
+		= & 0
+	\end{align*}
+	Ergo: $z \cdot \tilde{y} = konst. = c$ \\
+	Ergo: 
+	\begin{align*}
+		z(t) = c \cdot \frac{1}{\tilde{y}(t)} = c \cdot \exp\left( \int_{t_0}^t a(s) 
+			\dd{s}\right). 
+	\end{align*}
+	Da
+	\begin{align*}
+		x_0 = z(t_0) = c \cdot \exp\left(\int_{t_0}^{t_0}a(s) \dd{s}\right) = c
+	\end{align*}
+
+	folgt die Behauptung.
+\end{proof}
+
+\begin{Beispiel}{
+	Wir betrachten die Differentialgleichung
+	\begin{align*}
+		x' = \frac{-x}{t}\text{, d.h. } a(t) = -\frac{1}{t}
+	\end{align*}
+	Zum Anfangspunkt $x_0 \in \mathbb{R}$ ist die eindeutige Lösung gegeben durch:
+	\begin{align*}
+		y(t) = & x_0 \cdot \exp\left( - \int_{t_0}^t \frac{1}{s} \dd{s} \right) \\ 
+		= & x_0 \cdot \exp \left( -\ln\vert_{t_0}^t\right) \\
+		= & x_0 \cdot \exp \left( \ln(t_0) - \ln(t)\right) = x_0 \cdot \frac{t_0}{t}
+	\end{align*}
+}\end{Beispiel}
+
+\begin{Satz}[Variation der Konstante]{
+	Wir betrachten die Differentialgleichung~\ref{vl15_gl_1} mit den obigen 
+	Bezeichnungen und Annahmen an $a$ und $b$ (diesmal mit $b \neq 0$). 
+	Dann gibt es für jedes $t_0 \in I$ und alle $x_0 \in \mathbb{R}$ eine eindeutige 
+	Lösung. $y \rightarrow I \rightarrow \mathbb{R}$ von Gleichung~\ref{vl15_gl_1} 
+	mit $y(t_0) = x_0$ und zwar:
+	\begin{align*}
+		y(t) = y_0(t) \left( x_0 + \int_{t_0}^t y_0(s)^{-1} b(s) \dd{s}\right),
+	\end{align*}
+	wobei: 
+	\begin{align*}
+		y_0(t) = \exp\left(\int_{t_0}^t a(s) \dd{s}\right) \text{ }(t \in I)
+	\end{align*}		
+}\end{Satz}
+
+\begin{Bemerkung}{
+	Zur Bezeichnung \glqq Variation der Konstante\grqq{}: die obige Lösung sieht so 
+	aus wie die Lösung in Satz~\ref{vl_15_satz_1}
+	nur, dass der Vorfaktor nicht mehr konstant ist, sondern von $t$ abhängt, also 
+	\glqq variiert\grqq{}.
+}\end{Bemerkung}
+
+\begin{proof}
+	Es gilt: 
+	\begin{align*}
+		y(t_0) = y_0 (t_0) \cdot x_0 = x_0
+	\end{align*}
+	sowie
+	\begin{align*}
+		y'(t) = & y_0'(t) \cdot \left( x_0 + \int_{t_0}^t y_0(s)^{-1} \cdot b(s) 
+		\dd{s} \right)+ y_0(t) \cdot y_0(t)^{-1} \cdot b(t) \\
+		= & a(t) \cdot  y_0(t) \cdot\left( 
+			x_0 + \int_{t_0}^t  \frac{1}{y(s)} b(s) \dd{s} 
+			\right) + b(t) \\
+		= & a(t) y(t) + b(t)
+	\end{align*}
+	für alle $t \in I$.
+	Damit ist: $y: I \rightarrow \mathbb{R}$ eine Lösung von Gleichung~
+	\ref{vl15_gl_1} mit $y(t_0) = x_0$.\\
+	Eindeutigkeit: Sei $z : I \rightarrow \mathbb{R}$ eine weitere Lösung von 
+	Gleichung~\ref{vl15_gl_1} mit $z(t_0) = x_0$. 
+	Dann gilt für $h: I \rightarrow \mathbb{R}$ mit $h(t) = z(t) - y(t)$
+	\begin{align*}
+		h'(t) = & z'(t) - y'(t) = a(t) z(t) + b(t) - \left(a(t)y(t) + b(t)\right) \\
+		= & a(t) (z(t) - y(t)) = a(t) \cdot h(t)
+	\end{align*}
+	Ergo: $h: I \rightarrow \mathbb{R}$ ist Lösung von Gleichung~\ref{vl15_gl_1} mit 
+	$b = 0$ mit Anfangswert $h(t_0) = z(t_0) -y(t_0) = 0$.
+	Nach Satz~\ref{vl_15_satz_1} gilt:
+	\begin{align*}
+		h(t) = 0 \cdot  \exp(\hdots) = 0.
+	\end{align*}		
+	Damit gilt: $z(t) -y(t)$ das heißt:
+	\begin{align*}
+		z(t) = y(t)\text{ }(t \in I).
+	\end{align*}
+\end{proof}
+
+\begin{Beispiel}{
+	Wir betrachten: $x' = -\frac{x}{t} + t^3$ mit $x(1) = x_0$. Dann gilt:
+	\begin{align*}
+		y(t) = \frac{1}{t}\cdot\left(x_0 + \int_1^t s \cdot s^2 \dd{s} \right)
+		= \frac{1}{t} \left(x_0 + \left.\frac{s^5}{5}\right\vert_1^t\right)
+		= \frac{1}{t}\left(x_0 + \frac{t^5}{5} - \frac{1}{5}\right)
+	\end{align*}
+}\end{Beispiel}
+
+\subsection{Lineare Differentialgleichungen n-ter Ordnung (mit konstanten Koeffizienten)}
+Es wird im Folgenden nützlich sein auch komplexwertige Funktionen ableiten zu können.
+
+\begin{Definition}{
+	Sei $I \subseteq \mathbb{R}$ ein Intervall und $f: I \rightarrow \mathbb{C}$ 
+	eine Funktion. Wir sagen, $f$ ist \emph{stetig} in $x_0 \in I$, wenn 
+	$Re(f)$ und $Im(f)$ stetig in $x_0$ sind. Wir sagen $f: I \rightarrow \mathbb{C} 
+	$ ist \emph{stetig}, wenn $f$ in jedem $x_0 \in I$ stetig ist. Wir sagen 
+	$f$ ist in $x_0 \in I$ differenzierbar, wenn $Re(f)$ und $Im(f)$ in $x_0$
+	 differenzierbar sind. Wir sagen, dass $f$ differenzierbar ist, falls $f$ in 
+	 jedem Punkt $x_0 \in I$ differenzierbar ist.\\
+	 In diesem Falle ist die Ableitung von $f$ gegeben durch $f'(x) = Re(f')(x) 
+	 +i \cdot  Im(f') (x) $
+}\end{Definition}
+
+\begin{Bemerkung}{
+	Aus der entsprechenden Aussage für reellwertige Funktionen sieht man sofort: \\
+	Ist $f$ differenzierbar in $x_0 \in I$, so ist $f$ dort auch stetig.
+}\end{Bemerkung}
+
+\begin{Satz}{
+	Seien $f,g : I \subseteq \mathbb{R} \rightarrow \mathbb{C}$ differenzierbar 
+	in $x_0 \in I$. Dann gilt:
+	\begin{itemize}
+		\item $(f+g)'(x_0) = f'(x_0) + g'(x_0)$
+		\item $(f\cdot g)'(x_0) = f'(x_0) \cdot g(x_0) + f(x_0) \cdot g'(x_0)$
+		\item Falls $g(x) \neq 0$, so gilt
+		\begin{align*}
+			\left(\frac{f}{g}\right) '(x_0) = \frac{f'(x_0)g(x_0)-f(x_0)g'(x_0)}
+			{g^2(x_0)}
+		\end{align*}
+	\end{itemize}
+}\end{Satz}
+\begin{proof}
+	Möglichkeit 1: genauso wie für reellwertige Funktionen. \\
+	Möglichkeit 2: mit Hilfe der Aussagen für reellwertige Funktionen.
+	\textit{Beispiel: $(f+g)' = (Re(f)+Re(g) + i \cdot ( Im(f)+Im(g))' = Re(f') + 
+	Re(g') + i \cdot (Im(f') + Im(g') = f' + g'$}
+\end{proof}
+\begin{Satz}{\label{vl_15_satz_2}
+Ist $f : I \rightarrow \mathbb{C}$ und $g: J \rightarrow \mathbb{R}$ 
+und $g(J) \subseteq I$. Ist $g$ in $x_0 \in J$ sowie $f$ in $g(x_0) (\in I)$ differenzierbar, so ist $f \circ g$ in $x_0$ differenzierbar und es gilt:
+\begin{align*}
+	(f\circ g)'(x_0) = f'(g(x_0)) \cdot g'(x_0)
+\end{align*}
+}\end{Satz}
+\begin{proof}
+	$f \circ g (x) = Re(f \circ g)(x) + i \cdot Im(f \circ g)(x)$
+	Also folgt mit der Kettenregel für reellwertige Funktionen:
+	\begin{align*}
+		(f \circ g)'(x_0) = &  Re(f')(g(x_0))  \cdot g'(x_0) 
+			+ i(Im(f')g(x_0)) g'(x_0) \\
+			= & (Re(f')(g(x_0)) + i(Im(f')g(x_0)) \cdot g'(x_0) \\
+			= & f'(g(x_0) \cdot g'(x_0)
+	\end{align*}
+\end{proof}
+
+\begin{Beispiel}{
+	\begin{align*}
+		\exp(ix)' = & (\cos(x) + i\sin(x))' = \cos '(x) + i \sin ' (x) \\
+		= & - \sin (x) + i \cos (x) 
+		= i (i\sin (x) + \cos(x) ) = i \exp(ix) \\
+		\exp(i f(x))' = & i f'(x) \exp(i f(x)) \text{ Mit Satz~\ref{vl_15_satz_2}}
+	\end{align*}
+}\end{Beispiel}
+
+\begin{Bemerkung}{
+	Der Hauptsatz der Differential und Ingegralrechnung gilt damit auch für 
+	Funktion $f: [a,b] \rightarrow \mathbb{C}$, das heißt: \\
+	Ist $f:[a,b] \rightarrow \mathbb{C}$ Riemann-integrierbar und gibt es 
+	\begin{align*}
+		F: [a,b] \rightarrow & \mathbb{C} \text{ mit} \\
+		F'(x) = & f(x)\text{ }(x \in [a,b])
+	\end{align*}
+	so gilt:
+	\begin{align*}
+		\int_a^b f \dd{x} = F(b) -F(a)
+	\end{align*}
+}\end{Bemerkung}
+\begin{proof}
+folgt sofort aus der reellen Version.
+\end{proof}
+
+\begin{Definition}{
+	Sei $I \subseteq \mathbb{R}$ ein Intervall und seien $a_k: I \rightarrow 
+	\mathbb{R}$ $(k = 0, \hdots, n-1)$ sowie $b: I \rightarrow \mathbb{R}$ 
+	stetige Funktionen. Dann heißt:
+	\begin{align}\label{vl_15_gl_2}
+		x^{(n)} + a_{n-1}(t)x^{(n-1)} + \hdots + a_1(t)x' + a_0(t)x = 
+		b(t)
+	\end{align}
+	eine \emph{lineare Differentialgleichung n-ter Ordnung}.
+	Ist $b= 0$ so nennen wir wir Gleichung~\ref{vl_15_gl_2} \emph{homogen}, 
+	sonst \emph{inhomogen}. Wir nennen 
+	\begin{align}\label{vl_15_gl_3}
+		x^{(n)} + a_{n-1}(t)x^{(n-1)} + \hdots + a_1(t)x' + a_0x = 0
+	\end{align}
+	auch den \emph{homogenen Teil} von Gleichung\ref{vl_15_gl_2}. Wir sagen:
+	$y: J \rightarrow \mathbb{R}$ mit $J \subseteq I$ ist eine \emph{Lösung} von 
+	$\begin{cases} & Gleichung~\ref{vl_15_gl_2} \\  & Gleichung~\ref{vl_15_gl_3} 
+	\end{cases}$, falls:
+	\begin{align*}
+	y^{(n)}(t) + a_{n-1}(t)y^{(n-1)}(t) + \hdots + a_0(t)y(t) = 
+	\begin{cases} b(t) \\ 0 \end{cases}
+	\end{align*}
+
+}\end{Definition}
+
+\begin{Satz}{
+	Wir betrachten die Differentialgleichung~\ref{vl_15_gl_2}, sowie \ref{vl_15_gl_3} mit den gleichen Bezeichnungen wie oben. 
+	\begin{itemize}
+		\item Sei $L_h$ die Menge aller Lösungen $y: I \rightarrow \mathbb{R}$ 
+		von \ref{vl_15_gl_3}. Dann ist $L_h$ ein n-dimensionaler Vektorraum über 
+		$\mathbb{R}$
+		\item Sei $L_i$ die Menge aller Lösungen $z: I \rightarrow \mathbb{R}$ 
+		von \ref{vl_15_gl_2} . 
+		Dann gilt für ein beliebiges $z_0 \in L_i$:
+		\begin{align*}
+		L_i = z_0 + L_h
+		= \left\{ y : I \rightarrow \mathbb{R} \vert y = z_0 + f 
+		\text{für ein } f \in L_h\right\}.
+	\end{align*}			
+	\end{itemize}
+}\end{Satz}
