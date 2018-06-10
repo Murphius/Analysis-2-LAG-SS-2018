@@ -1,0 +1,350 @@
+\todo{Kennzeichnung als Einschub - Anfang}
+\begin{Bemerkung}{
+	Sei $I \subseteq \mathbb{R}$ ein Intervall und $\mathbb{K} = \mathbb{C}$ oder
+	$\mathbb{K} = \mathbb{R}$. Dann bedeutet $\mathbb{K}^I = \{f: I \rightarrow 
+	\mathbb{K}\}$ die Menge aller Abbildungen von $I$ nach $K$. Auf $\mathbb{K}^I$ 
+	definieren wir:
+	\begin{align*}
+		+ : \mathbb{K}^I \times \mathbb{K}^I \rightarrow & \mathbb{K}^I \\
+		(f,g) \mapsto & f + g
+	\end{align*}
+	wobei $(f+g)(x) = f(x)+g(x)$ sei $(x \in I)$, sowie:
+	\begin{align*}
+		\cdot : \mathbb{K} \times \mathbb{K}^I \rightarrow & \mathbb{K}^I
+		(\lambda, f) \mapsto \lambda \cdot f
+	\end{align*}
+	wobei $(\lambda \cdot f)(x) = \lambda \cdot f(x)$ $(x \in I)$.
+	Man kann leicht zeigen, dass $(\mathbb{K}^I, \cdot, +)$ ein 
+	$\mathbb{K}$-Vektorraum ist. Neutrales Element bezüglich $+$:
+	\begin{align*}
+		O_{\mathbb{K}^I} : I \rightarrow & \mathbb{K} \\
+		x \mapsto & 0
+	\end{align*}
+}\end{Bemerkung}
+
+\begin{Satz}{\todo{ohne Nummer}
+	Sei $V$ ein Vektorraum und $\emptyset \neq U \subseteq V$. Dann gilt:
+	\begin{align*}
+		U \text{ U ist ein VR } \Leftrightarrow &
+		\forall \lambda, \mu \in U : x + y \in U \\
+		\forall \lambda \in \mathbb{K} \forall x \in U: \lambda \cdot x \in U
+	\end{align*}
+}\end{Satz}
+\begin{proof}
+	Lineare Algebra
+\end{proof}
+
+\begin{Beispiel}{
+	Sei $\mathcal{C}^n(I, \mathbb{K}) = \{ f: I \rightarrow \mathbb{K}
+		\vert f \text{ ist n-mal stetig differenzierbar} \}$
+	beziehungsweise
+		$\mathcal{D}^n(I, \mathbb{K}) = \{ f: I \rightarrow \mathbb{K} \vert 
+			f \text{ ist n-mal differenzierbar}\}$.\\
+	Aufgrund der Summenregel der Differenzial-Rechnung sieht man mit obigen Satz 
+	sofort: \begin{center}
+	$\mathcal{D}^n(I, \mathbb{K}), \mathcal{C}^n(I, \mathbb{K})$ sind Vektorräume.
+	\end{center}
+	Ist nun $V$ ein Vektorraum, so sagen wir $x_1, \hdots, x_n \in V$ sind 
+	\emph{linear unabhängig}, falls gilt:
+	\begin{align*}
+		\sum_{i=1}^n \alpha_i \cdot x_i = 0 \Rightarrow \alpha_i = \hdots = 
+		\alpha_n = 0
+	\end{align*}	 
+	Im konkreten Beispiel $\mathbb{K}^I$ heißt das:
+	\begin{center}
+	Die Funktionen $f_1, \hdots, f_n: I \rightarrow \mathbb{K}$ sind linear 
+	unabhängig, wenn für alle $(\alpha_1, \hdots, \alpha_n) \in \mathbb{K}^n
+	\setminus \{0\}$ ein $x \in I$ existiert mit:
+	\end{center}
+	\begin{align*}
+		\alpha_1f_1(x) + \hdots + \alpha_nf_n(x) \neq 0
+	\end{align*}
+	Eine linear unabhängige Menge von Elementen $x_1, \hdots, x_n \in V$
+	heißt \emph{Basis} von $V$, falls für alle $x \in V$ $\alpha_1, \hdots, \alpha_n
+	 \in \mathbb{K}$ existiert mit: 
+	\begin{align*}	 
+	 x = \alpha_1 x_1 + \alpha_2x_2 + \hdots  + \alpha_n x_n
+	\end{align*}
+	  Wir sagen $V$ hat \emph{Dimension n}, wenn es eine 
+	 n-elementige Basis von $V$ gibt.
+}\end{Beispiel}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Die Existenz von Lösungen, das heißt $L_h \neq \emptyset$, sowie 
+		die Dimensionalität von $L_h$ folgen mit Hilfe des Satzes von Picard-
+		Lindelöff, den wir nicht behandeln werden.\\
+		Wir zeigen: $L_h$ ist ein Vektorraum.\\
+		Seien dazu $y_1,y_2 \in L_h$ und $\lambda \in \mathbb{R}$.
+		Dann gilt:
+		\begin{align*}
+			& (y_1 + y_2)^{(n)} + a_{n-1}(\lambda)(y_1+y_2)^{(n-1)} + \hdots 	
+			+ a_0(t)(y_1 + y_2) \\
+			= & y_1^{(n)} + a_{n-1}(t)y_{1}^{(n-1)}+ \hdots \\
+			& + a_0(t)y_1 + y_2^{(n)} + a_{(n-1)}(t)y_{2}^{(n-1)} + \hdots + 
+			a_0(t)y_2 = 0		
+		\end{align*}
+		Analog gilt:
+		\begin{align*}
+			& (\lambda y_1)^{(n)} + a_{n-1}(t)(\lambda y_1)^{(n-1)} + \hdots 
+			+ a_0(t)(\lambda y_1) \\ =
+			& \lambda(y_1^{(n)}+a_{n-1}(t)y_1^{(n-1)} + \hdots + a_0 y_1) = 0
+		\end{align*}
+		\item Sei $z$ eine beliebige Lösung von \ref{vl_15_gl_3}. Dann gilt für jede Lösung 
+		$y$ von \ref{vl_15_gl_3}:
+		\begin{align*}
+			& (z-y)^{(n)} + a_{n-1}(t) (z-y)^{(n-1)}+\hdots+a_0(t)(z-y) \\
+			= & z^{(n)} + a_{n-1}(t)z^{(n-1)} + \hdots +a_0(t)z \\
+			& -\left( y^{(n)} + a_{n-1}(t)y^{(n-1)} + \hdots + a_0(t)y\right) \\
+			= & 0
+		\end{align*}
+		Ergo:
+		\begin{center}
+		 $(z-y) \in L_h\Rightarrow y-z \in L_h \vert + z \Leftrightarrow y \in L_h + z$
+		\end{center}
+	\end{enumerate}
+\end{proof}
+
+\begin{Definition}{\label{vl_16_def_1}
+	Man nennt eine Basis des Vektorraums $L_h$ auch ein \emph{Fundamentalsystem} von 
+	\ref{vl_15_gl_3}
+}\end{Definition}
+
+\todo{Kennzeichnung Einschub - Ende}
+
+\begin{Definition}{
+	Seien $a_0, \hdots a_{n-1} \in \mathbb{C}, I \subseteq \mathbb{R}$ ein Intervall 
+	und $b: I \rightarrow \mathbb{C}$ stetig. Wir nennen:
+	\begin{center}
+		\begin{subnumcases}{x^{(n)} + a_{n-1}x^{(n-1)} + \hdots + a_0x =}
+			b(t), & \label{vl_16_gl_1a} \\
+			0, & \label{vl_16_gl_1b}
+		\end{subnumcases}
+	\end{center}
+	eine \emph{lineare Differentialgleichung n-ter Ordnung mit konstanten 
+	Koeffizienten}. Wir sagen: $y: I \rightarrow \mathbb{C}$ ist eine Lösung von 
+	Gleichung~\ref{vl_16_gl_1a} beziehungsweise \ref{vl_16_gl_1b}, falls:
+	\begin{align*}
+		y^{(n)} + a_{n-1}y^{(n-1)} + \hdots + a_0y = 
+		\begin{cases}
+			b(t) \\
+			0
+		\end{cases}
+	\end{align*}
+}\end{Definition}
+
+\begin{Bemerkung}{
+	Wir werden zunächst, um Rechenarbeit zu sparen, komplexwertige Lösungen zulassen 
+	und später aus diesen reelwertige konstruieren. \\
+	Lineare Differentialgleichungen mit konstanten Koeffizienten lassen sich 
+	vereinfacht mit \glqq Differentialpolynomen\grqq{} beschreiben. 
+	Sei $\mathbb{C}[t]$ die Menge aller Polynome der Form:
+	\begin{align*}
+		P(t) = a_0 + a_1t + \hdots + a_n t^n
+	\end{align*}
+	Wobei $n \in \mathbb{N}_0$ und $a_0, \hdots, a_n \in \mathbb{C}$. Ersetzt man in 
+	$P$ formal die Unbekannte $t$ durch $\frac{\mathrm{d}}{\mathrm{dt}}$, so erhält 
+	man einen \emph{Differentialoperator}.
+	\begin{align*}
+		P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) = a_0 + a_1 \cdot \frac{\mathrm{d}}{\mathrm{dt}} + \hdots + a_n \frac{\mathrm{d^n}}{\mathrm{dt^n}}
+	\end{align*}
+	Das heißt $P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right)$ ist als Abbildung zu
+	verstehen, die jedem $n$- und differenzierbaren\todo{das n klingt falsch} $f: \mathbb{R} \rightarrow \mathbb{C}$ eine Funktion wie folgt zuweist:
+	\begin{align*}
+		P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) : 
+		\mathcal{D}^n(\mathbb{R}, \mathbb{C}) \rightarrow & \mathbb{C}^{\mathbb{R}} \\
+		f \mapsto & \sum_{i = 0}^n a_i \frac{\mathrm{d}}{\mathrm{dt}} t
+	\end{align*}
+	Der Witz an dieser Sichtweise : Jede lineare Differentialgleichung 
+	mit konstanten Koeffizienten, lässt sich einfach als 
+	\begin{align*}
+		P \left( \frac{\mathrm{d}}{\mathrm{dt}} \right) x = 
+		\begin{cases}	b(t) \\ 0 \end{cases}
+	\end{align*}
+	schreiben, wobei $P \in \mathbb{C}[t]$ ein Polynom entsprechender 
+	Ordnung mit führendem Koeffizienten gleich $1$ ist.  
+}\end{Bemerkung}
+
+\begin{Beispiel}{
+	Die Differentialgleichung 
+	\begin{align*}
+		x^{(3)} - 2x'' + x' - 2x = 0 
+	\end{align*}
+	lässt sich mit:
+	\begin{align*}
+		P(t) = t^3 - 2t^2+t-2
+	\end{align*}		
+	schreiben als:
+	\begin{align*}
+		P \left(\frac{\mathrm{d}}{\mathrm{dt}}\right)x = 0
+	\end{align*}		
+}\end{Beispiel}
+
+\begin{Proposition}{\label{vl_16_prop_1}
+	Seien $P_1, P_2 \in \mathbb{C}[t]$ und $P=P_1 + P_2, Q = P_1 \cdot P_2$. 
+	Dann gilt für jede ausreichend oft differenzierbare Funktion $f : \mathbb{R} 
+	\rightarrow \mathbb{C}$
+	\begin{enumerate}
+		\item \label{vl_16_prop_1_stp_1} $P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) f = 
+		P_1\left( \frac{\mathrm{d}}{\mathrm{dt}} \right) f + P_2 
+		\left( \frac{\mathrm{d}}{\mathrm{dt}} \right) f$
+		\item \label{vl_16_prop_1_stp_2} $Q \left(\frac{\mathrm{d}}{\mathrm{dt}}\right) = 
+		P_1\left( \frac{\mathrm{d}}{\mathrm{dt}} \right) \cdot 
+		P_2 \left( \frac{\mathrm{d}}{\mathrm{dt}} \right)$
+	\end{enumerate}
+}\end{Proposition}
+
+\begin{proof}
+	Wir machen Teil~\ref{vl_16_prop_1_stp_1}, Teil~\ref{vl_16_prop_1_stp_2} läuft analog.
+	 Sei $n = max\{\mathrm{dg}P_1, \mathrm{dg}P_2\}$ \todo{dg??} und 
+	 $f: \mathbb{R} \rightarrow \mathbb{C}$ $n$-mal differenzierbar. 
+	 Dann gilt mit: 
+	 \begin{align*}
+	 	P_1(t) & = \sum_{l=0}^{n_1}a_l 
+		\frac{\mathrm{d^l}}{\mathrm{dt^l}} f + \sum_{k = 0}^{n_2} b_k 
+		\frac{\mathrm{d^k}}{\mathrm{dt^k}}f \\
+		& \xlongequal[\text{o. E.}]{n_1 \leq n_2} 
+	 	\sum_{k=0}^{n_2}a_k \frac{\mathrm{d^k}}{\mathrm{dt^k}} f + b_k 
+	 	\frac{\mathrm{d^k}}{\mathrm{dt^k}}f + 
+		\sum_{l= 0}^{n_1} a_l \frac{\mathrm{d^l}}{\mathrm{dt^l}}f \\
+		& =  \sum_{k=0}^{n_2}(a_k+b_k) \frac{\mathrm{d^k}}{\mathrm{dt^k}}f + 
+		\sum_{k=n_2+1}^{n_1}a_k \frac{\mathrm{d^k}}{\mathrm{dt^k}} f \\
+		& = P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right)f
+	\end{align*}
+\end{proof}
+
+\begin{Bemerkung}{
+	Die obige Proposition sagt, dass wir mit Diffentialpolynomen genauso rechnen 
+	können wie mit \glqq monotonen\grqq{} Polynomen.
+}\end{Bemerkung}
+
+\begin{Proposition}{
+	Sei $P(t) \in \mathbb{C}[t]$ und $\lambda\in \mathbb{C}$. Dann gilt:
+	\begin{align*}
+		P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right)\exp(\lambda t) = 
+		P(\lambda)\cdot\exp(\lambda t)
+	\end{align*}
+}\end{Proposition}
+
+\begin{proof}
+	Betrachte: 
+	\begin{align*}
+		\frac{\mathrm{d}}{\mathrm{dt}} \exp(\lambda t) = &  
+			\lambda \cdot \exp(\lambda t) \text{ und analog } \\
+		\frac{\mathrm{d^l}}{\mathrm{dt^l}} \exp(\lambda t)  
+				= & \lambda^l \cdot \exp(\lambda t)
+\end{align*}		
+	Damit gilt für  $P(t) =\sum_{l=0}^n a_l t $:
+	\begin{align*}
+		P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) \exp(\lambda t) = &
+		\sum_{l=0}^n a_l \frac{\mathrm{d^l}}{\mathrm{dt^l}}\exp(\lambda t) \\ 
+		= & \sum_{l= 0}^n a_l \lambda^l \exp(\lambda t)
+		= P(\lambda) \exp(\lambda t)
+	\end{align*}
+\end{proof}
+
+\begin{Satz}{
+	Sei 
+	\begin{align*}
+		P(t) = \sum_{l=0}^n a_l t^l \in \mathbb{C}[t]
+	\end{align*}
+	Angenommen $P$ hat $n$ paarweise verschiedene Nullstellen 
+	$\lambda_1, \hdots, \lambda_n$. Dann sind die Funktionen
+	\begin{align*}
+		\varphi_k : \mathbb{R} \rightarrow & \mathbb{C}, \\
+		\varphi_k(t) = & \exp(\lambda_k t) \text{ } (k = 1, \hdots, n)
+	\end{align*}
+	linear unabhängige Lösungen von $P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) x = 0$.
+}\end{Satz}
+
+\begin{proof}
+	Tatsächlich gilt für alle $k = 1, \hdots, n $ dass: 
+	\begin{align*}
+		P \left(\frac{\mathrm{d}}{\mathrm{dt}}\right) \varphi_k = &
+			P(\lambda_k)  \cdot \exp(\lambda_k t) = 0
+	\end{align*}
+	Wir zeigen die lineare Unabhängigkeit der Funktionen $\varphi_1, \hdots, 
+	\varphi_k$ \\ für $k = 1, \hdots, n$ mittels vollständiger Induktion. \\
+	\emph{$k=1:$} 
+	\begin{align*}
+		\alpha_1\exp(\lambda_1t) = 0 \Rightarrow \alpha_1 = 0
+	\end{align*}
+	\emph{$k \rightarrow k+1$} Angenommen
+	\begin{align*}
+		\alpha_i \varphi_i + \hdots + \varphi_{k+1} \alpha_{k+1} = 0
+	\end{align*}
+	Zu zeigen: 
+	\begin{align*}
+		\alpha_1 = \alpha_2 = \hdots = \alpha_k = \alpha_{k+1} = 0
+	\end{align*}		
+	Wir wenden
+	\begin{align*}
+		(\lambda_{k+1} - \frac{\mathrm{d}}{\mathrm{dt}})
+	\end{align*} auf obige Gleichung an.
+	Also: 
+	\begin{align*}
+		\left(\lambda_{k+1}-\frac{\mathrm{d}}{\mathrm{dt}}\right) 
+			\sum_{i=0}^{k+1} \alpha_i \varphi_i(t) 
+		= & \sum_{i=1}^{k+1} \alpha_i \left( \lambda_{k+1} - 
+			\frac{\mathrm{d}}{\mathrm{dt}} \right) \varphi_i(t) \\ 
+		\overset{\ref{vl_16_prop_1}}{=} & \sum_{i=1}^{k+1} \alpha_i (\lambda_{k+1} - \lambda_i) 
+			\varphi_i(t) \\
+		= & \sum_{i = 1}^k \alpha_i(\lambda_{k+1} - \lambda_i) \varphi_i(t) 
+	= 0
+	\end{align*}
+	Da laut Induktionsvoraussetzung $\varphi_1, \hdots, \varphi_k$ linear 
+	unabhängig sind, muss gelten:
+	\begin{align*}
+		\alpha_1(\lambda_{k+1}-\lambda_1) - \alpha_2(\lambda_{k+1}- \lambda_1)
+		& = \hdots = \alpha_k(\lambda_l+1 - \lambda_k ) = 0
+	\end{align*}
+	Da $(\lambda_{k+1}- \lambda_i) \neq 0$ $(i \neq k)$, folgt 
+	\begin{align*}
+		\alpha_1 = \alpha_2 = \hdots = \alpha_k = 0
+	\end{align*}		
+	Da $\varphi_k(t) = \exp(\lambda_k t) \neq 0$, muss auch $\lambda_{k+1}$ 
+	gelten und die lineare Unabhängigkeit folgt.
+\end{proof}
+
+\begin{Beispiel}{
+	Die Differentialgleichung 
+	\begin{align*}
+		P\left( \frac{\mathrm{d}}{\mathrm{dt}}\right) f = & 0  \text{ mit} \\
+		P(t) =  & t^3 -2t^2 + t -2 = (t -i) (t+i)(t-2)
+ 	\end{align*}
+ 	hat die linear Unabhängige Lösung
+ 	\begin{align*}
+ 		\varphi_1(t) = \exp(it), \varphi_2(t) = \exp(-it), \varphi_3 = \exp(2t)
+ 	\end{align*}
+}\end{Beispiel}
+
+Angenommen sämtliche Koeffizienten der Differentialgleichung sind reell. Wie erhalten wir 
+aus Satz~\ref{vl_16_def_1} \todo{ref?} ein reellwertiges Fundamentalsystem? \\
+Also sei $P(t) \in \mathbb{R}[t]$ mit paarweise verschiedenen Nullstellen.
+\begin{align*}
+	\lambda_1, \overline{\lambda_1}, \hdots, \lambda_k, \overline{\lambda_k} \in 
+		\mathbb{C} \\
+	\eta_1, \hdots, \eta_l \in \mathbb{R}
+\end{align*}
+Dann betrachten wir für $i = 1, \hdots,k$ 
+\begin{align*}
+	\Psi_{i,1} = & \frac{1}{2} \left( \exp(\lambda_i \cdot t) + 
+			\exp(\overline{\lambda_i}\cdot t)\right) \\
+		= &\frac{1}{2} exp(Re(\lambda) \cdot t)\cdot \cos(Im(\lambda) \cdot t) \\	
+	\Psi_{i,2} = & \frac{1}{2i} \left( \exp(\lambda_i \cdot t) - 
+			\exp(\overline{\lambda_i} \cdot t)\right) \\
+		= & \exp(Re(\lambda)\cdot t) \cdot \sin(Im(\lambda_i) \cdot t)	
+\end{align*}
+\begin{center}
+	Und für $i = 1, \hdots, l$: 
+\end{center}
+\begin{align*}
+	\Psi_i = \exp(\eta \cdot t)
+\end{align*}
+Da 
+\begin{align*}
+	\Psi_{i,l} + i \Psi_{i,2} = \exp(\lambda \cdot t) \text{ und} \\
+	\Psi_{i,1} - i \Psi_{i,2} = \exp(\overline{\lambda_i} t) 
+\end{align*}
+Sind $\Psi_{1,1},\Psi_{1,2}, \hdots, \Psi_i$ \todo{fehlt}
+ein Fundamentalsystem von $P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) f = 0$.
