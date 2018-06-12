@@ -1,0 +1,203 @@
+	Wir werden uns bei der Behandlung inhomogener linearer Differentialgleichungen 
+	mit konstanten Koeffizienten auf spezielle Inhomogenitäten der Form
+	\begin{align*}
+		b(t) = q(t) \cdot \exp(\mu t) \text{ } (\mu \in \mathbb{C})
+	\end{align*}
+	beschränken, wobei $q \in \mathbb{C} [t]$
+\begin{Definition}{
+	Wir sagen die Differentialgleichung $P\left( \frac{\mathrm{d}}
+	{\mathrm{dt}}\right)x = q(t) \exp(\mu t)$ ist in \emph{Resonanz}, falls 
+	$P(\mu) = 0$.
+}\end{Definition}
+
+\begin{Satz}{
+	Sei $P(t) = \sum_{l=0}^n a_l t^l \in \mathbb{C}[t]$ mit 
+	$a_n = 1$ und $\mu \in \mathbb{C}$ mit $P(\mu) \neq 0$. Sei weiter 
+	$q \in \mathbb{C}[t]$. Dann besitzt die Differentialgleichung 
+	\begin{align*}
+		P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) x = q(t) \exp(\mu t)
+	\end{align*}
+	eine spezielle Lösung der Gestalt $y(t) = r(t) \exp(\mu t)$, wobei 
+	$r \in \mathbb{C}[t]$ mit \\ $\mathrm{deg} (r) = \mathrm{deg}(q)$\todo{????}
+}\end{Satz}
+
+\begin{Bemerkung}{
+	Mit Satz 10 \todo{ref} und Satz 5 \todo{ref} kennen wir also den kompletten 
+	Lösungsraum, das heißt, die Menge aller Lösungen der Differentialgleichung,
+	sobald wir das Polynom $r$ kennen.
+}\end{Bemerkung}
+\begin{proof}
+	Beachte: 
+	\begin{align}
+		\frac{\mathrm{d}}{\mathrm{dt}} t^m \exp ( \mu t) = 
+			& \left( m t^{m-1} + \mu t^m \right) \cdot \exp(\mu t) \notag \\
+		 \frac{\mathrm{d^2}}{\mathrm{dt^2}} 
+		 t^m \exp ( \mu t) = & \left( m (m-1) t^{m-2} + 
+			 2m \mu t^{m-1} + {\mu}^2 t^m \right) \exp(\mu t) \notag \\
+		 \vdots \notag
+		 \\
+		 \frac{\mathrm{d^l}}{\mathrm{dt^l}} t^m \exp(\mu t) 
+		 	= & \left( {\mu}^l t^m + s_l(t) \right)\exp(\mu t)  \label{vl_17_gl_1}
+	\end{align}
+\end{proof}
+
+\begin{Beispiel}{
+	\begin{align*}
+		\left(\frac{\mathrm{d^3}}{\mathrm{dt^3}} - 2 \frac{\mathrm{d^2}}
+			{\mathrm{dt^2}} - 2 \frac{\mathrm{d}}{\mathrm{dt}} + 2\right) 
+			x(t) = 2 \sin(t)
+	\end{align*}
+	Wir betrachten 
+	\begin{align}
+		P \left( \frac{\mathrm{d}}{\mathrm{dt}}\right)y_1(t) =& i\exp(-it) \\
+			\label{vl_17_gl_2} \\
+		P \left( \frac{\mathrm{d}}{\mathrm{dt}} \right) y_2(t) = & i \exp(it)
+			\label{vl_17_gl_3}
+	\end{align}
+	Mit Satz 12 (beziehungsweise dessen Beweis), \todo{ref} sehen wir, dass 
+	\begin{align*}
+		y_1(t) = \frac{i}{P(-i)} \exp(-it) \text{ und }y_2(t) = \frac{i}{P(i)}
+			\exp(it)
+	\end{align*}
+	Lösungen von Gleichung~\ref{vl_17_gl_2} und Gleichung~\ref{vl_17_gl_3} sind.
+	Mit 
+	\begin{align*}
+		P(-i) = & (-i)^3 -2(-i)^2-2(-i)+2 \\ = & i + 2 + 2i + 2 = 4 +3i \\
+		\text{und } P(i) = & \overline{P(-i)} = 4 -3i \text{ ergibt sich} \\
+		P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right)\left( y_1(t) - y_2(t)\right)
+		= & -i \exp(it) + i \exp(-it)  \\
+		= & -i (\exp(it) - \exp (-it)) = 2 \sin t
+	\end{align*}
+	Eine spezielle reellwertige Lösung ist damit gegeben durch:
+	\begin{align*}
+		y(t) = \frac{8}{25} \sin(t) + \frac{6}{25 }cos(t)
+	\end{align*}
+}\end{Beispiel}
+
+\begin{Beispiel}{
+	\begin{align*}
+		\frac{\mathrm{d^3}}{\mathrm{dt^3}} x(t) - x(t) = t = t \exp(0 \cdot t) \\
+		\text{Mit } P(t) = t^3 -t \text{ gilt } P(0) \neq 0
+	\end{align*}
+	Nach Satz 12 \todo{ref} existiert eine spezielle Lösung der Form $y(t) = a + bt$ 
+	. Eingesetzt in die Differentialgleichung liefert das: 
+	\begin{align*}
+		\frac{\mathrm{d^3}}{\mathrm{dt^3}}(a+bt) - (a +bt) = - a -bt = t
+	\end{align*}
+	Das heißt $a = 0$ und $b = -1$. Damit ist $y(t) = -t$ eine spezielle Lösung 
+	der Differentialgleichung $P \left( \frac{\mathrm{d}}{\mathrm{dt}}\right) 
+	x = t$.
+}\end{Beispiel}
+\cleardoublepage
+\section{Folgen und Reihen von Funktionen}
+Im Folgenden sei $\mathbb{K} = \mathbb{R}$ beziehungsweise $\mathbb{K} = \mathbb{C}$. Sei $D \subseteq K$ eine nicht leere Menge, dann bezeichnen wir mit $\mathbb{K}^D $ die Menge aller Funktionen von $D$ nach $\mathbb{K}$. \\
+Eine \emph{Folge} von Funktionen in $\mathbb{K}^D$ ist eine Abbildung von $\mathbb{N}$ nach $\mathbb{K}^D$, wobei wir das Bild von $n \in \mathbb{N}$ mit 
+$f_n$ bezeichnen.
+
+\begin{Definition}{
+	Sei $D \subseteq \mathbb{K}$ und $(f_n)_{n \in \mathbb{N}}$ eine Folge von 
+	Funktionen \\
+	$f_n : D \rightarrow \mathbb{K}$. Wir sagen, $(f_n)$ \emph{konvergiert 
+	Punktweise} gegen $f:D \rightarrow \mathbb{K}$, falls für alle $x \in D$ gilt:
+	\begin{align*}
+		\lim \limits_{n \rightarrow \infty}{f_n(x) =f(x)}
+	\end{align*}
+	Analog sagen wir $\sum_{n\geq 1} f_n$ \emph{konvergiert punktweise} gegen 
+	$f: D \rightarrow \mathbb{K}$, falls:
+	\begin{align*}
+		\sum_{n = 1}^{\infty} f_n(x) = f(x) \text{ } (x \in D)
+	\end{align*}
+}\end{Definition}
+
+\begin{Bemerkung}{
+	In obiger Definition wird insbesondere voraus gesetzt, dass die Folge $(f_n(x))_
+	{n \in \mathbb{N}}$ konvergiert.
+	\begin{itemize}
+		\item Der Grenzwert $f$ einer punktweise konvergenten Funktionenfolge ist 
+		stets eindeutig, da für jedes $x \in D$ der Grenzwert 
+		$\lim\limits_{n \rightarrow \infty} f_n(x)$ eindeutig ist
+	\end{itemize}
+	Fundamentales Problem im Kontext der Konvergenz von Funktionenfolgen:
+	\glqq Hat Grenzwert $f$ die \glqq gleichen\grqq{} Eigenschaften wie die 
+	Folgenglieder $f_n$?\grqq{} \\
+	Im Spezialfall: Ist der punktweise Grenzwert $f$ einer Folge $(f_n)_{n \in 
+	\mathbb{N}}$ von stetigen Funktionen automatisch stetig? \\
+	Kurz gesagt: Sei $f$ der punktweise Grenzwert von $f_n$, gilt dann 
+	\begin{align*}
+		\lim\limits_{x \rightarrow y}{\lim \limits_{n \rightarrow \infty}{f_n(x)}}
+		= \lim\limits_{n \rightarrow \infty}{\lim\limits_{x \rightarrow y}{f_n(x)} }
+		= f(y) ?
+	\end{align*}
+	Die Antwort ist: \textbf{Nein!}.
+}\end{Bemerkung}
+
+\begin{Beispiel}{
+	Sei 
+	\begin{align*}
+		f_n: [0,1] \rightarrow & \mathbb{R} \\
+		f_n(x) = & \begin{cases} 0 & \text{für } x 
+			\in [0, 1 - \frac{1}{n}] \\ nx - (n-1) & \text{ sonst}
+			\end{cases}
+	\end{align*}
+		Behauptung: $(f_n)_{n \in \mathbb{N}}$ konvergiert punktweise gegen 
+	\begin{align*}
+		f(x) = \begin{cases} 0 & \text{ für } x \neq 1 \\
+		1 & \text{ für } x = 1 \end{cases}
+	\end{align*}
+	Dann sei $x \in [0,1]$. Dann existiert ein $n_x \in \mathbb{N}$ mit 
+	$1- \frac{1}{n_x} > x$ und entsprechend $1 - y_n > x$ für alle $n \geq n_x$. 
+	Das heißt
+\begin{align*}
+		\lim \limits_{n \rightarrow \infty}{ f_n(x)} = 0
+	\end{align*}
+	Andererseits gilt $f_n(1) = 1$ für alle $n \in \mathbb{N}$. \\
+	Ergo:$\lim\limits_{n\rightarrow \infty}{f_n(1) = 1}$. \\
+	Fazit: Um aus der Stetigkeit der Folgenglieder auf die Stetigkeit des Grenzwerts 
+	schließen zu können, braucht es eine Verschärfung des Konvergenzbegriffs.
+	Ähnlich sieht es mit anderen Eigenschaften, wie Differenzierbarkeit 
+	beziehungsweise Integrierbarkeit aus.
+}\end{Beispiel}
+
+\begin{Definition}{
+	Sei $D \subseteq \mathbb{K}$ und $(f_n)_{n \in \mathbb{N}}$ eine Folge von 
+	Funktionen \\ $f_n: D \rightarrow \mathbb{K}$. Wir sagen $(f_n)$ 
+	\emph{konvergiert gleichmäßig (glm.)} gegen die Funktion $f: D \rightarrow 
+	\mathbb{K}$, wenn gilt:
+	\begin{align*}
+		\forall \epsilon > 0 \text{ } \exists n_{\epsilon} \in \mathbb{N} 
+			\text{ } \forall x \in D \text{ } \forall n \geq n_{\epsilon} 
+			: \abs{f_n(x) - f(x)} < \epsilon
+	\end{align*}
+	Analog sagen wir $\sum_{k \geq 1} f_k$ \emph{konvergiert gleichmäßig} gegen 
+	$f: D \rightarrow \mathbb{K}$ wenn gilt:
+	\begin{align*}
+		\forall \epsilon > 0 \text{ } \exists n_{\epsilon} \in \mathbb{N} 
+			\text{ } \forall x \in D \text{ } \forall n \geq n_{\epsilon}: 
+			\abs{\sum_{l=1}^n f_l(x) - f(x)} < \epsilon
+	\end{align*}
+}\end{Definition}
+
+\begin{Bemerkung}{
+	Offensichtlich impliziert gleichmäßige Konvergenz stets punktweise Konvergenz
+}\end{Bemerkung}
+
+\begin{Satz}{
+	Sei $D \subseteq \mathbb{K}$ und $(f_n)_{n \in \mathbb{N}}$ eine Folge 
+	stetiger Funktionen, die gleichmäßig gegen $f: D \rightarrow \mathbb{K}$ 
+	konvergiert. Dann ist $f$ stetig.
+}\end{Satz}
+
+\begin{proof}
+	Sei $\epsilon > 0$ gegeben. Wähle $n \in \mathbb{N}$ mit $\abs{f_{n_{\epsilon}}
+	-f(x)} < \frac{\epsilon}{3}$ für alle $x \in D$. Da $f_{n_{\epsilon}}$ stetig 
+	ist, gibt es für jedes $x_0 \in D$ ein $\delta > 0 $, so dass für $y \in D$ mit 
+	$\abs{y- x_0} < \delta $ gilt:
+	$\abs{f_{n_{\epsilon}}(y) - f_{n_{\epsilon}}(x_0)} < \frac{\epsilon}{3} $
+	Dann gilt für alle $y \in D$ mit $\abs{y - x_0} < \delta$:
+	\begin{align*}
+		\abs{f(x_0) -f(y)} \leq \abs{f_i(x_i) - f_{n_{\epsilon}}(x_0} 
+		+ \abs{f_{n_{\epsilon}}(x_0) - f_{n_{\epsilon}}(y)} + 
+		\abs{f_{n_{\epsilon}}(y) - f(y)} \leq \epsilon
+	\end{align*}
+	Da $\epsilon > 0 $ beliebig war, folgt die Behauptung.
+\end{proof}
