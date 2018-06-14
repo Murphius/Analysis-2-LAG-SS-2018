@@ -1,0 +1,271 @@
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Konvergiert $(f_n)$ gleichmäßig gegen eine Funktion $f$, 
+		so nennen wir $f$ auch den \emph{gleichmäßigen Limes / Grenzwert} 
+		von $(f_n)$. Analog reden wir vom \emph{Punktweisen Limes / Grenzwert}.
+		\item Der letzte Satz sagt, dass wir bei gleichmäßiger Konvergenz gewisse 
+		Grenzwerte vertauschen können, das heißt:
+		\begin{align*}
+			\lim\limits_{n\rightarrow \infty}{\lim\limits_{x \rightarrow y}{f_n(x)}}
+			\text{ Unter den Voraussetzungen von Satz 2}
+		\end{align*}
+		\todo{ref}
+		%TODO ref 
+		\item Ist $f(x) = \sum_{n = 0}^{\infty} a_n (x-x_0)^n$ eine Potenzreihe \\
+		mit Konvergenzradius $R > 0$ um den Punkt $x_0$. Setzen wir 
+		\begin{align*}
+			f_N = \sum_{n = 0}^N a_n (x-x_0)^n
+		\end{align*}
+		so ist $f$ per Definition der punktweise Limes von $(f_N)$.
+		Tatsächlich konvergieren die Funktionen $f_N\vert_{B_r(x_0)}$ für 
+		beliebiges $r \in (0,R)$ gleichmäßig gegen $f\vert_{B_r(x_0)}$ 
+		Denn:
+		\begin{align*}
+			\forall x \in B_{r (x_0)} : \abs{f(x)- f_N(x) } 
+			=&\abs{ \sum_{n=0}^{\infty} a_n (x-x_0)^n - \sum_{n=0}^N a_n (x-x_0)^n} \\
+			= & \abs{\sum_{n = N+1 }^{\infty} a_n (x-x_0)^n} \\
+			\leq & \sum_{n = N+1}^{\infty} \abs{a_n}(x-x_0)^n \\
+			\leq & \sum_{n = N +1}^{\infty} \abs{a_n} r^n < \infty
+		\end{align*}
+		wobei die absolute Konvergenz von Potenzreichen innerhalb des 
+		Konvergenzradius ausgenutzt wurde. \\
+		Sei $\epsilon > 0$ gegeben. Dann existiert also $N_{\epsilon}$, so dass 
+		für alle $N \geq N_{\epsilon}$ gilt:
+		\begin{align*}
+			\sum_{n = N+1}^{\infty}\abs{a_n}r^n < \epsilon.
+		\end{align*}
+		Ergo: Wir haben gezeigt, dass für $N \geq N_{\epsilon}$ gilt:
+		\begin{align*}
+			\abs{f(x) - f_N(x)} < \epsilon \text{ } (x \in B_{r(x_0)})
+		\end{align*}
+		Das zeigt insbesondere mit Satz 3, \todo{ref} %TODO ref
+		 dass Potenzreihen innerhalb des Konvergenzradius stetig sind.
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Satz}{
+	Sei $D \subseteq \mathbb{K}$ und $(f_n)$ eine Folge von Funktionen $f_n: D 
+	\rightarrow \mathbb{K}$. Dann gilt: 
+	\begin{center}
+		$(f_n)$ konvergiert genau dann gleichmäßig, wenn gilt:
+	\end{center}
+	\begin{align}\label{vl_18_gl_1}
+		\forall \epsilon > 0 \text{ } \exists n_{\epsilon} \text{ }\forall n,m \geq 	
+		n_{\epsilon} \text{ }\forall x \in D : \abs{f_n(x) - f_m(x)} < \epsilon
+	\end{align}
+}\end{Satz}
+
+\begin{proof}
+	$\Rightarrow$ Sei $\epsilon > 0$ gegeben. Da $f_n$ gleichmäßig gegen $f: D 
+	\rightarrow \mathbb{K}$ konvergiert, gibt es $n_{\epsilon}$, so dass für alle 
+	$n \geq n_{\epsilon}$ gilt:
+	\begin{align*}
+		\forall x \in D: \abs{ f_n(x) -f(x)} < \epsilon
+	\end{align*}
+	Dann gilt für $n,m \geq n_{\epsilon}$:
+	\begin{align*}
+		\forall x \in D: \abs{f_n(x) - f_m(x)} \leq \abs{f_n(x) -f(x)} + 
+		\abs{f(x) -f_m(x)} < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+	\end{align*}
+	Das heißt Gleichung~\ref{vl_18_gl_1} ist erfüllt. \\
+	$\Leftarrow$ Da für alle $x \in D (f_n(x))$ nach Gleichung~\ref{vl_18_gl_1} 
+	eine Cauchy-Folge ist, konvergiert $(f_n(x))$.
+	Wir definieren: 
+	\begin{align*}
+		f: D \rightarrow & \mathbb{K} \\
+		x \mapsto \lim\limits_{n \rightarrow \infty} f_n(x)
+	\end{align*}		
+	Es bleibt zu zeigen, dass $(f_n)$ gleichmäßig gegen $f$ konvergiert. 
+	Sei $\epsilon > 0$ gegeben. Dann existiert nach \ref{vl_18_gl_1} ein 
+	$n_{\epsilon}$, so dass für alle $x \in D$ gilt:
+	\begin{align}\label{vl_18_gl_2}
+		\abs{f_n(x) - f_m(x)} < \epsilon
+	\end{align}
+	solange $n,m \geq n_{\epsilon}$. Damit gilt für alle $n \geq n_{\epsilon}$:
+	\begin{align*}
+		\abs{f_n(x) - f(x)} = \abs{f_n(x) - \lim\limits_{m \rightarrow \infty} 
+		{f_m(x)}} = \lim\limits_{m \rightarrow \infty} \abs{f_n(x) - f_m(x)}
+	\end{align*}
+	Mit Gleichung~\ref{vl_18_gl_2} folgt:
+	\begin{align*}
+		\abs{f_n(x) -f(x)} \leq \epsilon \text{ } (x \in D)
+\end{align*}		
+	Da $\epsilon > 0$ beliebig, folgt die gleichmäßige Konvergenz und 
+	damit die Behauptung.
+\end{proof}
+
+\begin{Satz}{
+	Sei $(f_n)$ eine Funktionenfolge von auf $[a,b]$-integrierbaren Funktionen, 
+	die gleichmäßig gegen $f:[a,b] \rightarrow \mathbb{K}$ konvergiert. Dann ist 
+	$f$ integrierbar und 
+	\begin{align*}
+		\textcolor{orange}{\int_a^b \lim\limits_{n \rightarrow  \infty}{f_n \dd{x}} =}		
+		\int_a^b f \dd{x} = \lim\limits_{n \rightarrow \infty} \int_a^b f_n \dd{x}
+	\end{align*}
+}\end{Satz}
+\begin{proof}
+	Wir betrachten im Folgenden $\mathbb{K} = \mathbb{R}$. Der Fall $\mathbb{K} 
+	= \mathbb{C}$ folgt stets aus der separaten Betrachtung von Real- und 
+	Imaginärteil. \\
+	Sei $\epsilon > 0$ gegeben. Dann existiert per Voraussetzung ein $n_{\epsilon} 
+	\in \mathbb{N}$, so dass gilt:
+	\begin{align*}
+		\forall x \in D: \forall n \geq n_{\epsilon} : \abs{f_n(x) - f(x) } \leq 
+		\epsilon
+	\end{align*}
+	Es gilt also: 
+	\begin{align*}
+		f_{n_{\epsilon}} - \epsilon \leq f(x) \leq f_{n_{\epsilon}} + \epsilon 
+		\text{ }(x \in [a,b])
+	\end{align*}		
+	Daher gilt:
+	\begin{align*}
+		\int_a^b f_{n_{\epsilon}} + \epsilon \dd{x} 
+		= & \int_a^b f_{n_{\epsilon}} \dd{x} + \epsilon \cdot (b-a) \\
+		\leq & \unint{a}{b}{f} \leq \obint{a}{b}{f} \\
+		\leq & \int_a^b f\dd{x} + \epsilon\cdot (b-a)
+	\end{align*}
+	Ergo:
+	\begin{align*}
+		\abs{\unint{a}{b}{f} - \obint{a}{b}{f} } \leq 2 \cdot \epsilon (b-a)
+	\end{align*}
+	Da $\epsilon > 0$ beliebig, folgt $\unint{a}{b}{f} = \obint{a}{b}{f}$, 
+	das heißt $f \in \riemann a b$.
+	Weiter gilt:
+	\begin{align*}
+		\abs{ \int_a^b f - f_n \dd{x} } \leq \int_a^b \abs{ f(x) - f_n(x) }\dd{x}
+		\leq \epsilon\cdot (a-b)
+	\end{align*}
+	Für $n \rightarrow \infty$ folgt die Behauptung.
+\end{proof}
+
+\begin{Korollar}{
+	Ist $f_n \in \riemann a b n \in \mathbb{N}_0$ und konvergiert 
+	$\sum_{n = 0}^{\infty} f_n$ gleichmäßig gegen $f: [a,b] \rightarrow \mathbb{K}$, 
+	so ist $f \in \riemann a b$ und 
+	\begin{align*}
+		\int_a^b f\dd{x} = \sum_{n=0}^{\infty} \int_a^b f_n \dd{x}
+	\end{align*}
+}\end{Korollar}
+
+\begin{Bemerkung}{
+	Wir können also gliedweise integrieren.
+}\end{Bemerkung}
+
+\begin{Satz}{
+	Seien $f_n : [a,b] \rightarrow \mathbb{N}$ stetig differenzierbar $(n \in 
+	\mathbb{N})$. Weiter gelte, dass $(f_n)$ punktweise gegen $f:[a,b] \rightarrow 
+	\mathbb{R}$ konvergiert und $(f_n')$ gleichmäßig gegen 
+	$g:[a,b] \rightarrow \mathbb{R}$ konvergiert. Dann ist $f$ stetig 
+	differenzierbar und es gilt:
+	\begin{align*}
+		f'(x) = g(x) \text{ } (x \in [a,b])
+	\end{align*}
+}\end{Satz}
+
+\begin{proof}
+	Da $f_n'$ gleichmäßig gegen $g$ konvergiert ist $g$ stetig (Satz 3) 
+	\todo{ref}%TODO ref
+	Daher gilt nach Satz~\ref{vl_12_satz_01} dass 
+	$G(x) = \int_a^b g \dd{t}$ differenzierbar ist und als Ableitung $g$ besitzt. 
+	Weiterhin gilt mit Satz 5 \todo{ref}:
+	\begin{align*}
+		\int_a^x \lim\limits_{n \rightarrow \infty}{f_n'} \dd{t} = 
+		\lim\limits_{n\rightarrow \infty}{\int_a^b f_n' \dd{t}} = G(x)
+	\end{align*}
+	Nach dem Hauptsatz der Differential und Integralrechnung gilt außerdem:
+	\begin{align*}
+		\int_a^x f_n' \dd{t} = f_n(x) -f_n(a) 
+	\end{align*}
+	Ergo:
+	\begin{align*}
+		f(x) = \lim\limits_{n \rightarrow \infty}{f_n(x)} = 
+		\lim\limits_{n \rightarrow \infty} \int_a^x f_n' \dd{t} + 
+		\lim\limits_{n \rightarrow \infty}{f_n(a)} = G(x) + f(a)
+	\end{align*}
+	Damit ist $f$ differenzierbar und es gilt: 
+	\begin{align*}
+		\frac{\mathrm{d}}{\mathrm{dx}}f(x) 
+	= \frac{\mathrm{d}}{\mathrm{dx}}G(x) = g(x)
+	\end{align*}		
+\end{proof}
+
+\begin{Bemerkung}{
+	Das zeigt insbesondere, dass wir Potenzreihen gliedweise differenzieren können.
+}\end{Bemerkung}
+
+\subsection{Fourier-Reihen}
+Fourier-Reihen sind spezielle Reihen, die insbesondere für die Approximation 
+periodischer Funktionen geeignet sind. 
+
+\begin{Definition}{
+	Eine Funktion $f: \mathbb{R} \rightarrow \mathbb{C}$ heißt \emph{p-periodisch}, 
+	beziehungsweise \emph{periodisch mit Periode p}, wobei $p > 0$ sei, wenn gilt:
+	\begin{align*}
+		f(x+p) = f(x)
+	\end{align*}
+}\end{Definition}
+
+\begin{Beispiel}{
+	$\sin, \cos$ sind $2\pi$-periodisch.
+}\end{Beispiel}
+
+\begin{Bemerkung}{
+\begin{itemize}
+	\item[ ]
+	\item Selbstverständlich gilt für alle $n \in \mathbb{Z}$: $f(x + np) = f(x)$.
+	\item Wir werden uns im Folgenden aus Notationsgründen auf 1-periodische 
+	Funktionen beschränken. \\
+	Beachte: Ist $f: \mathbb{R} \rightarrow \mathbb{C}$ p-periodisch, so ist 
+	\begin{align*}
+		\tilde{f}: \mathbb{R} \rightarrow & \mathbb{C}\\
+		 \hat{f} = & f(px +1)
+	\end{align*}
+	1-periodisch: 
+	\begin{align*}
+		\tilde{f}(x+1) = & f(px + 1) \\ = & f(px + p) = f(px) = \hat{f}
+	\end{align*}
+	Das heißt: Jede p-periodische Funktion lässt sich einfach in eine \\
+	1-periodische 
+	Funktion überführen und umgekehrt. \\
+	\textbf{Achtung}: In der Literatur beschränkt man sich auch gerne auf $2\pi$-
+	periodische Funktionen.
+\end{itemize}
+}\end{Bemerkung}
+
+\begin{Definition}{
+	Sei $f: \mathbb{R} \rightarrow \mathbb{C}$ 1-periodisch und Riemann-integrierbar 
+	über $[0,1]$. Dann heißen die Zahlen
+	\begin{align*}
+		\hat{f}(n) := \int_0^1 f(x) \cdot \exp(-2\pi \cdot i \cdot n \cdot x) \dd{x}
+	\end{align*}
+	mit $n \in \mathbb{Z}$ die \emph{Fourier-Koeffizienten} von $f$. Weiter 
+	heißt die Reihe 
+	\begin{align*}
+		F(x) = \sum_{n = -\infty}^{\infty} \hat{f}(n) \cdot \exp\left( 
+		2 \cdot \pi \cdot i \cdot n \cdot x\right),
+	\end{align*}
+	das heißt die Folge der Partialsummen,
+	\begin{align*}
+		F_N(x)= \sum_{n = -N}^N \hat{f}(n) \exp\left( 
+		2 \cdot \pi \cdot i \cdot n \cdot x\right)
+	\end{align*}
+	mit $N \in \mathbb{N}$ \emph{Fourier-Reihe} von $f$.
+	\todo{Satz nicht eindeutig \\
+	von Weiter heißt die Reihe ... Fourier-Reihe von f}
+}\end{Definition}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+	\item[ ]
+		\item Die Fourier-Reihe lässt sich zunächst für jede 1-periodische, 
+		integrierbare Funktion definieren.
+		Ähnlich wie bei Taylorreihen ist aber a priori nicht klar, ob die 
+		Fourier-Reihe konvergiert, in welchem Sinne sie konvergiert und wenn sie 
+		konvergiert, ob sie gegen die original Funktion $f$ konvergiert.
+		Man kann zeigen: Die Fourier-Reihe konvergiert immer gegen $f$ im 
+		sogenannten \glqq quadratischen Mittel\grqq{}, ein Begriff den wir hier 
+		nicht behandeln werden.
+	\end{itemize}
+}\end{Bemerkung}
