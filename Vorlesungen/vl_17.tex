@@ -10,7 +10,7 @@
 	$P(\mu) = 0$.
 }\end{Definition}
 
-\begin{Satz}{
+\begin{Satz}{\label{vl_17_satz_1}
 	Sei $P(t) = \sum_{l=0}^n a_l t^l \in \mathbb{C}[t]$ mit 
 	$a_n = 1$ und $\mu \in \mathbb{C}$ mit $P(\mu) \neq 0$. Sei weiter 
 	$q \in \mathbb{C}[t]$. Dann besitzt die Differentialgleichung 
@@ -22,7 +22,8 @@
 }\end{Satz}
 
 \begin{Bemerkung}{
-	Mit Satz 10 \todo{ref} und Satz 5 \todo{ref} kennen wir also den kompletten 
+	Mit Satz~\ref{vl_17_satz_1} \todo{ref prüfen
+eigentliche nr war 10} und Satz~\ref{vl_14_satz_1} \todo{ref prüfen} kennen wir also den kompletten 
 	Lösungsraum, das heißt, die Menge aller Lösungen der Differentialgleichung,
 	sobald wir das Polynom $r$ kennen.
 }\end{Bemerkung}
@@ -54,7 +55,7 @@
 		P \left( \frac{\mathrm{d}}{\mathrm{dt}} \right) y_2(t) = & i \exp(it)
 			\label{vl_17_gl_3}
 	\end{align}
-	Mit Satz 12 (beziehungsweise dessen Beweis), \todo{ref} sehen wir, dass 
+	Mit Satz~\ref{vl_17_satz_1}(beziehungsweise dessen Beweis), \todo{ref prüfen} sehen wir, dass 
 	\begin{align*}
 		y_1(t) = \frac{i}{P(-i)} \exp(-it) \text{ und }y_2(t) = \frac{i}{P(i)}
 			\exp(it)
@@ -79,7 +80,7 @@
 		\frac{\mathrm{d^3}}{\mathrm{dt^3}} x(t) - x(t) = t = t \exp(0 \cdot t) \\
 		\text{Mit } P(t) = t^3 -t \text{ gilt } P(0) \neq 0
 	\end{align*}
-	Nach Satz 12 \todo{ref} existiert eine spezielle Lösung der Form $y(t) = a + bt$ 
+	Nach Satz~\ref{vl_17_satz_1} \todo{ref prüfen} existiert eine spezielle Lösung der Form $y(t) = a + bt$ 
 	. Eingesetzt in die Differentialgleichung liefert das: 
 	\begin{align*}
 		\frac{\mathrm{d^3}}{\mathrm{dt^3}}(a+bt) - (a +bt) = - a -bt = t
@@ -158,7 +159,7 @@ $f_n$ bezeichnen.
 	beziehungsweise Integrierbarkeit aus.
 }\end{Beispiel}
 
-\begin{Definition}{
+\begin{Definition}{\label{vl_17_def_2}
 	Sei $D \subseteq \mathbb{K}$ und $(f_n)_{n \in \mathbb{N}}$ eine Folge von 
 	Funktionen \\ $f_n: D \rightarrow \mathbb{K}$. Wir sagen $(f_n)$ 
 	\emph{konvergiert gleichmäßig (glm.)} gegen die Funktion $f: D \rightarrow 
@@ -181,7 +182,7 @@ $f_n$ bezeichnen.
 	Offensichtlich impliziert gleichmäßige Konvergenz stets punktweise Konvergenz
 }\end{Bemerkung}
 
-\begin{Satz}{
+\begin{Satz}{\label{vl_17_satz_2} %2
 	Sei $D \subseteq \mathbb{K}$ und $(f_n)_{n \in \mathbb{N}}$ eine Folge 
 	stetiger Funktionen, die gleichmäßig gegen $f: D \rightarrow \mathbb{K}$ 
 	konvergiert. Dann ist $f$ stetig.

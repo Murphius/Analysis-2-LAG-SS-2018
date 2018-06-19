@@ -1,0 +1,223 @@
+\textcolor{red}{Konsultation zur Prüfung : Freitag 20.07.2018, 
+ab $9^{\underline{00}}$ Uhr, SR 384 CZ 3}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Ist $f$ eine p-periodische Funktion, so ist die Fourier-Reihe $F$ 
+		von $f$ definiert als $\tilde{F}(\frac{x}{p}$, wobei $\tilde{F}$ die 
+		Fourier-Reihe der (1-periodischen) Funktion $\tilde{f}: \mathbb{R} 
+		\rightarrow \mathbb{K}$ mit $\tilde{f}(x) = f(px)$ ist. \\
+		Das heißt:
+		\begin{align*}
+			F(x) = & \sum_{k=0}^{\infty} \hat{f}(k) \exp\left( 2\pi i k 
+				\frac{x}{p}\right) \\
+			\text{wobei } \hat{f} (k) = & \int_0^1 \tilde{f}(x) \cdot 
+				\exp(-2\pi i k x) \dd{x} \\
+			 = & \int_0^1 f(p\cdot x)\exp(-2\pi i k x) \\
+			\overset{t = px}{=} & \frac{1}{p}\int_0^p f(t) 
+			\exp\left( \frac{-2\pi}{p}ikt \right) \dd{t}
+		\end{align*}
+		\item Ist $f: \mathbb{R} \rightarrow \mathbb{R}$ 1-periodisch, so 
+		gilt:
+		\begin{align*}
+			\hat{f}(k) = & \int_0^1 f(x) \exp( -2\pi i k x) \dd{x}	
+			= \int_0^1 f(x) \overline{\exp(2\pi i k x)} \dd{x} \\
+			= & \overline{\int_0^1 f(x) \exp(2\pi i k x) \dd{x}} = 
+			\overline{\hat{f}(-k)}			
+		\end{align*}		
+		Das heißt:
+		\begin{align}
+			F(x) = & \sum_{k= - \infty}^{\infty} \hat{f}(k) \exp(2\pi i k x) 
+				\notag \\ 
+			= &\sum_{k=0}^{\infty} \hat{f}(k) \exp(2\pi ikx) + \hat{f}(-k) 
+			\exp(-2\pi i kx) \notag \\
+			\xlongequal[\text{reell}]{\text{f ist}} &
+			\sum_{k=0}^{\infty} \hat{f}(k)\exp(2\pi ikx) 
+				+ \overline{\hat{f}(k) \exp(2\pi ikx)} \notag \\ 
+			= & \sum_{k=0}^{\infty} 2 \cdot Re(\hat{f}(k) \cdot 
+			\exp(2\pi i kx) \label{vl_19_gl_1}
+		\end{align}
+		Spezialfall: $f(x) = f(-x)$, das heißt: $f$ ist gerade. Dann gilt:
+		\begin{align*}
+			\hat{f}(k) = & \int_0^1 f(x) \exp(-\pi ikx) \dd{x} \\
+			 \xlongequal[-t+1=x]{-x+1 = t} &(-1) \cdot \int_1^0 f(-t+1) 
+			 	\exp(-2\pi ik (-t+1)) \dd{t} \\
+			 = & \int_0^1 f(-t+1)\exp(2\pi i k t - 2\pi ik)  \dd{t} \\
+			 = & \int_0^1 f(t) \exp(2\pi ikt) \dd{t} \\
+			 = & \hat{f}(-k) = & \overline{\hat{f}(k)}
+		\end{align*}
+		Ergo: $\hat{f}(k) = \hat{f}(-k) \in \mathbb{R}$ \\
+		Mit Gleichung~\ref{vl_19_gl_1} folgt:
+		\begin{align*}
+			 F(x) = \sum_{k=0}^{\infty}  2 \hat{f}(k) \cos 2 \pi k x
+		\end{align*}
+		Analog kann man zeigen: Gilt $f(-x) = - f(x)$ 
+		(das heißt $f$ ist ungerade), 
+		dann lässt sich $F(x)$ schreiben als
+		\begin{align*}
+			F(x) = \sum_{k=0}^{\infty}a_k \sin(2\pi k x)
+		\end{align*}		 
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Proposition}{%3
+	Sei $f(x) = \sum_{k = -\infty}^{\infty} \gamma_k \cdot \exp(2\pi i k x)$ wobei 
+	$\gamma_k \in \mathbb{K}$ und die trigonometrische Reihe auf der rechten Seite 
+	gleichmäßig konvergiert. Dann gilt:
+	\begin{center}
+		$f$ ist 1-periodisch und Riemann-integrierbar über $[0,1]$ und 
+		$\hat{f}(k) = \gamma_k$
+	\end{center}
+}\end{Proposition}
+
+\begin{proof}
+	Sei $f_n = \sum_{k=-n}^n \gamma_k \exp(2\pi ikx)$. Es gilt:
+	\begin{align*}
+		f_n(x+1) = & \sum_{k = -n}^n \gamma_k \exp(2\pi i k (x+1)) \\
+		= & \sum_{k = -n}^n \gamma_k \exp(2 \pi i k x) \cdot \exp(2 \pi i k)
+		\\ = & f_n(x)
+	\end{align*}		
+	Das heißt für alle $n \in \mathbb{N}$ ist $f_n$ 1-periodisch.
+	Damit gilt:
+	\begin{align*}
+	f(x+1) = \lim\limits_{n \rightarrow \infty} f_n(x+1) 
+		= \lim\limits_{n \rightarrow \infty} f_n(x) = f(x)
+	\end{align*}		
+	Das heißt $f$ ist 1-periodisch. Mit Satz~\ref{vl_18_def_4} 
+	\todo{ref prüfen} aus dem vorherigen 
+	Abschnitt folgt $f \in \riemann 0 1$. Weiter gilt:
+	\begin{align*}
+	\hat{f}(k) = & \int_0^1 f(x) \exp(-2\pi ikx) \dd{x} \\
+	= & \int_0^1 \sum_{l=0}^{\infty} 
+		\left(\gamma_k \exp(2\pi i lx) 	\right) \exp(-2\pi ikx) \dd{x} \\
+	= & \sum_{l=0}^{\infty} \int_0^1 \gamma_l 
+		\exp(2\pi i l x) \cdot (-2\pi i k x) \dd{x} \\
+	= & \sum_{l = - \infty}^{\infty} \gamma_l \cdot \int_0^1 
+		\exp(2\pi i (l-k)x) \dd{x}
+	= \begin{cases}
+		0 & \text{ für } l \neq k \\
+		1 & \text{ für } l = k
+		\end{cases}
+	\end{align*}
+\end{proof}
+
+\begin{Satz}{
+	Sei $f: \mathbb{R} \rightarrow \mathbb{C}$ eine stetige 1-periodische Funktion, 
+	die stückweise stetig differenzierbar ist, das heißt es existiert eine Partition 
+	\begin{align*}
+		0 \leq t_0 < t_1 < \hdots < t_n = 1
+	\end{align*} \todo{$\leq 1$ ?}
+	von $[0,1]$, so dass 
+	\begin{align*}
+		f\vert_{[t_{i-1},t_i]} \text{ für alle } i = 1, \hdots, n
+	\end{align*}
+	stetig differenzierbar ist. \\
+	Dann konvergiert die Fourier-Reihe von $f$ gleichmäßig gegen $f$. 
+	\begin{center}
+		- Ohne Beweis -
+	\end{center}
+}\end{Satz}
+
+\cleardoublepage
+\section{Grundbegriffe in metrischen und normierten Räumen}
+\emph{Ziel des Kapitels:} Vereinheitlichung und Verallgemeinerung bekannter \\
+Konvergenz- und Abstandsbegriffe
+
+\begin{Definition}{
+	Sei $X$ eine Menge. Eine \emph{Metrik} auf $X$ ist eine Abbildung auf 
+	$d: X \times X \rightarrow [0, \infty)$ mit:
+	\begin{enumerate}
+		\item \label{vl_19_stp_1}$d(x,y) = 0 \Leftrightarrow x = y$
+		\item \label{vl_19_stp_2}$d(x,y) \leq d(x,z) + d(z,y)$ für alle $x,y,z \in X$
+		\item \label{vl_19_stp_3}$d(x,y) = d(y,x)$ für $x,y \in X$
+	\end{enumerate}
+	Das Paar $(X,d)$ heißt \emph{metrischer Raum}. Oftmals sagt man einfach 
+	$X$ ist metrischer Raum, sofern die entsprechende Metrik aus dem Kontext 
+	hervorgeht.
+}\end{Definition}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Stichpunkt~\ref{vl_19_stp_2} heißt Dreiecks-Ungleichung
+		\item Stichpunkt~\ref{vl_19_stp_3} heißt Symmetrie
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Beispiel}{
+	\begin{enumerate}
+		\item[ ]
+		\item Auf $\mathbb{K}$ definiert $d(x,y) = \abs{s -y}$ eine Metrik
+		\item Auf $\mathbb{K}^n$ definieren wir die $l_1$-Metrik durch:
+		\begin{align*}
+			d_1( (x_1, \hdots, x_n), (y_1, \hdots, y_n) ) =
+			 \sum_{i = 1}^n \abs{x_i - y_i}
+		\end{align*}
+		$d_1$ ist eine Metrik, denn \ref{vl_19_stp_1} und \ref{vl_19_stp_3} sind 
+		 trivial. \ref{vl_19_stp_2} folgt mit: \\
+		 Seien $ x, y, z \in \mathbb{K}^n $ gegeben. Dann gilt:
+		 \begin{align*}
+		 	d(x,y) = \sum_{i = 1}^n \abs{x_i - y_i} \leq 
+		 	\sum_{i = 1}^n \abs{x_i-z_i} + \abs{z_i - y_i} = d(x,z) + d(z,y)
+		 \end{align*}
+		 \item Auf $\mathbb{K}^n$ definieren wir für $p \in \mathbb{N}$ die $l_p$-
+		 Metrik:
+		 \begin{align*}
+		 	d_p (x,y) = \sqrt[p]{\sum_{i=1}^n\abs{x_i-y_i}^p}
+		 \end{align*}
+		 \ref{vl_19_stp_1} und \ref{vl_19_stp_3} sind offensichtlich. Die 
+		 Dreiecksungleichung macht in diesem Falle durchaus Arbeit: 
+		 Stichwort: Minkowski-Ungleichung.
+	 \item \label{vl_19_stp_4} Auf $\mathbb{K}^n$ definieren wir die $l_{\infty}$-Metrik:
+		 \begin{align*}
+		 	d_{\infty} (x,y) = \max\{\abs{x_i-y_i}\vert i = 1, \hdots, n\}
+		 \end{align*}
+		 \ref{vl_19_stp_1} und \ref{vl_19_stp_3} sind wieder einfach zu sehen. 
+		 \ref{vl_19_stp_2} folgt aus: \\
+		 Seien $x,y,z \in \mathbb{K}^n$ gegeben. Dann gilt:
+		 \begin{align*}
+		 	d_{\infty} (x,y) = & \max\{\abs{x_i-y_i}\vert i = 1, \hdots, n\} \\
+		 	\leq & \max\{\abs{x_i - z_i} + \abs{z_i - y_i} \vert i = 1, \hdots, n\} \\
+		 	\leq & \max\{\abs{x_i-z_i}\vert i = 1, \hdots, n\} + 
+		 	\max\{\abs{z_i - y_i}\vert i = 1, \hdots, n\}  \\
+		 	= & d_{\infty}(x,z) + d_{\infty} (z,y)
+		 \end{align*}
+	\end{enumerate}
+}\end{Beispiel}
+
+\begin{Bemerkung}{
+	Man kann zeigen, dass $d_{\infty} (x,y) = \lim\limits_{p \rightarrow \infty}{
+	d_p(x,y)}$
+}\end{Bemerkung}
+
+\begin{Beispiel}{
+
+	\begin{enumerate}\setcounter{enumi}{4}
+		\item[]
+		\item Sei $X$ eine beliebige nicht leere Menge. Dann definiert
+		\begin{align*}
+			d_D(x,y) = \begin{cases} 0 & \text{ falls } x = y \\ 1 & \text{ sonst } \end{cases}
+		\end{align*}
+		die sogenannte \emph{diskrete  Metrik} auf $X$. \ref{vl_19_stp_1} und 
+		\ref{vl_19_stp_3} sind wieder einfach zu sehen. \\
+		\ref{vl_19_stp_2}:  Ohne Einschränkung: Sei $x \neq y$ und $z \in X$ beliebig. Ist $z = x$ bzw. $z = y$, so gilt:
+		\begin{align*}
+			1 = d_D(x,y) \leq d_D(x,z) + d_D(z,y) = 1		
+		\end{align*}
+		Ist $z \notin \{x,y\}$, so gilt:
+		\begin{align*}
+			1 = d_D(x,y) \leq d_D(x,z) + d_d(z,y) = 2
+		\end{align*}
+		
+		\item Sei $X \neq \emptyset$ eine beliebige Menge und 
+		\begin{align*}
+			B(X) = \{f: X \rightarrow \mathbb{K}\vert f \text{ ist beschränkt}\}
+		\end{align*}
+		Wir definieren:
+		\begin{align*}
+			d_\infty (f,g) = \sup_{x \in X} \abs{f(x)- g(x)}
+		\end{align*}
+		(das verallgemeinert Beispiel~\ref{vl_19_stp_4})
+	\end{enumerate}
+}\end{Beispiel}

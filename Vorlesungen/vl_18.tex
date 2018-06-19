@@ -7,11 +7,11 @@
 		\item Der letzte Satz sagt, dass wir bei gleichmäßiger Konvergenz gewisse 
 		Grenzwerte vertauschen können, das heißt:
 		\begin{align*}
-			\lim\limits_{n\rightarrow \infty}{\lim\limits_{x \rightarrow y}{f_n(x)}}
-			\text{ Unter den Voraussetzungen von Satz 2}
+			\lim\limits_{n\rightarrow \infty}{\lim\limits_{x \rightarrow y}{f_n(x)}} = \lim\limits_{x \rightarrow y}{\lim\limits_{n \rightarrow \infty}
+			{f_n(x)}}
+			\text{ Unter den Voraussetzungen von Satz~\ref{vl_17_satz_2}}
 		\end{align*}
-		\todo{ref}
-		%TODO ref 
+		\todo{ref prüfen}
 		\item Ist $f(x) = \sum_{n = 0}^{\infty} a_n (x-x_0)^n$ eine Potenzreihe \\
 		mit Konvergenzradius $R > 0$ um den Punkt $x_0$. Setzen wir 
 		\begin{align*}
@@ -39,12 +39,12 @@
 		\begin{align*}
 			\abs{f(x) - f_N(x)} < \epsilon \text{ } (x \in B_{r(x_0)})
 		\end{align*}
-		Das zeigt insbesondere mit Satz 3, \todo{ref} %TODO ref
+		Das zeigt insbesondere mit Satz~\ref{vl_17_def_2}, \todo{ref prüfen} 
 		 dass Potenzreihen innerhalb des Konvergenzradius stetig sind.
 	\end{itemize}
 }\end{Bemerkung}
 
-\begin{Satz}{
+\begin{Satz}{\label{vl_18_satz_1}%Satz 3
 	Sei $D \subseteq \mathbb{K}$ und $(f_n)$ eine Folge von Funktionen $f_n: D 
 	\rightarrow \mathbb{K}$. Dann gilt: 
 	\begin{center}
@@ -95,7 +95,7 @@
 	damit die Behauptung.
 \end{proof}
 
-\begin{Satz}{
+\begin{Satz}{\label{vl_18_satz_2}
 	Sei $(f_n)$ eine Funktionenfolge von auf $[a,b]$-integrierbaren Funktionen, 
 	die gleichmäßig gegen $f:[a,b] \rightarrow \mathbb{K}$ konvergiert. Dann ist 
 	$f$ integrierbar und 
@@ -165,11 +165,11 @@
 }\end{Satz}
 
 \begin{proof}
-	Da $f_n'$ gleichmäßig gegen $g$ konvergiert ist $g$ stetig (Satz 3) 
-	\todo{ref}%TODO ref
+	Da $f_n'$ gleichmäßig gegen $g$ konvergiert ist $g$ stetig (Satz~\ref{vl_17_def_2}) 
+	\todo{ref prüfen}
 	Daher gilt nach Satz~\ref{vl_12_satz_01} dass 
 	$G(x) = \int_a^b g \dd{t}$ differenzierbar ist und als Ableitung $g$ besitzt. 
-	Weiterhin gilt mit Satz 5 \todo{ref}:
+	Weiterhin gilt mit Satz~\ref{vl_18_satz_2} \todo{ref prüfen}:
 	\begin{align*}
 		\int_a^x \lim\limits_{n \rightarrow \infty}{f_n'} \dd{t} = 
 		\lim\limits_{n\rightarrow \infty}{\int_a^b f_n' \dd{t}} = G(x)
@@ -234,7 +234,7 @@ periodischer Funktionen geeignet sind.
 \end{itemize}
 }\end{Bemerkung}
 
-\begin{Definition}{
+\begin{Definition}{\label{vl_18_def_4}
 	Sei $f: \mathbb{R} \rightarrow \mathbb{C}$ 1-periodisch und Riemann-integrierbar 
 	über $[0,1]$. Dann heißen die Zahlen
 	\begin{align*}
