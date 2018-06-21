@@ -195,7 +195,7 @@ Konvergenz- und Abstandsbegriffe
 
 	\begin{enumerate}\setcounter{enumi}{4}
 		\item[]
-		\item Sei $X$ eine beliebige nicht leere Menge. Dann definiert
+		\item \label{vl_19_stp_5} Sei $X$ eine beliebige nicht leere Menge. Dann definiert
 		\begin{align*}
 			d_D(x,y) = \begin{cases} 0 & \text{ falls } x = y \\ 1 & \text{ sonst } \end{cases}
 		\end{align*}
@@ -219,5 +219,36 @@ Konvergenz- und Abstandsbegriffe
 			d_\infty (f,g) = \sup_{x \in X} \abs{f(x)- g(x)}
 		\end{align*}
 		(das verallgemeinert Beispiel~\ref{vl_19_stp_4})
+		\item $X$-beliebige Menge auf $B(X) =\{f: X \rightarrow \mathbb{K}\vert f 
+		\text{ ist beschränkt}\}$ definieren wir:
+		\begin{align*}
+			d_\infty = \sup_{x \in X} \abs{f(x) -g(x)}
+		\end{align*}
+		\ref{vl_19_stp_1} und \ref{vl_19_stp_3} sind weiter einfach. 
+		\ref{vl_19_stp_3} folgt aus: 
+		\begin{align*}
+			d_\infty (f,g) = & \sup_{x \in X} \abs{ f(x) -g(x)} 
+			\leq \sup_{x \in X} \abs{f(x)-h(x)}+\abs{h(x)-g(x)}  \\
+			\leq &  \sup_{x \in X}\abs{f(x)-h(x)} + \sup_{y \in X}\abs{h(y)-g(y)} \\
+			= & d_\infty (f,h) + d_\infty (h,g) \text{ für alle } f,g,h \in B(X) 
+		\end{align*}
+		\item $X = \mathcal{C}([a,b], \mathbb{K})$- die Menge aller stetigen Funktionen 
+		von $[a,b]$ nach $\mathbb{K}$. Auch auf $\mathcal{C}([a,b], \mathbb{K})$ 
+		definieren wir $d_\infty(f,g) = \sup_{x \in X} \abs{f(x)-g(x)}$.
+		\item \label{vl_19_stp_6}  $X$-Personen auf Facebook.
+		Mögliches Abstandsmaß: Kürzeste Verbindung zwischen Person A und Person B eindeutig 
+		über Freundschaftsrelation. 
+		\item \label{vl_19_stp_7} Ist $(X,d)$ ein metrischer Raum und $Y \subseteq X$, so ist auch 
+		$(Y, d\vert_{Y \times Y})$ ein metrischer Raum, den wir üblicherweise einfach 
+		mit $(Y,d)$ bezeichnen.
 	\end{enumerate}
 }\end{Beispiel}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Mit Ausnahme von Beispiel~\ref{vl_19_stp_5},~\ref{vl_19_stp_6},~\ref{vl_19_stp_7} gehören die obigen Beispiele zur 
+		Klasse sogenannter normierter Räume beziehungsweise Skalarprodukträume, 
+		auf denen noch mehr Struktur vorliegt als \glqq nur\grqq{} eine Metrik.
+	\end{itemize}
+}\end{Bemerkung}

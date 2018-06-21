@@ -1,0 +1,162 @@
+\begin{Definition}{%2
+	Sei $(X,d)$ ein metrischer Raum. Eine Folge $(x_n)$ in $X$ heißt 
+	\emph{konvergent gegen} $x \in X$, wenn gilt:
+	\begin{align*}
+		\forall \epsilon > 0 \text{ } \exists n_\epsilon \in \mathbb{N} \text{ }
+		\forall n \geq n_\epsilon : d(x_n, x) < \epsilon
+	\end{align*}
+	Wir schreiben: $x_n \overset{n\rightarrow \infty}{\longrightarrow} x$ 
+	beziehungsweise $\lim\limits_{n \rightarrow \infty}{x_n} = x$ und nennen 
+	$x$ den \emph{Grenzwert (GW)} von $(x_n)$. 
+}\end{Definition}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Man vergleiche die obige Definition mit der Definition konvergenter 
+		 Zahlenfolgen
+		 \item Man mache sich klar, dass gilt:
+		 \begin{align*}
+		 	x_n \overset{n \rightarrow \infty}{\longrightarrow} \Longrightarrow 
+		 	d(x_n, x) \overset{n \rightarrow \infty}{\longrightarrow} 0
+		 \end{align*} \todo{hier fehlt die Zahl vor dem Folgt-Pfeil}
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Lemma}{%3
+	Sei $(X,d)$ ein metrischer Raum und $(x_n)$ eine konvergente Folge in $X$. 
+	Dann ist der Grenzwert von $(x_n)$ eindeutig bestimmt.
+}\end{Lemma}
+
+\begin{proof}
+	Seien $x,y$ Grenzwerte der Folge $(x_n)$. Dann gilt:
+	\begin{align*}
+		0 \leq d (x,y) \leq d(x,x_n) + d(y, y_n) \text{ für alle } n \in \mathbb{N}
+	\end{align*}
+	Da $d(x,x_n) \overset{n \rightarrow \infty}{\longrightarrow} 0$, 
+	$d(y, x_n) \overset{n \rightarrow \infty}{\longrightarrow} 0$ gilt:
+	\begin{align*}
+		d(x,y) = \lim\limits_{n \rightarrow \infty} d(x,y) \leq 
+		\lim\limits_{n \rightarrow \infty} d(x,x_n) + d(x_n,y) = 0
+	\end{align*}
+	Mit \ref{vl_19_stp_1} folgt $x = y$.
+\end{proof}
+
+\begin{Beispiel}{
+	Was heißt Konvergenz einer Folge $(f_n)$ gegen $f$ in $B(X)$ bezüglich der 
+	Metrik $d_\infty$?\\
+	Per Definition gilt:
+	\begin{align*}
+		& \forall \epsilon > 0 \text{ } \exists n_\epsilon \in \mathbb{N} \text{ }\forall n \geq 
+			n_\epsilon: d_\infty(f_n,f) \leq \epsilon \\
+		\Longrightarrow & \forall \epsilon > 0 \text{ } \exists n_\epsilon \in \mathbb{N} \text{ }
+			\forall n \geq  n_\epsilon: \sup_{x \in X} \abs{f_n(x)-f(x)} \leq 
+			\epsilon \\
+		\Longrightarrow & \forall \epsilon > 0 \text{ } \exists n_\epsilon \in 
+			\mathbb{N} \text{ }\forall n \geq n_\epsilon \text{ }\forall x \in X: 
+			\abs{f_(x) -f(x)} \leq \epsilon \\
+		\Longleftrightarrow & f_n \text{ konvergiert gleichmäßig gegen } f
+	\end{align*}
+}\end{Beispiel}
+
+Im Folgenden lernen wir eine wichtige Teilklasse von metrischen Räumen kennen, sogenannte
+normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
+
+\begin{Definition}{%4 
+	Sei $V$ ein Vektorraum über $\mathbb{K}$. Eine Abbildung 
+	\begin{align*}
+		\norm{\cdot} : V \rightarrow [0, \infty)
+	\end{align*}
+	heißt \emph{Norm (auf $V$)}, wenn gilt:
+	\begin{enumerate}
+		\item \label{vl_20_stp_1} $\norm{v} = 0 \Longrightarrow v = 0$
+		\item \label{vl_20_stp_2} $ \norm{v + w} \leq \norm{v} + \norm{w}$
+		\item \label{vl_20_stp_3} $\norm{\alpha v} = \abs{\alpha}\cdot\norm{v}$
+	\end{enumerate}
+	Das Paar $(v, \norm{\cdot})$ heißt \emph{normierter Raum}.
+}\end{Definition}
+
+\begin{Definition}{\todo{gleichzeitig auch Proposition}%5 
+	Sei $(V, \norm{\cdot})$ ein normierter Raum. Dann ist:
+	\begin{align*}
+		d_{\norm{\cdot}} : V \times V \rightarrow & [0, \infty) \\
+			(v,w) \mapsto & \norm{v-w}
+	\end{align*}
+	eine Metrik auf $V$. Wir nennen $d_{\norm{\cdot}}$ die von $\norm{\cdot}$ 
+	\emph{induzierte Metrik}.
+}\end{Definition}
+
+\begin{proof}
+	Wir haben nur die Punkte~\ref{vl_20_stp_1},~\ref{vl_20_stp_2},~\ref{vl_20_stp_3} nachzuprüfen.
+	\begin{enumerate}
+		\item $
+			d_{\norm{\cdot}}(x,y) = 0 \Leftrightarrow \norm{x-y} = 0		
+			\Leftrightarrow  x-y = 0 
+			\Leftrightarrow x = y
+		$
+		\item Seien $x,y,z \in V$, dann gilt:
+		\begin{align*}
+			d_{\norm{\cdot}}(x,y) = & \norm{x-y} = \norm{(x-z)+(z-y)} \\
+			\leq & \norm{x-z} + \norm{z-x} \\
+			= & d_{\norm{\cdot}}(x,z) + d_{\norm{\cdot}}(z,y)	
+		\end{align*}
+		\item 
+		\begin{align*}
+			d_{\norm{\cdot}}(x,y) = & \norm{x-y} = \norm{-1 \cdot (y-x)} \\
+			=& \abs{-1} \cdot \norm{y-x} = \norm{y-x} = d_{\norm{\cdot}}(y,x)
+		\end{align*}
+	\end{enumerate}
+\end{proof}
+
+\begin{Beispiel}{
+	\begin{itemize}
+		\item[]
+		\item Auf $V = \mathbb{K}^n$ definieren wir für $p \in \mathbb{N}$
+		\begin{align*}
+			\norm{\cdot}_p : V \rightarrow & [0, \infty) \\
+				x \mapsto &\norm{x}_p := \left( \sum_{i=1}^n \abs{x_i}^p \right)^{\frac{1}{p}}
+		\end{align*}
+		die sogenannte $l_p$-Norm.
+		Man sieht sofort: die von $\norm{\cdot}_p$ induzierte Metrik ist genau die 
+		$l_p$-Metrik
+		\item Aus \todo{auf oder aus?} $V = \mathbb{K}^n$ definiert für $p \in \mathbb{N}$ 
+		\begin{align*}
+			\norm{\cdot}: V \rightarrow & [0, \infty)  \\
+			x \mapsto & \max_{i = 1, \hdots, n} \abs{x_i}
+		\end{align*}
+		die $l_\infty$ Norm, die weiter die $l_\infty$-Metrik induziert.
+		\item Auf $B(X)$, sowie $\mathcal{C}([a,b], \mathbb{K})$ ist
+		$\norm{f}_\infty = \sup_{x \in X} \abs{f(x)}$ eine Norm, die sogenannte 
+		Supremumsnorm.
+	\end{itemize}
+}\end{Beispiel}
+
+\begin{Proposition}[Umgekehrte Dreiecksungleichung]{%6
+	Sei $(X,d)$ metrischer Raum. Dann gilt:
+	\begin{align*}
+		\abs{d(x,y)- d(x,z)} \leq d(y,z) \text{ } (x,y,z \in X)
+	\end{align*}
+	Ist $(V, \norm{\cdot})$ ein normierter Raum, dann gilt:
+	\begin{align*}
+		\abs{\norm{y} - \norm{z} } \leq \norm{y -z} \text{ } (y, z \in V)
+	\end{align*}
+}\end{Proposition}
+
+\begin{proof}
+	Wegen M2 gilt:
+	\begin{align} \label{vl_20_gl_1}
+		d(x,y) \leq & d(x,z) + d(y,z) \text{ und außerdem} \\
+		d(x,z) \leq & d(x,y) + d(y,z) \label{vl_20_gl_2}
+	\end{align}
+	Mit $\ref{vl_20_gl_1}- d(x,z)$ und $\ref{vl_20_gl_2}-d(x,y)$ folgt:
+	\begin{align*}
+		d(y,z) \geq & d(x,y) - d(x,z) \\
+			& d(x,z) - d(x,y)
+	\end{align*} \todo{sieht so aus als ob in der 2. Zeile was fehlt?}
+	\textcolor{green}{Da für $\lambda \in \mathbb{R}$ gilt: $\abs{\lambda} = 
+		\max\{-\lambda, \lambda\}$} gilt: $d(y,z) \geq \abs{d(x,y) - d(x,z)}$.
+		Das zeigt den ersten Teil der Aussage. Zum zweiten Teil:\\
+		Da für alle $x \in V$ gilt: $d_{\norm{\cdot}} (x,0) = \norm{x}$, 
+		folgt die Behauptung indem wir $d$ durch $d_{\norm{\cdot}}$ ersetzen und 
+		$x = 0$ einsetzen.
+\end{proof}
