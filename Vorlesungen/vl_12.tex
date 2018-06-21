@@ -151,6 +151,25 @@
 }\end{Satz}
 
 \begin{proof}
+	\begin{align}\label{vl_12_gl_1}
+		\frac{\mathrm{d}}{dt}F(t)\cdot G(t) = & F(t)G(t) + F(t)G'(t) = 
+		f(t)G(t) + F(t)g(t)
+	\end{align}
+	Da $f,g \in \Riemann a b$ und $F,G$ differenzierbar (und daher auch in 
+	$\Riemann a b$), ist die rechte Seite in $\Riemann a b$. \\
+	Mit Satz~\ref{vl_12_satz_02} haben wir:
+	\begin{align*}
+		\int_a^b f(t) G(t) + F(t)g(t) \dd{t} = F(b)G(b) -F(a)G(a)
+	\end{align*}
+	Weiter aufgrund der Linearität des Integrals:
+	\begin{align*}
+		\int_a^bfG + Fg \dd{t} = \int_a^b fG\dd{t} + \int_a^b Fg\dd{t} \\
+		\ref{vl_12_gl_1}-\int_a^b fG\dd{t}
+	\end{align*}
+	liefert die Behauptung.
+\end{proof}
+
+\begin{proof}
 	\begin{align*}
 		\left( FG|_a^x - \int_a^x f \cdot G \dd{t} \right)' = &
 		\left(F(x) \cdot G(x) - F(a) \cdot G(a) - \int_a^x fG \dd{t} \right)' \\
