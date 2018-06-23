@@ -196,7 +196,7 @@
 
 \begin{proof}
 	Wir machen Teil~\ref{vl_16_prop_1_stp_1}, Teil~\ref{vl_16_prop_1_stp_2} läuft analog.
-	 Sei $n = max\{\mathrm{dg}P_1, \mathrm{dg}P_2\}$ \todo{dg??} und 
+	 Sei $n = max\{\mathrm{deg}P_1, \mathrm{deg}P_2\}$ das Maximum der Polynomgrade und 
 	 $f: \mathbb{R} \rightarrow \mathbb{C}$ $n$-mal differenzierbar. 
 	 Dann gilt mit: 
 	 \begin{align*}
@@ -243,7 +243,7 @@
 	\end{align*}
 \end{proof}
 
-\begin{Satz}{
+\begin{Satz}{\label{satz:lsg_homog_dgl_n_ter_grad}
 	Sei 
 	\begin{align*}
 		P(t) = \sum_{l=0}^n a_l t^l \in \mathbb{C}[t]
@@ -319,7 +319,7 @@
 }\end{Beispiel}
 
 Angenommen sämtliche Koeffizienten der Differentialgleichung sind reell. Wie erhalten wir 
-aus Satz~\ref{vl_16_def_1} \todo{ref prüfen} ein reellwertiges Fundamentalsystem? \\
+aus Satz~\ref{satz:lsg_homog_dgl_n_ter_grad} ein reellwertiges Fundamentalsystem? \\
 Also sei $P(t) \in \mathbb{R}[t]$ mit paarweise verschiedenen Nullstellen.
 \begin{align*}
 	\lambda_1, \overline{\lambda_1}, \hdots, \lambda_k, \overline{\lambda_k} \in 
@@ -335,16 +335,18 @@ Dann betrachten wir für $i = 1, \hdots,k$
 			\exp(\overline{\lambda_i} \cdot t)\right) \\
 		= & \exp(Re(\lambda)\cdot t) \cdot \sin(Im(\lambda_i) \cdot t)	
 \end{align*}
-\begin{center}
-	Und für $i = 1, \hdots, l$: 
-\end{center}
+Und für $i = 1, \hdots, l$: 
 \begin{align*}
 	\Psi_i = \exp(\eta \cdot t)
 \end{align*}
 Da 
 \begin{align*}
-	\Psi_{i,l} + i \Psi_{i,2} = \exp(\lambda \cdot t) \text{ und} \\
+	\Psi_{i,l} + i \Psi_{i,2} = \exp(\lambda \cdot t)
+\end{align*}
+und
+\begin{align*}
 	\Psi_{i,1} - i \Psi_{i,2} = \exp(\overline{\lambda_i} t) 
 \end{align*}
-Sind $\Psi_{1,1},\Psi_{1,2}, \hdots, \Psi_i$ \todo{fehlt}
-ein Fundamentalsystem von $P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) f = 0$.
+sind $\Psi_{1,1},\Psi_{1,2}, \hdots, \Psi_{k,1},\Psi_{k,2}, \Psi_{1},\hdots, \Psi_i$
+ein (reelles) Fundamentalsystem von $P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) f = 0$.
+

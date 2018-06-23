@@ -17,9 +17,9 @@
 		 Zahlenfolgen
 		 \item Man mache sich klar, dass gilt:
 		 \begin{align*}
-		 	x_n \overset{n \rightarrow \infty}{\longrightarrow} \Longrightarrow 
-		 	d(x_n, x) \overset{n \rightarrow \infty}{\longrightarrow} 0
-		 \end{align*} \todo{hier fehlt die Zahl vor dem Folgt-Pfeil}
+		 	x_n \xrightarrow{n \rightarrow \infty} x \Longrightarrow 
+		 	d(x_n, x) \xrightarrow{n \rightarrow \infty} 0
+		 \end{align*}
 	\end{itemize}
 }\end{Bemerkung}
 
@@ -39,7 +39,7 @@
 		d(x,y) = \lim\limits_{n \rightarrow \infty} d(x,y) \leq 
 		\lim\limits_{n \rightarrow \infty} d(x,x_n) + d(x_n,y) = 0
 	\end{align*}
-	Mit \ref{vl_19_stp_1} folgt $x = y$.
+	Mit \ref{vl_19_stp_1}, aus der Definition der Metrik, folgt $x = y$.
 \end{proof}
 
 \begin{Beispiel}{
@@ -47,12 +47,13 @@
 	Metrik $d_\infty$?\\
 	Per Definition gilt:
 	\begin{align*}
-		& \forall \epsilon > 0 \text{ } \exists n_\epsilon \in \mathbb{N} \text{ }\forall n \geq 
+		& f_n \xrightarrow[n \to \infty]{d_\infty} f \\
+		\Longleftrightarrow & \forall \epsilon > 0 \text{ } \exists n_\epsilon \in \mathbb{N} \text{ }\forall n \geq 
 			n_\epsilon: d_\infty(f_n,f) \leq \epsilon \\
-		\Longrightarrow & \forall \epsilon > 0 \text{ } \exists n_\epsilon \in \mathbb{N} \text{ }
+		\Longleftrightarrow & \forall \epsilon > 0 \text{ } \exists n_\epsilon \in \mathbb{N} \text{ }
 			\forall n \geq  n_\epsilon: \sup_{x \in X} \abs{f_n(x)-f(x)} \leq 
 			\epsilon \\
-		\Longrightarrow & \forall \epsilon > 0 \text{ } \exists n_\epsilon \in 
+		\Longleftrightarrow & \forall \epsilon > 0 \text{ } \exists n_\epsilon \in 
 			\mathbb{N} \text{ }\forall n \geq n_\epsilon \text{ }\forall x \in X: 
 			\abs{f_(x) -f(x)} \leq \epsilon \\
 		\Longleftrightarrow & f_n \text{ konvergiert gleichmäßig gegen } f
@@ -67,7 +68,7 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 	\begin{align*}
 		\norm{\cdot} : V \rightarrow [0, \infty)
 	\end{align*}
-	heißt \emph{Norm (auf $V$)}, wenn gilt:
+	heißt \emph{Norm (auf $V$)}, wenn für beliebige $v,w\in V$ sowie $\alpha \in \mathbb{IK}$ gilt:
 	\begin{enumerate}
 		\item \label{vl_20_stp_1} $\norm{v} = 0 \Longrightarrow v = 0$
 		\item \label{vl_20_stp_2} $ \norm{v + w} \leq \norm{v} + \norm{w}$
@@ -76,10 +77,10 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 	Das Paar $(v, \norm{\cdot})$ heißt \emph{normierter Raum}.
 }\end{Definition}
 
-\begin{Definition}{\todo{gleichzeitig auch Proposition}%5 
+\begin{Definition}[Induzierte Metrik]{\todo{gleichzeitig auch Proposition}%5 
 	Sei $(V, \norm{\cdot})$ ein normierter Raum. Dann ist:
 	\begin{align*}
-		d_{\norm{\cdot}} : V \times V \rightarrow & [0, \infty) \\
+		d_{\norm{\cdot}} : V \times V \to & [0, \infty) \\
 			(v,w) \mapsto & \norm{v-w}
 	\end{align*}
 	eine Metrik auf $V$. Wir nennen $d_{\norm{\cdot}}$ die von $\norm{\cdot}$ 
@@ -87,7 +88,7 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 }\end{Definition}
 
 \begin{proof}
-	Wir haben nur die Punkte~\ref{vl_20_stp_1},~\ref{vl_20_stp_2},~\ref{vl_20_stp_3} nachzuprüfen.
+	Wir haben nur die Punkte~\ref{def:metrik:1},~\ref{def:metrik:2},~\ref{def:metrik:3} von Definition~\ref{def:metrik} nachzuprüfen.
 	\begin{enumerate}
 		\item $
 			d_{\norm{\cdot}}(x,y) = 0 \Leftrightarrow \norm{x-y} = 0		
@@ -113,18 +114,18 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 		\item[]
 		\item Auf $V = \mathbb{K}^n$ definieren wir für $p \in \mathbb{N}$
 		\begin{align*}
-			\norm{\cdot}_p : V \rightarrow & [0, \infty) \\
+			\norm{\cdot}_p : V \to & [0, \infty) \\
 				x \mapsto &\norm{x}_p := \left( \sum_{i=1}^n \abs{x_i}^p \right)^{\frac{1}{p}}
 		\end{align*}
 		die sogenannte $l_p$-Norm.
 		Man sieht sofort: die von $\norm{\cdot}_p$ induzierte Metrik ist genau die 
 		$l_p$-Metrik
-		\item Aus \todo{auf oder aus?} $V = \mathbb{K}^n$ definiert für $p \in \mathbb{N}$ 
+		\item Auf $V = \mathbb{K}^n$ definieren wir für $p \in \mathbb{N}$ die $l_\infty$ Norm
 		\begin{align*}
-			\norm{\cdot}: V \rightarrow & [0, \infty)  \\
-			x \mapsto & \max_{i = 1, \hdots, n} \abs{x_i}
+			\norm{\cdot}: V \to & [0, \infty)  \\
+			x \mapsto & \max_{i = 1, \hdots, n} \abs{x_i}\,,
 		\end{align*}
-		die $l_\infty$ Norm, die weiter die $l_\infty$-Metrik induziert.
+		welche die $l_\infty$-Metrik induziert.
 		\item Auf $B(X)$, sowie $\mathcal{C}([a,b], \mathbb{K})$ ist
 		$\norm{f}_\infty = \sup_{x \in X} \abs{f(x)}$ eine Norm, die sogenannte 
 		Supremumsnorm.
@@ -140,7 +141,7 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 	\begin{align*}
 		\abs{\norm{y} - \norm{z} } \leq \norm{y -z} \text{ } (y, z \in V)
 	\end{align*}
-}\end{Proposition}
+}\end{Proposition}\todo{eigentlich müsstest du die Punkte bei der Metrik in M1, M2 und M3 umbenennen\dots}
 
 \begin{proof}
 	Wegen M2 gilt:
@@ -148,13 +149,20 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 		d(x,y) \leq & d(x,z) + d(y,z) \text{ und außerdem} \\
 		d(x,z) \leq & d(x,y) + d(y,z) \label{vl_20_gl_2}
 	\end{align}
-	Mit $\ref{vl_20_gl_1}- d(x,z)$ und $\ref{vl_20_gl_2}-d(x,y)$ folgt:
+	Ziehen wir $d(x,z)$ von $\ref{vl_20_gl_1}$ und $d(x,y)$ von $\ref{vl_20_gl_2}$ ab, so folgen die Gleichungen:
 	\begin{align*}
 		d(y,z) \geq & d(x,y) - d(x,z) \\
-			& d(x,z) - d(x,y)
-	\end{align*} \todo{sieht so aus als ob in der 2. Zeile was fehlt?}
-	\textcolor{green}{Da für $\lambda \in \mathbb{R}$ gilt: $\abs{\lambda} = 
-		\max\{-\lambda, \lambda\}$} gilt: $d(y,z) \geq \abs{d(x,y) - d(x,z)}$.
+		d(y,z) \geq & d(x,z) - d(x,y) 
+	\end{align*}
+	Da für $\lambda \in \mathbb{R}$ gilt:
+		$$
+			\abs{\lambda} = 
+				\max\{-\lambda, \lambda\}
+		$$
+		erhalten wir
+		$$
+			d(y,z) \geq \abs{d(x,y) - d(x,z)}\,.
+		$$
 		Das zeigt den ersten Teil der Aussage. Zum zweiten Teil:\\
 		Da für alle $x \in V$ gilt: $d_{\norm{\cdot}} (x,0) = \norm{x}$, 
 		folgt die Behauptung indem wir $d$ durch $d_{\norm{\cdot}}$ ersetzen und 

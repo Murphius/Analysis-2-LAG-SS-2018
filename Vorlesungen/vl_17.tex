@@ -1,7 +1,7 @@
 	Wir werden uns bei der Behandlung inhomogener linearer Differentialgleichungen 
 	mit konstanten Koeffizienten auf spezielle Inhomogenitäten der Form
 	\begin{align*}
-		b(t) = q(t) \cdot \exp(\mu t) \text{ } (\mu \in \mathbb{C})
+		b(t) = q(t) \cdot \exp(\mu t) \quad (\mu \in \mathbb{C})
 	\end{align*}
 	beschränken, wobei $q \in \mathbb{C} [t]$
 \begin{Definition}{
@@ -17,8 +17,9 @@
 	\begin{align*}
 		P\left(\frac{\mathrm{d}}{\mathrm{dt}}\right) x = q(t) \exp(\mu t)
 	\end{align*}
-	eine spezielle Lösung der Gestalt $y(t) = r(t) \exp(\mu t)$, wobei 
-	$r \in \mathbb{C}[t]$ mit \\ $\mathrm{deg} (r) = \mathrm{deg}(q)$ \todo{Das bedeutet beide Polynome haben den selben Grad.}
+	eine spezielle Lösung der Gestalt
+	$$y(t) = r(t) \exp(\mu t)\,,$$
+	wobei  $r \in \mathbb{C}[t]$ mit $\mathrm{deg} (r) = \mathrm{deg}(q)$ (also beide Polynome den gleichen Grad haben).
 }\end{Satz}
 
 \begin{Bemerkung}{
@@ -80,7 +81,7 @@ eigentliche nr war 10} und Satz~\ref{vl_14_satz_1} \todo{ref prüfen} kennen wir
 		\frac{\mathrm{d^3}}{\mathrm{dt^3}} x(t) - x(t) = t = t \exp(0 \cdot t) \\
 		\text{Mit } P(t) = t^3 -t \text{ gilt } P(0) \neq 0
 	\end{align*}
-	Nach Satz~\ref{vl_17_satz_1} \todo{ref prüfen} existiert eine spezielle Lösung der Form $y(t) = a + bt$ 
+	Nach Satz~\ref{vl_17_satz_1} (mit $\mu=0$ und $q(t)=t$) existiert eine spezielle Lösung der Form $y(t) = a + bt$ 
 	. Eingesetzt in die Differentialgleichung liefert das: 
 	\begin{align*}
 		\frac{\mathrm{d^3}}{\mathrm{dt^3}}(a+bt) - (a +bt) = - a -bt = t
@@ -159,7 +160,7 @@ $f_n$ bezeichnen.
 	beziehungsweise Integrierbarkeit aus.
 }\end{Beispiel}
 
-\begin{Definition}{\label{vl_17_def_2}
+\begin{Definition}[Gleichmäßige Konvergenz]{\label{def:glm_konv}
 	Sei $D \subseteq \mathbb{K}$ und $(f_n)_{n \in \mathbb{N}}$ eine Folge von 
 	Funktionen \\ $f_n: D \rightarrow \mathbb{K}$. Wir sagen $(f_n)$ 
 	\emph{konvergiert gleichmäßig (glm.)} gegen die Funktion $f: D \rightarrow 
