@@ -68,11 +68,11 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 	\begin{align*}
 		\norm{\cdot} : V \rightarrow [0, \infty)
 	\end{align*}
-	heißt \emph{Norm (auf $V$)}, wenn für beliebige $v,w\in V$ sowie $\alpha \in \mathbb{IK}$ gilt:
-	\begin{enumerate}
-		\item \label{vl_20_stp_1} $\norm{v} = 0 \Longrightarrow v = 0$
-		\item \label{vl_20_stp_2} $ \norm{v + w} \leq \norm{v} + \norm{w}$
-		\item \label{vl_20_stp_3} $\norm{\alpha v} = \abs{\alpha}\cdot\norm{v}$
+	heißt \emph{Norm (auf $V$)}, wenn für beliebige $v,w\in V$ sowie $\alpha \in \IK$ gilt:
+	\begin{enumerate}[label=\subscript{N}{{\arabic*}}]
+		\item \label{def:norm:1} $\norm{v} = 0 \Longrightarrow v = 0$
+		\item \label{def:norm:2} $ \norm{v + w} \leq \norm{v} + \norm{w}$
+		\item \label{def:norm:3} $\norm{\alpha v} = \abs{\alpha}\cdot\norm{v}$
 	\end{enumerate}
 	Das Paar $(v, \norm{\cdot})$ heißt \emph{normierter Raum}.
 }\end{Definition}
@@ -141,7 +141,7 @@ normierten Räume, insbesondere die, die eine Vektorraum-Struktur besitzen.
 	\begin{align*}
 		\abs{\norm{y} - \norm{z} } \leq \norm{y -z} \text{ } (y, z \in V)
 	\end{align*}
-}\end{Proposition}\todo{eigentlich müsstest du die Punkte bei der Metrik in M1, M2 und M3 umbenennen\dots}
+}\end{Proposition}
 
 \begin{proof}
 	Wegen M2 gilt:
