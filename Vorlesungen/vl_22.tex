@@ -1,0 +1,178 @@
+\begin{Proposition}{%14
+	Sei $X$ eine Menge und $d_1,d_2$ zwei Metriken auf $X$. Dann sind äquivalent:
+	\begin{enumerate}
+		\item \label{vl_22_stp_1} $d_1$ erzeugt die gleiche Topologie wie $d_2$
+		\item \label{vl_22_stp_2} $\forall x \in X $ $ \forall \epsilon > 0 $ $\exists \delta > 0 $
+		\begin{align*}
+			B_\delta^{d_1}(x) \subseteq & B_\epsilon^{d_2}(x) \text{ und} \\
+			B_\delta^{d_2}(x) \subseteq & B_\epsilon^{d_1}(x)
+		\end{align*}
+	\end{enumerate}
+}\end{Proposition}
+
+\begin{Beispiel}{
+	$X = \IR^2, x = (0,0)$,
+	$d_1 = d_\infty, d_2 = d_2$ (das heißt die $l_2$-Metrik)
+}\end{Beispiel}
+
+\begin{proof}
+\ref{vl_22_stp_1} $\Rightarrow$ \ref{vl_22_stp_2}: Angenommen die Aussage ist falsch. Das heißt angenommen:
+\begin{align*}
+	\exists x \text{ }\exists \epsilon > & 0 \text{ }\forall \delta > 0:\\
+	B_\delta^{d_1}(x) \nsubseteq & B_\epsilon^{d_2}(x) \text{ oder} \\
+	B_\delta^{d_2}(x) \nsubseteq & B_\epsilon^{d_1}(x)
+\end{align*}
+Ohne Einschränkung gilt, dass ein $x$ existiert, sowie $\epsilon >0$, sodass 
+für alle $\delta > 0$ $B_\delta^{d_1}(x) \nsubseteq B_\epsilon^{d_2}(x)$. 
+Das heißt insbesondere: 
+\begin{align*}
+	\exists x \in X \text{ } \exists \epsilon > & 0 \text{ } \forall n \in \IN: \\
+	B_{\frac{1}{n}}^{d_1} \nsubseteq B_\epsilon^{d_2}(x)
+\end{align*}
+Wir wählen nun für $n \in \IN x_n \in B_{\frac{1}{n}}^{d_1}(x) \ B_\epsilon^{d_2}(x)$
+Damit konvergiert $x_n \rightarrow x$ bezüglich $d_1$ aber $x_n \nrightarrow x$ 
+bezüglich $d_2$.\\
+\ref{vl_22_stp_2} $\Rightarrow$ \ref{vl_22_stp_1} Sei $(x_n)$ eine Folge mit 
+$x_n \rightarrow x$ bezüglich $d_1$. Zu zeigen: $x_n \rightarrow x$ bezüglich $d_2$. 
+Das heißt zu zeigen ist:
+\begin{align*}
+	\forall \epsilon > 0 \text{ } \exists n_\epsilon \in \IN \text{ } \forall n \geq n_\epsilon: 
+	x_n \in B_\epsilon^{d_2}(x) \text{ wegen Lemma 13}
+\end{align*}
+Wähle $n_\epsilon$ so, dass $x_n \in B_\delta^{d_1}(x)$ für alle $n \geq n_\epsilon$ 
+gilt, wobei $\delta$ wie in Punkt~\ref{vl_22_stp_2} gewählt sei. Dann gilt:
+\begin{align*}
+	\forall \epsilon > 0 \text{ } \exists n_\epsilon \in \IN \text{ Lemma~\ref{vl_21_lemma_2} } \forall n \geq n_\epsilon :
+	x_n \in B_\delta^{d_1}(x) \subseteq B_\epsilon^{d_2}(x)
+\end{align*}
+\end{proof}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[]
+		\item Erzeugen zwei Metriken $d_1,d_2$ auf $X$ die gleiche Topologie, so 
+		haben nach dem obigen die metrischen Räume $(X,d_1),(X,d_2)$ die \\
+		\glqq gleiche lokale Struktur\grqq{}
+		\item Auf $\IK$ gilt: alle \textcolor{cyan}{Normen} sind äquivalent!
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Definition}{%15
+	Sei $(X,d)$ ein metrischer Raum. Eine Folge $(x_n)$ heißt  \emph{Cauchy-Folge}, 
+	wenn gilt:
+	\begin{align*}
+		\forall \epsilon > 0 \text{ } \exists n_\epsilon \in \IN \text{ }\forall n,m \geq n_\epsilon: 
+		d(x_n,x_m) \leq \epsilon
+	\end{align*}
+}\end{Definition}
+
+\begin{Proposition}{%16
+	Sei $(X,d)$ ein metrischer Raum und $(x_n)$ in $x$ konvergent. Dann ist $(x_n)$ 
+	eine Cauchy-Folge.
+}\end{Proposition}
+
+\begin{proof}
+	Sei also $x = \lim\limits_{n \rightarrow \infty}{x_n}$. Sei $\epsilon > 0$ 
+	gegeben. Dann existiert also ein $n_\epsilon$, so dass für alle $n \geq n_\epsilon$ gilt: $d(x_n,x) < \epsilon$. Seien $n, m \geq n_\epsilon$. Dann gilt:
+	\begin{align*}
+		d(x_n,x_m) \leq d(x_n, x) + d(x,x_m) < 2 \epsilon
+	\end{align*}
+	Da $\epsilon >0$ beliebig war, folgt die Behauptung.
+\end{proof}
+
+\begin{Bemerkung}{
+	Die Umkehrung dieser Aussage ist im allgemeinen falsch!
+}\end{Bemerkung}
+
+\begin{Definition}{%17
+	Ein metrischer Raum $(X,d)$ heißt \emph{vollständig}, wenn jede \\
+	Cauchy-Folge in $(X,d)$ einen Grenzwert besitzt.
+}\end{Definition}
+
+\begin{Beispiel}{
+	\begin{itemize}
+		\item[ ]
+		\item $\IR$ und $\IC$ sind vollständig
+		\item $(\IK^n, d_2)$ sind vollständig, denn:
+			Sei $(x^l)_{l \in \IN} = ((x_1^l, \hdots, x_n^l))_{l \in \IN}$ eine \\
+			Cauchy-Folge in $\IK^n$. Dann gilt für $j=1,\hdots, n:$
+			\begin{align*}
+				\abs{x_j^l - x_j^{l'}} \leq \sqrt{\sum_{j=1}^n\abs{x_j^l - x_j^{l'}}} = d_2(x^l,x^{l'}) \rightarrow 0
+			\end{align*}
+			Das heißt $(x_j^l)_{l \in \IN}$ ist für alle $j = 1, \hdots, n$ eine 
+			Cauchy-Folge in $\IK$ und daher (siehe erstes Beispiel) konvergent.
+			Das heißt für alle $j= 1, \hdots, n$ können wir definieren:
+			\begin{align*}
+				x_j = \lim\limits_{l \rightarrow \infty}{x_j^l}
+			\end{align*}
+			Für $x =(x_1, \hdots, x_n)$ gilt dann:
+			\begin{align*}
+				d_2(x,x_l) = \sqrt{\sum_{j=1}^n \abs{x_j - x_j^l}^2} \overset{l \rightarrow \infty}{\longrightarrow} 0
+			\end{align*}
+		\item Man mache sich klar: Sind $d_1,d_2$ äquivalente Metriken 
+		auf $X$, so ist $(X,d_1)$ genau dann vollständig, wenn $(X,d_2)$ vollständig 
+		ist. Es gibt aber Fälle von Metriken $d_1,d_2$ auf einer Menge $X$, so dass 
+		$d_1$ und $d_2$ die gleiche Topologie erzeugen, aber $(X,d_1)$ vollständig 
+		ist, während $(X,d_2)$ nicht vollständig ist.
+		\item Die letzten beiden Beispiele zeigen:
+		$(\IK^n, \norm{\cdot})$ ist vollständig für jede Norm auf $\IK^n$
+		\item $l_2$ ist vollständig (ohne Beweis)
+		\item $\mathcal{C}([a,b], \IK)$ versehen mit $d_\infty$ ist vollständig
+		 (siehe Kapitel über gleichmäßige Konvergenz\todo{ref?} und beachte dass 
+		 $f_n \rightarrow f$ bezüglich $d_\infty$ genau dann gilt, wenn 
+		 $f_n \rightarrow f$ gleichmäßig konvergiert).
+		 \item $\IQ$ ist nicht vollständig
+		 \item $(0,1]$ ist nicht vollständig
+		 \item $\mathcal{C}([a,b],\IR)$ mit dem Skalarprodukt $\skp f g = \int_a^b 
+		 	f g \dd{x}$ ist nicht vollständig.
+	\end{itemize}
+}\end{Beispiel}
+
+\section{Topologie metrischer Räume}
+Eng verwandt mit dem Begriff der offenen Kugel um einen Punkt sind die folgenden 
+Konzepte:
+
+\begin{Definition}{%1
+	Sei $(X,d)$ ein metrischer Raum und $x \in X$. Dann heißt $V \subseteq X$ eine 
+	\emph{Umgebung} von $x$, wenn es ein $r > 0$ gibt, so dass $B_r(x) \subseteq V$ 
+	gilt.
+}\end{Definition}
+
+\begin{Beispiel}{
+	Selbstverständlich ist jede offene Kugel $B_\epsilon(x)$ eine Umgebung von $x$
+}\end{Beispiel}
+
+\begin{Definition}{%2
+	Sei $(X,d)$ ein metrischer Raum. Dann heißt $U \subseteq V$ \emph{offen}, wenn 
+	$U$ für jedes $x \in U$ eine Umgebung ist.
+	Das heißt $U \subseteq X$ ist offen, wenn für alle $x \in U$ ein $r_x > 0$ 
+	existiert, mit $B_{r_x}(x) \subseteq 0$. 
+	$A \subseteq X$ ist \emph{abgeschlossen}, wenn $X \ A$ offen ist. 
+}\end{Definition}
+
+\begin{Bemerkung}{
+	\begin{itemize}
+		\item[ ]
+		\item Es gibt Mengen die weder offen, noch abgeschlossen sind. $(0,1]$
+		\item Es gibt auch Mengen, die sowohl offen, als auch abgeschlossen sind:
+		$\IR, \Phi$
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Lemma}{%3
+	Jede offene Kugel in einem metrischen Raum $(X,d)$ ist offen.
+}\end{Lemma}
+
+\begin{proof}
+	Sei eine offene Kugel $B_\epsilon(x)$ gegeben und $y \in B_\epsilon(x)$. 
+	Dann gilt:
+	\begin{align*}
+		d(x,y) = r < \epsilon
+	\end{align*}
+	Wähle $\delta > 0$ mit $r + \delta < \epsilon$. Dann gilt für alle 
+	$z \in B_\delta (y)$:
+	\begin{align*}
+		d(z,x) \leq d(x,y) + d(y,x) < r + \delta < \epsilon
+	\end{align*}
+	Das heißt, $z \in B_\epsilon(x)$.
+\end{proof}
