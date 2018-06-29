@@ -31,14 +31,7 @@
 \usetikzlibrary{arrows}
 \usepackage{graphicx}
 
-% Hervorhebung für wichtige Begriffe, insbesondere Definitionen.
-% Sofort verknüpft mit dem Index.
-\newcommand*{\highl}[2][]{\textbf{\boldmath{#2}}%
-	\ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1}}%
-}
-\newcommand*{\nenne}[2][]{#2%
-	\ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1}}%
-}
+
 
 \makeindex
 

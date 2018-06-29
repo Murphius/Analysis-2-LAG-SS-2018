@@ -1,3 +1,5 @@
+%!TEX root = ../gesamt.tex
+
 \begin{Bemerkung}{
 	\begin{itemize}
 		\item[ ]
@@ -37,10 +39,11 @@
 		\end{align*}
 		Ergo: Wir haben gezeigt, dass für $N \geq N_{\epsilon}$ gilt:
 		\begin{align*}
-			\abs{f(x) - f_N(x)} < \epsilon \text{ } (x \in B_{r(x_0)})
+			\forall x \in B_r(x_0) : \abs{f(x) - f_N(x)} < \epsilon
 		\end{align*}
-		Das zeigt insbesondere mit Satz~\ref{vl_17_def_2}, \todo{ref prüfen} 
+		Das zeigt insbesondere mit Satz~\ref{vl_17_satz_2},
 		 dass Potenzreihen innerhalb des Konvergenzradius stetig sind.
+		 \todo{hier ist $B_r(x_0)$ noch nicht definiert.}
 	\end{itemize}
 }\end{Bemerkung}
 

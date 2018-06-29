@@ -1,3 +1,5 @@
+%!TEX root = ../gesamt.tex
+
 \begin{Proposition}{%14
 	Sei $X$ eine Menge und $d_1,d_2$ zwei Metriken auf $X$. Dann sind äquivalent:
 	\begin{enumerate}
@@ -12,7 +14,7 @@
 
 \begin{Beispiel}{
 	$X = \IR^2, x = (0,0)$,
-	$d_1 = d_\infty, d_2 = d_2$ (das heißt die $l_2$-Metrik)
+	$d_1 = d_\infty, d_2 = d_2$ (das heißt die $l_2$-Metrik) \todo{Das ist ja grauenvolle Nomenklatur...}
 }\end{Beispiel}
 
 \begin{proof}
@@ -26,7 +28,7 @@ Ohne Einschränkung gilt, dass ein $x$ existiert, sowie $\epsilon >0$, sodass
 für alle $\delta > 0$ $B_\delta^{d_1}(x) \nsubseteq B_\epsilon^{d_2}(x)$. 
 Das heißt insbesondere: 
 \begin{align*}
-	\exists x \in X \text{ } \exists \epsilon > & 0 \text{ } \forall n \in \IN: \\
+	\exists x \in X \; \exists \epsilon > & 0 \text{ } \forall n \in \IN: \\
 	B_{\frac{1}{n}}^{d_1} \nsubseteq B_\epsilon^{d_2}(x)
 \end{align*}
 Wir wählen nun für $n \in \IN x_n \in B_{\frac{1}{n}}^{d_1}(x) \ B_\epsilon^{d_2}(x)$
@@ -138,26 +140,25 @@ Konzepte:
 	gilt.
 }\end{Definition}
 
-\begin{Beispiel}{
-	Selbstverständlich ist jede offene Kugel $B_\epsilon(x)$ eine Umgebung von $x$
-}\end{Beispiel}
+\begin{Beispiel}
+	Selbstverständlich ist jede offene Kugel $B_\epsilon(x)$ eine Umgebung von $x$.
+\end{Beispiel}
 
 \begin{Definition}{%2
 	Sei $(X,d)$ ein metrischer Raum. Dann heißt $U \subseteq V$ \emph{offen}, wenn 
 	$U$ für jedes $x \in U$ eine Umgebung ist.
 	Das heißt $U \subseteq X$ ist offen, wenn für alle $x \in U$ ein $r_x > 0$ 
-	existiert, mit $B_{r_x}(x) \subseteq 0$. 
+	existiert, mit $B_{r_x}(x) \subseteq U$. 
 	$A \subseteq X$ ist \emph{abgeschlossen}, wenn $X \ A$ offen ist. 
 }\end{Definition}
 
-\begin{Bemerkung}{
+\begin{Bemerkung}~
 	\begin{itemize}
-		\item[ ]
 		\item Es gibt Mengen die weder offen, noch abgeschlossen sind. $(0,1]$
 		\item Es gibt auch Mengen, die sowohl offen, als auch abgeschlossen sind:
-		$\IR, \Phi$
+		$\IR, \emptyset$
 	\end{itemize}
-}\end{Bemerkung}
+\end{Bemerkung}
 
 \begin{Lemma}{%3
 	Jede offene Kugel in einem metrischen Raum $(X,d)$ ist offen.

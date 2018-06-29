@@ -1,12 +1,10 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsthm} 
-%\usepackage[standard]{ntheorem}                            % Theorem-Umgebung
 \usepackage{enumitem}
 	\newcommand{\subscript}[2]{$#1 _ #2$}
 \usepackage{tikz}
@@ -17,33 +15,48 @@
 \usepackage{cases}
 \input{Diverses/mathe.tex}
 
-\newtheorem{theorem}{Theorem}[section]
+\author{Merle Gänßinger}
 
-\newtheorem{Definition}{Definition}[section]
-\theoremstyle{definition}
+\usepackage{amsthm} 
+%\usepackage[standard]{ntheorem}                            % Theorem-Umgebung
+    \newtheorem{theorem}{Theorem}[section]
 
-\newtheorem{Beispiel}{Beispiel}[section]
-\theoremstyle{definition}
+    \newtheorem{Definition}{Definition}[section]
+    \theoremstyle{definition}
 
-\newtheorem{Satz}{Satz}[section]
-\theoremstyle{plain}
+    \newtheorem{Beispiel}{Beispiel}[section]
+    \theoremstyle{definition}
 
-\newtheorem*{Bemerkung}{Bemerkung}
-\theoremstyle{plain}
+    \newtheorem{Satz}{Satz}[section]
+    \theoremstyle{plain}
 
-\newtheorem{Proposition}{Proposition}[section]
-\theoremstyle{definition}
+    \newtheorem*{Bemerkung}{Bemerkung}
+    \theoremstyle{plain}
 
-\newtheorem{Korollar}{Korollar}[section]
-\theoremstyle{definition}
+    \newtheorem{Proposition}{Proposition}[section]
+    \theoremstyle{definition}
 
-\newtheorem{Lemma}{Lemma}[section]
-\theoremstyle{plain}
+    \newtheorem{Korollar}{Korollar}[section]
+    \theoremstyle{definition}
+    \newtheorem{Lemma}{Lemma}[section]
+    \theoremstyle{plain}
 
-%\newtheorem*{Beweis}{Beweis}
-%\theoremstyle{proof}
+    %\newtheorem*{Beweis}{Beweis}
+    %\theoremstyle{proof}
 
 \renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+
+\usepackage{makeidx}
+    \makeindex
+    % Hervorhebung für wichtige Begriffe, insbesondere Definitionen.
+    % Sofort verknüpft mit dem Index.
+    \newcommand*{\highl}[2][]{\textbf{\boldmath{#2}}%
+	    \ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1}}%
+    }
+    \newcommand*{\nenne}[2][]{#2%
+	    \ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1}}%
+    }
+
 
 \usepackage{hyperref}	%should be loaded last
 \hypersetup{%
@@ -98,5 +111,7 @@
 \input{Vorlesungen/vl_20}
 \input{Vorlesungen/vl_21}
 \input{Vorlesungen/vl_22}
+\clearpage
+\printindex
 \end{document}
  	

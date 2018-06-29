@@ -1,3 +1,5 @@
+%!TEX root = ../gesamt.tex
+
 Anstatt per Hand nachzuweisen, dass die $l_p$-Normen in der Tat Normen sind, 
 wollen wir den wohl wichtigsten Fall $(p=2)$ genauer betrachten. Es zeigt sich, 
 dass der $l_2$-Norm noch mehr zugrunde liegt, als einfach nur eine Norm, nämlich 
@@ -9,16 +11,16 @@ ein Skalarprodukt.
 		< \cdot, \cdot >: V \times V \rightarrow \IK
 	\end{align*}		
 	heißt \emph{Skalarprodukt}, wenn gilt:
-	\begin{enumerate}[label=(\subscript{S}{{\arabic*}})]
-		\item \label{vl_21_stp_1}$<x,y> = \overline{<y,x>}$ \glqq (Anti-)Symmetrie\grqq{}
-		\item \label{vl_21_stp_2} $\forall \alpha,\beta \in \IK$ $\forall x,y,z \in V:$
+	\begin{enumerate}[label=\subscript{S}{{\arabic*}}]
+		\item \label{def:skalprod:1}$<x,y> = \overline{<y,x>}$ \glqq (Anti-)Symmetrie\grqq{}
+		\item \label{def:skalprod:2} $\forall \alpha,\beta \in \IK$ $\forall x,y,z \in V:$
 		\begin{align*}
 			<\alpha x + \beta y, z > = & \alpha <x,z> + \beta <y,z> \\
 			\text{und } <z, \alpha x + \beta y > = &\overline{\alpha} <z,x> 
-				+ \beta y >
+				+ \overline <z, \beta y >
 		\end{align*}
 		\glqq Sesquilinearität\grqq{}
-		\item \label{vl_21_stp_3} $\forall x \in V:$ $<x,x> = 0$, genau dann, wenn $x = 0$
+		\item \label{def:skalprod:3} $\forall x \in V:$ $<x,x> = 0$, genau dann, wenn $x = 0$
 		\glqq positive Definitheit\grqq{}
 	\end{enumerate}
 	Ist $<\cdot, \cdot>$ ein Skalarprodukt (SKP), so heißt das Paar \\
@@ -40,7 +42,7 @@ ein Skalarprodukt.
 		\left< \frac{\lambda x}{\sqrt{<x,x>}} - \frac{y}{\sqrt{<y,y>}} , 
 		 \frac{\lambda x}{\sqrt{<x,x>}} - - \frac{y}{\sqrt{<y,y>}} \right> \geq 0
 	\end{align*}
-	Aufgrund von~\ref{vl_21_stp_2} gilt:
+	Aufgrund von~\ref{def:skalprod:2} gilt:
 	\begin{align*}
 	 & \left< \frac{\lambda x}{\sqrt{<x,x>}} - \frac{y}{\sqrt{<y,y>}} , 
 		 \frac{\lambda x}{\sqrt{<x,x>}} - - \frac{y}{\sqrt{<y,y>}} \right> \\
@@ -50,7 +52,7 @@ ein Skalarprodukt.
 		+ \left< \frac{-y}{\sqrt{<y,y>}}, \frac{\lambda x}{\sqrt{<x,x>}} \right> \\
 		&+ \left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{-y}{\sqrt{<y,y>}}\right> \\
 	= & \lambda \cdot \overline{\lambda} \cdot \frac{<x,x>}{<x,x>} + \frac{<y,y>}{<y,y>} 
-		+ 2 \cdot Re \left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{-\lambda }{\sqrt{<y,y>}} \right>
+		+ 2 \cdot Re \left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{-y }{\sqrt{<y,y>}} \right>
 	\end{align*}
 
 Für $\lambda$ mit $\abs{\lambda} = \lambda \cdot \overline{\lambda} = 1$, so 
@@ -77,7 +79,7 @@ Für $\lambda$ mit $\abs{\lambda} = \lambda \cdot \overline{\lambda} = 1$, so
 
 \begin{Proposition}{%9 auch Defintion
 \todo{ist auch Definition}
-Sei $V$ ein Skalarprodukt-Raum. Dann ist
+Sei $V$ ein \highl{Skalarprodukt}-\nenne[Skalarprodukt!Raum]{Raum}. Dann ist
 \begin{align*}
 	\norm{\cdot}_{<\cdot,\cdot>} : V \rightarrow [0,\infty) \\
 	x \mapsto \sqrt{<x,x>}
@@ -93,8 +95,8 @@ eine Norm auf $V$, die wir die von $<\cdot,\cdot>$ induzierte Norm nennen.
 }\end{Bemerkung}
 
 \begin{proof}
-	\ref{def:norm:1} folgt sofort aus ~\ref{vl_21_stp_3} und \ref{def:norm:3} folgt sofort aus 
-	\ref{vl_21_stp_2}. Nun zu \ref{def:norm:2}: \\
+	\ref{def:norm:1} folgt sofort aus ~\ref{def:skalprod:3} und \ref{def:norm:3} folgt sofort aus 
+	\ref{def:skalprod:2}. Nun zu \ref{def:norm:2}: \\
 	Seien $x,y \in V$ gegeben, dann gilt:
 	\begin{align*}
 		\norm{x + y}^2_{<\cdot,\cdot>} = & <x+y, x+y> =
@@ -106,9 +108,8 @@ eine Norm auf $V$, die wir die von $<\cdot,\cdot>$ induzierte Norm nennen.
 	Wurzelziehen liefert die Behauptung.
 \end{proof}
 
-\begin{Beispiel}{
+\begin{Beispiel}{~
 	\begin{itemize}
-		\item[ ]
 		\item $V = \IK^n$. Sei für $x,y \in V$ $<x,y> = \sum_{i=1}^n x_i \cdot 
 		\overline{y_i}$. Dann ist $<\cdot, \cdot>$ offensichtlich ein Skalarprodukt 
 		auf $V$. Weiterhin induziert $<\cdot, \cdot>$ die Norm $\norm{\cdot}_2$ und 
@@ -128,9 +129,10 @@ eine Norm auf $V$, die wir die von $<\cdot,\cdot>$ induzierte Norm nennen.
 			\abs{x_i} + \abs{y_i} \leq \sum_{i = 1}^\infty \abs{x_i}^2 + \abs{y_i}^2 
 			= \sum_{i = 1}^\infty \abs{x_i}^2 + \sum_{i=1}^{\infty} \abs{y_i}^2 < \infty
 		\end{align*}
+		\todo{hier sollte ein Fehler sein. Die Abschätzung $\abs{x_i} \leq \abs{x_i}^2$ geht im Allgemeinen nicht. Was aber geht ist $\abs{x_i}\abs{y_i}\leq \frac12 \abs{x_i}^2\abs{y_i}^2$}
 		Damit konvergiert $\sum_{i=1}^\infty x_i \cdot \overline{y_i}$ absolut und 
-		daher schlechthin\todo{ich finde die Wortwahl mies}: Zu den Eigenschaften~\ref{vl_21_stp_1},~\ref{vl_21_stp_2},~\ref{vl_21_stp_3}: \ref{vl_21_stp_1} und \ref{vl_21_stp_3} sind 
-		klar und \ref{vl_21_stp_2} folgt aus den Grenzwertsätzen.
+		daher schlechthin\todo{ich finde die Wortwahl mies}: Zu den Eigenschaften~\ref{def:skalprod:1},~\ref{def:skalprod:2},~\ref{def:skalprod:3}: \ref{def:skalprod:1} und \ref{def:skalprod:3} sind 
+		klar und \ref{def:skalprod:2} folgt aus den Grenzwertsätzen.
 		\item Sei $ V = \mathcal{C}([a,b], \IR)$ der Raum aller stetigen Funktionen von $[a,b]$ nach $\IR$. Dann definiert 
 		\begin{align*}
 			<f,g> = \int_a^b f g \dd{x}
@@ -149,23 +151,24 @@ Sei $X \neq \emptyset$ eine Menge und $d_1,d_2$ Metriken auf $X$.
 Wir sagen $d_1$ und $d_2$ \emph{erzeugen die gleiche Topologie}, wenn für alle 
 Folgen $(x_n)$ in $X$ und für alle $x\in X$ gilt:
 \begin{align*}
-	& \lim\limits_{n \rightarrow \infty}{(x_n)} = x \text{ bezüglich Metrik } d_1\\
-	\Leftrightarrow & \lim\limits_{n \rightarrow \infty}{ x_n = x }\text{ bezüglich 
+	\lim\limits_{n \rightarrow \infty}{x_n} = x \text{ bezüglich Metrik } d_1 
+	\quad \gdw \quad \lim\limits_{n \rightarrow \infty}{ x_n = x }\text{ bezüglich 
 		Metrik } d_2
 \end{align*}
 Das heißt: 
 \begin{align*}
-	d_1(x_n,x) \rightarrow 0 \Leftrightarrow d_2(x_n,x) = 0
+	d_1(x_n,x) \toinfty 0 \quad \Leftrightarrow \quad  d_2(x_n,x) \toinfty 0
 \end{align*}
-Wir sagen $d_1$ und $d_2$ sind \emph{äquivalent}, wenn $c,C > 0$ existieren mit:
+Wir sagen $d_1$ und $d_2$ sind \highl[äquivalent!Metrik]{äquivalent}, wenn $c,C > 0$ existieren mit:
 \begin{align*}
-	c d_1(x,y) \leq d_2(x,y) \leq C d_1(x,y) \forall x,y \in X
+	\forall x,y \in X \quad c d_1(x,y) \leq d_2(x,y) \leq C d_1(x,y) 
 \end{align*}
 Analog sagen wir zwei Normen $\norm{\cdot}_1, \norm{\cdot}_2$ auf einem Vektorraum 
-$X$ sind \emph{äquivalent}, wenn $c,C > 0$ existieren mit:
+$X$ sind \highl[äquivalent!Norm]{äquivalent}, wenn $c,C > 0$ existieren mit:
 \begin{align*}
 	c \cdot \norm{x}_1 \leq \norm{x}_2 \leq C \norm{x}_1 \text{ } \forall x \in X
 \end{align*}
+	\todo{Das kann zu Verwirrungen bzw. euklidische Norm und 1-Norm führen}
 }\end{Definition}
 
 \begin{Bemerkung}{
@@ -175,17 +178,17 @@ $X$ sind \emph{äquivalent}, wenn $c,C > 0$ existieren mit:
 
 \begin{Proposition}{%11
 	Äquivalente Normen erzeugen äquivalente Metriken. Und äquivalente Metriken 
-	erzeugen die gleichen Topologie.
+	erzeugen die gleichen Topologien.
 }\end{Proposition}
 
 \begin{proof}
 	Seien $x,y \in X$ und $c,C > 0$, so dass $c \norm{\cdot}_1 \leq \norm{\cdot}_2 
-	\leq C \cdot \norm{\cdot}_1$, wobei $\norm{\cdot}_1, \norm{\cdot}_2$ 
+	\leq C \norm{\cdot}_1$, wobei $\norm{\cdot}_1, \norm{\cdot}_2$ 
 	äquivalente Normen auf dem Vektorraum $X$ seien.
 	Dann gilt:
 	\begin{align*}
 		c d_{\norm{\cdot}_1}(x,y) = c \norm{x-y}_1 \leq \norm{x-y}_2 
-		= & d_{\norm{\cdot}_2} \leq C \norm{x-y}_1 = C d_{\norm{\cdot}_1}(x,y)
+		= & d_{\norm{\cdot}_2}(x,y) \leq C \norm{x-y}_1 = C d_{\norm{\cdot}_1}(x,y)
 	\end{align*}
 	Das zeigt den ersten Teil.\\
 	Zum zweiten Teil: Sei $X \neq \emptyset$ und $d_1,d_2$ äquivalente Metriken auf 
@@ -199,26 +202,25 @@ $X$ sind \emph{äquivalent}, wenn $c,C > 0$ existieren mit:
 	Die andere Richtung läuft analog.
 \end{proof}
 
-\begin{Definition}{%12
+\begin{Definition}%12
 	Sei $(X,d)$ ein metrischer Raum und $x \in X$ sowie $\epsilon > 0$. Dann heißt 
 	$B_\epsilon (x) = \{ y \in X \vert d(x,y) < \epsilon\}$ der \emph{offene 
 	$\epsilon$-Ball} / die \emph{offene $\epsilon$-Kugel um $X$}.
-}\end{Definition}
+\end{Definition}
 
-\begin{Beispiel}{
+\begin{Beispiel}~
 	\begin{itemize}
-		\item[ ]
 		\item $X = \IR^2, d = d_2$ Kreis mit Radius 1 ohne Rand
 		\item $X = \IR^2, d = d_\infty$ Quadrat um (1,1) mit Seitenlänge 1
 	\end{itemize}
-}\end{Beispiel}
+\end{Beispiel}
 
 \begin{Lemma}{\label{vl_21_lemma_2}%13
 	Sei $(X,d)$ metrischer Raum und $(x_n)$ eine Folge in $X$. Dann sind äquivalent:
 	\begin{itemize}
-		\item $x_n \overset{n\rightarrow \infty}{\longrightarrow}x$
-		\item $\forall \epsilon > 0$ $\exists n_\epsilon$ $\forall n \geq n_\epsilon  
-			x_n \in B_\epsilon (x)$
+		\item $x_n \toinfty x$
+		\item $\forall \epsilon > 0 \exists n_\epsilon \in \IN \forall n \geq n_\epsilon  
+			: x_n \in B_\epsilon (x)$
 	\end{itemize}
 }\end{Lemma}
 
@@ -226,17 +228,17 @@ $X$ sind \emph{äquivalent}, wenn $c,C > 0$ existieren mit:
 	\begin{align*}
 		& x_n \overset{n\rightarrow \infty}{\longrightarrow} x \\
 		\Leftrightarrow & \forall \epsilon > 0 
-			\text{ }\exists n_\epsilon \in \IN \text{ }\forall n \geq n_\epsilon: 
+			\exists n_\epsilon \in \IN \forall n \geq n_\epsilon: 
 			d(x_n,x) < \epsilon \\
 		\Leftrightarrow & \forall \epsilon > 0 \exists n_\epsilon \in \IN \forall n \geq 
 	n_\epsilon: x_n \in B_\epsilon(x)
 	\end{align*} 
 \end{proof}
 
-\begin{Definition}[Einschub]{
-	Sei $(X,d)$ metrischer Raum. Eine Folge $(x_n)$ in $X$ heißt \emph{Cauchy-Folge}, wenn gilt: 
+\begin{Definition}[Einschub]
+	Sei $(X,d)$ metrischer Raum. Eine Folge $(x_n)$ in $X$ heißt \highl[Cauchy-Folge!im metrischen Raum]{Cauchy-Folge}, wenn gilt: 
 	\begin{align*}
 	\forall \epsilon > 0 \text{ } \exists n_\epsilon \in \IN \text{ } \forall n, m 
 		\geq n_\epsilon: d(x_n,x_m) < \epsilon
 	\end{align*}
-}\end{Definition}
+\end{Definition}
