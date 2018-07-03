@@ -1,0 +1,154 @@
+Der Begriff der offenen Menge beziehungsweise der Umgebung eines Punktes erlaubt die 
+folgende alternative Charakterisierung von konvergenten Folgen.
+
+\begin{Lemma}{\label{vl_23_lemma_1}%4
+	Sei $(X,d)$ metrischer Raum und $(x_n)$ eine Folge in $X$. Dann sind äquivalent:
+	\begin{enumerate}[label=({\roman{enumi}})]
+		\item \label{vl_23_stp_1} $x_n \toinfty x$
+		\item \label{vl_23_stp_2} $\forall \epsilon > 0 \quad \exists n_\epsilon \quad \forall n \geq 
+			n_\epsilon: x_n \in B_\epsilon (x)$
+		\item \label{vl_23_stp_3} Für jede Umgebung $U$ von $x$ existiert ein $n_U \in \IN$, so dass 
+			gilt: $x_n \in U \quad (n \geq n_U)$
+		\item \label{vl_23_stp_4} Für jede offene Menge $V \subseteq X$ mit $x \in V$ existiert ein 
+			$n \in \IN$, so dass gilt: $x_n \in V \quad n \geq n_V)$
+	\end{enumerate}
+}\end{Lemma}
+\begin{proof}
+	Die Äquivalenz von \ref{vl_23_stp_1} und \ref{vl_23_stp_2} ist genau Lemma~
+	\ref{vl_21_lemma_2}
+	des vorherigen Kapitels. \\
+	\ref{vl_23_stp_2} $\rightarrow$ \ref{vl_23_stp_4} Da $V$ offen ist, existiert 
+	per Definition ein $\epsilon > 0$ mit $B_\epsilon \subseteq V$. Dann gilt 
+	für alle $n \geq n_\epsilon: x_n \in B_\epsilon(x) \subseteq V$.\\
+	\ref{vl_23_stp_3} $\rightarrow$ \ref{vl_23_stp_3} Per Definition (von Umgebungen) gibt es eine offene Menge $V \subseteq U$ mit $x \in V$. Dann gilt 
+	für alle $n \geq n_V: x_n \in V \subseteq U$.\\
+	\ref{vl_23_stp_3} $\rightarrow$ \ref{vl_23_stp_2} Das folgt aus der Tatsache, 
+	dass $B_\epsilon(x)$ Umgebung von $x$ ist.
+\end{proof}
+
+\begin{Proposition}{\label{vl_23_prop_1}%5
+	Sei $(X,d)$ metrischer Raum. Dann gilt
+	\begin{enumerate}[label=(\subscript{T}{{\arabic*}})]
+		\item \label{vl_23_stp_5} $\Phi,X$ sind offen
+		\item \label{vl_23_stp_6} Sind $V_1, \hdots, V_n$ offen, so ist auch $\cap_{i=1}^n V_i$ offen
+		\item \label{vl_23_stp_7} Sei $I$ eine beliebige Indexmenge und $(V_i)_{i \in I}$ eine 
+			Familie offener Menge.\\
+			Sei $M \subseteq \mathcal{P}(x)$ so, dass für alle $U \in M$ gilt:
+			$U$ ist offen. Dann gilt: 
+			\begin{align*}
+				\cup_{U \in M} U \text{ ist offen}
+			\end{align*}
+	\end{enumerate}
+}\end{Proposition}
+
+\begin{proof}
+\ref{vl_23_stp_5} \& \ref{vl_23_stp_7} sind einfach. \\
+\ref{vl_23_stp_6} Sei $x \in \cap_{i=1}^n V_i$. Dann gilt also $x \in V_i \quad (
+	i = 1, \hdots, n)$. Da die $V_i$ offen sind, existiert jeweils ein $\epsilon_i 
+	> 0$ mit $B_{\epsilon_i} (x) \subseteq V_i$. 
+	Sei $\epsilon = \min_{i = 1, \hdots, n} \epsilon_i$. Dann gilt: 
+	$B_\epsilon(x) \subseteq V_i (i = 1, \hdots, n)$. Ergo:
+	\begin{align*}
+		B_\epsilon(x) \subseteq \cap_{i = 1}^n V_i
+	\end{align*}
+	Da $x$ beliebig gewählt war, ist $\cap_{i = 1}^n V_i$ offen.
+\end{proof}
+
+\begin{Korollar}{\label{vl_23_korollar_1}%6
+	Sei $(X,d)$ ein metrischer Raum und $I$ eine beliebige Indexmenge und $(B_i)_{
+	i \in I}$ eine Familie abgeschlossener Mengen. Dann ist $\cap_{i \in I} B_i$ 
+	abgeschlossen.
+}\end{Korollar}
+
+\begin{proof}
+	Es ist zu zeigen: 
+	\begin{align*}
+		\left( \cap_{i \in I} B_i \right)^C = X \ \cap_{i \in I}B_i
+	\end{align*}
+	ist offen. Mit den de Morgan'schen Regeln folgt:
+	\begin{align*}
+		\left( \cap_{i \in I} B_i \right)^C = \cup_{i \in I}{B_i}^C
+	\end{align*}
+	ist offen, da $B_i^C$ offen ist und wegen Proposition~\ref{vl_23_prop_1}~	
+	\ref{vl_23_stp_7}.
+\end{proof}
+
+\begin{Bemerkung}{
+	~\begin{itemize}
+		\item Ist $X$ eine Menge und $M \subseteq X$, so heißt 
+		$M^C := X \setminus M$ das \emph{Komplement} von $M$ (in $X$).
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Korollar}{%7
+	Sei $(X,d)$ metrischer Raum und $A \subseteq X$ abgeschlossen sowie $U 
+	\subseteq X$ offen. Dann ist $U \setminus A$ offen und $A \setminus U$ abgeschlossen.
+}\end{Korollar}
+
+\begin{proof}
+	$U \setminus A = U \cap A^C$ ist offen, da $A^C$ offen ist und wegen \ref{vl_23_stp_6}
+	%T2
+	$A \setminus U = A \cap U^C$ ist abgeschlossen, da $U^C$ abgeschlossen ist und 
+	Korollar~\ref{vl_23_korollar_1} gilt.
+\end{proof}
+
+\begin{Definition}{%8
+	Sei $(X,d)$ ein metrischer Raum. Dann heißt
+	\begin{itemize}
+		\item $int M := \overset{\partial}{M} := M^{\partial} := \cup_{u \subseteq M, u \text{ist offen}} u $ das \emph{Inverse von $M$}
+		\item $\mathrm{dM} := \overline{M} := \cap_{A \supseteq B, A \text{ ist abgeschlossen}}$ den \emph{Abschluss} von $M$ 
+		\item $\partial M := \overline{M} \setminus \overset{\partial}{M}$ 
+		den \emph{Rand} von $M$
+	\end{itemize}
+}\end{Definition}
+
+\begin{Bemerkung}{
+	~\begin{itemize}
+		\item Damit ist $\overset{\partial}{M}$ die größte offene Menge die komplett in 
+	$M$ enthalten ist.
+		\item Analog ist $\overline{M}$ die kleinste abgeschlossene Menge, die $M$, 
+			enthält.
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Proposition}{\label{vl_23_prop_2}%9
+	Sei $(X,d)$ metrischer Raum. Eine Teilmenge $A \subseteq X$ ist genau dann 
+	abgeschlossen, wenn der Grenzwert jeder (in $X$ konvergente) Folge 
+	$(x_n)$ in $A$ selbst wieder in $A$ liegt. 
+}\end{Proposition}
+
+\begin{proof}
+	Sei zunächst $A$ abgeschlossen und $(x_n)$ eine Folge in $A$, die gegen 
+	$x \in X$ konvergiert. Angenommen $x$ liegt nicht in $A$. Da $A$ abgeschlossen 
+	ist, ist $A^C$ offen. Nach Punkt~\ref{vl_23_stp_4} Lemma~\ref{vl_23_lemma_1} 
+	gibt es also ein $n_{A^C}$, so dass $x_1 \in A^C$ für alle $ n \geq n_{A^C}$ 
+	im Widerspruch zur Annahme, dass $(x_n)$ eine Folge in $A$ ist. 
+	Das zeigt die erste Richtung. Für die andere Richtung sei $A \subseteq X$ 
+	eine Menge mit der Eigenschaft, dass jede (in $x$ konvergente) Folge in $A$ 
+	ihren Grenzwert in $A$ hat. Wir zeigen: $A^C$ ist offen. Sei aber 
+	$x \in A^C$. Angenommen für alle $n \in \IN$ gilt: 
+	\begin{align*}
+		B_{\frac{1}{n}}(x) \not \subseteq A^C
+	\end{align*}
+	das heißt, für alle $n \in \IN$ existiert ein $x_n \in B_{\frac{1}{n}}(x) 
+	\cup A$. Das heißt $(x_n)$ ist eine Folge in $A$, die nach Lemma~\ref{vl_23_lemma_1}
+	Punkt~\ref{vl_23_stp_2} gegen $x$ konvergiert.
+	Da $x \in A^C$ beliebig war, folgt die Behauptung.
+\end{proof}
+
+\begin{Definition}{%10
+	Sei $X$ metrischer Raum und $Y \subseteq X$. Dann heißt $z \in X$
+	\begin{itemize}
+		\item \emph{Häufungspunkt (HP)} von $Y$, falls in jeder Umgebung $U$ von 
+			$z$ ein Element $y \in Y \setminus z$ liegt
+		\item \emph{Isolierter Punkt} von $Y$, falls $z \in Y$ und $z$ kein 
+			Häufungspunkt von $Y \setminus z$ ist.
+		\item \emph{Innerer Punkt} von $Y$, wenn $z \in Y$
+	\end{itemize}
+}\end{Definition}
+Damit schreibt sich Proposition~\ref{vl_23_prop_2}
+	wie folgt:
+\begin{Proposition}{%11
+	Sei $(X,d)$ metrischer Raum. Eine Teilmenge $A \subseteq X$ ist abgeschlossen, 
+	wenn sie jeden ihrer Häufungspunkte enthält.
+}\end{Proposition}
