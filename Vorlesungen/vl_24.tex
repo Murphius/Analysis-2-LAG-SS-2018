@@ -96,15 +96,15 @@ Begriffe wie den Grenzwert und Stetigkeit untersuchen.
 \end{Proposition}
 
 \begin{proof}
-	Sei $\epsilon >0$. Da $g$ stetig in $f(p)$ ist, gibt es $\delta\prime > 0$, 
+	Sei $\epsilon >0$. Da $g$ stetig in $f(p)$ ist, gibt es $\delta' > 0$, 
 	so dass
 	\begin{align*}
-		g(B_{\delta\prime}(f(p)) \subseteq B_\epsilon(g \circ f(p))
+		g(B_{\delta'}(f(p)) \subseteq B_\epsilon(g \circ f(p))
 	\end{align*}
-	Analog existiert $\delta > 0$ mit $f(B_\delta(p)) \subseteq B_{\delta\prime}
+	Analog existiert $\delta > 0$ mit $f(B_\delta(p)) \subseteq B_{\delta'}
 	(f(p))$. Dann gilt:
 	\begin{align*}
-		g \circ f (B_\delta(p)) \subseteq g(B_{\delta\prime}(f(p)) 
+		g \circ f (B_\delta(p)) \subseteq g(B_{\delta'}(f(p)) 
 		\subseteq B_\epsilon(g\circ f(p))
 	\end{align*}
 	Da $\epsilon > 0$ beliebig war, folgt die Behauptung.
@@ -141,26 +141,27 @@ Begriffe wie den Grenzwert und Stetigkeit untersuchen.
 	Metriken auf den Raum $Y= X_1 \times X_2 \times \hdots \times X_n$
 	Eine natürliche Metrik auf $Y$ ist gegeben durch:
 	\begin{align*}
-		d_+ (Y,Y') = d_+ ((X_1, \hdots, X_n), (X_1', \hdots, X_n\prime)) 
-		= \sum_{i = 1}^n d_i(x_i,x_i\prime)
+		d_+ (Y,Y') = d_+ ((X_1, \hdots, X_n), (X_1', \hdots, X_n')) 
+		= \sum_{i = 1}^n d_i(x_i,x_i')
 	\end{align*}
 	Eine weitere natürliche Metrik auf $Y$ ist gegeben durch:
 	\begin{align*}
-		d_{\max}(Y,Y\prime) = d_{\max}((X_1, \hdots, X_n),(X_1\prime, \hdots, 
-			X_n\prime)) = \max_{i=1, \hdots, n} d_i(x_i,x_i\prime)
+		d_{\max}(Y,Y') = d_{\max}((X_1, \hdots, X_n),(X_1', \hdots, 
+			X_n')) = \max_{i=1, \hdots, n} d_i(x_i,x_i')
 	\end{align*}
 	Es zeigt sich, dass $d_+$ und $d_{max}$ äquivalent sind, denn:
 	\begin{align*}
-		d_\infty (Y, Y\times) \leq d_+(Y, Y\prime) \leq n \cdot d_{\max} 
-		(Y, Y\prime)
+		d_{\max} (Y, Y') \leq d_+(Y, Y') \leq n \cdot d_{\max} 
+		(Y, Y')
 	\end{align*}
 	Fazit: Bei der Behandlung des Produkts $(X_1, \hdots, X_n)$ ist es unerheblich, 
 	für welche der beiden Metriken wir uns entscheiden.
 }\end{Einschub}
 
 \begin{Proposition}{%7 oder auch mal 9
-	Seien $X_1, \hdots, X_n, Y$ metrische Räume und $f: Y \rightarrow X_1 \times 
-	\hdots \times X_n$ mit $y \mapsto (f_1(Y), \hdots, f_n(Y))$, wobei 
+	Seien $X_1, \hdots, X_n, Y$ metrische Räume und 
+		$$f: Y \rightarrow X_1 \times \hdots \times X_n$$ mit $y \mapsto (f_1(Y), \hdots, f_n(Y))$,
+		 wobei 
 	$f_i: Y \rightarrow X_i, \quad (i = 1, \hdots, n)$ sei. \\
 	Dann ist $f$ genau dann stetig in $p \in Y$ wenn $f_i \quad (i= 1, \hdots, n)$
 	stetig in $p$ ist.
@@ -202,15 +203,15 @@ Begriffe wie den Grenzwert und Stetigkeit untersuchen.
 	$d$ ist stetig in $(x_1, x_2)$.
 	Dann gilt:
 	\begin{align*}
-		\abs{d(x_1,x_2) + d(x_1\prime, x_2\prime)} = & 
-		\abs{d(x_1,x_2) - d(x_1, x_2\prime) 
-			+ d(x_1,x_2\prime) - d(x_1\prime,x_2\prime)} \\ \leq &
-		\abs{d(x_1,x_2) - d(x_1, x_2\prime)} + 
-			\abs{d(x_1,x_2\prime)-d(x_1\prime,x_2\prime)} \\ \leq &
-		d(x_2, x_2\prime) + d(x_1, x_1\prime) = 
-		d_+ ((x_1,x_2), (x_1\prime, x_2\prime))
+		\abs{d(x_1,x_2) + d(x_1', x_2')} = & 
+		\abs{d(x_1,x_2) - d(x_1, x_2') 
+			+ d(x_1,x_2') - d(x_1',x_2')} \\ \leq &
+		\abs{d(x_1,x_2) - d(x_1, x_2')} + 
+			\abs{d(x_1,x_2')-d(x_1',x_2')} \\ \leq &
+		d(x_2, x_2') + d(x_1, x_1') = 
+		d_+ ((x_1,x_2), (x_1', x_2'))
 	\end{align*}
-	Ergo: Ist $d_+((x_1,x_2), (x_1\prime,x_2\prime)) < \delta$ (für $\delta = 
+	Ergo: Ist $d_+((x_1,x_2), (x_1',x_2')) < \delta$ (für $\delta = 
 	\epsilon$), dann ist $\abs{d(\hdots) - d(\hdots)} < \epsilon$. 
 	Da $\epsilon > 0$ beliebig war, folgt die Behauptung. 
 	Für den zweiten Teil folgt die Behauptung aus:
