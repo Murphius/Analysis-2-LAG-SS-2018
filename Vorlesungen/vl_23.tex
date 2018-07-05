@@ -29,14 +29,14 @@ folgende alternative Charakterisierung von konvergenten Folgen.
 \begin{Proposition}{\label{vl_23_prop_1}%5
 	Sei $(X,d)$ metrischer Raum. Dann gilt
 	\begin{enumerate}[label=(\subscript{T}{{\arabic*}})]
-		\item \label{vl_23_stp_5} $\Phi,X$ sind offen
-		\item \label{vl_23_stp_6} Sind $V_1, \hdots, V_n$ offen, so ist auch $\cap_{i=1}^n V_i$ offen
+		\item \label{vl_23_stp_5} $\emptyset,X$ sind offen
+		\item \label{vl_23_stp_6} Sind $V_1, \hdots, V_n$ offen, so ist auch $\bigcap_{i=1}^n V_i$ offen
 		\item \label{vl_23_stp_7} Sei $I$ eine beliebige Indexmenge und $(V_i)_{i \in I}$ eine 
 			Familie offener Menge.\\
 			Sei $M \subseteq \mathcal{P}(x)$ so, dass für alle $U \in M$ gilt:
 			$U$ ist offen. Dann gilt: 
 			\begin{align*}
-				\cup_{U \in M} U \text{ ist offen}
+				\bigcup_{U \in M} U \text{ ist offen}
 			\end{align*}
 	\end{enumerate}
 }\end{Proposition}
@@ -49,7 +49,7 @@ folgende alternative Charakterisierung von konvergenten Folgen.
 	Sei $\epsilon = \min_{i = 1, \hdots, n} \epsilon_i$. Dann gilt: 
 	$B_\epsilon(x) \subseteq V_i (i = 1, \hdots, n)$. Ergo:
 	\begin{align*}
-		B_\epsilon(x) \subseteq \cap_{i = 1}^n V_i
+		B_\epsilon(x) \subseteq \bigcap_{i = 1}^n V_i
 	\end{align*}
 	Da $x$ beliebig gewählt war, ist $\cap_{i = 1}^n V_i$ offen.
 \end{proof}
@@ -63,11 +63,11 @@ folgende alternative Charakterisierung von konvergenten Folgen.
 \begin{proof}
 	Es ist zu zeigen: 
 	\begin{align*}
-		\left( \cap_{i \in I} B_i \right)^C = X \ \cap_{i \in I}B_i
+		\left( \bigcap_{i \in I} B_i \right)^C = X \cap \bigcap_{i \in I} B_i
 	\end{align*}
 	ist offen. Mit den de Morgan'schen Regeln folgt:
 	\begin{align*}
-		\left( \cap_{i \in I} B_i \right)^C = \cup_{i \in I}{B_i}^C
+		\left( \bigcap_{i \in I} B_i \right)^C = \bigcup_{i \in I}{B_i}^C
 	\end{align*}
 	ist offen, da $B_i^C$ offen ist und wegen Proposition~\ref{vl_23_prop_1}~	
 	\ref{vl_23_stp_7}.
@@ -95,16 +95,16 @@ folgende alternative Charakterisierung von konvergenten Folgen.
 \begin{Definition}{%8
 	Sei $(X,d)$ ein metrischer Raum. Dann heißt
 	\begin{itemize}
-		\item $int M := \overset{\partial}{M} := M^{\partial} := \cup_{u \subseteq M, u \text{ist offen}} u $ das \emph{Inverse von $M$}
-		\item $\mathrm{dM} := \overline{M} := \cap_{A \supseteq B, A \text{ ist abgeschlossen}}$ den \emph{Abschluss} von $M$ 
-		\item $\partial M := \overline{M} \setminus \overset{\partial}{M}$ 
-		den \emph{Rand} von $M$
+		\item $$\mathop{int} M := \overset{\circ}{M} := M^{\circ} := \bigcup_{\substack{u \subseteq M\\ U \text{ist offen}}} U $$ das \highl[Innere!Menge]{Innere von $M$}
+		\item $\partial M := \bar{M} := \cap_{A \supseteq B, A \text{ ist abgeschlossen}}$ den \highl{Abschluss} von $M$ 
+		\item $\partial M := \bar{M} \setminus \overset{\circ}{M}$ 
+		den \highl{Rand} von $M$
 	\end{itemize}
 }\end{Definition}
 
 \begin{Bemerkung}{
 	~\begin{itemize}
-		\item Damit ist $\overset{\partial}{M}$ die größte offene Menge die komplett in 
+		\item Damit ist $\overset{\circ}{M}$ die größte offene Menge die komplett in 
 	$M$ enthalten ist.
 		\item Analog ist $\overline{M}$ die kleinste abgeschlossene Menge, die $M$, 
 			enthält.
@@ -123,7 +123,9 @@ folgende alternative Charakterisierung von konvergenten Folgen.
 	ist, ist $A^C$ offen. Nach Punkt~\ref{vl_23_stp_4} Lemma~\ref{vl_23_lemma_1} 
 	gibt es also ein $n_{A^C}$, so dass $x_1 \in A^C$ für alle $ n \geq n_{A^C}$ 
 	im Widerspruch zur Annahme, dass $(x_n)$ eine Folge in $A$ ist. 
-	Das zeigt die erste Richtung. Für die andere Richtung sei $A \subseteq X$ 
+	Das zeigt die erste Richtung.
+
+	Für die andere Richtung sei $A \subseteq X$ 
 	eine Menge mit der Eigenschaft, dass jede (in $x$ konvergente) Folge in $A$ 
 	ihren Grenzwert in $A$ hat. Wir zeigen: $A^C$ ist offen. Sei aber 
 	$x \in A^C$. Angenommen für alle $n \in \IN$ gilt: 
@@ -131,7 +133,7 @@ folgende alternative Charakterisierung von konvergenten Folgen.
 		B_{\frac{1}{n}}(x) \not \subseteq A^C
 	\end{align*}
 	das heißt, für alle $n \in \IN$ existiert ein $x_n \in B_{\frac{1}{n}}(x) 
-	\cup A$. Das heißt $(x_n)$ ist eine Folge in $A$, die nach Lemma~\ref{vl_23_lemma_1}
+	\cap A$. Das heißt $(x_n)$ ist eine Folge in $A$, die nach Lemma~\ref{vl_23_lemma_1}
 	Punkt~\ref{vl_23_stp_2} gegen $x$ konvergiert.
 	Da $x \in A^C$ beliebig war, folgt die Behauptung.
 \end{proof}
@@ -139,11 +141,11 @@ folgende alternative Charakterisierung von konvergenten Folgen.
 \begin{Definition}{%10
 	Sei $X$ metrischer Raum und $Y \subseteq X$. Dann heißt $z \in X$
 	\begin{itemize}
-		\item \emph{Häufungspunkt (HP)} von $Y$, falls in jeder Umgebung $U$ von 
-			$z$ ein Element $y \in Y \setminus z$ liegt
-		\item \emph{Isolierter Punkt} von $Y$, falls $z \in Y$ und $z$ kein 
-			Häufungspunkt von $Y \setminus z$ ist.
-		\item \emph{Innerer Punkt} von $Y$, wenn $z \in Y$
+		\item \highl[Häufungspunkt!metrischer Raum]{Häufungspunkt (HP)} von $Y$, falls in jeder Umgebung $U$ von 
+			$z$ ein Element $y \in Y \setminus \set z$ liegt
+		\item \highl{Isolierter Punkt} von $Y$, falls $z \in Y$ und $z$ kein 
+			Häufungspunkt von $Y \setminus \set z$ ist.
+		\item \highl{Innerer Punkt} von $Y$, wenn $z \in Y$
 	\end{itemize}
 }\end{Definition}
 Damit schreibt sich Proposition~\ref{vl_23_prop_2}
@@ -152,3 +154,4 @@ Damit schreibt sich Proposition~\ref{vl_23_prop_2}
 	Sei $(X,d)$ metrischer Raum. Eine Teilmenge $A \subseteq X$ ist abgeschlossen, 
 	wenn sie jeden ihrer Häufungspunkte enthält.
 }\end{Proposition}
+\todo{Ist das nicht ein genau dann wenn?}
