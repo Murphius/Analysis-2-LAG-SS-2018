@@ -1,0 +1,253 @@
+\section{Grenzwerte \& Stetigkeit von Abbildungen zwischen metrischen Räumen}
+
+Wir wollen, ganz analog zu Fall reell- beziehungsweise komplexwertiger Funktionen, 
+Begriffe wie den Grenzwert und Stetigkeit untersuchen.
+
+\begin{Definition}{%1
+	Seien $X,Y$ metrische Räume und $f: D \subseteq X \rightarrow Y$ sowie $p \in 
+	X$ ein Häufungspunkt von $D$.\\
+	Wir sagen $f$ hat an der Stelle $p$ den \emph{Grenzwert(GW)} $q \in Y$, wenn 
+	gilt:
+	\begin{align*}
+		\forall \epsilon > 0 \quad \exists \delta > 0  \quad \forall x 
+		\in (B_\delta(p) \cap D) \setminus \{p\}: \quad d(f(x), q) < \epsilon
+	\end{align*}
+	In diesem Falle schreiben wir wie üblich:
+	\begin{align*}
+		\lim\limits_{x \rightarrow p}{f(x)} = q \text{ beziehungsweise } 
+		f(x) \xrightarrow{x \rightarrow p}q
+	\end{align*}
+}\end{Definition}
+
+\begin{Bemerkung}{
+	~\begin{itemize}
+		\item Achtung! Hier stehen (implizit) zwei unter Umständen komplett 
+		verschiedene Metriken (eine auf $X$ und eine auf $Y$).
+		\item $p$ muss \underline{nicht} in $D$ liegen, selbst wenn $p \in D$ , ist 
+		$f(p)$ für die Existenz eines Grenzwerts komplett unerheblich.
+		\item Wie im reellen folgt (direkt aus der Dreiecksungleichung) die 
+		Eindeutigkeit des Grenzwerts.
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Satz}{%2
+	Seien $X,Y$ metrische Räume, $f: D \subseteq X \rightarrow Y$ eine Abbildung 
+	und $p \in X$ ein Häufungspunkt von $D$. Dann sind äquivalent:
+	\begin{enumerate}
+		\item \label{vl_24_stp_1} \begin{align*}
+				\lim\limits_{x \rightarrow p}{f(x)} = q
+			\end{align*}
+		\item \label{vl_24_stp_2} Für jede Folge $(x_n)$ in $D$ mit $x_n \neq p 
+		\quad (n \in \IN)$ und $\lim\limits_{n \rightarrow \infty}{x_n}=p$ gilt:
+			\begin{align*}
+				\lim\limits_{n \rightarrow \infty}{f(x_n)} = q
+			\end{align*}
+	\end{enumerate}
+}\end{Satz}
+
+\begin{proof}
+	Ganz analog zum reell- beziehungsweise komplexwertigen Fall.
+\end{proof}
+
+\begin{Definition}{%3
+	Seien $X,Y$ metrische Räume und $f: X \rightarrow Y$. Dann heißt $f$ 
+	\emph{stetig an der Stelle} $p \in X$, wenn gilt:
+	\begin{align*}
+		\forall \epsilon > 0 \quad \exists \delta > 0 \quad \forall x \in 
+		B_\delta (p) : d(f(x),f(p)) < \epsilon
+	\end{align*}
+	Ist $f$ stetig in jedem $p \in X$, so heißt $f$ \emph{stetig}.
+}\end{Definition}
+
+\begin{Bemerkung}{
+	~\begin{itemize}
+		\item Hier muss $p$ selbstverständlich im Definitionsbereich von $f$ liegen.
+		\item In isolierten Punkten ist $f$ stets steig.
+		\item Erinnerung: Für $A \subseteq X$ sei $F(A) = \{f(x) \vert x \in A\}$ \\
+			Damit schreibt sich die Definition von Stetigkeit in $p \in X$ wie 
+			folgt:
+			\begin{align*}
+				\forall \epsilon > 0 \quad \exists \delta > 0: \quad 
+				f(B_\delta(p)) \subseteq B_\epsilon(f(p))
+			\end{align*}
+		\item Stetig heißt: \glqq Punkte nahe $p$ werden in Punkte nahe 
+			$f(p)$ abgebildet\grqq{}
+	\end{itemize}
+}\end{Bemerkung}
+
+\begin{Satz} \label{vl_24_satz_2}%4
+	Sei $X, Y$ metrische Räume und $f: X \rightarrow Y$ sowie $p \in X$ ein 
+	Häufungspunkt von $X$. Dann sind äquivalent: 
+	\begin{enumerate}
+		\item \label{vl_24_stp_3} $f$ ist stetig in $p$
+		\item \label{vl_24_stp_4} $\lim\limits_{x \rightarrow p}{f(x)} = f(p)$
+	\end{enumerate}
+\end{Satz}
+
+\begin{proof}
+	Ganz analog zum Beweis der entsprechenden reell- beziehungsweise komplexwertige 
+	Aussage.
+\end{proof}
+
+\begin{Proposition}%5
+		Seien $X,Y,Z$ metrische Räume und $f: X \rightarrow Y$ stetig in $p \in X$ 
+		sowie $g: Y \rightarrow Z$ stetig in $f(p) \in Y$. Dann ist 
+		$g \circ f: X \rightarrow Z$ stetig in $p$
+\end{Proposition}
+
+\begin{proof}
+	Sei $\epsilon >0$. Da $g$ stetig in $f(p)$ ist, gibt es $\delta\prime > 0$, 
+	so dass
+	\begin{align*}
+		g(B_{\delta\prime}(f(p)) \subseteq B_\epsilon(g \circ f(p))
+	\end{align*}
+	Analog existiert $\delta > 0$ mit $f(B_\delta(p)) \subseteq B_{\delta\prime}
+	(f(p))$. Dann gilt:
+	\begin{align*}
+		g \circ f (B_\delta(p)) \subseteq g(B_{\delta\prime}(f(p)) 
+		\subseteq B_\epsilon(g\circ f(p))
+	\end{align*}
+	Da $\epsilon > 0$ beliebig war, folgt die Behauptung.
+\end{proof}
+
+\begin{Proposition}{\label{vl_24_prop_2}%6
+	Sei $X$ ein metrischer Raum und $f,g : X \rightarrow \IK$ stetig in $p \in X$. 
+	Dann sind auch $f + g$, $f \cdot g$  und - falls $g(x) \neq 0 \quad (x \in X)$ 
+	- $\frac{f}{g}$ stetig in $p$.
+}\end{Proposition}
+
+\begin{proof}
+	Wir betrachten den Fall der Addition, die anderen Fälle laufen ganz analog. \\
+	Ohne Einschränkung sei $p$ Häufungspunkt von $X$. Dann gilt:
+	\begin{align*}
+		\lim\limits_{x \rightarrow p}{f(x) +g(x)} = & 
+		\lim\limits_{n \rightarrow \infty} f(x_n) + g(x_n) = 
+		\lim\limits_{n \rightarrow \infty}{f(x_n)} 
+		+ \lim\limits_{n \rightarrow \infty} g(x_n) \\ = &
+		\lim\limits_{x \rightarrow p}f(x) + \lim\limits_{x \rightarrow p} g(x)
+		= f(p) +g(p) = (f+g)(p)
+	\end{align*}
+	wobei $(x_n)$ eine beliebige Folge in $X$ mit $(x_n) \neq p \quad (n \in \IN)$
+	und $\lim\limits_{n \rightarrow \infty}{x_n} = p$ sei. Wir haben also gezeigt:
+	\begin{align*}
+		\lim\limits_{x \rightarrow p}{(f+g)(x)} = (f+g)(p)
+	\end{align*}	
+	Mist Satz~\ref{vl_24_satz_2} folgt die Behauptung. 
+\end{proof}
+
+\begin{Einschub}{
+	Wir haben in den Übungen bereits Metriken auf den Produkt metrischer Räume 
+	$(X_1,d_1) , \hdots, (X_n, d_n)$ bereits kennen gelernt, das heißt
+	Metriken auf den Raum $Y= X_1 \times X_2 \times \hdots \times X_n$
+	Eine natürliche Metrik auf $Y$ ist gegeben durch:
+	\begin{align*}
+		d_+ (Y,Y\prime) = d_+ ((X_1, \hdots, X_n), (X_1\prime, \hdots, X_n\prime)) 
+		= \sum_{i = 1}^n d_i(x_i,x_i\prime)
+	\end{align*}
+	Eine weitere natürliche Metrik auf $Y$ ist gegeben durch:
+	\begin{align*}
+		d_{\max}(Y,Y\prime) = d_{\max}((X_1, \hdots, X_n),(X_1\prime, \hdots, 
+			X_n\prime)) = \max_{i=1, \hdots, n} d_i(x_i,x_i\prime)
+	\end{align*}
+	Es zeigt sich, dass $d_+$ und $d_{max}$ äquivalent sind, denn:
+	\begin{align*}
+		d_\infty (Y, Y\times) \leq d_+(Y, Y\prime) \leq n \cdot d_{\max} 
+		(Y, Y\prime)
+	\end{align*}
+	Fazit: Bei der Behandlung des Produkts $(X_1, \hdots, X_n)$ ist es unerheblich, 
+	für welche der beiden Metriken wir uns entscheiden.
+}\end{Einschub}
+
+\begin{Proposition}{%7 oder auch mal 9
+	Seien $X_1, \hdots, X_n, Y$ metrische Räume und $f: Y \rightarrow X_1 \times 
+	\hdots \times X_n$ mit $y \mapsto (f_1(Y), \hdots, f_n(Y))$, wobei 
+	$f_i: Y \rightarrow X_i, \quad (i = 1, \hdots, n)$ sei. \\
+	Dann ist $f$ genau dann stetig in $p \in Y$ wenn $f_i \quad (i= 1, \hdots, n)$
+	stetig in $p$ ist.
+}\end{Proposition}
+
+\begin{proof}
+	\glqq $f$ stetig $\Rightarrow f_i$ stetig\grqq{}:
+	Sei $\epsilon > 0$ gegeben. Da $f$ stetig ist, existiert ein $\delta > 0$ mit:
+	\begin{align*}
+		d(f(x),f(p)) < \epsilon
+	\end{align*}
+	sobald $x \in U_\delta (p)$. Damit gilt:
+	\begin{align*}
+		D(f_i(x),f_i(p)) \leq d_{\max} (f(x), f(p)) < \epsilon
+	\end{align*}
+	für alle $x \in B_\delta(p)$. Also ist $f_i$ stetig.\\
+	\glqq $f_i$ ist stetig in $p$ $\Rightarrow f$ ist stetig\grqq{}:
+	Sei $\epsilon > 0$ gegeben. Dann existiert für \newline $i = 1, \hdots, n$ ein 
+	$\delta_i > 0$ mit: 
+	\begin{align*}
+		d(f_i(x),f_i(p))< \epsilon
+	\end{align*}
+	sobald $d(x,p) < \delta_i$. Dann gilt für alle $x$ mit $d(x,p) <\delta$, wobei 
+	$\delta := \min_{i = 1, \hdots, n} \delta_i$:
+	\begin{align*}
+		d_{\max}(f(x),f(p)) = \max_{i=1\hdots,n} d(f_i(x),f(p)) \leq \epsilon
+	\end{align*}
+	Da $\epsilon > 0$ beliebig war, folgt die Behauptung.
+\end{proof}
+
+\begin{Proposition}[Stetigkeit von Norm und Metrik]{%8 oder 10
+	Sei $(X,d)$ metrischer Raum. Dann ist $d: X \times X \rightarrow \IR$ stetig. 
+	Sei $(V, \norm{\cdot})$ normierter Raum. Dann ist $\norm{\cdot} : V \rightarrow 
+	\IR$ stetig.
+}\end{Proposition}
+
+\begin{proof}
+	Seien $(x_1, x_2) \in X \times X$ sowie $\epsilon > 0$ gegeben. Wir zeigen: 
+	$d$ ist stetig in $(x_1, x_2)$.
+	Dann gilt:
+	\begin{align*}
+		\abs{d(x_1,x_2) + d(x_1\prime, x_2\prime)} = & 
+		\abs{d(x_1,x_2) - d(x_1, x_2\prime) 
+			+ d(x_1,x_2\prime) - d(x_1\prime,x_2\prime)} \\ \leq &
+		\abs{d(x_1,x_2) - d(x_1, x_2\prime)} + 
+			\abs{d(x_1,x_2\prime)-d(x_1\prime,x_2\prime)} \\ \leq &
+		d(x_2, x_2\prime) + d(x_1, x_1\prime) = 
+		d_+ ((x_1,x_2), (x_1\prime, x_2\prime))
+	\end{align*}
+	Ergo: Ist $d_+((x_1,x_2), (x_1\prime,x_2\prime)) < \delta$ (für $\delta = 
+	\epsilon$), dann ist $\abs{d(\hdots) - d(\hdots)} < \epsilon$. 
+	Da $\epsilon > 0$ beliebig war, folgt die Behauptung. 
+	Für den zweiten Teil folgt die Behauptung aus:
+	\begin{align*}
+		\abs{\norm{x} - \norm{y}} \leq \norm{x-y}
+	\end{align*}
+	Das heißt $\norm{B_\delta(x)} \subseteq B_\delta(\norm{x})$.
+\end{proof}
+\todo{soll das einfach so stehen oder in eine Umgebung?}
+Ein weiteres wichtiges Beispiel stetiger Funktionen: \\
+Wir definieren die \emph{Koordinaten-Funktion}
+\begin{align*}
+	\phi_j : \IK^d \rightarrow & \IK \\
+		(x_1, \hdots, x_d) \mapsto & x_j
+\end{align*}
+für $j = 1, \hdots d$. Offensichtlich gilt: 
+\begin{align*}
+	\abs{\phi_j(x)-\phi_j(y)} \leq \norm{x-y}_1
+\end{align*}
+womit $\phi_j$ stetig ist. Durch wiederholte Anwendung von 
+Proposition~\ref{vl_24_prop_2} erhalten wir dann, dass jedes \emph{Monom}, 
+das heißt jede Abbildung der Form 
+\begin{align*}
+	\IK^d \owns X \mapsto X_1^{n_1} \cdot \hdots \cdot X_d^{n_d}
+\end{align*}
+mit $n_1, \hdots , n_d \in \{0,1,2,\hdots \}$ stetig ist.
+Dasselbe gilt für Vielfache und Summen von Monomen. Ergo: \emph{Polynome}, das heißt 
+Abbildung
+\begin{align*}
+	P: \IK^d \rightarrow & \IK \\
+	(x_1, \hdots, x_d) \mapsto & \sum c_{n_1, \hdots, n_d} \cdot x_1^{n_1}\cdot 
+	\hdots \cdot x_d^{n_d}
+\end{align*}
+wobei die Koeffizienten $c_{n_1,\hdots, n_d} \in \IK$ und die Summe endlich ist, 
+sind stetig. Analog sind rationale Funktionen, das heißt Abbildungen:
+\begin{align*}
+	F: \IK^d \setminus \IQ^{-1}(0) \rightarrow & \IK \\
+	x \mapsto & \frac{P(x)}{Q(x)}
+\end{align*}
+wobei $P,Q$ Polynome sind, stetig.
