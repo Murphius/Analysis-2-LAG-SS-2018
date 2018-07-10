@@ -221,29 +221,32 @@
 	Wir beschränken uns auf den Fall $x \rightarrow a$ 
 	$(x \rightarrow b$ läuft analog$)$ und zeigen zunächst folgende Aussage: \\
 	\emph{Behauptung:} Sei $A \in [-\infty, \infty)$. \\ 
-	Dann existiert für jedes $q > A$ ein $c > a$ mit $\frac{f(x)}{g(x)} < q$ $(x\in (a,c))$. \\
+	Dann existiert für jedes $q > A$ ein $c > a$ mit
+	 $$\forall x\in (a,c): \frac{f(x)}{g(x)} < q \,.$$ \\
 	\emph{Beweis der Behauptung:} \\
-	Da $\frac{f'(x)}{g'(x)} \overset{x \searrow a}{\longrightarrow} A$ 
+	Da $\frac{f'(x)}{g'(x)} \xrightarrow{{x \searrow a}} A$ 
 	existiert ein $c' > a$ mit: $\frac{f'(x)}{g'(x)}<r$ für ein beliebiges 
-	$r \in (A,q)$ und $x \in (a,c')$.\\
+	$r \in (A,q)$\footnote{Anmerkung von Basti: das $r$ hat den gleichen Zweck wie $q$, man muss es nur aus \enquote{technischen Gründen} einführen, da weiter unten durch Grenzwertbildung ein $\leq$ statt $<$ entsteht. Man kann $r$ auch speziell wählen, falls einem das lieber ist: z.B. wäre $r=\frac{(A+q)}{2}$ eine geeignete Wahl.} und $x \in (a,c')$.\\
 	Nach dem verallgemeinerten Mittelwertsatz gilt:
 	\begin{align}
 		\label{gleichung_beweis_lh_1}
 		\frac{f(x)-f(y)}{g(x)-g(y)} = \frac{f'(t)}{g'(t)}
 	\end{align}
-	für ein geeignetes $t$ zwischen $x$ und $y$. \\
+	für ein geeignetes $t \in  (x,y)$. \\
 	Für $a < x < y <c'$ gilt daher:
 	\begin{align}
 		\label{gleichung_beweis_lh_2}
 		\frac{f(x)-f(y)}{g(x)-g(y)} < r
 	\end{align}
-	\begin{itemize}
+
+	\begin{enumerate}[label=Fall {\arabic*}]
 		\item[Fall 1:] $f,g \overset{x \rightarrow a}{\longrightarrow} 0$. 
 		Nach Gleichung~\eqref{gleichung_beweis_lh_2}
 		gilt für $x \rightarrow a$ 
 		\begin{align*}
-			\frac{-f(y)}{-g(y)} = \frac{f(y)}{g(y)} < r <q \text{ }(y \in (a, c'))
+			\forall y \in (a, c') : \frac{-f(y)}{-g(y)} = \frac{f(y)}{g(y)} \leq r <q
 		\end{align*}
+		\todo{Hier stand \enquote{$<r$}, aber nach dem Grenzwert sollte es $\leq r$ sein}
 		\item[Fall 2:] $g(x) \overset{x \rightarrow a}{\rightarrow}\pm \infty$
 		Multipliziere \eqref{gleichung_beweis_lh_1} mit
 		$\frac{g(x)-g(y)}{g(x)}$. \\
@@ -258,8 +261,10 @@
 		\begin{align*}
 			\lim\limits_{x\rightarrow a}{\frac{f(x)}{g(x)}}\leq r < q
 		\end{align*}
-		Es muss also ein $ c > a$ existieren mit: 
-		$\frac{f(x)}{g(x)} <r$ $(x \in (a,c))$ \\
+	\end{enumerate}
+		Es muss also ein $ c > a$ existieren sodass:\\ 
+		$$\forall x \in (a,c): \frac{f(x)}{g(x)} <$$ \\
+		
 		Analog kann man zeigen: \\
 		\emph{Behauptung' :} Sei $A  \in (-\infty, \infty]$. Dann existiert für 
 		jedes $p <A$ ein $d > a$, so dass $p < \frac{f(x)}{g(x)}$ $(x \in (a,d))$\\
@@ -276,7 +281,6 @@
 		\begin{align*}
 			\frac{f(x)}{g(x)} \in B_{\epsilon}(A)
 		\end{align*}
-	\end{itemize}	
 \end{proof}
 
 \begin{Beispiel}{

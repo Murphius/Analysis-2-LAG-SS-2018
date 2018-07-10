@@ -8,9 +8,15 @@
 \usepackage{enumitem}
 	\newcommand{\subscript}[2]{$#1 _ #2$}
 \usepackage{tikz}
+\usepackage{todonotes}
+%funktioniert nur mit -shell-escape    
+    \usetikzlibrary{external}
+    \tikzexternalize[prefix=TikzPictures/]
+    \makeatletter
+        \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
+    \makeatother
 \usepackage{extarrows}
 \usepackage{physics}
-\usepackage{todonotes}
 \usepackage{csquotes}
 \usepackage{cases}
 \input{Diverses/mathe.tex}

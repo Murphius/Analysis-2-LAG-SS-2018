@@ -1,5 +1,8 @@
 \begin{figure}[ht]
 \centering
+	{
+	\tikzsetnextfilename{plot_integral_f.pdf}
+
 	\begin{tikzpicture}
 		\draw[very thin, gray, step = 0.5] (-0.9,-0.9) grid (4.9,2.9);
 		\draw[->,thick, black](-1,0) -- (5,0) node[right]{x};
@@ -13,6 +16,7 @@
        	\draw[black,thick](2.5,0) -- (2.5, 2.37);
        	\node at (4,1.5){$\int_a^b f$};
 	\end{tikzpicture}
+	}
 	\caption{Vorgehen}
 	\label{fig_int_vorgehen}
 \end{figure}
