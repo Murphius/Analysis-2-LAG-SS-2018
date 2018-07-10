@@ -193,16 +193,18 @@ $f_n$ bezeichnen.
 }\end{Satz}
 
 \begin{proof}
-	Sei $\epsilon > 0$ gegeben. Wähle $n \in \mathbb{N}$ mit $\abs{f_{n_{\epsilon}}
-	-f(x)} < \frac{\epsilon}{3}$ für alle $x \in D$. Da $f_{n_{\epsilon}}$ stetig 
-	ist, gibt es für jedes $x_0 \in D$ ein $\delta > 0 $, so dass für $y \in D$ mit 
+	Sei $x_0 \in D$ sowie $\epsilon > 0$ gegeben.\footnote{Wir prüfen Stetigkeit punktweise, also in beliebigem $x_0$}\\
+	Wähle $n_\varepsilon \in \mathbb{N}$ mit
+	$\abs{f_{n_{\epsilon}}(x) -f(x)} < \frac{\epsilon}{3}$
+	für alle $x \in D$.\footnote{Das $n_\varepsilon$ Existiert, da die $f_n$ gleichmäßig gegen $f$ konvergieren.}\\
+	Da $f_{n_{\epsilon}}$ stetig ist, gibt es für $x_0$ ein $\delta > 0 $, so dass für $y \in D$ mit 
 	$\abs{y- x_0} < \delta $ gilt:
-	$\abs{f_{n_{\epsilon}}(y) - f_{n_{\epsilon}}(x_0)} < \frac{\epsilon}{3} $
-	Dann gilt für alle $y \in D$ mit $\abs{y - x_0} < \delta$:
+	$\abs{f_{n_{\epsilon}}(y) - f_{n_{\epsilon}}(x_0)} < \frac{\epsilon}{3}$.\\
+	Dann gilt für alle $y \in D$ mit $\abs{y - x_0} < \delta$: \footnote{wegen doppelter Anwendung der Dreiecksungleichung}
 	\begin{align*}
-		\abs{f(x_0) -f(y)} \leq \abs{f_i(x_i) - f_{n_{\epsilon}}(x_0} 
-		+ \abs{f_{n_{\epsilon}}(x_0) - f_{n_{\epsilon}}(y)} + 
-		\abs{f_{n_{\epsilon}}(y) - f(y)} \leq \epsilon
+		\abs{f(x_0) -f(y)} \leq \abs{f(x_0) - f_{n_{\epsilon}}(x_0)}
+		+ \abs{f_{n_{\epsilon}}(x_0) - f_{n_{\epsilon}}(y)}
+		+ \abs{f_{n_{\epsilon}}(y) - f(y)} < \epsilon
 	\end{align*}
 	Da $\epsilon > 0 $ beliebig war, folgt die Behauptung.
 \end{proof}
