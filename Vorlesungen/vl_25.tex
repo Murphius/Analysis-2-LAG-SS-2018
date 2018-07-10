@@ -1,0 +1,181 @@
+\section{Kompaktheit}
+
+\begin{Definition}%1
+	Ist $(x_n)$ eine Folge in einem metrischen Raum $(X,d)$ und $(n_j)_{j \in \IN}$ 
+	eine strikt monoton wachsende Folge natürlicher Zahlen, (das heißt \mbox{$n_1 < n_2 
+	< \hdots$}), dann heißt $(x_{n_j})_{j \in \IN}$ eine \emph{Teilfolge (TF)} von 
+	$(x_n)$.
+\end{Definition}
+
+\begin{Proposition}\label{vl_25_prop_1}%2
+	Sei $(x_n)$ eine Folge in einem metrischen Raum $(X,d)$, so sind äquivalent:
+	\begin{enumerate}
+		\item \label{vl_25_stp_1}$\lim\limits_{n \rightarrow \infty}{x_n} = x$
+		\item \label{vl_25_stp_2} Jede Teilfolge von $(x_{n_j})$ von $(x_n)$ 
+			konvergiert gegen $x$
+	\end{enumerate}
+\end{Proposition}
+
+\begin{proof}
+	Die Aussage folgt aus der entsprechenden Aussage für reelle Zahlenfolgen, wenn 
+	man folgende Äquivalenzen berücksichtigt:
+	\begin{align*}
+		&\lim\limits_{n \rightarrow \infty} = x \\
+		\xLeftrightarrow{Def. Grenzwert} &
+			\lim\limits_{n\rightarrow\infty}d(x_n,x)=0 \\
+		\xLeftrightarrow[\text{für Zahlenfolgen}]{\text{entsprechende Aussage}} 
+			& \lim\limits_{j\rightarrow \infty}d(x_{n_j},x) = 0 
+			\text{ für jede Teilfolge } (x_{n_j}) \\
+		\Longleftrightarrow & \lim\limits_{j \rightarrow \infty} x_j = x
+	\end{align*}
+\end{proof}
+
+\begin{Definition}%3
+	Sei $X$ ein metrischer Raum und $E \subseteq X$. Dann heißt $E$ \emph{kompakt}, 
+	wenn jede Folge in $E$ eine in $E$ konvergente Teilfolge besitzt.
+\end{Definition}
+
+\begin{Beispiel}	
+	Jedes abgeschlossene Intervall $[a,b] \subseteq \IR$ ist kompakt: 
+	Jede Folge in $[a,b]$ ist beschränkt und besitzt daher nach Bolzano-Weierstraß 
+	eine konvergente Teilfolge. Der Grenzwert dieser konvergenten Folge liegt in 
+	$[a,b]$, da $[a,b]$ abgeschlossen ist.
+\end{Beispiel}
+ 
+\begin{Satz}\label{vl_25_satz_1} %4
+	Sei $X$ metrischer Raum und $E \subseteq X$ kompakt. Dann ist $E$ abgeschlossen. 
+\end{Satz}
+
+\begin{proof}
+	Sei $(x_n)$ eine Folge in $E$, die gegen $x \in X$ konvergiert. Nach 
+	Proposition~\ref{vl_23_prop_2}ist zu zeigen: $x \in E$. \\
+	Wegen der Kompaktheit von $E$ gibt es eine Teilfolge $x_{n_j}$ von $(x_n)$ 
+	mit \mbox{$x_{n_j} \xRightarrow{j \rightarrow \infty} x' \in E$}. Wegen 
+	Proposition~\ref{vl_25_prop_1} muss gelten: $x = x'$ und daher $x \in E$. 
+\end{proof}
+
+\begin{Satz}\label{vl_25_satz_2}%5
+	Sei $X$ metrischer Raum und $E \subseteq X$ kompakt sowie $A \subseteq E$ 
+	abgeschlossen. Dann ist $A$ kompakt.
+\end{Satz}
+
+\begin{proof}
+	Sei $(x_n)$ eine Folge in A. Dann ist $(x_n)$ insbesondere Folge in $E$. 
+	Da $E$ kompakt ist, besitzt $(x_n)$ eine in $E$ konvergente 
+	Teilfolge $(x_{n_j})$. Sei $A := \lim\limits_{j \rightarrow \infty}{x_{n_j}}$.\\
+	Zu zeigen: $x \in A$. Das folgt sofort aus Proposition~\ref{vl_23_prop_2} 
+	und der Abgeschlossenheit 
+	von $A$.
+\end{proof}
+
+\begin{Korollar}%6
+	Sei $X$ metrischer Raum. $A \subseteq X$ abgeschlossen sowie $K \subseteq X$ 
+	kompakt. Dann ist $A \cap K$ kompakt.
+\end{Korollar}
+
+\begin{proof}
+	$K$ ist abgeschlossen (Satz~\ref{vl_25_satz_1}), so dass $A \cap K$ 
+	abgeschlossen ist (als Schnitt abgeschlossener Mengen). Damit folgt die 
+	Aussage aus Satz~\ref{vl_25_satz_2}.
+\end{proof}
+
+\begin{Definition}%7
+	Sei $(X,d)$ metrischer Raum und $A \subseteq X$. Dann heißt A \emph{beschränkt}, 
+	wenn es $x \in X$ gibt und ein $R> 0$ existiert, so dass $A \subseteq B_R(x)$.
+\end{Definition}
+
+\begin{Bemerkung}
+	Die $\Delta$-Ungleichung liefert sofort, dass, sobald für $x \in X$ ein $R_x >0$ 
+	existiert, so dass $A\subseteq B_{R_x}(x)$, diese Eigenschaft für alle 
+	$x\in X$ gilt.
+\end{Bemerkung}
+
+\begin{Proposition}\label{vl_25_prop_2}%8
+	Sei $X$ metrischer Raum und $E \subseteq X$ kompakt. Dann ist $E$ beschränkt.
+\end{Proposition}
+
+\begin{proof}
+	Angenommen $E$ ist nicht beschränkt. Wähle $x_1 \in X$ fest. Wir definieren 
+	$(x_n)$ rekursiv: $x_{n-1} \in X$ mit $d(x_{n+1},x_l) > 1 \; (l = 1, \hdots, 
+	n)$. Dann gilt für die Folge $(x_n)$:
+	\begin{align*}
+		d(x_n,x_m) > 1 \;(n\neq m)
+	\end{align*}
+	Dann gilt aber auch für jede Teilfolge $(x_{n_j})$ von $(x_n)$:
+	\begin{align*}
+		d(x_{n_j},x_{n_{j\prime}}) > 1 \; (j \neq j\prime)
+	\end{align*}
+	Das heißt keine Teilfolge ist eine Cauchy-Folge.
+	Da jede konvergente Folge auch Cauchy-Folge ist, gibt es also keine konvergente 
+	Teilfolge. Das heißt $E$ ist nicht kompakt.
+\end{proof}
+
+\begin{theorem}[Satz von Heine-Borel]\label{satz_v_heine_borel}
+	Eine Teilmenge $K \subseteq \IR^d$ ist genau dann kompakt, wenn sie 
+	abgeschlossen und beschränkt ist.
+\end{theorem}
+
+\begin{proof}
+$\Rightarrow$ gilt auf Grund von Satz~\ref{vl_25_satz_1}. und 
+Proposition~\ref{vl_25_prop_2}.\\
+$\Leftarrow$ Da $K$ beschränkt ist, gibt es $N \in \IN$, so dass $K \subseteq 
+[-N,N]^d$. kompakt ist.\\
+Das heißt, wir müssen folgende Behauptung beweisen:\\
+\underline{Behauptung:} Für alle $n\in \IN$ ist $[-N, N]^d$ ist kompakt. 
+\begin{proof}
+	Sei $(x_n) = (x_n^1, \hdots, x_n^d)$ eine Folge in $[-N,N]^d$. Da 
+	$(x_n^1)$ Folge in $[-N,N]$ ist (also insbesondere beschränkt ist, 
+	liefert Bolzano-Weierstraß die Existenz einer (in $[-N,N]$) konvergente 
+	Teilfolge $(\tilde{x}_n^1)= (x_{n_j}^1)$. Wir betrachten nun die Folge 
+	$(x_{n_j}^2)$ in $[-N,N]$. Wegen Bolzano-Weierstraß besitzt diese 
+	eine konvergente Teilfolge $(\tilde{x}_n^2)$.\\
+	Durch $d$-fache Wiederholung dieses Schrittes erhalten wir eine strikt wachsende 
+	Folge $n_1 < n_2 < \hdots$ natürliche Zahlen, so dass 
+	\begin{align*}
+		(x_{n_j}^k) \; \text{für alle } k = 1, \hdots, d \text{ konvergiert}
+	\end{align*}
+	Wir setzen für $k = 1, \hdots, n$
+	\begin{align*}
+		x^k & := \lim\limits_{j \rightarrow \infty}x_{n_j}^k \text{ Dann gilt} \\
+		d_{\max}((x_{n_j}), (x^1, \hdots, x^d)) & = 
+			\max_{k = 1, \hdots, d} d(x_{n_j}	k, x^k) 
+			\xrightarrow{j \rightarrow \infty} 0
+	\end{align*}
+\end{proof}
+\end{proof}
+
+\begin{Definition}%10
+	Seien $X,Y$ metrische Räume und $f:X \rightarrow Y$. Dann heißt $f$ 
+	\emph{gleichmäßig stetig}, wenn gilt:
+		\begin{align*}
+			\forall \epsilon > 0 \; \exists \delta > 0 \; \forall x_1,x_2 \in X:
+			\; d(x_1,x_2)< \delta \Rightarrow d(f(x_1),f(x_2)) < \epsilon
+		\end{align*}
+\end{Definition}
+
+\begin{Satz}%11
+	Seien $X,Y$ metrische Räume und $X$ kompakt sowie $f:X \rightarrow Y$ stetig. 
+	Dann ist $f$ gleichmäßig stetig.
+\end{Satz}
+
+\begin{proof}
+	Angenommen $f$ ist nicht gleichmäßig stetig. Dann existiert für $n \in \IN$ ein 
+	Paar $x_n,y_n \in X$ sowie $\epsilon > 0$ mit: $d(x_n,y_n) < \frac{1}{n}$ und 
+	$d(f(x_n),f(y_n)) \geq \epsilon$.\\
+	Da $X$ kompakt ist, gibt es eine strikt wachsende Folge natürlicher Zahlen 
+	$(n_j)$, so dass $x_{n_j},y_{n_j}$ konvergent sind mit: $x:= \lim\limits_{j 
+	\rightarrow \infty}{x_{n_j}}$ und $y := \lim\limits_{j \rightarrow \infty}{
+	y_{n_j}}$. Dann gilt:
+	\begin{align*}
+		0 \leq d(x,y) = \lim\limits_{j\rightarrow \infty}{d(x,x_{n_j}) + 
+		d(x_{n_j},y_{n_j}) + d(y_{n_j}, y)}
+	\end{align*}
+	Ergo: $d(x,y) = 0$, das heißt $x =y$.
+	Gleichzeitig gilt, aufgrund der Stetigkeit 
+	\begin{align*}
+		\lim\limits_{j \rightarrow \infty}{f(x_{n_j})} = f(x) \text{ und } 
+		\lim\limits_{j \rightarrow \infty}{f(y_{n_j})} = f(y) 
+	\end{align*}
+	Aber: $d(f(x_{n_j}),f(y_{n_j})) \geq \epsilon \; (j \in \IN)$.
+	\textcolor{cyan}{Rest folgt nächste Vorlesung}
+\end{proof}

@@ -222,33 +222,35 @@ Begriffe wie den Grenzwert und Stetigkeit untersuchen.
 \end{proof}
 \todo{soll das einfach so stehen oder in eine Umgebung?}
 Ein weiteres wichtiges Beispiel stetiger Funktionen: \\
-Wir definieren die \emph{Koordinaten-Funktion}
-\begin{align*}
-	\phi_j : \IK^d \rightarrow & \IK \\
-		(x_1, \hdots, x_d) \mapsto & x_j
-\end{align*}
-für $j = 1, \hdots d$. Offensichtlich gilt: 
-\begin{align*}
-	\abs{\phi_j(x)-\phi_j(y)} \leq \norm{x-y}_1
-\end{align*}
-womit $\phi_j$ stetig ist. Durch wiederholte Anwendung von 
-Proposition~\ref{vl_24_prop_2} erhalten wir dann, dass jedes \emph{Monom}, 
-das heißt jede Abbildung der Form 
-\begin{align*}
-	\IK^d \owns X \mapsto X_1^{n_1} \cdot \hdots \cdot X_d^{n_d}
-\end{align*}
-mit $n_1, \hdots , n_d \in \{0,1,2,\hdots \}$ stetig ist.
-Dasselbe gilt für Vielfache und Summen von Monomen. Ergo: \emph{Polynome}, das heißt 
-Abbildung
-\begin{align*}
-	P: \IK^d \rightarrow & \IK \\
-	(x_1, \hdots, x_d) \mapsto & \sum c_{n_1, \hdots, n_d} \cdot x_1^{n_1}\cdot 
-	\hdots \cdot x_d^{n_d}
-\end{align*}
-wobei die Koeffizienten $c_{n_1,\hdots, n_d} \in \IK$ und die Summe endlich ist, 
-sind stetig. Analog sind rationale Funktionen, das heißt Abbildungen:
-\begin{align*}
-	F: \IK^d \setminus Q^{-1}(\set 0) \rightarrow & \IK \\
-	x \mapsto & \frac{P(x)}{Q(x)}
-\end{align*}
-wobei $P,Q$ Polynome sind, stetig.
+\begin{Beispiel*}
+	Wir definieren die \emph{Koordinaten-Funktion}
+	\begin{align*}
+		\phi_j : \IK^d \rightarrow & \IK \\
+			(x_1, \hdots, x_d) \mapsto & x_j
+	\end{align*}
+	für $j = 1, \hdots d$. Offensichtlich gilt: 
+	\begin{align*}
+		\abs{\phi_j(x)-\phi_j(y)} \leq \norm{x-y}_1
+	\end{align*}
+	womit $\phi_j$ stetig ist. Durch wiederholte Anwendung von 
+	Proposition~\ref{vl_24_prop_2} erhalten wir dann, dass jedes \emph{Monom}, 
+	das heißt jede Abbildung der Form 
+	\begin{align*}
+		\IK^d \owns X \mapsto X_1^{n_1} \cdot \hdots \cdot X_d^{n_d}
+	\end{align*}
+	mit $n_1, \hdots , n_d \in \{0,1,2,\hdots \}$ stetig ist.
+	Dasselbe gilt für Vielfache und Summen von Monomen. Ergo: \emph{Polynome}, das heißt 
+	Abbildung
+	\begin{align*}
+		P: \IK^d \rightarrow & \IK \\
+		(x_1, \hdots, x_d) \mapsto & \sum c_{n_1, \hdots, n_d} \cdot x_1^{n_1}\cdot 
+		\hdots \cdot x_d^{n_d}
+	\end{align*}
+	wobei die Koeffizienten $c_{n_1,\hdots, n_d} \in \IK$ und die Summe endlich ist, 
+	sind stetig. Analog sind rationale Funktionen, das heißt Abbildungen:
+	\begin{align*}
+		F: \IK^d \setminus Q^{-1}(\set 0) \rightarrow & \IK \\
+		x \mapsto & \frac{P(x)}{Q(x)}
+	\end{align*}
+	wobei $P,Q$ Polynome sind, stetig.
+\end{Beispiel*}

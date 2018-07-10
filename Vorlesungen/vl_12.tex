@@ -26,35 +26,35 @@
 }\end{Satz}
 
 
-\begin{proof}
+\begin{proof}~
 	\begin{enumerate}
-		\item[ ]
 		\item Da $f \in \mathcal{R}_{[a,b]}$, ist $f$ insbesondere beschränkt.
 		Das heißt es existiert ein $M \in \mathbb{R}$ mit 
 		\begin{align*}
-			\abs{f(x)} \leq M \text{ } (x \in [a,b])
+			\forall x \in [a,b]:\abs{f(x)} \leq M
 		\end{align*}
 		Sei nun $\epsilon > 0$ gegeben. Setze $\delta := \frac{\epsilon}{M}$. 
 		Für $x, y \in [a,b]$ mit $\abs{x-y} < \delta$ erhalten wir:
 		\begin{align*}
 			\abs{F(x) - F(y)} = & \abs{\int_a^x f \dd{t} - \int_a^y f \dd{t} }\\
-			= &  \abs{\int_a^x f\dd{t} + \int_y^x f\dd{t} - \int_a^yf\dd{t}}\\
-			= & \abs{\int_y^x f\dd{t}} \leq \int_y^x \abs{f} \dd{t}\\
-			\leq & M \cdot \int_y^x 1 \dd{t} = M (x-y) \leq \epsilon
+			= &  \abs{ \left (\int_a^y f\dd{t} + \int_y^x f\dd{t} \right ) - \int_a^yf\dd{t}} \tag{Satz~\ref{vl_11_satz24}-4}\\
+			= & \abs{\int_y^x f\dd{t}} \leq \int_y^x \abs{f} \dd{t} \tag{Satz~\ref{vl_11_satz_25}}\\
+			\leq & M \cdot \int_y^x 1 \dd{t} = M (x-y) < \epsilon
 		\end{align*}
 		Da $\epsilon > 0$ beliebig gewählt war, folgt die Aussage
+		\item Sei $h \in \mathbb{R}$, so dass $x_0 +h \in [a,b]$.
+		Dann gibt es ein $\xi_h$ zwischen $x_0$ und $x_0+h$ mit:
+		\begin{align*}
+			\frac{F(x_0 + h) - F(x_0)}{h}
+			= & \frac{ \int_a^{x_0+h}f(t)\dd{t}- \int_a^{x_0}f(t)\dd{t}}{h} \\
+			= & \frac{h}{1} \int_{x_0}^{x_0+h} f(t)\dd{t} \\
+			= & \frac{1}{h} f(\xi_h) \cdot \int_{x_0}^{x_0+h} \dd{t} \tag{Satz~\ref{satz:mws_integral}}\\
+			= & \frac{1}{h} f(\xi_h) \cdot h
+		\end{align*}
+		 Damit gilt (wegen der Stetigkeit von $f$ in $x_0$): \\
+			$$\lim\limits_{h \rightarrow 0}{\frac{F(x_0+h)-F(x_0)}{h}} 
+			= \lim\limits_{h \rightarrow 0} f(\xi_h) = f(x_0)$$
 	\end{enumerate}
-	\item Sei $h \in \mathbb{R}$, so dass $x_0 +h \in [a,b]$.
-	Dann gibt es ein $\xi_h$ zwischen $x_0$ und $x_0+h$ mit:
-	\begin{align*}
-		\frac{F(x_0 + h) - F(x_0)}{h} = & \frac{\int_a^{x_0+h}f(t)\dd{t}-
-		\int_a^{x_0}f(t)\dd{t}}{	h} \\
-		= & \int_{x_0}^{x_0+h}\frac{f(t)\dd{t}}{h} \\
-		= & f(\xi_h) \cdot \frac{\int_{x_0}^h \dd{t}}{h} \\
-		= & f(\xi_h) \cdot \frac{h}{h} \text{ Damit gilt:} \\
-		&\lim\limits_{h \rightarrow 0}{\frac{F(x_0+h)-F(x_0)}{h}} 
-		= \lim\limits_{h \rightarrow 0} f(\xi_h) = f(x_0)
-	\end{align*}
 \end{proof}
 
 
