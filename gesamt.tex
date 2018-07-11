@@ -14,6 +14,29 @@
     \makeatletter
         \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
     \makeatother
+\usetikzlibrary{positioning,%
+  fit,%
+  arrows,%
+  automata,%
+  trees,%
+  intersections,%
+  mindmap,%
+  shapes.geometric,%
+  shapes.arrows,%
+  decorations,%
+  decorations.pathmorphing,%
+  decorations.pathreplacing,%
+  decorations.shapes,%
+  matrix,%
+  chains,%
+  scopes,%
+  circuits,%
+  circuits.ee.IEC,%
+  calc,%
+  fadings,%
+  lindenmayersystems,%
+  decorations.markings%
+}
 \usepackage{extarrows}
 \usepackage{physics}
 \usepackage{csquotes}

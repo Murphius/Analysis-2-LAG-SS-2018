@@ -42,7 +42,7 @@
 
 \begin{Bemerkung}{
 	Offensichtlich gilt: 
-	$f(\alpha) = P_{n, \alpha} ( \alpha)$. Weiter gilt: 
+	$f(\alpha) = P_{n, \alpha} ( \alpha)$ (für jedes $n \in \IN$). Weiter gilt: 
 	\begin{align*}
 		f'(\alpha) = P'_{n, \alpha}(\alpha) = \left( \sum_{l = 0}^n l 
 		\cdot \frac{f^l (\alpha)}{l!} \left( x  - \alpha) ^{l-1} \right) \right)
@@ -56,8 +56,8 @@
 
 \begin{Satz}[Satz von Taylor (mit Lagrange-Restglied)]{\label{satz_von_taylor}
 	Sei $f: [a,b] \rightarrow \mathbb{R},$ $n \in \mathbb{N}$ und 
-	$f$ $(n-1)-mal$ stetig differenzierbar $($auf $[a,b])$ und 
-	$n-mal$ differenzierbar auf $(a,b)$. Seien $\alpha \neq \beta$ 
+	$f$ $(n-1)$-mal stetig differenzierbar $($auf $[a,b])$ und 
+	$n$-mal differenzierbar auf $(a,b)$.\footnote{Anmerkung von Basti: $f$ ist wegen der zweiten Aussage sowieso stetig diffbar auf $(a,b)$, aber die erste Aussage fordert zusätzlich die Stetigkeit in $a$ und $b$} Seien $\alpha \neq \beta$ 
 	in $[a,b]$ gegeben. Dann existiert ein $x$ zwischen $\alpha$ 
 	und $\beta$, so dass gilt: 
 	\begin{align*}
@@ -72,37 +72,40 @@
 	\end{align*}
 	Man beachte, dass die $n-te$ Ableitung der rechten Seite gegeben ist durch:
 	\begin{align*}
-		P_{n-1, \alpha}^	{(n)}(t) + n! \cdot M (\textit{ für } t \in [a,b])
+		P_{n-1, \alpha}^{(n)}(t) + n! \cdot M \quad (\text{für } t \in [a,b])
 	\end{align*}
 	Daher ist zu zeigen: Es existiert ein $x$ zwischen $\alpha$ und $\beta$ mit:
 	\begin{align*}
 		f^{(n)}(x) = n! \cdot M
-	\end{align*}
+	\end{align*}\footnote{Anmerkung von Basti: $P_{n-1, \alpha}^{(n)} \equiv 0$ da $n$-te Ableitung eines Polynoms $n-1$-ten Grades}
 	Wir definieren die Hilfsfunktion 
 	\begin{align*}
 		h(t) = & f(t) - P_{n-1, \alpha}(t) - M(t - \alpha)^n 
 		\textit{ für } t \in [a,b] \\
 		h(\beta) = & f(\beta) - P_{n-1, \alpha}(\beta) - M(\beta- \alpha)^n = 0 \\
-		h(\alpha) = & f(\alpha) - P_{n-1, \alpha}(\alpha) \cdot 
+		h(\alpha) = & f(\alpha) - P_{n-1, \alpha}(\alpha) -
 		M(\alpha -\alpha)^n = 0 
-		\textit{ siehe obige Bemerekung} \\
-		h'(\alpha) = & f'(\alpha) - P_{n-1, \alpha}(\alpha) - 
+		\tag{siehe obige Bemerekung} \\
+		h'(\alpha) = & f'(\alpha) - P_{n-1, \alpha}'(\alpha) - 
 		n \cdot M(\alpha - \alpha)^{n-1} = 0
 	\end{align*} 
 	Man sieht analog:
 	\begin{align*}
 		h^{(l)}(\alpha) = 0 \textit{ für } l = 1, ..., n-1
 	\end{align*}
+	\todo{das sollte von $1$ bis $n$ gelten}
 	Damit existiert aufgrund des Mittelwertsatzes ein $x_1$ zwischen $\alpha$ und 
 	$\beta$ mit $h'(x_1) = 0$. Analog gibt es zwischen $\alpha$ und 
 	$x_1$ ein $x_2$ mit $h''(x_2) = 0$. Man findet also $x_1, ..., x_{n-1}$ mit 
-	$h^{(l)}(x_l) = 0$ $( l = 1, ..., n-1)$. Insbesondere existiert ein $x$ 
+	$h^{(l)}(x_l) = 0$ $( l = 1, ..., n-1)$.\footnote{Veranschaulichung siehe Abbildung~\ref{fig:taylor_veranschaulichung}}
+\input{Plots/taylor_veranschaulichung.tex}
+	Insbesondere existiert ein $x$ 
 	zwischen $\alpha$ und $x_{n-1}$ (also zwischen $\alpha$ und $\beta$) mit 
 	$h^{(n)}(x) = 0$. Damit gilt 
 	\begin{align*}
-		0 = h^{(n)}(x) = f^{(n)}(x) - P_{n-1, \alpha}(x) - M \cdot n! \cdot 
+		0 = h^{(n)}(x) = f^{(n)}(x) - P^(n)_{n-1, \alpha}(x) - M \cdot n! \cdot 
 		(x-\alpha)^0
-	\end{align*}
+	\end{align*}{}
 	und daher $f^{(n)}(x) = M \cdot n!$
 \end{proof}	
 
