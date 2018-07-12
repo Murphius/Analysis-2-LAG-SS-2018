@@ -9,3 +9,5 @@
 *.ind
 *.blg
 *.auxlock
+*.md5
+*.dpth

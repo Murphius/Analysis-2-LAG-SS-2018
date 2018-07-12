@@ -263,11 +263,13 @@ Damit gilt:
 		auf Grund von c), d) und Satz~\ref{vl_11_satz24} 
 		\item[f)] Wähle $\varphi \in [0, 2\pi)$, so dass:
 		\begin{align*}
-			exp(i \varphi) \cdot \int_a^b f \dd{x} \in \mathbb{R} \text{ Dann gilt:} \\
+			exp(i \varphi) \cdot \int_a^b f \dd{x} \in \mathbb{R} \text{ Dann gilt: } \abs{\exp(i \varphi)} =1
+		\end{align*}
+		\begin{align*}
 			\abs{\int_a^b f\dd{x} } = & \abs{exp(i \varphi) \cdot \int_a^b f \dd{x}} \\
 			 = & \abs{ \int_a^b exp(i \varphi) \cdot f \dd{x}} = \abs{ \int_a^b   
 			Re(exp(i \varphi) f) \dd{x}} \\
-			 \leq & \int_a^b \abs{Re(exp(i \varphi) f} \dd{x}
+			 \leq & \int_a^b \abs{Re(exp(i \varphi) f)} \dd{x}
 			\leq \int_a^b \abs{ exp(i \varphi) f } \dd{x} \\
 			= & \int_a^b \abs{f} \dd{x}
 		\end{align*}
