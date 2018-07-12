@@ -17,7 +17,7 @@ ein Skalarprodukt.
 		\begin{align*}
 			<\alpha x + \beta y, z > = & \alpha <x,z> + \beta <y,z> \\
 			\text{und } <z, \alpha x + \beta y > = &\overline{\alpha} <z,x> 
-				+ \overline <z, \beta y >
+				+ \overline{\beta} <z, y >
 		\end{align*}
 		\glqq Sesquilinearität\grqq{}
 		\item \label{def:skalprod:3} $\forall x \in V:$ $<x,x> = 0$, genau dann, wenn $x = 0$
@@ -40,17 +40,17 @@ ein Skalarprodukt.
 	Dann gilt:
 	\begin{align*}
 		\left< \frac{\lambda x}{\sqrt{<x,x>}} - \frac{y}{\sqrt{<y,y>}} , 
-		 \frac{\lambda x}{\sqrt{<x,x>}} - - \frac{y}{\sqrt{<y,y>}} \right> \geq 0
+		 \frac{\lambda x}{\sqrt{<x,x>}} - \frac{y}{\sqrt{<y,y>}} \right> \geq 0
 	\end{align*}
 	Aufgrund von~\ref{def:skalprod:2} gilt:
 	\begin{align*}
 	 & \left< \frac{\lambda x}{\sqrt{<x,x>}} - \frac{y}{\sqrt{<y,y>}} , 
-		 \frac{\lambda x}{\sqrt{<x,x>}} - - \frac{y}{\sqrt{<y,y>}} \right> \\
+		 \frac{\lambda x}{\sqrt{<x,x>}} - \frac{y}{\sqrt{<y,y>}} \right> \\
 	= &
-	\left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{\lambda x}{\sqrt{<x,x>}} \right> \\
-		& + \left< \frac{y}{\sqrt{<y,y>}}, \frac{y}{\sqrt{<y,y>}} \right> 
-		+ \left< \frac{-y}{\sqrt{<y,y>}}, \frac{\lambda x}{\sqrt{<x,x>}} \right> \\
-		&+ \left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{-y}{\sqrt{<y,y>}}\right> \\
+	\left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{\lambda x}{\sqrt{<x,x>}} \right> 
+		+ \left< \frac{y}{\sqrt{<y,y>}}, \frac{y}{\sqrt{<y,y>}} \right> \\
+		& + \left< \frac{-y}{\sqrt{<y,y>}}, \frac{\lambda x}{\sqrt{<x,x>}} \right> 
+		+ \left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{-y}{\sqrt{<y,y>}}\right> \\
 	= & \lambda \cdot \overline{\lambda} \cdot \frac{<x,x>}{<x,x>} + \frac{<y,y>}{<y,y>} 
 		+ 2 \cdot Re \left< \frac{\lambda x}{\sqrt{<x,x>}}, \frac{-y }{\sqrt{<y,y>}} \right>
 	\end{align*}
@@ -68,7 +68,6 @@ Für $\lambda$ mit $\abs{\lambda} = \lambda \cdot \overline{\lambda} = 1$, so
 		= & 2 - 2 \cdot \abs{ \left< \frac{x}{\sqrt{<x,x>}}, \frac{y}{\sqrt{<y,y>}} 
 		 \right>} \geq 0
 	\end{align*} 
-	\todo{Doppel minus}
 	Das heißt:
 	\begin{align*}
 		\abs{\left< \frac{x}{\sqrt{<x,x>}} , \frac{y}{\sqrt{<y,y>}} \right>} \leq & 1 
