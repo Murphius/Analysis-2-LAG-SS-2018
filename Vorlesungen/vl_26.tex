@@ -1,0 +1,148 @@
+\begin{proof}
+	Angenommen $f$ ist nicht gleichmäßig stetig. Dann existiert für $n \in \IN$ ein 
+	Paar $x_n,y_n \in X$ sowie $\epsilon > 0$ mit: $d(x_n,y_n) < \frac{1}{n}$ und 
+	$d(f(x_n),f(y_n)) \geq \epsilon$.\\
+	Da $X$ kompakt ist, gibt es eine strikt wachsende Folge natürlicher Zahlen 
+	$(n_j)$, so dass $x_{n_j},y_{n_j}$ konvergent sind mit: $x:= \lim\limits_{j 
+	\rightarrow \infty}{x_{n_j}}$ und $y := \lim\limits_{j \rightarrow \infty}{
+	y_{n_j}}$. Dann gilt:
+	\begin{align*}
+		0 \leq d(x,y) = \lim\limits_{j\rightarrow \infty}{d(x,x_{n_j}) + 
+		d(x_{n_j},y_{n_j}) + d(y_{n_j}, y)}
+	\end{align*}
+	Ergo: $d(x,y) = 0$, das heißt $x =y$.
+	Gleichzeitig gilt, aufgrund der Stetigkeit 
+	\begin{align*}
+		\lim\limits_{j \rightarrow \infty}{f(x_{n_j})} = f(x) \text{ und } 
+		\lim\limits_{j \rightarrow \infty}{f(y_{n_j})} = f(y) 
+	\end{align*}
+	Aber: $d(f(x_{n_j}),f(y_{n_j})) \geq \epsilon \; (j \in \IN)$.
+	$\exists \epsilon > 0 \; \exists x_n, y_n$ mit 
+	\begin{align*}
+		d(x_n,y_n) < \frac{1}{n} \text{ und } d(f(x_n),f(y_n)) \geq \epsilon
+	\end{align*}
+	Dann existiert Teilfolge $(x_{n_j}),(y_{n_j})$ von $(x_n),(y_n)$ mit:
+	\begin{align*}
+		\lim\limits_{j\rightarrow\infty}{x_{n_j}} & = x \\
+		\lim\limits_{j\rightarrow \infty}{y_{n_j}} & = y
+	\end{align*}
+	\begin{align*}
+		0 & \leq d(x,y) \leq d(x,x_{n_j}) + d(x_{n_j},y) \\
+			&\leq d(x,x_{n_j}) + d(x_{n_j},y_{n_j}) + d(y_n,y) < \frac{1}{n_j} \\
+		& \Rightarrow d(x,y) = 0 \Rightarrow x = y
+	\end{align*}
+	Da $f$ stetig ist, existiert 
+	\begin{align*}
+		f(x) = \lim\limits_{j \rightarrow \infty}{f(x_{n_j})}\\
+		f(y) = \lim\limits_{j \rightarrow \infty}{f(y_{n_j})}
+	\end{align*}
+	Es gilt
+	\begin{align*}
+		(f(x_{n_j}),f(y_{n_j}) \xrightarrow{j \rightarrow \infty} (f(x),f(y))
+	\end{align*}
+	Da $d:X \times X \rightarrow :[0, \infty)$ stetig ist, gilt:
+	\begin{align*}
+		d(f(x),f(y)) = \lim\limits_{j\rightarrow \infty}{d(f(x_{n_j}),f(y_{n_j})}
+		\geq \epsilon \Rightarrow f(x) \neq f(y) 
+	\end{align*}
+	Widerspruch zur Tatsache das $x=y$.
+\end{proof}
+
+\begin{Satz}\label{vl_26_satz1}%12
+	Sei $K$ ein kompakter metrischer Raum, $X$ metrischer Raum. \\
+	$f: K \rightarrow X$ 
+	stetig. Dann ist $f(K) = \{f(k)\vert k \in K\}$ kompakt.
+\end{Satz}
+
+\begin{proof}
+	Sei $(y_n)$ eine Folge in $f(K)$. Zu zeigen: Es existiert eine konvergente 
+	Teilfolge $(y_{n_j})$ mit Grenzwert in $f(K)$. Sei $k_n$ so, dass $f(k_n) 
+	= y_n \; y \in \IN$. Da $(k_n)$ Folge in kompakten metrischen Raum $K$ ist, 
+	existiert eine konvergente Teilfolge $(k_{n_j})$ mit Grenzwert $k \in K$. Es 
+	gilt: 
+	\begin{align*}
+		y_{n_j} = f(k_{n_j}) \xrightarrow{j \rightarrow \infty} f(k)
+	\end{align*}
+	da $f$ stetig ist. Da $f(k) \in f(K)$ liegt, folgt die Behauptung.
+\end{proof}
+
+\begin{Korollar}%13
+	Sei $K$ ein kompakter metrischer Raum und $f: K \rightarrow \IR$ stetig. 
+	Dann ist $f$ beschränkt und nimmt in $K$ sein Maximum sowie Minimum an.
+\end{Korollar}
+
+\begin{proof}
+	Nach Satz~\ref{vl_26_satz1} ist $f(K)$ kompakt und daher beschränkt und 
+	abgeschlossen. Aufgrund der Beschränktheit existiert ein Supremum $M$ und 
+	ein Infimum $m$ der Funktionswerte von $f$. \\
+	Wir zeigen: $M$ wird angenommen (der Fall $m$ läuft analog).\\
+	Da $M$ Supremum von $f(K)$ ist, existiert eine Folge $(y_n)$ mit 
+	$y_n \rightarrow M$. Da $f(K)$ abgeschlossen ist, muss $M \in f(K)$ gelten. 
+	Damit existiert also ein $k \in K$ mit $f(k) = M$. 
+\end{proof}
+
+\section{Der Banach'sche Fixpunktsatz}
+
+\begin{Definition}%1
+	Seien $X,Y$ metrischer Raum eine Abbildung $f: X \rightarrow Y$ heißt 
+	\emph{Lipschitz-stetig}, wenn ein $L > 0$ existiert mit:
+	\begin{align*}
+		\forall x_1, x_1 \in X: d(f(x_1),f(x_2)) \leq L \cdot d(x_1,x_2)
+	\end{align*}
+	in diesem Fall nennen wir $L$ eine \emph{Lipschitz-Konstante} von $f$.
+	Wir sagen eine Abbildung $f: X \rightarrow Y$ ist eine \emph{Kontraktion}, 
+	wenn es für $f$ eine Lipschitz-Konstante $L$ gibt, mit $L < 1$.
+\end{Definition}
+
+Der nächste Satz ist der zentrale Fixpunktsatz der Analysis und damit einer der 
+wichtigsten Sätze der Analysis schlechthin.
+
+\begin{theorem}[Banach'scher-Fixpunktsatz]\label{vl_26_theorem_1}
+	\label{banachscherfixpunktsatz} %2
+	Sei $(X,d)$ ein vollständiger metrischer Raum und $f: X \rightarrow X$ eine 
+	Kontraktion. Dann gilt:
+	\begin{itemize}
+		\item Es existiert ein eindeutiger Fixpunkt $p \in X$ von $f$, das heißt 
+			ein Punkt $p$ wird mit $f(p) = p$ 
+		\item Für beliebige $x \in X$ konvergiert die Folge
+			\begin{align*}
+				(f^n(x))_{n \in \IN_{\geq 0}} \text{ gegen p}
+			\end{align*}
+	\end{itemize}
+\end{theorem}
+
+\begin{proof}
+	Wir zeigen zunächst: \\
+	Ist $p \in X$ ein Fixpunkt, so ist $p$ der einzige Fixpunkt von $f$. 
+	Denn: Angenommen es existiert ein weiterer Fixpunkt $p' \neq p$. Dann gilt:
+	\begin{align*}
+		0 < d(p,p')=d(f(p),f(p')) \leq L d(p,p') < d(p,p') \text{ Widerspruch}
+	\end{align*}
+	Das heißt, $p$ muss der einzige Fixpunkt sein. \\
+	Nun zur Existenz eines Fixpunkts.\\
+	Sei $x \in X$ beliebig und $x_n = f^n(x) \; (n \in \IN_{\geq 0})$. 
+	Für $m \in \IN$ gilt:
+	\begin{align*}
+		d(x_m, x_{m+1})&= d(f^m(x_0),f^m(x_1)) \leq L d(f^{m-1}(x_0),f^{m-1}(x_1))\\
+		\leq & L^2 d(f^{m-2}(x_0), f^{m-2}(x_1)) \leq L^m d(x_0,x_1)
+	\end{align*}
+	Wobei $0 < L < 1$ eine Lipschitz-Konstante von $f$ sei.
+	Seien nun $n, m \in \IN$ und ohne Einschränkung $n \geq m$. Dann gilt:
+	\begin{align*}
+	d(x_n,x_m) & \leq d(x_n,x_{m+1})+d(x_{m+1},x_m) \leq \hdots \\
+	\leq & \sum_{j = 0}^{n-m-1} d(x_{m-j-1},x_{m+j}) 
+	\leq \sum_{j=0}^{n-m-1} L^{m+j}\cdot d(x_0,x_1) \\ 
+	= & L^m d(x_0,x_1) \cdot d((x_0,x_1) \cdot \sum_{j=0}^{n-m-1}  L^j \\
+	= & L^m d(x_0,x_1) \cdot d(x_0,x_1) \cdot \sum_{j=0}^\infty L^j \\
+	= & L^m d(x_0,x_1) \cdot d(x_0,x_1) \frac{1}{1-L}
+	\xrightarrow{m \rightarrow \infty} 0
+	\end{align*}
+	Ergo: $(x_n)$ ist Cauchy-Folge. Da $(X,d)$ vollständig ist, konvergiert $x_n$ 
+	gegen $x \in X$. Wir zeigen jetzt: $f(x) =x$.
+	Damit folgt dann die Behauptung. Es gilt : 
+	\begin{align*}
+		f(x) = & f(\lim\limits_{n \rightarrow \infty}{x_n}) \\ \xlongequal[\text{Lipschitz-stetig}]{\text{f ist stetig}} & \lim\limits_{n \rightarrow \infty}{f(x_n)} = \lim\limits_{n\rightarrow \infty}{f(f^n(x_0))} \\
+		 = & \lim\limits_{n \rightarrow \infty}{f^{n+1}(x_0)}
+		= \lim\limits_{n \rightarrow \infty}{f^n(x_0)} = X
+	\end{align*}			
+\end{proof}
