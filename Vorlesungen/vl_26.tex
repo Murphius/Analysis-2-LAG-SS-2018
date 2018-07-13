@@ -120,7 +120,7 @@ wichtigsten Sätze der Analysis schlechthin.
 	\end{align*}
 	Das heißt, $p$ muss der einzige Fixpunkt sein. \\
 	Nun zur Existenz eines Fixpunkts.\\
-	Sei $x \in X$ beliebig und $x_n = f^n(x) \; (n \in \IN_{\geq 0})$. 
+	Sei $x \in X$ beliebig und $x_n := f^n(x) \; (n \in \IN_{\geq 0})$. 
 	Für $m \in \IN$ gilt:
 	\begin{align*}
 		d(x_m, x_{m+1})&= d(f^m(x_0),f^m(x_1)) \leq L d(f^{m-1}(x_0),f^{m-1}(x_1))\\
@@ -132,13 +132,14 @@ wichtigsten Sätze der Analysis schlechthin.
 	d(x_n,x_m) & \leq d(x_n,x_{m+1})+d(x_{m+1},x_m) \leq \hdots \\
 	\leq & \sum_{j = 0}^{n-m-1} d(x_{m-j-1},x_{m+j}) 
 	\leq \sum_{j=0}^{n-m-1} L^{m+j}\cdot d(x_0,x_1) \\ 
-	= & L^m d(x_0,x_1) \cdot d((x_0,x_1) \cdot \sum_{j=0}^{n-m-1}  L^j \\
-	= & L^m d(x_0,x_1) \cdot d(x_0,x_1) \cdot \sum_{j=0}^\infty L^j \\
+	= & L^m d(x_0,x_1) \cdot d(x_0,x_1) \cdot \sum_{j=0}^{n-m-1}  L^j \\
+	\leq & L^m d(x_0,x_1) \cdot d(x_0,x_1) \cdot \sum_{j=0}^\infty L^j \\
 	= & L^m d(x_0,x_1) \cdot d(x_0,x_1) \frac{1}{1-L}
 	\xrightarrow{m \rightarrow \infty} 0
 	\end{align*}
-	Ergo: $(x_n)$ ist Cauchy-Folge. Da $(X,d)$ vollständig ist, konvergiert $x_n$ 
-	gegen $x \in X$. Wir zeigen jetzt: $f(x) =x$.
+	\todo{In der Summe sollte $d(x_{m+(j+1)},x_{m+j})$ stehen}
+	Ergo: $(x_n)$ ist Cauchy-Folge.\footnote{Basti: das sollte man sich klar machen!} Da $(X,d)$ vollständig ist, existiert ein $x'\in X$, sodass $x_n$ 
+	gegen $x' \in X$ konvergiert.\todo{Hier stand erst das gleiche $x$ wie oben, aber das ist natürlich quatsch. Steht das bei anderen auch so in den Mitschriften?} Wir zeigen jetzt: $f(x) =x$.
 	Damit folgt dann die Behauptung. Es gilt : 
 	\begin{align*}
 		f(x) = & f(\lim\limits_{n \rightarrow \infty}{x_n}) \\ \xlongequal[\text{Lipschitz-stetig}]{\text{f ist stetig}} & \lim\limits_{n \rightarrow \infty}{f(x_n)} = \lim\limits_{n\rightarrow \infty}{f(f^n(x_0))} \\

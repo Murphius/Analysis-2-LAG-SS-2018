@@ -1,7 +1,7 @@
 \begin{figure}[ht]
     \begin{center}
+        \tikzsetnextfilename{taylor_veranschaulichung}
         \begin{tikzpicture}
-            \tikzsetnextfilename{taylor_veranschaulichung}
             \tikzset{decorate sep/.style 2 args=
             {decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
             \draw (0,0) -- (10,0);
@@ -9,27 +9,28 @@
             \draw (10,0.1) -- (10,-0.1);
 
             \node[below] (a) at (0,0) {\small $\alpha$};
-            \node[below = 2cm of a](au){\small $\substack{h(\alpha)=0\\\text{für } l=1,\ldots,n-1}$};
+            \node[below = 3.5 of a](au){\small $\substack{h(\alpha)=0\\\text{für } l=1,\ldots,n-1}$};
             \draw[dashed] (a) -- (au);
 
             \node[below] (b) at (10,0) {\small $\beta$};
-            \node[below = 2cm of b](bu){\small $h(\beta)=0$};
+            \node[below = 3.5 of b](bu){\small $h(\beta)=0$};
             \draw[dashed] (b) -- (bu);
 
             \draw (7,0.1) -- (7,-0.1);
             \node[below] (c) at (7,0) {\small $x_1$};
-            \node[below = 1.5cm of c](cu){\small $h'(x_1)=0$};
+            \node[below = 2.2 of c](cu){\small $h'(x_1)=0$};
             \draw[dashed] (c) -- (cu);
-            \node[below = 0.5 of cu](cmw){{\small MWS}};
+            \node[below = 0.2 of cu](cmw){\small $\substack{\text{MWS}\\\exists x_1\in (\alpha,\beta)}$};
 
             \draw (5,0.1) -- (5,-0.1);
             \node[below] (d) at (5,0) {\small $x_2$};
-            \node[below = 1cm of d](du){\small $h'(x_2)=0$};
+            \node[below = 0.7 of d](du){\small $h''(x_2)=0$};
             \draw[dashed] (d) -- (du); 
+            \node[below = 0.2 of du](dmw){\small $\substack{\text{MWS}\\\exists x_2\in (\alpha,x_1)}$};
 
             \draw (3,0.1) -- (3,-0.1);
             \node[below] (e) at (3,0) {\small $x_3$};
-            \node[below = 0.5cm of e](eu){\small $h^{(3)}(x_3)=0$};
+            \node[below = 0.3 of e](eu){\small $h^{(3)}(x_3)=0$};
             \draw[dashed] (e) -- (eu);
 
             \draw (bu.south) to[out=230, in=270] (cmw);
@@ -37,14 +38,16 @@
 
             \draw[->] (cmw) to (cu.south);
 
-            \draw[->] (cu) to[out=190, in=290] (du);
-            \draw[->] (au.east) to[out=-20, in=250] (du);
+            \draw (cu) to[out=190, in=270] (dmw);
+            \draw (au.east) to[out=-20, in=270] (dmw);
+
+            \draw[->] (dmw) to (du.south);
 
             \draw[->] (du) to[out=190, in=290] (eu);
             \draw[->] (au) to[out=0, in=250] (eu);
 
     	%Male Punkte
-            \draw[decorate sep={1.5mm}{4mm},fill] (1.8,-0.8) -- (0.7,-0.8);
+%            \draw[decorate sep={1.5mm}{4mm},fill] (1.8,-0.8) -- (0.7,-0.8);
         \end{tikzpicture}
     \end{center}
     \caption{Basti: Versuch einer Veranschaulichung des Beweises vom Satz von Taylor.}
