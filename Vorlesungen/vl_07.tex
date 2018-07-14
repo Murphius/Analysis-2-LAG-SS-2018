@@ -126,20 +126,22 @@
 
 \begin{Satz}{
 	Sei $f: I \rightarrow \mathbb{R}$ zweimal differenzierbar $(I \subseteq 
-	\mathbb{R}$ Intervall$)$. Gibt es $\xi \in I$ mit $f'(\xi) = 0$ und 
-	$f''(\xi) < 0 \textbf{ }  (f''(\xi)> 0)$, so nimmt $f$ an der Stelle $\xi$ ein 
+	\mathbb{R}$ Intervall$)$.\\
+	Gibt es $\xi \in I$ mit $f'(\xi) = 0$ und 
+	$f''(\xi) < 0 \; (f''(\xi)> 0)$, so nimmt $f$ an der Stelle $\xi$ ein 
 	striktes lokales Maximum (Minimum) an.
 }\end{Satz}
 
 \begin{proof}
-	Wir betrachten nur den Fall $f''(\xi) < 0$. Für den Fall
-	$f''(\xi) > 0$ betrachte man $-f$.\\
+	Wir betrachten nur den Fall $f''(\xi) < 0$.
+	Für den Fall $f''(\xi) > 0$ \\betrachte man $-f$.
 	Per Definition haben wir also: 
 	\begin{align*}
 		f''(\xi) = \lim\limits_{x \rightarrow \xi}{\frac{f'(x) - f'(\xi)}{x - \xi} }
-		< 0
+		< 0 \\
+		\\
+		r := \lim\limits_{x \rightarrow \xi}{\frac{f'(x) - f'(\xi)}{x - \xi} }
 	\end{align*}
-	$r := \lim\limits_{x \rightarrow \xi}{\frac{f'(x) - f'(\xi)}{x - \xi} } $ \\
 	Das heißt es existiert für jedes $ \epsilon > 0$ ein $\delta > 0$ mit:
 	\begin{align*}
 		\left\vert \frac{f'(x) - f'(\xi)}{x - \xi} - r \right\vert < \epsilon
@@ -263,8 +265,7 @@
 		\end{align*}
 	\end{enumerate}
 		Es muss also ein $ c > a$ existieren sodass:\\ 
-		$$\forall x \in (a,c): \frac{f(x)}{g(x)} <$$ \\
-		
+		$\forall x \in (a,c): \frac{f(x)}{g(x)} <$\\
 		Analog kann man zeigen: \\
 		\emph{Behauptung' :} Sei $A  \in (-\infty, \infty]$. Dann existiert für 
 		jedes $p <A$ ein $d > a$, so dass $p < \frac{f(x)}{g(x)}$ $(x \in (a,d))$\\
@@ -272,7 +273,7 @@
 		$ A = - \infty$ aus der ersten Behauptung. \\
 		Für $A \in \mathbb{R}$ argumentieren wir wie folgt: \\
 		Sei $\epsilon > 0$ gegeben. Nach der ersten Behauptung existiert 
-		$c > a$, so dass $\frac{f(x)}{g(x)} < A + \epsilon$ $(x\in (a,c))$. 
+		$c > a$, so dass \\$\frac{f(x)}{g(x)} < A + \epsilon$ $(x\in (a,c))$. 
 		Nach der zweiten Behauptung existiert $d > a$ mit:
 		\begin{align*}
 			\frac{f(x)}{g(x)} > A - \epsilon \text{ } (x \in (a,d))
