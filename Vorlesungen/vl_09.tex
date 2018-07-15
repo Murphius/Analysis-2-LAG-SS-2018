@@ -2,7 +2,7 @@
 
 \begin{Definition}{
 	Ist $f: I \rightarrow \mathbb{R}$ beliebig oft differenzierbar, so definieren 
-	wir die Taylorreihe am Entwicklungspunkt $\alpha \in I$.
+	wir die Taylor-reihe am Entwicklungspunkt $\alpha \in I$.
 	\begin{align*}
 		T_{f, \alpha} (x) = \sum_{n = 0}^{\infty} \frac{f^{(n)}(\alpha)}{n!}
 		(x- \alpha)^n
@@ -13,7 +13,7 @@
 	\begin{itemize}
 		\item[ ]
 		\item im Allgemeinen konvergiert $T_{f,\alpha}(x)$ für $x \neq \alpha$ nicht
-		\item Der Satz von Taylor behandelt \emph{nicht} die Taylorreihe
+		\item Der Satz von Taylor behandelt \emph{nicht} die Taylor-reihe
 		\item Selbst wenn $T_{f, \alpha}(x)$ konvergiert, muss 
 		$T_{f,\alpha}(x) = f(x)$ nicht gelten
 		\item Sei $R_n(x) = P_{n, \alpha}(x) -f(x)$ Dann gilt :
@@ -32,7 +32,7 @@
 	\begin{align*}
 		f^{(l)}(\alpha) = l ! \cdot a_l
 	\end{align*}
-	das heißt, die Taylorreihe $T_{f,\alpha}$ stimmt mit der definierten 
+	das heißt, die Taylor-reihe $T_{f,\alpha}$ stimmt mit der definierten 
 	Potenzreihe überein.
 }\end{Satz}
 
@@ -91,7 +91,7 @@ Dabei heißt auf \emph{natürliche Weise} insbesondere:
 \end{itemize} 
 
 \begin{Definition}{
-	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \emph{Partition} \todo{das geht besser auch mit Stichwortverzeichnis. Baue ich später ein.} $P$ 
+	Sei $ I \subseteq \mathbb{R}$ ein Intervall. Eine \emph{Partition} $P$ 
 	(Abbildung~\ref{fig_int_partition}) von 
 	$[a,b]$ ist eine endliche Menge von Punkten $a = x_0 \leq x_1 \leq \hdots
 	\leq x_n = b$.\\
@@ -123,7 +123,7 @@ Dabei heißt auf \emph{natürliche Weise} insbesondere:
 		& \overline{\int_a^b} f \dd{x} \text{ das \emph{obere} und} \\
 		& \underline{\int_a^b} f \dd{x} \text{ das \emph{untere}}
 	\end{align*}
-	\emph{Riemannintegral} von $f$ über $[a,b]$ \\
+	\emph{Riemann-integral} von $f$ über $[a,b]$ \\
 	Gilt:
 	\begin{align*}
 		\int_a^{\overline{b}} f \dd{x} = \underline{\int_{a}^b} f \dd{x}
@@ -134,8 +134,8 @@ Dabei heißt auf \emph{natürliche Weise} insbesondere:
 		\int_a^b f(x) \dd{x} := \underline{\int_a^b} f \dd{x} = 
 		\overline{\int_a^b} f \dd{x}
 	\end{align*}
-	das \emph{Riemannintegral} von $f$ über $[a,b]$.\\
-	Die Menge der Riemanintegrierbaren Funktionen auf $[a,b]$ bezeichnen wir 
+	das \emph{Riemann-integral} von $f$ über $[a,b]$.\\
+	Die Menge der Riemann-integrierbaren Funktionen auf $[a,b]$ bezeichnen wir 
 	mit $\mathcal{R}$ beziehungsweise $\mathcal{R}_{[a,b]}$.
 	\input{Plots/plot_integral_riemannintegral}
 }\end{Definition}
@@ -185,7 +185,7 @@ Dabei heißt auf \emph{natürliche Weise} insbesondere:
 	Wir definieren:
 	\begin{align*}
 		W_1 := & \sup_{[x_{i-1}, x']} f(x) \\
-		W_2 := & sup_{[x', x_i]} f(x)
+		W_2 := & \sup_{[x', x_i]} f(x)
 	\end{align*}
 	Dann gilt: 
 	\begin{align*}
@@ -194,7 +194,7 @@ Dabei heißt auf \emph{natürliche Weise} insbesondere:
 		= & (M_i -W_1) \cdot (x' - x_{i-1}) 
 		+ (M_i - W_2)\cdot(x_i - x') \geq 0
 	\end{align*}
-	 Enthält von $P'$ $k$ Punkte, die nicht in $P$ enthalten sind, so führen wir 
+	 Enthält $P'$ $k$ Punkte, die nicht in $P$ enthalten sind, so führen wir 
 	 obiges Verfahren insgesamt $k$-mal durch. 
 \end{proof}
 

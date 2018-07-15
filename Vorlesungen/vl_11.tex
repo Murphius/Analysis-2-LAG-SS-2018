@@ -67,15 +67,15 @@
 }\end{Beispiel}
 
 \begin{Satz}{\label{vl_11_satz23}
-	Sei $f \in \mathcal{R}_{[a,b]}$ und $m \leq f(x) \leq M$ $ (x \in [a,b])$.
-	Sei ferner  \linebreak $\Phi : [m, M] \rightarrow \mathbb{R}$ stetig. 
-	Dann ist $\Phi \circ f \in \mathcal{R}_{[a,b]}$ \\
+	Sei $f \in \mathcal{R}_{[a,b]}$ und $m \leq f(x) \leq M$ $ (x \in [a,b])$.\\
+	Sei ferner $\Phi : [m, M] \rightarrow \mathbb{R}$ stetig. 
+	Dann ist $\Phi \circ f \in \mathcal{R}_{[a,b]}$.
 }\end{Satz}
 
 \begin{proof}	
 	 Sei $\epsilon > 0$ gegeben. Da $\Phi$ auf dem abgeschlossenen Intervall 
 	$[m,M]$ stetig ist, existiert ein $\delta > 0$ 
-	(Ohne Eisnchränkung sei $\delta < \epsilon$) mit :
+	(Ohne Einschränkung sei $\delta < \epsilon$) mit :
 	\begin{align*}
 		\vert s - t\vert < \delta \Rightarrow \vert f(x) - f(t) \vert < \epsilon
 	\end{align*}
@@ -148,7 +148,7 @@
 }\end{Satz}
 
 \begin{proof}
-	\begin{enumerate}
+	~\begin{enumerate}
 		\item Da $f_i \in \mathcal{R}_{[a,b]} (i = 1, 2)$ gibt es Partitionen 
 		$P_i$ von $[a,b]$ mit 
 		\begin{align*}
@@ -162,13 +162,13 @@
 		\end{align*}		 
 		\item Es gilt 
 		\begin{align*}
-			\sup_{x \in [x_{i-1}-x_i]} f_1(x) +f_2(x) \leq & 
-			\sup_{x \in [x_{i-1}-x_i]} f_1(x) + \sup_{x \in [x_{i-1}-x_i]} f_2(x)
+			\sup_{x \in [x_{i-1},x_i]} f_1(x) +f_2(x) \leq & 
+			\sup_{x \in [x_{i-1},x_i]} f_1(x) + \sup_{x \in [x_{i-1},x_i]} f_2(x)
 		\end{align*}				
 		Analog gilt: 
 		\begin{align*}
-			\inf_{x \in [x_{i-1}-x_i]} f_1(x) + f_2(x) \geq & 
-			\inf_{x \in [x_{i-1}-x_i]} f_1(x) + \inf_{x \in [x_{i-1}-x_i]} f_2(x)
+			\inf_{x \in [x_{i-1},x_i]} f_1(x) + f_2(x) \geq & 
+			\inf_{x \in [x_{i-1},x_i]} f_1(x) + \inf_{x \in [x_{i-1},x_i]} f_2(x)
 		\end{align*}				
 		Damit folgt:
 		\begin{align*}
@@ -229,7 +229,7 @@
 		ein lineares Funktional ist
 		\item Eigenschaft 2 sagt, dass dieses Funktional positiv ist
 		(also nicht-negative Funktionen einen nicht negativen Wert zuordnet)
-		\item Eigenschaft 4 impliziert eine gewisse stetigkeit
+		\item Eigenschaft 4 impliziert eine gewisse Stetigkeit
 	\end{itemize}
 }\end{Bemerkung}
 
@@ -246,7 +246,7 @@
 \begin{proof}
 	Sei $\Phi : \mathbb{R} \rightarrow  \mathbb{R}, t \mapsto t^2$. \\
 	Dann ist
-	$\Phi$ stetig und damit $\Phi \circ (f+g) $ bzw $\Phi \circ (f -g)$ 
+	$\Phi$ stetig und damit $\Phi \circ (f+g) $ beziehungsweise $\Phi \circ (f -g)$ 
 	aufgrund von Satz~\ref{vl_11_satz24} und Satz~\ref{vl_11_satz23}
 	Riemann-integrierbar über $[a,b]$.
 	Beachte: 

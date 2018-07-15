@@ -51,9 +51,11 @@
 			= & \frac{1}{h} f(\xi_h) \cdot \int_{x_0}^{x_0+h} \dd{t} \tag{Satz~\ref{satz:mws_integral}}\\
 			= & \frac{1}{h} f(\xi_h) \cdot h
 		\end{align*}
-		 Damit gilt (wegen der Stetigkeit von $f$ in $x_0$): \\
-			$$\lim\limits_{h \rightarrow 0}{\frac{F(x_0+h)-F(x_0)}{h}} 
-			= \lim\limits_{h \rightarrow 0} f(\xi_h) = f(x_0)$$
+		 Damit gilt (wegen der Stetigkeit von $f$ in $x_0$):
+		 \begin{align*}
+		 \lim\limits_{h \rightarrow 0}{\frac{F(x_0+h)-F(x_0)}{h}} 
+			= \lim\limits_{h \rightarrow 0} f(\xi_h) = f(x_0)
+		 \end{align*}
 	\end{enumerate}
 \end{proof}
 
@@ -67,8 +69,7 @@
 }\end{Satz}
 
 \begin{Bemerkung}{
-	\begin{itemize}
-		\item[ ]
+	~\begin{itemize}
 		\item Eine Funktion $F$ mit $F'=f$ nennt man eine \emph{Stammfunktion} 
 		von $f$
 		\item Man schreibt gerne $F(x) \vert_a^b := F(b) -F(a)$
@@ -81,14 +82,13 @@
 	\begin{align*}
 		S(P,f) - s(P,f) < & \epsilon
 	\end{align*}
-	Weiter existiert aufgrund des Mittelwertsatzes der Differential-Rechnung
+	Weiter existiert aufgrund des Mittelwertsatzes der \\Differential-Rechnung
 	(Satz~\ref{vl_07_MWS}) 
 	$\xi \in [x_{i-1}, x_i]$ mit 
 	\begin{align*}
 		F(x_i) - F(x_{i-1}) = &  f(\xi_i) \cdot \Delta x_i
 	\end{align*}
-	Nach Satz~\ref{kap10_satz19}
-	gilt 
+	Nach Satz~\ref{kap10_satz19} gilt 
 	\begin{align*}
 		\epsilon > & \abs{ \int_a^b f \dd{x} - \sum_{i=1}^n f(\xi_i) \Delta x_i} \\
 		= & \abs{ \int_a^b f \dd{x} - \sum_{i=1}^n F(x_i) -F(x_{i-1})} \\
@@ -114,7 +114,7 @@
 
 \begin{Proposition}{
 	Sei $F: [a,b] \rightarrow \mathbb{R}$ eine Stammfunktion von $f \in \mathcal{R}
-	_{[a,b]}$. Eine Funktion $G: [a,b] \rightarrow \mathbb{R}$ genau dann 
+	_{[a,b]}$. Eine Funktion $G: [a,b] \rightarrow \mathbb{R}$ ist genau dann 
 	Stammfunktion von $f$, wenn $F-G = konst.$
 }\end{Proposition}
 
@@ -190,8 +190,9 @@
 		& & = & \left. cos(x) \cdot sin(x) \right\vert_a^b + 
 			\int_a^b 1 - cos^2(x) \dd{x} \\
 		& & = & \left. cos(x) \cdot sin(x) \right\vert_a^b 
-			+ \int_a^b 1 \dd{x} - \int_a^b cos^2(x) \dd{x} 
-			 \left\vert + \int_a^b cos^2(x) \dd{x} \right. \\
+			+ \int_a^b 1 \dd{x} \\
+		& & & - \int_a^b cos^2(x) \dd{x} 
+			 \; \left\vert + \int_a^b cos^2(x) \dd{x} \right. \\
 	 \Leftrightarrow 
 	 & 2 \int_a^b cos^2(x) \dd{x} & = & \left. cos(x) \cdot sin(x) \right\vert_a^b 
 	 	+ \left. x \right\vert_a^b  \left\vert \cdot \frac{1}{2} \right. \\
@@ -201,7 +202,6 @@
 	\text{Ergo: } & \int_a^b cos^2(x) \dd{x} & = & \frac{1}{2} (cos(x) sin(x) 
 		\vert_a^b + (b-a))
 	\end{align*}
-	
 	\begin{align*}
 		\int_a^b \ln (x) \dd{x} \text{ wobei } 0 \not\in [a,b] \\
 		\int 1 \cdot \ln (x) \dd{x} = & x \cdot \ln (x)\vert_a^b - 
@@ -240,7 +240,7 @@
 		\begin{align*}
 			\phi'(t)\mathrm{dt} = \frac{\mathrm{d\phi}}{\mathrm{dt}}dt
 		\end{align*}
-		Dann lässt sich die Substitutions-Regel
+		Dann lässt sich die Substitutionsregel
 		\begin{align*}
 			\int_c^d f(\phi) \dd{\phi} = \int_{\phi(c)}^{\phi(d)} f(x) \dd{x}
 		\end{align*}

@@ -33,8 +33,8 @@ die nicht beschränkt sind.
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.3]{Skizzen/plot_bsp_uneigentlichesIntegral}
+		\caption{Skizze der Funktion $\frac{1}{x^2}$}
 	\end{figure}
-	\todo{Caption fehlt}
 	Denn: für $b > 1$ gilt:
 	\begin{align*}
 		\int_a^b \frac{\mathrm{dx}}{x^s} \dd{x} = & \int_a^b x^{-s} \dd{x}
@@ -54,7 +54,7 @@ die nicht beschränkt sind.
 }\end{Beispiel}
 
 \begin{enumerate}[resume]
-	\item Der Integrand ist an einer Invervallgrenze kritisch (also beispielsweise 
+	\item Der Integrand ist an einer Intervallgrenze kritisch (also beispielsweise 
 	unbeschränkt).
 \end{enumerate}
 
@@ -85,7 +85,7 @@ die nicht beschränkt sind.
 
 
 \begin{enumerate}[resume]
-	\item Beide Integrationsgerenzen sind kritisch
+	\item Beide Integrationsgrenzen sind kritisch
 \end{enumerate}
 
 \begin{Definition}{
@@ -215,13 +215,12 @@ Damit gilt:
 			\Gamma(x) = &  (x-1) \Gamma(x-1)
 	\end{align*}
 \end{proof}
-\todo{ Bemerkung statt x -1 -> x+1 ? }
 
 \subsubsection{Integrale über komplexwertige Funktionen}
 
 \begin{Definition}{
 	Sei $f: [a,b] \rightarrow \mathbb{C}$. Dann heißt $f$ auf $[a,b]$ 
-	\emph{Riemann-integrierbar}, falls $Re(f)$ und $Im(f)$ (Realteil beziehungsweise 
+	\emph{Riemann-\\integrierbar}, falls $Re(f)$ und $Im(f)$ (Realteil beziehungsweise 
 	Imaginärteil von f) Riemann-integrierbar sind über $[a,b]$. In diesem Falle 
 	definieren wir:
 	\begin{align*}
@@ -252,7 +251,6 @@ Damit gilt:
 			\abs{\int_a^b f \dd{x} } \leq \int_a^b \abs{f} \dd{x}
 		\end{align*}
 	\end{enumerate}
-	\todo{Punkt f fehlt oben ?}
 }\end{Satz}
 
 \begin{proof}
@@ -260,8 +258,8 @@ Damit gilt:
 	Funktion
 	\begin{itemize}
 		\item[e)] $\abs{f} = \sqrt{f \cdot \overline{f}}$ ist integrierbar, 
-		auf Grund von c), d) und Satz~\ref{vl_11_satz24} 
-		\item[f)] Wähle $\varphi \in [0, 2\pi)$, so dass:
+		auf Grund von c), d) und Satz~\ref{vl_11_satz24}. \\
+		Wähle $\varphi \in [0, 2\pi)$, so dass:
 		\begin{align*}
 			exp(i \varphi) \cdot \int_a^b f \dd{x} \in \mathbb{R} \text{ Dann gilt: } \abs{\exp(i \varphi)} =1
 		\end{align*}
