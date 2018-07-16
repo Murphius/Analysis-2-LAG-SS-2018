@@ -146,28 +146,27 @@ Wir haben diverse Metriken gesehen, die teils von Normen induziert werden, die w
 \end{center}
 
 \begin{Definition}{%10
-Sei $X \neq \emptyset$ eine Menge und $d_1,d_2$ Metriken auf $X$. 
-Wir sagen $d_1$ und $d_2$ \emph{erzeugen die gleiche Topologie}, wenn für alle 
+Sei $X \neq \emptyset$ eine Menge und $m_1,m_2$ Metriken auf $X$. 
+Wir sagen $m_1$ und $m_2$ \emph{erzeugen die gleiche Topologie}, wenn für alle 
 Folgen $(x_n)$ in $X$ und für alle $x\in X$ gilt:
 \begin{align*}
-	\lim\limits_{n \rightarrow \infty}{x_n} = x \text{ bezüglich Metrik } d_1 
+	\lim\limits_{n \rightarrow \infty}{x_n} = x \text{ bezüglich Metrik } m_1 
 	\quad \gdw \quad \lim\limits_{n \rightarrow \infty}{ x_n = x }\text{ bezüglich 
-		Metrik } d_2
+		Metrik } m_2
 \end{align*}
 Das heißt: 
 \begin{align*}
-	d_1(x_n,x) \toinfty 0 \quad \Leftrightarrow \quad  d_2(x_n,x) \toinfty 0
+	m_1(x_n,x) \toinfty 0 \quad \Leftrightarrow \quad  m_2(x_n,x) \toinfty 0
 \end{align*}
-Wir sagen $d_1$ und $d_2$ sind \highl[äquivalent!Metrik]{äquivalent}, wenn $c,C > 0$ existieren mit:
+Wir sagen $m_1$ und $m_2$ sind \highl[äquivalent!Metrik]{äquivalent}, wenn $c,C > 0$ existieren mit:
 \begin{align*}
-	\forall x,y \in X \quad c d_1(x,y) \leq d_2(x,y) \leq C d_1(x,y) 
+	\forall x,y \in X \quad c m_1(x,y) \leq m_2(x,y) \leq C m_1(x,y) 
 \end{align*}
 Analog sagen wir zwei Normen $\norm{\cdot}_1, \norm{\cdot}_2$ auf einem Vektorraum 
 $X$ sind \highl[äquivalent!Norm]{äquivalent}, wenn $c,C > 0$ existieren mit:
 \begin{align*}
 	c \cdot \norm{x}_1 \leq \norm{x}_2 \leq C \norm{x}_1 \text{ } \forall x \in X
 \end{align*}
-	\todo{Das kann zu Verwirrungen bzw. euklidische Norm und 1-Norm führen}
 }\end{Definition}
 
 \begin{Bemerkung}{
@@ -204,7 +203,7 @@ $X$ sind \highl[äquivalent!Norm]{äquivalent}, wenn $c,C > 0$ existieren mit:
 \begin{Definition}%12
 	Sei $(X,d)$ ein metrischer Raum und $x \in X$ sowie $\epsilon > 0$. Dann heißt 
 	$B_\epsilon (x) = \{ y \in X \vert d(x,y) < \epsilon\}$ der \emph{offene 
-	$\epsilon$-Ball} / die \emph{offene $\epsilon$-Kugel um $X$}.
+	$\epsilon$-Ball} / die \emph{offene $\epsilon$-Kugel um $x$}.
 \end{Definition}
 
 \begin{Beispiel}~
@@ -218,7 +217,7 @@ $X$ sind \highl[äquivalent!Norm]{äquivalent}, wenn $c,C > 0$ existieren mit:
 	Sei $(X,d)$ metrischer Raum und $(x_n)$ eine Folge in $X$. Dann sind äquivalent:
 	\begin{itemize}
 		\item $x_n \toinfty x$
-		\item $\forall \epsilon > 0 \exists n_\epsilon \in \IN \forall n \geq n_\epsilon  
+		\item $\forall \epsilon > 0 \; \exists n_\epsilon \in \IN \; \forall n \geq n_\epsilon  
 			: x_n \in B_\epsilon (x)$
 	\end{itemize}
 }\end{Lemma}
@@ -234,10 +233,4 @@ $X$ sind \highl[äquivalent!Norm]{äquivalent}, wenn $c,C > 0$ existieren mit:
 	\end{align*} 
 \end{proof}
 
-\begin{Definition}[Einschub]
-	Sei $(X,d)$ metrischer Raum. Eine Folge $(x_n)$ in $X$ heißt \highl[Cauchy-Folge!im metrischen Raum]{Cauchy-Folge}, wenn gilt: 
-	\begin{align*}
-	\forall \epsilon > 0 \text{ } \exists n_\epsilon \in \IN \text{ } \forall n, m 
-		\geq n_\epsilon: d(x_n,x_m) < \epsilon
-	\end{align*}
-\end{Definition}
+%steht weiter unten noch (mal) -> war hier nur Einschub für die Übungsaufgaben

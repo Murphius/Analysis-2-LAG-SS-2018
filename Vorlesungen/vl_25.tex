@@ -12,7 +12,7 @@
 	Sei $(x_n)$ eine Folge in einem metrischen Raum $(X,d)$, so sind äquivalent:
 	\begin{enumerate}
 		\item \label{vl_25_stp_1}$\lim\limits_{n \rightarrow \infty}{x_n} = x$
-		\item \label{vl_25_stp_2} Jede Teilfolge von $(x_{n_j})$ von $(x_n)$ 
+		\item \label{vl_25_stp_2} Jede Teilfolge $(x_{n_j})$ von $(x_n)$ 
 			konvergiert gegen $x$
 	\end{enumerate}
 \end{Proposition}
@@ -51,7 +51,8 @@
 	Sei $(x_n)$ eine Folge in $E$, die gegen $x \in X$ konvergiert. Nach 
 	Proposition~\ref{vl_23_prop_2}ist zu zeigen: $x \in E$. \\
 	Wegen der Kompaktheit von $E$ gibt es eine Teilfolge $x_{n_j}$ von $(x_n)$ 
-	mit \mbox{$x_{n_j} \xRightarrow{j \rightarrow \infty} x' \in E$}. Wegen 
+	mit \\
+	\mbox{$x_{n_j} \xRightarrow{j \rightarrow \infty} x' \in E$}. Wegen 
 	Proposition~\ref{vl_25_prop_1} muss gelten: $x = x'$ und daher $x \in E$. 
 \end{proof}
 
@@ -159,24 +160,4 @@ Das heißt, wir müssen folgende Behauptung beweisen:\\
 	Dann ist $f$ gleichmäßig stetig.
 \end{Satz}
 
-\begin{proof}
-	Angenommen $f$ ist nicht gleichmäßig stetig. Dann existiert für $n \in \IN$ ein 
-	Paar $x_n,y_n \in X$ sowie $\epsilon > 0$ mit: $d(x_n,y_n) < \frac{1}{n}$ und 
-	$d(f(x_n),f(y_n)) \geq \epsilon$.\\
-	Da $X$ kompakt ist, gibt es eine strikt wachsende Folge natürlicher Zahlen 
-	$(n_j)$, so dass $x_{n_j},y_{n_j}$ konvergent sind mit: $x:= \lim\limits_{j 
-	\rightarrow \infty}{x_{n_j}}$ und $y := \lim\limits_{j \rightarrow \infty}{
-	y_{n_j}}$. Dann gilt:
-	\begin{align*}
-		0 \leq d(x,y) = \lim\limits_{j\rightarrow \infty}{d(x,x_{n_j}) + 
-		d(x_{n_j},y_{n_j}) + d(y_{n_j}, y)}
-	\end{align*}
-	Ergo: $d(x,y) = 0$, das heißt $x =y$.
-	Gleichzeitig gilt, aufgrund der Stetigkeit 
-	\begin{align*}
-		\lim\limits_{j \rightarrow \infty}{f(x_{n_j})} = f(x) \text{ und } 
-		\lim\limits_{j \rightarrow \infty}{f(y_{n_j})} = f(y) 
-	\end{align*}
-	Aber: $d(f(x_{n_j}),f(y_{n_j})) \geq \epsilon \; (j \in \IN)$.
-	\textcolor{cyan}{Rest folgt nächste Vorlesung}
-\end{proof}
+%Steht zu Beginn von VL 26
