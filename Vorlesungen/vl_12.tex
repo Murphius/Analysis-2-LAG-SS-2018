@@ -61,7 +61,7 @@
 
 
 \begin{Satz}[Hauptsatz der Differential- und Integralrechnung]{\label{vl_12_satz_02}
-	Ist $f \in \mathcal{R}_{[a,b]}$ und es gilt $F: [a,b] \rightarrow \mathbb{R}$
+	Ist $f \in \mathcal{R}_{[a,b]}$ und gibt es $F: [a,b] \rightarrow \mathbb{R}$
 	differenzierbar mit $F' = f$. Dann gilt
 	\begin{align*}
 		\int_a^b f\dd{x} = F(b) - F(a) 
@@ -78,13 +78,13 @@
 
 \begin{proof}
 	Sei $\epsilon >0 $ gegeben. Man wähle eine Partition $P = \{x_0, \hdots, x_n\}$ 
-	mit 
+	des Intervalls $[a,b]$ mit 
 	\begin{align*}
 		S(P,f) - s(P,f) < & \epsilon
 	\end{align*}
 	Weiter existiert aufgrund des Mittelwertsatzes der \\Differential-Rechnung
-	(Satz~\ref{vl_07_MWS}) 
-	$\xi \in [x_{i-1}, x_i]$ mit 
+	(Satz~\ref{vl_07_MWS}) für alle $i = 1, \hdots, n$ ein $ xi \in 
+	[xi_{i-1},x_i]$ mit 
 	\begin{align*}
 		F(x_i) - F(x_{i-1}) = &  f(\xi_i) \cdot \Delta x_i
 	\end{align*}
