@@ -229,7 +229,8 @@
 	Nach Satz~\ref{kap10_satz21}
 	ist jede Treppenfunktion Riemann-integrierbar. \\
 	Zur Berechnung des Intervalls bedienen wir uns der Notation von Satz 10 
-	\todo{falsche Referenz -> hardgecodet}
+	\todo{falsche Referenz -> hardgecodet; sollte Satz 3.7 sein}
+	%\ref{kap10_satz21}
 	und verwenden Satz~\ref{kap10_satz19}c.\\
 	Zur Vereinfachung nehmen wir wieder an, dass $f$ in $a$ und $b$ stetig ist. 
 	Das heißt die Menge der Unstetigkeitsstellen ist gegeben durch 
@@ -242,15 +243,15 @@
 		< \epsilon
 	\end{align*}
 	Für $ \lim\limits_{\epsilon \rightarrow 0}{}$ gilt:
-	$\begin{cases} 
-		|I_1^1| \rightarrow y_{1-a} & \\
-		\vert I_l^2 \vert \rightarrow y_2 - y_{l-1} & ( l = 2,...,m) \\
+	$$\begin{cases} 
+		|I_1^\epsilon| \rightarrow y_{1}-a & \\
+		\vert I_l^\epsilon \vert \rightarrow y_l - y_{l-1} & ( l = 2,...,m) \\
 		\vert I_{m+1}^{\epsilon} \vert \rightarrow b - y_m &
-	\end{cases}$ \\
+	\end{cases}$$
 	Das heißt
 	\begin{align}
 		\label{gleichung_3_1705}
-		\sum_{i=1}^{m+1}c_i\vert I_{\epsilon}^l \rightarrow c_i(y_i -a) 
+		\sum_{i=1}^{m+1}c_i \abs{I^{\epsilon}_l} \rightarrow c_1(y_1 -a) + 
 		\sum_{i=2}^m c_i \cdot (y_i -y_{i-1}) + c_m(b-y_m)
 	\end{align}
 	Außerdem gilt $v_i-u_j \overset{\epsilon \rightarrow 0}{\rightarrow} 0$
